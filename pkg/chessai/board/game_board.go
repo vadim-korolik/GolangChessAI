@@ -100,6 +100,9 @@ type Board struct {
 	pinMaskValid  bool
 	pinnedSquares uint64 // bit row*8+col set → that square holds a pinned friendly piece
 	kingInCheck   bool   // true if the side-to-move's king is in check at the start of getAllMoves
+
+	// Generator-local filter, scoped to GetCapturesAndPromotions and never copied.
+	captureOrPromotionOnly bool
 }
 
 func (b *Board) Hash() (result util.BoardHash) {
@@ -365,13 +368,20 @@ func (b *Board) GetAllMoves(color color.Color, previousMove *LastMove) *[]locati
 		// Pre-compute scores to avoid calling mvvLvaScore twice per sort comparison.
 		moves := make([]location.Move, len(*movesPtr))
 		copy(moves, *movesPtr)
-		scores := make([]int, len(moves))
+		scoredMoves := make([]struct {
+			move  location.Move
+			score int
+		}, len(moves))
 		for i, m := range moves {
-			scores[i] = b.mvvLvaScore(m)
+			scoredMoves[i].move = m
+			scoredMoves[i].score = b.mvvLvaScore(m)
 		}
-		sort.Slice(moves, func(i, j int) bool {
-			return scores[i] > scores[j]
+		sort.Slice(scoredMoves, func(i, j int) bool {
+			return scoredMoves[i].score > scoredMoves[j].score
 		})
+		for i, scored := range scoredMoves {
+			moves[i] = scored.move
+		}
 		movesPtr = &moves
 	}
 	return movesPtr
@@ -379,6 +389,18 @@ func (b *Board) GetAllMoves(color color.Color, previousMove *LastMove) *[]locati
 
 func (b *Board) GetAllMovesUnShuffled(color byte, previousMove *LastMove) *[]location.Move {
 	return b.getAllMovesCached(color, previousMove, false)
+}
+
+// GetCapturesAndPromotions returns legal captures and promotions in ordinary
+// unsorted move order. It bypasses the full-move cache and keeps en passant context.
+func (b *Board) GetCapturesAndPromotions(c color.Color, previousMove *LastMove) *[]location.Move {
+	b.captureOrPromotionOnly = true
+	defer func() { b.captureOrPromotionOnly = false }()
+	moves := b.getAllMoves(c, false)
+	if previousMove != nil {
+		*moves = append(*moves, *b.getEnPassantMoves(c, previousMove)...)
+	}
+	return moves
 }
 
 /*
@@ -420,7 +442,11 @@ func (b *Board) getAllMoves(c color.Color, onlyFirstMove bool) *[]location.Move 
 	b.pinMaskValid = true
 	defer func() { b.pinMaskValid = false }()
 
-	moves := make([]location.Move, 0, 40)
+	capacity := 40
+	if b.captureOrPromotionOnly {
+		capacity = 16
+	}
+	moves := make([]location.Move, 0, capacity)
 	for row := 0; row < Height; row++ {
 		rowData := b.board[row]
 		if rowData == 0 {
@@ -593,9 +619,7 @@ func (b *Board) GetAllAvailableMoves(color color.Color) map[string]*[]location.M
  * Determines if a king of color c is under attack by the opposite color.
  */
 func (b *Board) IsKingInCheck(c color.Color) bool {
-	oppositeColor := c ^ 1
-	bitBoard := b.GetAllAttackableMoves(oppositeColor)
-	return bitBoard.IsLocationSet(b.KingLocations[c])
+	return b.isKingInCheckFast(b.KingLocations[c], c)
 }
 
 // willMoveLeaveKingInCheck returns true if applying m would leave color c's king in check.

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "GWTjIExF",
+    "white": "vadbot",
+    "black": "shrevenbot",
+    "speed": "blitz",
+    "timestamp": "2026-10-09T08:22:53-07:00",
+    "rating": 1747,
+    "state": {
+      "type": "gameState",
+      "moves": "d2d4 c7c6 g1f3 e7e6 b1c3 d8a5 e2e4 f8b4 c1d2 a5h5 g2g4 h5g4 h1g1 g4h5 g1g7 f7f6 a2a3 b4c3 d2c3 b7b5 c3b4 b8a6 b4d6 f6f5 e4f5 h5h6 f3g5 c8b7 g7f7 e8c8 d1d2 e6f5 d2f4 d8e8 f1e2 h6g6 f7f5 g8h6 f5e5 e8d8 d6e7 d8e8 e2d3 g6g8 e7d6 g8g7 e5e8 h8e8 e1f1 c6c5 c2c3 c5c4 d3h7 b7h1 f1g1 h1d5 d6e5 g7e7 g5e4 d5e4 f4e4 e7g5 g1h1 a6c7 f2f4 g5h4 e4g2 h6g4 h7f5 g4e5 f4e5 h4f4 a1f1 f4e3 g2c6 e8d8 c6d6 e3e2 f5d7 c8b8 f1f6 e2b2 d6c6 b2c3 f6d6 d8g8 d7g4 c3e1 h1g2 g8g4 g2f3 g4d4 f3g2 e1e2 g2g3 e2e5 g3g2 d4d6 c6f3 d6g6 g2f1 g6f6 f3f6 e5f6 f1e1 f6d4 h2h3 c4c3 e1f1 d4d2 f1g1 c3c2 g1h1 c2c1r",
+      "wtime": 52030,
+      "btime": 33130,
+      "winc": 2000,
+      "binc": 2000,
+      "status": "mate",
+      "winner": "black"
+    }
+  },
+  {
+    "id": "5kUsoO5c",
+    "white": "vadbot",
+    "black": "kleinibot",
+    "speed": "blitz",
+    "timestamp": "2026-10-09T11:24:02-07:00",
+    "rating": 1737,
+    "state": {
+      "type": "gameState",
+      "moves": "e2e4 e7e5 g1f3 b8c6 d2d4 e5d4 f3d4 g8f6 b1c3 f8b4 c1g5 d8e7 f2f3 e7e5 d4f5 d7d5 f5g7 e8f8 g5h6 d5e4 f1c4 b4c3 e1f1 c3b2 a1b1 f8g8 d1d2 e4f3 h1g1 f3f2 g1h1 b2d4 c2c3 d4c3 d2f2 e5e4 c4f7 g8f7 b1c1 e4d3 f2e2 d3e2 f1e2 c3e5 c1c4 f7g6 h6f4 c6d4 e2e3 f6g4 e3d3 h8d8 h2h3 b7b5 c4c3 d4e6 d3c2 e6f4 c3f3 f4g2 h3g4 g6g7 f3h3 c8g4 h3h7 g7g8 c2b3 g4e6 b3b4 d8d5 h7h6 a7a5 b4b3 a8d8 h6g6 g8f7 g6e6 d5d3 b3c2 g2e3 c2c1 d3d1 h1d1 d8d1",
+      "wtime": 156250,
+      "btime": 76500,
+      "winc": 1000,
+      "binc": 1000,
+      "status": "mate",
+      "winner": "black"
+    }
+  },
+  {
+    "id": "IGpoFQPn",
+    "white": "vadbot",
+    "black": "topasbot",
+    "speed": "blitz",
+    "timestamp": "2026-10-09T15:28:09-07:00",
+    "rating": 1739,
+    "state": {
+      "type": "gameState",
+      "moves": "e2e4 e7e5 g1f3 b8c6 b1c3 g7g6 d2d4 e5d4 c3b5 g8f6 c1g5 f8b4 f3d2 b4e7 d1f3 e8g8 g5f4 d7d6 f4h6 f8e8 h2h3 a7a6 b5c7 d8c7 e1c1 c8e6 c2c4 c6e5 f3b3 d6d5 e4d5 e6d5 c1b1 d5e6 f2f4 e6f5 b1c1 e5d7 g2g4 d7c5 b3g3 f6e4 g3h2 e4d2 d1d2 f5e4 h1g1 c7a5 d2e2 c5b3 c1d1 a5a2 d1e1 d4d3 e2e4 e7h4 g1g3 d3d2 e1f2 d2d1q f2g1 e8e4 h2g2 e4e1 g3b3 a2b3 g1h2 e1f1 c4c5 f1h1 g2h1 b3g3",
+      "wtime": 146090,
+      "btime": 89530,
+      "winc": 3000,
+      "binc": 3000,
+      "status": "mate",
+      "winner": "black"
+    }
+  }
+]

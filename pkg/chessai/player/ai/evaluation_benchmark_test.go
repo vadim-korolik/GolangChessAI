@@ -17,6 +17,6 @@ func BenchmarkEvaluateBoardCold(b *testing.B) {
 	b.ReportAllocs()
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		evaluationSpeedSink = p.EvaluateBoard(position, color.White).TotalScore
+		evaluationSpeedSink = p.EvaluateBoard(position, color.White, nil).TotalScore
 	}
 }

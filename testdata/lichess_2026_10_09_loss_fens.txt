@@ -1,0 +1,22 @@
+# Fresh losses from the 2026-10-06 22:35 build. Stockfish depth-16 triage.
+# Preferences are provisional; use cold-hash depth-18 validation.
+r1bqk2r/pppp1p1p/2n2np1/1N4B1/1b1pP3/5N2/PPP2PPP/R2QKB1R w KQkq - 4 7 | IGpoFQPn-ply13 | c2c3 | f3d2 | SF16 121cp
+r1bq1rk1/ppp1bp1p/2np1np1/1N6/3pPB2/5Q2/PPPN1PPP/R3KB1R w KQ - 0 10 | IGpoFQPn-ply19 | c2c3 | f4h6 | SF16 124cp
+r1bqr1k1/ppp1bp1p/2np1npB/1N6/3pP3/5Q2/PPPN1PPP/R3KB1R w KQ - 2 11 | IGpoFQPn-ply21 | f3d3 | h2h3 | SF16 142cp
+r3r1k1/1pq1bp1p/p5pB/2n2b2/2Pp1PP1/7P/PP1n3Q/2KR1B1R w - - 0 23 | IGpoFQPn-ply45 | g4f5 | d1d2 | SF16 102cp
+r3r1k1/1pq1bp1p/p5pB/2n5/2PpbPP1/7P/PP1R3Q/2K2B1R w - - 1 24 | IGpoFQPn-ply47 | f1g2 | h1g1 | SF16 148cp
+r1b1k2r/pppp1ppp/2n2n2/4q1B1/1b1NP3/2N2P2/PPP3PP/R2QKB1R w KQkq - 1 8 | 5kUsoO5c-ply15 | g5f6 | d4f5 | SF16 117cp
+r1b2k1r/ppp2pNp/2n2n1B/4q3/1b2p3/2N2P2/PPP3PP/R2QKB1R w KQ - 0 11 | 5kUsoO5c-ply21 | f1e2 | f1c4 | SF16 258cp
+r1b3kr/ppp2pNp/2n2n1B/4q3/2B5/5p2/PbPQ2PP/1R3K1R w - - 0 15 | 5kUsoO5c-ply29 | b1b2 | h1g1 | SF16 143cp
+r1b3kr/ppp2pNp/2n2n1B/4q3/2B5/8/PbPQ1pPP/1R3KR1 w - - 0 16 | 5kUsoO5c-ply31 | d2f2 | g1h1 | SF16 107cp
+r1b3kr/ppp2pNp/2n2n1B/4q3/2Bb4/8/P1PQ1pPP/1R3K1R w - - 2 17 | 5kUsoO5c-ply33 | b1b5 | c2c3 | SF16 203cp
+r3k1nr/pb1p2Rp/n1pBp2q/1p3PN1/3P4/P7/1PP2P1P/R2QKB2 w Qkq - 3 15 | GWTjIExF-ply29 | f5f6 | g7f7 | SF16 167cp
+2kr2nr/pb1p1R1p/n1pB3q/1p3pN1/3P4/P7/1PPQ1P1P/R3KB2 w Q - 0 17 | GWTjIExF-ply33 | d6e5 | d2f4 | SF16 186cp
+2k1r1nr/pb1p1R1p/n1pB2q1/1p3pN1/3P1Q2/P7/1PP1BP1P/R3K3 w Q - 4 19 | GWTjIExF-ply37 | d6e5 | f7f5 | SF16 115cp
+2k1r3/pb1p2qp/n2B3n/1pp3N1/3P1Q2/P2B4/1PP2P1P/R4K2 w - - 0 26 | GWTjIExF-ply51 | a1e1 | c2c3 | SF16 126cp
+2k1r3/p2p2qB/n2B3n/1p4N1/2pP1Q2/P1P5/1P3P1P/R4K1b w - - 1 28 | GWTjIExF-ply55 | a1e1 | f1g1 | SF16 154cp
+2k1r3/p1np3B/7n/1p2B1q1/2pPQ3/P1P5/1P3P1P/R6K w - - 3 33 | GWTjIExF-ply65 | a1g1 | f2f4 | SF16 147cp
+1k1r4/p1nB4/3Q4/1p2P3/2pP4/P1P5/1P2q2P/5R1K w - - 1 41 | GWTjIExF-ply81 | f1f8 | f1f6 | SF16 1273cp
+1k1r4/p1nB4/3Q1R2/1p2P3/2pP4/P1P5/1q5P/7K w - - 0 42 | GWTjIExF-ply83 | f6f8 | d6c6 | SF16 599cp
+1k1r4/p1nB4/2Q2R2/1p2P3/2pP4/P1q5/7P/7K w - - 0 43 | GWTjIExF-ply85 | d7g4 | f6d6 | SF16 568cp
+1k6/p1n5/2QR4/1p2P3/2pr4/P4K2/7P/4q3 w - - 0 47 | GWTjIExF-ply93 | c6d7 | f3g2 | SF16 474cp

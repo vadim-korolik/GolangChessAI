@@ -11,6 +11,7 @@ import (
 	"math/rand"
 	"os"
 	"runtime"
+	"runtime/debug"
 	"sync/atomic"
 	"time"
 )
@@ -258,6 +259,10 @@ func betterMove(maximizingP bool, currentBest *ScoredMove, candidate *ScoredMove
 }
 
 func (p *AIPlayer) GetBestMove(b *board.Board, previousMove *board.LastMove, logger *PerformanceLogger) *location.Move {
+	if move := p.positionAwareOpeningResponse(b, previousMove); move != nil {
+		p.Opening = OpeningNone
+		return move
+	}
 	if p.Opening != OpeningNone && p.TurnCount >= positionBlindBookMaxTurns {
 		p.Opening = OpeningNone
 	}
@@ -301,9 +306,6 @@ func (p *AIPlayer) GetBestMove(b *board.Board, previousMove *board.LastMove, log
 			return bookMove
 		}
 		p.Opening = OpeningNone // book broken/illegal for this position; switch to search
-	}
-	if move := p.positionAwareOpeningResponse(b, previousMove); move != nil {
-		return move
 	}
 	if move := p.earlyOpeningPreference(b, previousMove); move != nil {
 		return move
@@ -368,6 +370,28 @@ func (p *AIPlayer) positionAwareOpeningResponse(b *board.Board, previousMove *bo
 	}
 	if p.PlayerColor != color.Black || p.TurnCount < 1 || p.TurnCount > 3 || previousMove == nil {
 		return nil
+	}
+	if p.TurnCount == 1 {
+		// The blind ...Nf6 preference conceded the center after c4 in mv1fVMW2 and RY4YvAIT.
+		for _, response := range []struct{ first, reply location.Move }{
+			{
+				first: location.Move{Start: location.NewLocation(1, 4), End: location.NewLocation(3, 4)}, // d4
+				reply: location.Move{Start: location.NewLocation(6, 3), End: location.NewLocation(5, 3)}, // ...e6
+			},
+			{
+				first: location.Move{Start: location.NewLocation(0, 1), End: location.NewLocation(2, 2)}, // Nf3
+				reply: location.Move{Start: location.NewLocation(4, 4), End: location.NewLocation(3, 4)}, // ...d4
+			},
+		} {
+			line := []location.Move{
+				response.first,
+				{Start: location.NewLocation(6, 4), End: location.NewLocation(4, 4)}, // ...d5
+				{Start: location.NewLocation(1, 5), End: location.NewLocation(3, 5)}, // c4
+			}
+			if move := p.openingLineResponse(b, previousMove, line, response.reply); move != nil {
+				return move
+			}
+		}
 	}
 	line := []location.Move{
 		{Start: location.NewLocation(1, 3), End: location.NewLocation(3, 3)}, // e4
@@ -542,8 +566,8 @@ func (p *AIPlayer) avoidImmediateMateMove(b *board.Board, previousMove *board.La
 			continue
 		}
 		child := b.Copy()
-		board.MakeMove(&move, child)
-		score := p.EvaluateBoard(child, p.PlayerColor).TotalScore
+		last := board.MakeMove(&move, child)
+		score := -p.EvaluateBoard(child, p.PlayerColor^1, last).TotalScore
 		if score > bestSafe.Score || bestSafe.Move.Start.Equals(bestSafe.Move.End) {
 			bestSafe = ScoredMove{Move: move, Score: score}
 		}
@@ -558,12 +582,15 @@ func (p *AIPlayer) avoidImmediateMateMove(b *board.Board, previousMove *board.La
 func moveAllowsMateInOne(b *board.Board, previousMove *board.LastMove, side color.Color, move location.Move) bool {
 	child := b.Copy()
 	last := board.MakeMove(&move, child)
-	enemy := side ^ 1
-	replies := child.GetAllMoves(enemy, last)
+	return hasMateInOne(child, last, side^1)
+}
+
+func hasMateInOne(b *board.Board, previousMove *board.LastMove, side color.Color) bool {
+	replies := b.GetAllMoves(side, previousMove)
 	for _, reply := range *replies {
-		replyBoard := child.Copy()
+		replyBoard := b.Copy()
 		replyLast := board.MakeMove(&reply, replyBoard)
-		if replyBoard.IsInCheckmate(side, replyLast) {
+		if replyBoard.IsKingInCheck(side^1) && !replyBoard.HasLegalMove(side^1, replyLast) {
 			return true
 		}
 	}
@@ -622,6 +649,16 @@ func (p *AIPlayer) printMoveDebug(b *board.Board, m *ScoredMove) {
 }
 
 func (p *AIPlayer) ClearCaches(force bool) {
+	if !force {
+		var memory runtime.MemStats
+		runtime.ReadMemStats(&memory)
+		limit := uint64(debug.SetMemoryLimit(-1))
+		// Leave room for the next parallel search before the runtime's soft cap forces GC thrashing.
+		if memory.HeapAlloc > limit-limit/4 {
+			log.Println("Clearing player caches due to memory pressure")
+			force = true
+		}
+	}
 	cleared := false
 	if force {
 		log.Println("WARNING: Force clearing player caches (negative affects if during game)")
@@ -641,6 +678,12 @@ func (p *AIPlayer) ClearCaches(force bool) {
 		}
 	}
 	if cleared {
+		// Workers retain the old evaluation map and their own TTs until the pool is released.
+		if algorithm, ok := p.Algorithm.(*ABDADA); ok && algorithm.workersFor == p {
+			algorithm.rootWorkerABs = nil
+			algorithm.selectAB = nil
+			algorithm.workersFor = nil
+		}
 		runtime.GC()
 		log.Println("Forcing garbage collection")
 	}
@@ -703,6 +746,6 @@ func (p *AIPlayer) IncrementTTGeneration() {
 	atomic.AddUint32(&p.ttGeneration, 1)
 }
 
-func (p *AIPlayer) terminalNode(b *board.Board, moves *[]location.Move) bool {
-	return len(*moves) == 0 || b.CurrentPositionRepeats >= 2 || b.MovesSinceNoDraw >= 100 || b.IsInsufficientMaterial()
+func (p *AIPlayer) terminalNode(b *board.Board, hasLegalMove bool) bool {
+	return !hasLegalMove || b.CurrentPositionRepeats >= 2 || b.MovesSinceNoDraw >= 100 || b.IsInsufficientMaterial()
 }

@@ -548,8 +548,8 @@ type evaluationPair struct {
 // board reachable through search. A prior version called IsInCheckmate(whoMoves^1)
 // here; it always evaluated false but still paid for a full move-scan + attack
 // bitboard on the wrong color on every quiescence-search standPat call.
-func terminalScore(b *board.Board, whoMoves color.Color) (int, bool) {
-	hasLegalMove := b.HasLegalMove(whoMoves, nil)
+func terminalScore(b *board.Board, whoMoves color.Color, previousMove *board.LastMove) (int, bool) {
+	hasLegalMove := b.HasLegalMove(whoMoves, previousMove)
 	// With a legal move, check status cannot make the position terminal.
 	// Avoid rebuilding the opponent's attack map on every evaluation leaf.
 	if !hasLegalMove {
@@ -565,11 +565,11 @@ func terminalScore(b *board.Board, whoMoves color.Color) (int, bool) {
 }
 
 // TODO(Vadim) make this a static function so evaluation cache is global
-func (p *AIPlayer) EvaluateBoard(b *board.Board, whoMoves color.Color) *Evaluation {
+func (p *AIPlayer) EvaluateBoard(b *board.Board, whoMoves color.Color, previousMove *board.LastMove) *Evaluation {
 	eval := NewEvaluation()
 	// Check terminal wins/losses before draw counters. A game can have prior
 	// repetition history without the current position being a threefold draw.
-	if score, terminal := terminalScore(b, whoMoves); terminal {
+	if score, terminal := terminalScore(b, whoMoves, previousMove); terminal {
 		eval.TotalScore = score
 	} else if b.MovesSinceNoDraw >= 100 {
 		// Vadim: >= instead of == because AI simulation will go beyond 100, it will know no win is possible
@@ -578,13 +578,19 @@ func (p *AIPlayer) EvaluateBoard(b *board.Board, whoMoves color.Color) *Evaluati
 	} else if b.CurrentPositionRepeats >= 2 {
 		eval.TotalScore = StalemateScore
 	} else {
-		eval = p.evaluateBoardCached(b, whoMoves)
-		// Note: this term is path-dependent (the counter is not in the
-		// position hash) and mildly pollutes the TT, but removing it regressed
-		// the 74cp bench baseline as part of a wider change set; keep until a
-		// removal is validated in isolation.
-		eval.TotalScore += Weight50Rule * b.MovesSinceNoDraw
+		return p.evaluateNonTerminal(b, whoMoves)
 	}
+	return eval
+}
+
+// The caller must already have excluded terminal positions and draw counters.
+func (p *AIPlayer) evaluateNonTerminal(b *board.Board, whoMoves color.Color) *Evaluation {
+	eval := p.evaluateBoardCached(b, whoMoves)
+	// Note: this term is path-dependent (the counter is not in the
+	// position hash) and mildly pollutes the TT, but removing it regressed
+	// the 74cp bench baseline as part of a wider change set; keep until a
+	// removal is validated in isolation.
+	eval.TotalScore += Weight50Rule * b.MovesSinceNoDraw
 	return eval
 }
 
@@ -616,6 +622,7 @@ func (p *AIPlayer) evaluateBoardCached(b *board.Board, whoMoves color.Color) *Ev
 		}
 	}
 	// EvaluateBoard already checked terminal states before consulting this cache.
+	// Quiesce proves the same conditions using its generated legal moves.
 	eval = evaluateNonTerminalBoard(b, whoMoves)
 
 	if p.evaluationMap != nil {
@@ -683,13 +690,14 @@ func kingSafety(b *board.Board, kingColor color.Color) int {
 	return score
 }
 
-func EvaluateBoardNoCache(b *board.Board, whoMoves color.Color) *Evaluation {
-	// technically ignores en passant, but that should be ok
+func EvaluateBoardNoCache(b *board.Board, whoMoves color.Color, previousMove *board.LastMove) *Evaluation {
+	// Previously: technically ignores en passant, but that should be ok.
+	// Pass previousMove so an en-passant-only escape remains nonterminal.
 	// Stalemate: the side to move has no legal moves and is not in check.
 	// Only check the side to move — checking whoMoves^1 (the side NOT to move)
 	// would misidentify positions where the opponent is boxed in (but can still
 	// be checkmated on the next move) as draws instead of wins.
-	if score, terminal := terminalScore(b, whoMoves); terminal {
+	if score, terminal := terminalScore(b, whoMoves, previousMove); terminal {
 		return &Evaluation{TotalScore: score}
 	}
 	return evaluateNonTerminalBoard(b, whoMoves)

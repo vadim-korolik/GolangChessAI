@@ -287,9 +287,9 @@ func (smp *LazySMP) search(root *board.Board, depth, alpha, beta int, currentPla
 	}
 
 	movesArr := root.GetAllMoves(currentPlayer, previousMove)
-	if smp.player.terminalNode(root, movesArr) {
+	if smp.player.terminalNode(root, len(*movesArr) > 0) {
 		return ScoredMove{
-			Score: AdjustMateScore(smp.player.EvaluateBoard(root, currentPlayer).TotalScore, depth),
+			Score: AdjustMateScore(smp.player.EvaluateBoard(root, currentPlayer, previousMove).TotalScore, depth),
 		}
 	}
 

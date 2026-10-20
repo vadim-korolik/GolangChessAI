@@ -1,0 +1,2 @@
+rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq c3 0 2 | mv1fVMW2-ply4 | e7e6 | g8f6 | exact early c-pawn challenge; SF22 loss 51cp
+rnbqkbnr/ppp1pppp/8/3p4/2P5/5N2/PP1PPPPP/RNBQKB1R b KQkq c3 0 2 | RY4YvAIT-ply4 | d5d4 | g8f6 | exact early c-pawn challenge; SF22 loss 72cp

@@ -1,0 +1,343 @@
+{
+  "fen": "3R4/5k1p/8/1Pnp1p2/6pK/1P1r4/8/8 w - - 2 55",
+  "forcedMove": "h4h5",
+  "depth": 7,
+  "diagnosticFENFullMoveNormalizedTo": 1,
+  "stockfish": {
+    "depth": 22,
+    "mateIn": 4,
+    "pv": [
+      "c5e6",
+      "d8d7",
+      "f7f6",
+      "d7f7",
+      "f6f7",
+      "h5h4",
+      "d3h3"
+    ]
+  },
+  "missedReduction": {
+    "alpha": 1145,
+    "beta": 2000000000,
+    "depth": 6,
+    "fen": "3R4/5k1p/8/1Pnp1p1K/6p1/1P1r4/8/8 b - - 3 1",
+    "move": "c5e6",
+    "ply": 1,
+    "reduction": 2,
+    "score": 1144
+  },
+  "baselineTrace": [
+    {
+      "mode": "default",
+      "nodes": 13678,
+      "recordedPositions": 3555,
+      "reductions": 1070,
+      "rootScore": -1145
+    },
+    {
+      "node": {
+        "FEN": "3R4/5k1p/8/1Pnp1p1K/6p1/1P1r4/8/8 b - - 3 1",
+        "Depth": 6,
+        "Alpha": -2000000000,
+        "Beta": 2000000000,
+        "Score": 1145,
+        "Move": "d3h3"
+      },
+      "ply": 1
+    },
+    {
+      "node": {
+        "FEN": "3R4/5k1p/8/1Pnp1p1K/6p1/1P5r/8/8 w - - 4 1",
+        "Depth": 7,
+        "Alpha": -2000000000,
+        "Beta": -610,
+        "Score": -1145,
+        "Move": "h5g5"
+      },
+      "ply": 2
+    },
+    {
+      "node": {
+        "FEN": "3R4/5k1p/8/1Pnp1pK1/6p1/1P5r/8/8 b - - 5 1",
+        "Depth": 6,
+        "Alpha": 611,
+        "Beta": 2000000000,
+        "Score": 1145,
+        "Move": "c5e6"
+      },
+      "ply": 3
+    },
+    {
+      "node": {
+        "FEN": "3R4/5k1p/4n3/1P1p1pK1/6p1/1P5r/8/8 w - - 6 1",
+        "Depth": 7,
+        "Alpha": -2000000000,
+        "Beta": -611,
+        "Score": -1145,
+        "Move": "g5f5"
+      },
+      "ply": 4
+    },
+    {
+      "node": {
+        "FEN": "3R4/5k1p/4n3/1P1p1K2/6p1/1P5r/8/8 b - - 0 1",
+        "Depth": 6,
+        "Alpha": 611,
+        "Beta": 2000000000,
+        "Score": 1145,
+        "Move": "e6d8"
+      },
+      "ply": 5
+    },
+    {
+      "node": {
+        "FEN": "3n4/5k1p/8/1P1p1K2/6p1/1P5r/8/8 w - - 0 1",
+        "Depth": 5,
+        "Alpha": -2000000000,
+        "Beta": -611,
+        "Score": -1145,
+        "Move": "f5g4"
+      },
+      "ply": 6
+    },
+    {
+      "node": {
+        "FEN": "3n4/5k1p/8/1P1p4/6K1/1P5r/8/8 b - - 0 1",
+        "Depth": 4,
+        "Alpha": 611,
+        "Beta": 2000000000,
+        "Score": 1145,
+        "Move": "h3b3"
+      },
+      "ply": 7
+    },
+    {
+      "node": {
+        "FEN": "3n4/5k1p/8/1P1p4/6K1/1r6/8/8 w - - 0 1",
+        "Depth": 3,
+        "Alpha": -2000000000,
+        "Beta": -611,
+        "Score": -1145,
+        "Move": "g4f5"
+      },
+      "ply": 8
+    },
+    {
+      "node": {
+        "FEN": "3n4/5k1p/8/1P1p1K2/8/1r6/8/8 b - - 1 1",
+        "Depth": 2,
+        "Alpha": 611,
+        "Beta": 1228,
+        "Score": 1145,
+        "Move": "d8e6"
+      },
+      "ply": 9
+    },
+    {
+      "node": {
+        "FEN": "8/5k1p/4n3/1P1p1K2/8/1r6/8/8 w - - 2 1",
+        "Depth": 1,
+        "Alpha": -1228,
+        "Beta": -1115,
+        "Score": -1145,
+        "Move": "f5e5"
+      },
+      "ply": 10
+    },
+    {
+      "fen": "8/5k1p/4n3/1P1pK3/8/1r6/8/8 b - - 3 1",
+      "missingPly": 11
+    }
+  ],
+  "unreducedTrace": [
+    {
+      "mode": "nolmr",
+      "nodes": 82044,
+      "recordedPositions": 23298,
+      "reductions": 0,
+      "rootScore": -1000000002
+    },
+    {
+      "node": {
+        "FEN": "3R4/5k1p/8/1Pnp1p1K/6p1/1P1r4/8/8 b - - 3 1",
+        "Depth": 6,
+        "Alpha": -2000000000,
+        "Beta": 2000000000,
+        "Score": 1000000002,
+        "Move": "c5e6"
+      },
+      "ply": 1
+    },
+    {
+      "node": {
+        "FEN": "3R4/5k1p/4n3/1P1p1p1K/6p1/1P1r4/8/8 w - - 4 1",
+        "Depth": 5,
+        "Alpha": -2000000000,
+        "Beta": -1145,
+        "Score": -1000000002,
+        "Move": "d8d7"
+      },
+      "ply": 2
+    },
+    {
+      "node": {
+        "FEN": "8/3R1k1p/4n3/1P1p1p1K/6p1/1P1r4/8/8 b - - 5 1",
+        "Depth": 5,
+        "Alpha": 1145,
+        "Beta": 1000000004,
+        "Score": 1000000002,
+        "Move": "f7f6"
+      },
+      "ply": 3
+    },
+    {
+      "node": {
+        "FEN": "8/3R3p/4nk2/1P1p1p1K/6p1/1P1r4/8/8 w - - 6 1",
+        "Depth": 4,
+        "Alpha": -1000000004,
+        "Beta": -1145,
+        "Score": -1000000002,
+        "Move": "d7f7"
+      },
+      "ply": 4
+    },
+    {
+      "node": {
+        "FEN": "8/5R1p/4nk2/1P1p1p1K/6p1/1P1r4/8/8 b - - 7 1",
+        "Depth": 4,
+        "Alpha": 1145,
+        "Beta": 1000000003,
+        "Score": 1000000002,
+        "Move": "f6f7"
+      },
+      "ply": 5
+    },
+    {
+      "node": {
+        "FEN": "8/5k1p/4n3/1P1p1p1K/6p1/1P1r4/8/8 w - - 0 1",
+        "Depth": 3,
+        "Alpha": -1000000003,
+        "Beta": -1145,
+        "Score": -1000000002,
+        "Move": "h5h4"
+      },
+      "ply": 6
+    },
+    {
+      "node": {
+        "FEN": "8/5k1p/4n3/1P1p1p2/6pK/1P1r4/8/8 b - - 1 1",
+        "Depth": 2,
+        "Alpha": 1145,
+        "Beta": 1000000003,
+        "Score": 1000000002,
+        "Move": "d3h3"
+      },
+      "ply": 7
+    },
+    {
+      "inCheck": true,
+      "side": 0,
+      "terminalPly": 8
+    }
+  ],
+  "guardedTrace": [
+    {
+      "mode": "default",
+      "nodes": 62216,
+      "recordedPositions": 16800,
+      "reductions": 1891,
+      "rootScore": -1000000002
+    },
+    {
+      "node": {
+        "FEN": "3R4/5k1p/8/1Pnp1p1K/6p1/1P1r4/8/8 b - - 3 1",
+        "Depth": 6,
+        "Alpha": -2000000000,
+        "Beta": 2000000000,
+        "Score": 1000000002,
+        "Move": "c5e6"
+      },
+      "ply": 1
+    },
+    {
+      "node": {
+        "FEN": "3R4/5k1p/4n3/1P1p1p1K/6p1/1P1r4/8/8 w - - 4 1",
+        "Depth": 5,
+        "Alpha": -2000000000,
+        "Beta": -1145,
+        "Score": -1000000002,
+        "Move": "d8d7"
+      },
+      "ply": 2
+    },
+    {
+      "node": {
+        "FEN": "8/3R1k1p/4n3/1P1p1p1K/6p1/1P1r4/8/8 b - - 5 1",
+        "Depth": 5,
+        "Alpha": 1145,
+        "Beta": 1000000004,
+        "Score": 1000000002,
+        "Move": "f7f6"
+      },
+      "ply": 3
+    },
+    {
+      "node": {
+        "FEN": "8/3R3p/4nk2/1P1p1p1K/6p1/1P1r4/8/8 w - - 6 1",
+        "Depth": 4,
+        "Alpha": -1000000004,
+        "Beta": -1145,
+        "Score": -1000000002,
+        "Move": "d7f7"
+      },
+      "ply": 4
+    },
+    {
+      "node": {
+        "FEN": "8/5R1p/4nk2/1P1p1p1K/6p1/1P1r4/8/8 b - - 7 1",
+        "Depth": 4,
+        "Alpha": 1145,
+        "Beta": 1000000003,
+        "Score": 1000000002,
+        "Move": "f6f7"
+      },
+      "ply": 5
+    },
+    {
+      "node": {
+        "FEN": "8/5k1p/4n3/1P1p1p1K/6p1/1P1r4/8/8 w - - 0 1",
+        "Depth": 3,
+        "Alpha": -1000000003,
+        "Beta": -1145,
+        "Score": -1000000002,
+        "Move": "b3b4"
+      },
+      "ply": 6
+    },
+    {
+      "node": {
+        "FEN": "8/5k1p/4n3/1P1p1p1K/1P4p1/3r4/8/8 b - - 0 1",
+        "Depth": 2,
+        "Alpha": 1145,
+        "Beta": 1000000003,
+        "Score": 1000000002,
+        "Move": "d3h3"
+      },
+      "ply": 7
+    },
+    {
+      "inCheck": true,
+      "side": 0,
+      "terminalPly": 8
+    }
+  ],
+  "instrumentedNodeCountsAreNotThroughputMeasurements": true,
+  "deploymentPerformed": false,
+  "guardedTraceVariant": "all new king-ring attacks, including occupied squares; superseded after broader test failures",
+  "focusedMateThreatTests": {
+    "command": "go test ./pkg/chessai/player/ai -run '^Test(ABDADALMRPreservesQuietMatingNet|ABDADARootVerificationKeepsRookAttack|ABDADANullMoveGuardFindsBishopDefense)$' -count=1",
+    "passed": true,
+    "seconds": 16.765
+  },
+  "currentCandidate": "preserve checks and verified mate-in-one threats after moves adding attacks on empty king-adjacent squares"
+}

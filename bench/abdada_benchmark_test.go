@@ -82,7 +82,7 @@ func BenchmarkEvaluateNoCache(b *testing.B) {
 	b.ReportAllocs()
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		_ = ai.EvaluateBoardNoCache(bo, color.White)
+		_ = ai.EvaluateBoardNoCache(bo, color.White, nil)
 	}
 }
 

@@ -49,8 +49,8 @@ func runAITest(t *testing.T, algorithm ai.Algorithm) {
 			break
 		}
 	}
-	smartScore := int64(aiPlayerSmart.EvaluateBoard(g.CurrentBoard, aiPlayerSmart.PlayerColor).TotalScore)
-	dumbScore := int64(aiPlayerDumb.EvaluateBoard(g.CurrentBoard, aiPlayerDumb.PlayerColor).TotalScore)
+	smartScore := int64(aiPlayerSmart.EvaluateBoard(g.CurrentBoard, aiPlayerSmart.PlayerColor, g.PreviousMove).TotalScore)
+	dumbScore := int64(aiPlayerDumb.EvaluateBoard(g.CurrentBoard, aiPlayerDumb.PlayerColor, g.PreviousMove).TotalScore)
 	fmt.Printf("Good %s E %d\n", aiPlayerSmart, smartScore)
 	fmt.Printf("Bad %s E %d\n", aiPlayerDumb, dumbScore)
 	if smartScore > dumbScore {

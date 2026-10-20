@@ -1,0 +1,223 @@
+{
+  "status": "deployed; fresh-game verification pending",
+  "deployed": true,
+  "baselineSha256": "a6df9359c39b657d903714218d61abb21394f8a6ca4e3bdc1d5929fa764dcbfe",
+  "change": "Prefer exact central opening replies over blind scripts; QGD ...e6 and English ...d4",
+  "loggedPatternGames": 17,
+  "loggedPatternResults": {
+    "wins": 7,
+    "losses": 10,
+    "draws": 0
+  },
+  "scope": "Only the two recorded full positions; existing helper checks board hash including rights, last move, and legal reply",
+  "rows": [
+    {
+      "gameId": "mv1fVMW2",
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq c3 0 2",
+      "before": "g8f6",
+      "after": "e7e6",
+      "refereeBest": "e7e6",
+      "beforeLoss": 51,
+      "afterLoss": 0,
+      "sfDepth": 22
+    },
+    {
+      "gameId": "RY4YvAIT",
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/2P5/5N2/PP1PPPPP/RNBQKB1R b KQkq c3 0 2",
+      "before": "g8f6",
+      "after": "d5d4",
+      "refereeBest": "d5d4",
+      "beforeLoss": 72,
+      "afterLoss": 0,
+      "sfDepth": 22
+    }
+  ],
+  "refereeCases": [
+    {
+      "gameId": "mv1fVMW2",
+      "ply": 4,
+      "played": "g8f6",
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq c3 0 2",
+      "referee": {
+        "score": -27,
+        "best": "e7e6",
+        "info": "info depth 22 seldepth 27 multipv 1 score cp -27 nodes 755658 nps 552381 hashfull 82 tbhits 0 time 1368 pv e7e6 b1c3 c7c5 c4d5 e6d5 g1f3 b8c6 g2g3 g8f6 f1g2 h7h6 e1g1 f8e7 d4c5 e7c5 c3a4 c5e7"
+      },
+      "moves": {
+        "g8f6": {
+          "score": -78,
+          "best": "g8f6",
+          "info": "info depth 22 seldepth 45 multipv 1 score cp -78 nodes 873027 nps 639580 hashfull 75 tbhits 0 time 1365 pv g8f6 c4d5 c7c6 d5c6 b8c6 g1f3 e7e5 f3e5 c6e5 d4e5 d8d1 e1d1 f6g4 d1e1 f8c5 e2e3 g4e5 c1d2 c8f5 d2c3 e5d3 f1d3 f5d3 b1d2 c5b6 d2b3 d3c4 c3a5 b6a5 b3a5 c4d5 f2f3 b7b6 a5b3 d5b3 a2b3 a7a5"
+        },
+        "e7e6": {
+          "score": -27,
+          "best": "e7e6",
+          "info": "info depth 22 seldepth 27 multipv 1 score cp -27 nodes 755658 nps 552381 hashfull 82 tbhits 0 time 1368 pv e7e6 b1c3 c7c5 c4d5 e6d5 g1f3 b8c6 g2g3 g8f6 f1g2 h7h6 e1g1 f8e7 d4c5 e7c5 c3a4 c5e7"
+        },
+        "c7c6": {
+          "score": -27,
+          "best": "c7c6",
+          "info": "info depth 22 seldepth 32 multipv 1 score cp -27 nodes 775727 nps 611289 hashfull 73 tbhits 0 time 1269 pv c7c6 g1f3 g8f6 b1c3 d5c4 a2a4 c8f5 e2e3 e7e6 f1c4 f8b4 e1g1 e8g8 f3h4 f5e4 d1e2 b4c3 b2c3 f6d5"
+        }
+      }
+    },
+    {
+      "gameId": "mv1fVMW2",
+      "ply": 6,
+      "played": "e7e6",
+      "fen": "rnbqkb1r/ppp1pppp/5n2/3P4/3P4/8/PP2PPPP/RNBQKBNR b KQkq - 0 3",
+      "referee": {
+        "score": -81,
+        "best": "c7c6",
+        "info": "info depth 22 seldepth 37 multipv 1 score cp -81 nodes 1116979 nps 627516 hashfull 105 tbhits 0 time 1780 pv c7c6 d5c6 b8c6 g1f3 e7e5 d4e5 d8d1 e1d1 f6g4 d1e1 g4e5 f3e5 c6e5 c1d2 c8f5 b1c3 e5c4 e2e4 f5e6 f1c4 e6c4 h2h4"
+      },
+      "moves": {
+        "e7e6": {
+          "score": -93,
+          "best": "e7e6",
+          "info": "info depth 22 seldepth 36 multipv 1 score cp -93 nodes 802408 nps 603768 hashfull 72 tbhits 0 time 1329 pv e7e6 d5e6 c8e6 e2e3 c7c5 f1b5 b8c6 b5c6 b7c6 g1f3 f8d6 d4c5 d8a5 b1d2 a5c5 b2b3 c5c3 a1b1 c3d3 d1e2 e6f5 e2d3 f5d3 b1a1 f6e4 c1b2 a7a5 d2e4 d3e4"
+        },
+        "f6d5": {
+          "score": -101,
+          "best": "f6d5",
+          "info": "info depth 22 seldepth 31 multipv 1 score cp -101 nodes 1154389 nps 574322 hashfull 119 tbhits 0 time 2010 pv f6d5 g1f3 c8f5 b1d2 d5b6 e2e4 f5g4 a2a3 b8d7 d1c2 e7e6 d2b3 c7c6 f1e2 f8e7 c1e3 a8c8 h2h3 g4h5 e1c1"
+        }
+      }
+    },
+    {
+      "gameId": "RY4YvAIT",
+      "ply": 4,
+      "played": "g8f6",
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/2P5/5N2/PP1PPPPP/RNBQKB1R b KQkq c3 0 2",
+      "referee": {
+        "score": -2,
+        "best": "d5d4",
+        "info": "info depth 22 seldepth 32 multipv 1 score cp -2 nodes 1203095 nps 627265 hashfull 107 tbhits 0 time 1918 pv d5d4 b2b4 c7c5 b4b5 a7a6 g2g3 b8d7 d2d3 e7e5 f1g2 g8f6 e1g1 f8d6 a2a4 h7h6 f1e1 e8g8 e2e3 a8a7 c1a3 d6c7 e3d4 e5d4"
+      },
+      "moves": {
+        "g8f6": {
+          "score": -74,
+          "best": "g8f6",
+          "info": "info depth 22 seldepth 38 multipv 1 score cp -74 nodes 616449 nps 600827 hashfull 60 tbhits 0 time 1026 pv g8f6 c4d5 c7c6 d5c6 b8c6 d2d4 e7e5 d4e5 d8d1 e1d1 f6g4 d1e1 f8c5 e2e3 g4e5 f3e5 c6e5 c1d2 c8f5 d2c3 e5d3 f1d3 f5d3 b1d2 e8g8 f2f3"
+        },
+        "e7e6": {
+          "score": -20,
+          "best": "e7e6",
+          "info": "info depth 22 seldepth 28 multipv 1 score cp -20 nodes 510484 nps 586089 hashfull 48 tbhits 0 time 871 pv e7e6 d2d4 g8f6 c4d5 e6d5 b1c3 f8b4 c1g5 h7h6 g5h4 g7g5 h4g3 f6e4 f3d2 e4c3 b2c3 b4c3 a1c1 c3b2 c1c7 b8a6 c7c2 b2d4 e2e3 d4g7 f1a6 b7a6"
+        },
+        "c7c6": {
+          "score": -23,
+          "best": "c7c6",
+          "info": "info depth 22 seldepth 32 multipv 1 score cp -23 nodes 732886 nps 599743 hashfull 65 tbhits 0 time 1222 pv c7c6 e2e3 g8f6 b1c3 e7e6 d2d4 b8d7 f1d3 d5c4 d3c4 b7b5 c4d3 a7a6 e3e4 c6c5 d4d5 f8d6 d5e6 f7e6 e1g1"
+        }
+      }
+    },
+    {
+      "gameId": "RY4YvAIT",
+      "ply": 6,
+      "played": "e7e6",
+      "fen": "rnbqkb1r/ppp1pppp/5n2/3P4/8/5N2/PP1PPPPP/RNBQKB1R b KQkq - 0 3",
+      "referee": {
+        "score": -82,
+        "best": "c7c6",
+        "info": "info depth 22 seldepth 33 multipv 1 score cp -82 nodes 775583 nps 611658 hashfull 79 tbhits 0 time 1268 pv c7c6 d5c6 b8c6 d2d4 e7e5 d4e5 d8d1 e1d1 f6g4 d1e1 g4e5 f3e5 c6e5 c1d2 f8d6 d2c3 e8g8 b1d2 e5c6 d2e4 d6e7 a2a3 c8e6 e2e3 a8d8 f2f3"
+      },
+      "moves": {
+        "e7e6": {
+          "score": -125,
+          "best": "e7e6",
+          "info": "info depth 22 seldepth 32 multipv 1 score cp -125 nodes 558865 nps 572021 hashfull 56 tbhits 0 time 977 pv e7e6 d5e6 c8e6 b1c3 c7c5 e2e4 b8c6 f1b5 d8b6 d1a4 f8e7 b5c6 b7c6 d2d3 e8g8 e1g1 a8d8 f3g5 e6c8 a4c2 c8a6 f1d1 c5c4 d3c4 a6c4"
+        },
+        "f6d5": {
+          "score": -80,
+          "best": "f6d5",
+          "info": "info depth 22 seldepth 26 multipv 1 score cp -80 nodes 872569 nps 576333 hashfull 85 tbhits 0 time 1514 pv f6d5 d2d4 c8f5 b1d2 d5b6 e2e4 f5g4 d1b3 b8d7 d2c4 e7e6 f3e5 g4h5 c1e3 f8e7 e5d7 d8d7 c4e5 d7d6 g2g4 h5g6 f1g2"
+        }
+      }
+    }
+  ],
+  "meanLossBefore": 61.5,
+  "meanLossAfter": 0,
+  "searchAblation": "15s/eight workers, two runs per position: QGD still Nf6 2/2; English d4 2/2",
+  "tests": {
+    "focusedOpeningSeconds": 0.864,
+    "aiSuiteSeconds": 91.407,
+    "explicitSkips": [
+      "TestAIBestMovesSame",
+      "TestLazySMPFindsHangingKnight"
+    ],
+    "existingAssertionsChanged": false,
+    "raceSeconds": 2.167
+  },
+  "pending": [
+    "Fresh-game verification"
+  ],
+  "pipeline": "/tmp/chess-oct15-central-opening-pipeline.py",
+  "limitations": [
+    "Two opening positions; this is not an Elo estimate",
+    "Loss/win counts involve different opponents and cannot isolate opening effect",
+    "No post-cache-deployment completed game yet at start of investigation"
+  ],
+  "optimizedProbe": [
+    {
+      "depth": 0,
+      "elapsedUS": 221,
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq c3 0 2",
+      "gameId": "mv1fVMW2",
+      "move": "e7e6",
+      "opening": -1
+    },
+    {
+      "depth": 0,
+      "elapsedUS": 105,
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq c3 0 2",
+      "gameId": "mv1fVMW2",
+      "move": "e7e6",
+      "opening": 0
+    },
+    {
+      "depth": 0,
+      "elapsedUS": 105,
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq c3 0 2",
+      "gameId": "mv1fVMW2",
+      "move": "e7e6",
+      "opening": 1
+    },
+    {
+      "depth": 0,
+      "elapsedUS": 243,
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/2P5/5N2/PP1PPPPP/RNBQKB1R b KQkq c3 0 2",
+      "gameId": "RY4YvAIT",
+      "move": "d5d4",
+      "opening": -1
+    },
+    {
+      "depth": 0,
+      "elapsedUS": 219,
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/2P5/5N2/PP1PPPPP/RNBQKB1R b KQkq c3 0 2",
+      "gameId": "RY4YvAIT",
+      "move": "d5d4",
+      "opening": 0
+    },
+    {
+      "depth": 0,
+      "elapsedUS": 233,
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/2P5/5N2/PP1PPPPP/RNBQKB1R b KQkq c3 0 2",
+      "gameId": "RY4YvAIT",
+      "move": "d5d4",
+      "opening": 1
+    }
+  ],
+  "candidateSha256": "c66509fe05ee95e65e718746124ad9a33371654470b76734b8c603f6a35395ef",
+  "deployment": {
+    "timestamp": "2026-10-15T00:37:14.504526-07:00",
+    "oldPid": 1769388,
+    "pid": 1804913,
+    "binarySha256": "c66509fe05ee95e65e718746124ad9a33371654470b76734b8c603f6a35395ef",
+    "rollbackBinary": "/tmp/chess-oct15-main-before-central-openings",
+    "noActiveGamesConfirmed": true,
+    "preservedLogBytes": 30113777,
+    "webServerPidPreserved": 1931717,
+    "runningHashVerified": "c66509fe05ee95e65e718746124ad9a33371654470b76734b8c603f6a35395ef"
+  }
+}

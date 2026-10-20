@@ -1,0 +1,2 @@
+4r1kr/2Q3pp/p2P1p1q/3b1P2/2PN4/B3P3/P2K1nPP/4R3 b - - 2 29 | mv1fVMW2-ply58 | f2e4 | e8e4 | shallow LMR weakness; rejected promotion-check guard; production-budget cold search already finds Nxe4
+4r3/p2k1Npp/b3p3/2pn4/3B1p2/P2p1P1Q/2q3PP/4R1KR w - - 2 29 | mirrored-mv1fVMW2-ply58 | f7e5 | e1e5 | preserved mirrored diagnostic, not a repaired regression

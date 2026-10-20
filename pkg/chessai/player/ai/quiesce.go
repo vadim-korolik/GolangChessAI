@@ -2,26 +2,38 @@ package ai
 
 import (
 	"github.com/Vadman97/GolangChessAI/pkg/chessai/board"
+	"github.com/Vadman97/GolangChessAI/pkg/chessai/config"
 	"github.com/Vadman97/GolangChessAI/pkg/chessai/location"
 	"github.com/Vadman97/GolangChessAI/pkg/chessai/piece"
 	"sync/atomic"
 )
 
 func (p *AIPlayer) Quiesce(root *board.Board, alpha, beta int, currentPlayer byte, previousMove *board.LastMove) int {
-	// Generate all moves first so terminal detection uses correct previousMove (en passant included).
-	moves := root.GetAllMoves(currentPlayer, previousMove)
-	if p.terminalNode(root, moves) {
-		return AdjustMateScore(p.EvaluateBoard(root, currentPlayer).TotalScore, 0)
-	}
-
+	// Generate legal moves first so terminal detection uses correct previousMove (en passant included).
+	// Outside check, generate only tactical moves and verify quiet-move existence when needed.
 	inCheck := root.IsKingInCheck(currentPlayer)
+	// Qsearch sorts captures itself; keep the existing ordering only for check evasions.
+	tacticalOnly := !inCheck && !config.Get().RandomMoveOrder
+	var moves *[]location.Move
+	if tacticalOnly {
+		moves = root.GetCapturesAndPromotions(currentPlayer, previousMove)
+	} else {
+		moves = root.GetAllMoves(currentPlayer, previousMove)
+	}
+	hasLegalMove := len(*moves) > 0
+	if !hasLegalMove && tacticalOnly {
+		hasLegalMove = root.HasLegalMove(currentPlayer, previousMove)
+	}
+	if p.terminalNode(root, hasLegalMove) {
+		return AdjustMateScore(p.EvaluateBoard(root, currentPlayer, previousMove).TotalScore, 0)
+	}
 
 	// When in check we must search all evasions — returning standpat is unsound
 	// because any static eval ignores the forced response and creates a horizon
 	// effect where the engine doesn't see checkmates starting at the qsearch boundary.
 	var standPat int
 	if !inCheck {
-		standPat = p.EvaluateBoard(root, currentPlayer).TotalScore
+		standPat = p.evaluateNonTerminal(root, currentPlayer).TotalScore
 		if standPat >= beta {
 			return beta
 		} else if alpha < standPat {

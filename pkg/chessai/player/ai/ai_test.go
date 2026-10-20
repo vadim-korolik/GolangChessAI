@@ -197,8 +197,8 @@ func evaluateScores(t *testing.T, c color.Color, gameBoard *board.Board, moves m
 	scores := map[string]int{}
 	for algorithmName, move := range moves {
 		newBoard := gameBoard.Copy()
-		board.MakeMove(&move, newBoard)
-		scores[algorithmName] = eval.EvaluateBoard(newBoard, c).TotalScore
+		last := board.MakeMove(&move, newBoard)
+		scores[algorithmName] = eval.EvaluateBoard(newBoard, c, last).TotalScore
 		fmt.Printf("\n===== ALGORITHM:%10s%5d =====\n", algorithmName, scores[algorithmName])
 	}
 	minScore, maxScore := PosInf, NegInf

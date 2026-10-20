@@ -1,0 +1,3148 @@
+{
+  "status": "deployed; fresh-game validation pending",
+  "baselineSha256": "6c10f9988464cd88b4c477c19a745071ed7782e293abb9cb1a1c8b0d756c861a",
+  "gameId": "mv1fVMW2",
+  "ply": 58,
+  "fen": "4r1kr/2Q3pp/p2P1p1q/3b1P2/2PN4/B3P3/P2K1nPP/4R3 b - - 2 29",
+  "budgetMS": 11229,
+  "threads": 8,
+  "runtime": {
+    "gcPercent": 400,
+    "memoryLimitBytes": 2147483648,
+    "cacheMaxPlayerElements": 20000000
+  },
+  "replayModel": {
+    "blackBudgets": "Exact per-move set-max-to budgets extracted from the Lichess log",
+    "moves": "All actual SAN/UCI moves applied regardless of diagnostic search choice",
+    "opponentPonder": "Eight-worker search aborted after opponent clock consumption; sub-100ms book windows excluded",
+    "cleanup": "Explicit player cleanup before main and ponder searches; does not model the additional Game.PlayTurn cleanup calls; core search recorded without mate-safety override",
+    "checks": [
+      "Every budget matches its logged UCI move",
+      "Final FEN matches exact target",
+      "28 prior Black turns preserved"
+    ]
+  },
+  "baselineTrace": [
+    {
+      "after": {
+        "cache": {
+          "evaluationHits": 756802,
+          "evaluationReads": 1690092,
+          "evaluationWrites": 933290,
+          "parentTTWrites": 1
+        },
+        "gcCPUSeconds": 0.890109398,
+        "heapAlloc": 793399800,
+        "heapInuse": 823328768,
+        "heapObjects": 13252599,
+        "numGC": 20,
+        "pauseNS": 4796142,
+        "totalAlloc": 5869760056
+      },
+      "before": {
+        "cache": {
+          "evaluationHits": 0,
+          "evaluationReads": 0,
+          "evaluationWrites": 0,
+          "parentTTWrites": 0
+        },
+        "gcCPUSeconds": 0.000449844,
+        "heapAlloc": 17643232,
+        "heapInuse": 18251776,
+        "heapObjects": 8702,
+        "numGC": 0,
+        "pauseNS": 0,
+        "totalAlloc": 17643232
+      },
+      "considered": 2156468,
+      "depth": 7,
+      "elapsedMS": 11231,
+      "move": "f2e4",
+      "score": 1,
+      "stage": "cold-fen"
+    },
+    {
+      "beforePly": 5,
+      "depth": 4,
+      "elapsedMS": 1082,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 30792,
+          "evaluationReads": 93569,
+          "evaluationWrites": 62777,
+          "parentTTWrites": 1
+        },
+        "gcCPUSeconds": 0.941554417,
+        "heapAlloc": 101500736,
+        "heapInuse": 104931328,
+        "heapObjects": 1628571,
+        "numGC": 24,
+        "pauseNS": 5082643,
+        "totalAlloc": 6195669160
+      }
+    },
+    {
+      "chosen": "e7e6",
+      "depth": 7,
+      "elapsedMS": 13967,
+      "played": "e7e6",
+      "ply": 6,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 721391,
+          "evaluationReads": 1665734,
+          "evaluationWrites": 944343,
+          "parentTTWrites": 2
+        },
+        "gcCPUSeconds": 1.863882177,
+        "heapAlloc": 435329504,
+        "heapInuse": 489783296,
+        "heapObjects": 6556590,
+        "numGC": 41,
+        "pauseNS": 7892745,
+        "totalAlloc": 11482030592
+      }
+    },
+    {
+      "beforePly": 7,
+      "depth": 4,
+      "elapsedMS": 1160,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 820555,
+          "evaluationReads": 1863593,
+          "evaluationWrites": 1043038,
+          "parentTTWrites": 3
+        },
+        "gcCPUSeconds": 2.005249929,
+        "heapAlloc": 460344936,
+        "heapInuse": 519389184,
+        "heapObjects": 7014091,
+        "numGC": 42,
+        "pauseNS": 8046959,
+        "totalAlloc": 12115090752
+      }
+    },
+    {
+      "chosen": "f8b4",
+      "depth": 6,
+      "elapsedMS": 14936,
+      "played": "f8b4",
+      "ply": 8,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 1485898,
+          "evaluationReads": 3437765,
+          "evaluationWrites": 1951867,
+          "parentTTWrites": 4
+        },
+        "gcCPUSeconds": 3.095156673,
+        "heapAlloc": 1326778784,
+        "heapInuse": 1357987840,
+        "heapObjects": 22493144,
+        "numGC": 47,
+        "pauseNS": 8477290,
+        "totalAlloc": 17595175944
+      }
+    },
+    {
+      "beforePly": 9,
+      "depth": 7,
+      "elapsedMS": 13482,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 2313625,
+          "evaluationReads": 4863990,
+          "evaluationWrites": 2550365,
+          "parentTTWrites": 5
+        },
+        "gcCPUSeconds": 4.584145581,
+        "heapAlloc": 760032480,
+        "heapInuse": 924246016,
+        "heapObjects": 9918112,
+        "numGC": 51,
+        "pauseNS": 8983945,
+        "totalAlloc": 22200588992
+      }
+    },
+    {
+      "chosen": "c8e6",
+      "depth": 6,
+      "elapsedMS": 14768,
+      "played": "c8e6",
+      "ply": 10,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 3396390,
+          "evaluationReads": 6974405,
+          "evaluationWrites": 3578015,
+          "parentTTWrites": 6
+        },
+        "gcCPUSeconds": 6.990696542,
+        "heapAlloc": 1243631320,
+        "heapInuse": 1345036288,
+        "heapObjects": 19766605,
+        "numGC": 56,
+        "pauseNS": 9501549,
+        "totalAlloc": 29221159784
+      }
+    },
+    {
+      "beforePly": 11,
+      "depth": 4,
+      "elapsedMS": 1265,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 3494447,
+          "evaluationReads": 7128766,
+          "evaluationWrites": 3634319,
+          "parentTTWrites": 7
+        },
+        "gcCPUSeconds": 6.991065968,
+        "heapAlloc": 1735471456,
+        "heapInuse": 1777704960,
+        "heapObjects": 31004696,
+        "numGC": 56,
+        "pauseNS": 9501549,
+        "totalAlloc": 29712999920
+      }
+    },
+    {
+      "chosen": "f6e4",
+      "depth": 5,
+      "elapsedMS": 14602,
+      "played": "f6e4",
+      "ply": 12,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 4161397,
+          "evaluationReads": 8592347,
+          "evaluationWrites": 4430950,
+          "parentTTWrites": 8
+        },
+        "gcCPUSeconds": 10.246782837,
+        "heapAlloc": 1299133416,
+        "heapInuse": 1400643584,
+        "heapObjects": 18091742,
+        "numGC": 61,
+        "pauseNS": 9942913,
+        "totalAlloc": 34652343304
+      }
+    },
+    {
+      "beforePly": 13,
+      "depth": 4,
+      "elapsedMS": 1171,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 4225109,
+          "evaluationReads": 8702822,
+          "evaluationWrites": 4477713,
+          "parentTTWrites": 9
+        },
+        "gcCPUSeconds": 10.247167142,
+        "heapAlloc": 1658858128,
+        "heapInuse": 1714978816,
+        "heapObjects": 26136213,
+        "numGC": 61,
+        "pauseNS": 9942913,
+        "totalAlloc": 35012068016
+      }
+    },
+    {
+      "chosen": "e6f5",
+      "depth": 6,
+      "elapsedMS": 14440,
+      "played": "e6f5",
+      "ply": 14,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 4796395,
+          "evaluationReads": 9919582,
+          "evaluationWrites": 5123187,
+          "parentTTWrites": 10
+        },
+        "gcCPUSeconds": 14.026568586,
+        "heapAlloc": 1119464728,
+        "heapInuse": 1230569472,
+        "heapObjects": 13160888,
+        "numGC": 66,
+        "pauseNS": 10369757,
+        "totalAlloc": 39298412624
+      }
+    },
+    {
+      "beforePly": 15,
+      "depth": 3,
+      "elapsedMS": 1241,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 4849221,
+          "evaluationReads": 10030936,
+          "evaluationWrites": 5181715,
+          "parentTTWrites": 11
+        },
+        "gcCPUSeconds": 14.026568586,
+        "heapAlloc": 1491243536,
+        "heapInuse": 1555185664,
+        "heapObjects": 21362489,
+        "numGC": 66,
+        "pauseNS": 10369757,
+        "totalAlloc": 39670191432
+      }
+    },
+    {
+      "chosen": "b4c3",
+      "depth": 8,
+      "elapsedMS": 14280,
+      "played": "b4c3",
+      "ply": 16,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 5710678,
+          "evaluationReads": 12313643,
+          "evaluationWrites": 6602965,
+          "parentTTWrites": 12
+        },
+        "gcCPUSeconds": 24.674999894,
+        "heapAlloc": 1578384944,
+        "heapInuse": 1657495552,
+        "heapObjects": 17819299,
+        "numGC": 77,
+        "pauseNS": 13780944,
+        "totalAlloc": 48084989480
+      }
+    },
+    {
+      "beforePly": 17,
+      "depth": 7,
+      "elapsedMS": 1163,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 5743412,
+          "evaluationReads": 12388739,
+          "evaluationWrites": 6645327,
+          "parentTTWrites": 13
+        },
+        "gcCPUSeconds": 25.834250843,
+        "heapAlloc": 1195597768,
+        "heapInuse": 1318969344,
+        "heapObjects": 9664130,
+        "numGC": 78,
+        "pauseNS": 13869661,
+        "totalAlloc": 48349904984
+      }
+    },
+    {
+      "chosen": "e4g3",
+      "depth": 8,
+      "elapsedMS": 12983,
+      "played": "e4g3",
+      "ply": 18,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 6364462,
+          "evaluationReads": 14163887,
+          "evaluationWrites": 7799425,
+          "parentTTWrites": 14
+        },
+        "gcCPUSeconds": 37.759345985,
+        "heapAlloc": 1558455208,
+        "heapInuse": 1632878592,
+        "heapObjects": 14975062,
+        "numGC": 88,
+        "pauseNS": 19991316,
+        "totalAlloc": 54815546264
+      }
+    },
+    {
+      "beforePly": 19,
+      "depth": 5,
+      "elapsedMS": 1242,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 6450830,
+          "evaluationReads": 14303794,
+          "evaluationWrites": 7852964,
+          "parentTTWrites": 15
+        },
+        "gcCPUSeconds": 39.221495577,
+        "heapAlloc": 1507598936,
+        "heapInuse": 1585602560,
+        "heapObjects": 14192962,
+        "numGC": 89,
+        "pauseNS": 20063284,
+        "totalAlloc": 55274998848
+      }
+    },
+    {
+      "chosen": "g3h1",
+      "depth": 9,
+      "elapsedMS": 13969,
+      "played": "g3h1",
+      "ply": 20,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 6759613,
+          "evaluationReads": 15290514,
+          "evaluationWrites": 8530901,
+          "parentTTWrites": 16
+        },
+        "gcCPUSeconds": 49.537713674,
+        "heapAlloc": 1416016560,
+        "heapInuse": 1501929472,
+        "heapObjects": 10821752,
+        "numGC": 97,
+        "pauseNS": 20637627,
+        "totalAlloc": 59038706112
+      }
+    },
+    {
+      "beforePly": 21,
+      "depth": 5,
+      "elapsedMS": 3486,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 6892543,
+          "evaluationReads": 15622828,
+          "evaluationWrites": 8730285,
+          "parentTTWrites": 17
+        },
+        "gcCPUSeconds": 52.280785157,
+        "heapAlloc": 1720209432,
+        "heapInuse": 1770283008,
+        "heapObjects": 16512946,
+        "numGC": 99,
+        "pauseNS": 20833270,
+        "totalAlloc": 60215181696
+      }
+    },
+    {
+      "chosen": "b8d7",
+      "depth": 5,
+      "elapsedMS": 17269,
+      "played": "f5c8",
+      "ply": 22,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 7302747,
+          "evaluationReads": 16765600,
+          "evaluationWrites": 9462853,
+          "parentTTWrites": 18
+        },
+        "gcCPUSeconds": 66.651738866,
+        "heapAlloc": 1791827432,
+        "heapInuse": 1833271296,
+        "heapObjects": 16757299,
+        "numGC": 109,
+        "pauseNS": 21612577,
+        "totalAlloc": 64393772984
+      }
+    },
+    {
+      "beforePly": 23,
+      "depth": 3,
+      "elapsedMS": 1241,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 7353356,
+          "evaluationReads": 16865990,
+          "evaluationWrites": 9512634,
+          "parentTTWrites": 19
+        },
+        "gcCPUSeconds": 68.135415483,
+        "heapAlloc": 1749941808,
+        "heapInuse": 1794793472,
+        "heapObjects": 16244717,
+        "numGC": 110,
+        "pauseNS": 21728954,
+        "totalAlloc": 64745675584
+      }
+    },
+    {
+      "chosen": "d8f6",
+      "depth": 8,
+      "elapsedMS": 17033,
+      "played": "d8f6",
+      "ply": 24,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 8049292,
+          "evaluationReads": 18779756,
+          "evaluationWrites": 10730464,
+          "parentTTWrites": 20
+        },
+        "gcCPUSeconds": 109.660584798,
+        "heapAlloc": 1928448568,
+        "heapInuse": 1955610624,
+        "heapObjects": 16192191,
+        "numGC": 134,
+        "pauseNS": 24796031,
+        "totalAlloc": 71871992608
+      }
+    },
+    {
+      "beforePly": 25,
+      "depth": 2,
+      "elapsedMS": 1251,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 8090287,
+          "evaluationReads": 18872955,
+          "evaluationWrites": 10782668,
+          "parentTTWrites": 21
+        },
+        "gcCPUSeconds": 113.510672099,
+        "heapAlloc": 1842273560,
+        "heapInuse": 1875738624,
+        "heapObjects": 14460993,
+        "numGC": 136,
+        "pauseNS": 24960844,
+        "totalAlloc": 72190906048
+      }
+    },
+    {
+      "chosen": "b8c6",
+      "depth": 6,
+      "elapsedMS": 16784,
+      "played": "b8c6",
+      "ply": 26,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 8671553,
+          "evaluationReads": 20186743,
+          "evaluationWrites": 11515190,
+          "parentTTWrites": 22
+        },
+        "gcCPUSeconds": 158.608249515,
+        "heapAlloc": 1911462480,
+        "heapInuse": 1935278080,
+        "heapObjects": 15182555,
+        "numGC": 160,
+        "pauseNS": 28061613,
+        "totalAlloc": 76830172504
+      }
+    },
+    {
+      "beforePly": 27,
+      "depth": 4,
+      "elapsedMS": 1243,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 8727876,
+          "evaluationReads": 20294606,
+          "evaluationWrites": 11566730,
+          "parentTTWrites": 23
+        },
+        "gcCPUSeconds": 164.206106293,
+        "heapAlloc": 1851945144,
+        "heapInuse": 1884053504,
+        "heapObjects": 13626745,
+        "numGC": 163,
+        "pauseNS": 28313707,
+        "totalAlloc": 77197977480
+      }
+    },
+    {
+      "chosen": "a7a6",
+      "depth": 5,
+      "elapsedMS": 16515,
+      "played": "a7a6",
+      "ply": 28,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 9236883,
+          "evaluationReads": 21308443,
+          "evaluationWrites": 12071560,
+          "parentTTWrites": 24
+        },
+        "gcCPUSeconds": 213.821372712,
+        "heapAlloc": 1852418472,
+        "heapInuse": 1884676096,
+        "heapObjects": 13216599,
+        "numGC": 188,
+        "pauseNS": 30197395,
+        "totalAlloc": 80498592968
+      }
+    },
+    {
+      "beforePly": 29,
+      "depth": 4,
+      "elapsedMS": 1279,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 9293993,
+          "evaluationReads": 21396789,
+          "evaluationWrites": 12102796,
+          "parentTTWrites": 25
+        },
+        "gcCPUSeconds": 217.82664048,
+        "heapAlloc": 1919490896,
+        "heapInuse": 1943461888,
+        "heapObjects": 14692337,
+        "numGC": 190,
+        "pauseNS": 30322903,
+        "totalAlloc": 80774618016
+      }
+    },
+    {
+      "chosen": "b7c6",
+      "depth": 10,
+      "elapsedMS": 16292,
+      "played": "b7c6",
+      "ply": 30,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 9500344,
+          "evaluationReads": 22091365,
+          "evaluationWrites": 12591021,
+          "parentTTWrites": 26
+        },
+        "gcCPUSeconds": 284.02513097,
+        "heapAlloc": 1954910376,
+        "heapInuse": 1977810944,
+        "heapObjects": 14003720,
+        "numGC": 222,
+        "pauseNS": 32136286,
+        "totalAlloc": 83244058392
+      }
+    },
+    {
+      "beforePly": 31,
+      "depth": 3,
+      "elapsedMS": 1195,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 9537008,
+          "evaluationReads": 22160977,
+          "evaluationWrites": 12623969,
+          "parentTTWrites": 27
+        },
+        "gcCPUSeconds": 290.989984371,
+        "heapAlloc": 1951835832,
+        "heapInuse": 1984708608,
+        "heapObjects": 13939953,
+        "numGC": 225,
+        "pauseNS": 32390395,
+        "totalAlloc": 83472784896
+      }
+    },
+    {
+      "chosen": "g7g5",
+      "depth": 5,
+      "elapsedMS": 16045,
+      "played": "f6e6",
+      "ply": 32,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 9884164,
+          "evaluationReads": 22851316,
+          "evaluationWrites": 12967152,
+          "parentTTWrites": 28
+        },
+        "gcCPUSeconds": 387.277714258,
+        "heapAlloc": 1989369520,
+        "heapInuse": 2040250368,
+        "heapObjects": 13920718,
+        "numGC": 269,
+        "pauseNS": 38227688,
+        "totalAlloc": 85775665024
+      }
+    },
+    {
+      "beforePly": 33,
+      "depth": 4,
+      "elapsedMS": 1331,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 9950862,
+          "evaluationReads": 22945378,
+          "evaluationWrites": 12994516,
+          "parentTTWrites": 29
+        },
+        "gcCPUSeconds": 393.744012285,
+        "heapAlloc": 2039852088,
+        "heapInuse": 2084683776,
+        "heapObjects": 15096049,
+        "numGC": 272,
+        "pauseNS": 38476248,
+        "totalAlloc": 86045216080
+      }
+    },
+    {
+      "chosen": "f7f6",
+      "depth": 7,
+      "elapsedMS": 14062,
+      "played": "f7f6",
+      "ply": 34,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 10306648,
+          "evaluationReads": 23699060,
+          "evaluationWrites": 13392412,
+          "parentTTWrites": 30
+        },
+        "gcCPUSeconds": 474.548358269,
+        "heapAlloc": 2091397168,
+        "heapInuse": 2143232000,
+        "heapObjects": 15073738,
+        "numGC": 308,
+        "pauseNS": 40691793,
+        "totalAlloc": 88529038872
+      }
+    },
+    {
+      "beforePly": 35,
+      "depth": 4,
+      "elapsedMS": 1166,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 10346856,
+          "evaluationReads": 23768374,
+          "evaluationWrites": 13421518,
+          "parentTTWrites": 31
+        },
+        "gcCPUSeconds": 482.016058089,
+        "heapAlloc": 2118748136,
+        "heapInuse": 2167259136,
+        "heapObjects": 15606062,
+        "numGC": 311,
+        "pauseNS": 40860725,
+        "totalAlloc": 88744871440
+      }
+    },
+    {
+      "chosen": "e6f5",
+      "depth": 6,
+      "elapsedMS": 12534,
+      "played": "e6f5",
+      "ply": 36,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 10601413,
+          "evaluationReads": 24399657,
+          "evaluationWrites": 13798244,
+          "parentTTWrites": 32
+        },
+        "gcCPUSeconds": 556.164405246,
+        "heapAlloc": 2165355952,
+        "heapInuse": 2226315264,
+        "heapObjects": 15815179,
+        "numGC": 343,
+        "pauseNS": 43059408,
+        "totalAlloc": 90798464552
+      }
+    },
+    {
+      "beforePly": 37,
+      "depth": 2,
+      "elapsedMS": 3326,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 10682732,
+          "evaluationReads": 24543859,
+          "evaluationWrites": 13861127,
+          "parentTTWrites": 33
+        },
+        "gcCPUSeconds": 575.53578304,
+        "heapAlloc": 2150959536,
+        "heapInuse": 2204139520,
+        "heapObjects": 15444221,
+        "numGC": 351,
+        "pauseNS": 43631851,
+        "totalAlloc": 91221186120
+      }
+    },
+    {
+      "chosen": "f5g6",
+      "depth": 6,
+      "elapsedMS": 12403,
+      "played": "f5g6",
+      "ply": 38,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 11028203,
+          "evaluationReads": 25303273,
+          "evaluationWrites": 14275070,
+          "parentTTWrites": 34
+        },
+        "gcCPUSeconds": 644.602502713,
+        "heapAlloc": 2217970904,
+        "heapInuse": 2270576640,
+        "heapObjects": 15938445,
+        "numGC": 379,
+        "pauseNS": 45541411,
+        "totalAlloc": 93715534568
+      }
+    },
+    {
+      "beforePly": 39,
+      "depth": 5,
+      "elapsedMS": 10382,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 11339268,
+          "evaluationReads": 25814084,
+          "evaluationWrites": 14474816,
+          "parentTTWrites": 35
+        },
+        "gcCPUSeconds": 707.184271621,
+        "heapAlloc": 2559036160,
+        "heapInuse": 2578808832,
+        "heapObjects": 22546272,
+        "numGC": 404,
+        "pauseNS": 47017374,
+        "totalAlloc": 95258419448
+      }
+    },
+    {
+      "chosen": "c8f5",
+      "depth": 5,
+      "elapsedMS": 12119,
+      "played": "c8f5",
+      "ply": 40,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 11559176,
+          "evaluationReads": 26294226,
+          "evaluationWrites": 14735050,
+          "parentTTWrites": 36
+        },
+        "gcCPUSeconds": 782.68670436,
+        "heapAlloc": 2285324264,
+        "heapInuse": 2333417472,
+        "heapObjects": 16092204,
+        "numGC": 434,
+        "pauseNS": 48953007,
+        "totalAlloc": 96840601128
+      }
+    },
+    {
+      "beforePly": 41,
+      "depth": 2,
+      "elapsedMS": 1226,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 11597176,
+          "evaluationReads": 26361792,
+          "evaluationWrites": 14764616,
+          "parentTTWrites": 37
+        },
+        "gcCPUSeconds": 790.888782432,
+        "heapAlloc": 2267562056,
+        "heapInuse": 2323972096,
+        "heapObjects": 15763557,
+        "numGC": 437,
+        "pauseNS": 49158463,
+        "totalAlloc": 97044716032
+      }
+    },
+    {
+      "chosen": "e8f7",
+      "depth": 4,
+      "elapsedMS": 12186,
+      "played": "e8f7",
+      "ply": 42,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 11865004,
+          "evaluationReads": 26924281,
+          "evaluationWrites": 15059277,
+          "parentTTWrites": 38
+        },
+        "gcCPUSeconds": 863.833060864,
+        "heapAlloc": 2335092152,
+        "heapInuse": 2382168064,
+        "heapObjects": 16715630,
+        "numGC": 465,
+        "pauseNS": 51157582,
+        "totalAlloc": 98848506704
+      }
+    },
+    {
+      "beforePly": 43,
+      "depth": 2,
+      "elapsedMS": 1189,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 11921279,
+          "evaluationReads": 27021976,
+          "evaluationWrites": 15100697,
+          "parentTTWrites": 39
+        },
+        "gcCPUSeconds": 871.342322308,
+        "heapAlloc": 2328679744,
+        "heapInuse": 2380283904,
+        "heapObjects": 16545359,
+        "numGC": 468,
+        "pauseNS": 51350833,
+        "totalAlloc": 99137101800
+      }
+    },
+    {
+      "chosen": "f7g8",
+      "depth": 7,
+      "elapsedMS": 12033,
+      "played": "f7g8",
+      "ply": 44,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 12068989,
+          "evaluationReads": 27440323,
+          "evaluationWrites": 15371334,
+          "parentTTWrites": 40
+        },
+        "gcCPUSeconds": 947.701673983,
+        "heapAlloc": 2397394768,
+        "heapInuse": 2431737856,
+        "heapObjects": 17183947,
+        "numGC": 497,
+        "pauseNS": 53080373,
+        "totalAlloc": 100555110384
+      }
+    },
+    {
+      "beforePly": 45,
+      "depth": 2,
+      "elapsedMS": 3977,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 12161528,
+          "evaluationReads": 27624673,
+          "evaluationWrites": 15463145,
+          "parentTTWrites": 41
+        },
+        "gcCPUSeconds": 974.587628665,
+        "heapAlloc": 2379126872,
+        "heapInuse": 2419466240,
+        "heapObjects": 16735149,
+        "numGC": 507,
+        "pauseNS": 53820927,
+        "totalAlloc": 101130140088
+      }
+    },
+    {
+      "chosen": "f5d3",
+      "depth": 6,
+      "elapsedMS": 11924,
+      "played": "f5d3",
+      "ply": 46,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 12610305,
+          "evaluationReads": 28574125,
+          "evaluationWrites": 15963820,
+          "parentTTWrites": 42
+        },
+        "gcCPUSeconds": 1034.769471591,
+        "heapAlloc": 2788203544,
+        "heapInuse": 2816425984,
+        "heapObjects": 23964052,
+        "numGC": 529,
+        "pauseNS": 55686337,
+        "totalAlloc": 104250974848
+      }
+    },
+    {
+      "beforePly": 47,
+      "depth": 2,
+      "elapsedMS": 1257,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 12635985,
+          "evaluationReads": 28620252,
+          "evaluationWrites": 15984267,
+          "parentTTWrites": 43
+        },
+        "gcCPUSeconds": 1043.333190767,
+        "heapAlloc": 2464247968,
+        "heapInuse": 2529042432,
+        "heapObjects": 17446419,
+        "numGC": 532,
+        "pauseNS": 55884533,
+        "totalAlloc": 104394485544
+      }
+    },
+    {
+      "chosen": "h1f2",
+      "depth": 7,
+      "elapsedMS": 9701,
+      "played": "h1f2",
+      "ply": 48,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 13055408,
+          "evaluationReads": 29435696,
+          "evaluationWrites": 16380288,
+          "parentTTWrites": 44
+        },
+        "gcCPUSeconds": 1090.716874785,
+        "heapAlloc": 2570124152,
+        "heapInuse": 2631892992,
+        "heapObjects": 18526322,
+        "numGC": 548,
+        "pauseNS": 57496426,
+        "totalAlloc": 107050082656
+      }
+    },
+    {
+      "beforePly": 49,
+      "depth": 2,
+      "elapsedMS": 3651,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 13113954,
+          "evaluationReads": 29585830,
+          "evaluationWrites": 16471876,
+          "parentTTWrites": 45
+        },
+        "gcCPUSeconds": 1114.181694009,
+        "heapAlloc": 2565796080,
+        "heapInuse": 2624192512,
+        "heapObjects": 18359565,
+        "numGC": 556,
+        "pauseNS": 57891447,
+        "totalAlloc": 107557981584
+      }
+    },
+    {
+      "chosen": "a8e8",
+      "depth": 7,
+      "elapsedMS": 11682,
+      "played": "a8e8",
+      "ply": 50,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 13423885,
+          "evaluationReads": 30559905,
+          "evaluationWrites": 17136020,
+          "parentTTWrites": 46
+        },
+        "gcCPUSeconds": 1171.620125025,
+        "heapAlloc": 2862571000,
+        "heapInuse": 2901368832,
+        "heapObjects": 23109957,
+        "numGC": 575,
+        "pauseNS": 59689816,
+        "totalAlloc": 110995838592
+      }
+    },
+    {
+      "beforePly": 51,
+      "depth": 2,
+      "elapsedMS": 2529,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 13461988,
+          "evaluationReads": 30655631,
+          "evaluationWrites": 17193643,
+          "parentTTWrites": 47
+        },
+        "gcCPUSeconds": 1186.874495517,
+        "heapAlloc": 2672319848,
+        "heapInuse": 2735349760,
+        "heapObjects": 19239016,
+        "numGC": 580,
+        "pauseNS": 60054689,
+        "totalAlloc": 111345342816
+      }
+    },
+    {
+      "chosen": "d3e4",
+      "depth": 6,
+      "elapsedMS": 11598,
+      "played": "d3e4",
+      "ply": 52,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 13703838,
+          "evaluationReads": 31353787,
+          "evaluationWrites": 17649949,
+          "parentTTWrites": 48
+        },
+        "gcCPUSeconds": 1252.940705374,
+        "heapAlloc": 2698956176,
+        "heapInuse": 2768683008,
+        "heapObjects": 19526652,
+        "numGC": 601,
+        "pauseNS": 61167307,
+        "totalAlloc": 113822641600
+      }
+    },
+    {
+      "beforePly": 53,
+      "depth": 2,
+      "elapsedMS": 1243,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 13726307,
+          "evaluationReads": 31404283,
+          "evaluationWrites": 17677976,
+          "parentTTWrites": 49
+        },
+        "gcCPUSeconds": 1261.818459984,
+        "heapAlloc": 2687075320,
+        "heapInuse": 2762555392,
+        "heapObjects": 19312101,
+        "numGC": 604,
+        "pauseNS": 61349105,
+        "totalAlloc": 113990927608
+      }
+    },
+    {
+      "chosen": "e4d5",
+      "depth": 6,
+      "elapsedMS": 11471,
+      "played": "e4d5",
+      "ply": 54,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 13980650,
+          "evaluationReads": 32004088,
+          "evaluationWrites": 18023438,
+          "parentTTWrites": 50
+        },
+        "gcCPUSeconds": 1330.744788331,
+        "heapAlloc": 2730021920,
+        "heapInuse": 2797355008,
+        "heapObjects": 19240130,
+        "numGC": 626,
+        "pauseNS": 62657070,
+        "totalAlloc": 116136734128
+      }
+    },
+    {
+      "beforePly": 55,
+      "depth": 2,
+      "elapsedMS": 1251,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 14012610,
+          "evaluationReads": 32069845,
+          "evaluationWrites": 18057235,
+          "parentTTWrites": 51
+        },
+        "gcCPUSeconds": 1337.471979316,
+        "heapAlloc": 2749750640,
+        "heapInuse": 2815631360,
+        "heapObjects": 19530007,
+        "numGC": 628,
+        "pauseNS": 62788766,
+        "totalAlloc": 116353765728
+      }
+    },
+    {
+      "chosen": "g6h6",
+      "depth": 6,
+      "elapsedMS": 8782,
+      "played": "g6h6",
+      "ply": 56,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 14261464,
+          "evaluationReads": 32546727,
+          "evaluationWrites": 18285263,
+          "parentTTWrites": 52
+        },
+        "gcCPUSeconds": 1389.462667379,
+        "heapAlloc": 2811951056,
+        "heapInuse": 2869886976,
+        "heapObjects": 20590402,
+        "numGC": 644,
+        "pauseNS": 63647885,
+        "totalAlloc": 117933446672
+      }
+    },
+    {
+      "beforePly": 57,
+      "depth": 2,
+      "elapsedMS": 2616,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 14302828,
+          "evaluationReads": 32653445,
+          "evaluationWrites": 18350617,
+          "parentTTWrites": 53
+        },
+        "gcCPUSeconds": 1404.973863429,
+        "heapAlloc": 2840416056,
+        "heapInuse": 2896936960,
+        "heapObjects": 20537677,
+        "numGC": 649,
+        "pauseNS": 63977367,
+        "totalAlloc": 118303409776
+      }
+    },
+    {
+      "hash": "000002000ca050cc06000c00004c00000070c0000dc0d090000800dd0000033b9d",
+      "historyLength": 2,
+      "repeats": 0,
+      "stage": "ready",
+      "state": {
+        "cache": {
+          "evaluationHits": 14302828,
+          "evaluationReads": 32653445,
+          "evaluationWrites": 18350617,
+          "parentTTWrites": 53
+        },
+        "gcCPUSeconds": 1404.973863429,
+        "heapAlloc": 2840423680,
+        "heapInuse": 2896936960,
+        "heapObjects": 20537800,
+        "numGC": 649,
+        "pauseNS": 63977367,
+        "totalAlloc": 118303417400
+      }
+    },
+    {
+      "after": {
+        "cache": {
+          "evaluationHits": 14633319,
+          "evaluationReads": 33369269,
+          "evaluationWrites": 18735950,
+          "parentTTWrites": 54
+        },
+        "gcCPUSeconds": 1470.611950065,
+        "heapAlloc": 2859425472,
+        "heapInuse": 2944942080,
+        "heapObjects": 20051631,
+        "numGC": 669,
+        "pauseNS": 65770489,
+        "totalAlloc": 120789210648
+      },
+      "before": {
+        "cache": {
+          "evaluationHits": 14302828,
+          "evaluationReads": 32653445,
+          "evaluationWrites": 18350617,
+          "parentTTWrites": 53
+        },
+        "gcCPUSeconds": 1404.973863429,
+        "heapAlloc": 2840425584,
+        "heapInuse": 2896936960,
+        "heapObjects": 20537844,
+        "numGC": 649,
+        "pauseNS": 63977367,
+        "totalAlloc": 118303419304
+      },
+      "considered": 916634,
+      "depth": 6,
+      "elapsedMS": 11249,
+      "move": "e8e4",
+      "score": 238,
+      "stage": "warm-history"
+    },
+    {
+      "after": {
+        "cache": {
+          "evaluationHits": 761649,
+          "evaluationReads": 1691347,
+          "evaluationWrites": 929698,
+          "parentTTWrites": 1
+        },
+        "gcCPUSeconds": 1476.602122131,
+        "heapAlloc": 281255536,
+        "heapInuse": 369082368,
+        "heapObjects": 2835596,
+        "numGC": 694,
+        "pauseNS": 68247549,
+        "totalAlloc": 126717831536
+      },
+      "before": {
+        "cache": {
+          "evaluationHits": 0,
+          "evaluationReads": 0,
+          "evaluationWrites": 0,
+          "parentTTWrites": 0
+        },
+        "gcCPUSeconds": 1475.581167471,
+        "heapAlloc": 16774264,
+        "heapInuse": 17571840,
+        "heapObjects": 2655,
+        "numGC": 674,
+        "pauseNS": 66013604,
+        "totalAlloc": 120850455472
+      },
+      "considered": 2157039,
+      "depth": 7,
+      "elapsedMS": 11232,
+      "move": "f2e4",
+      "score": 1,
+      "stage": "fresh-history"
+    },
+    {
+      "productionChanged": false,
+      "stage": "completed"
+    }
+  ],
+  "baselineTargetComparisons": [
+    {
+      "stage": "cold-fen",
+      "move": "f2e4",
+      "score": 1,
+      "depth": 7,
+      "elapsedMS": 11231,
+      "considered": 2156468,
+      "heapBeforeBytes": 17643232,
+      "heapAfterBytes": 793399800,
+      "cacheWritesBefore": 0,
+      "cacheWritesAfter": 933290,
+      "gcCPUSeconds": 0.889659554,
+      "gcCycles": 20
+    },
+    {
+      "stage": "warm-history",
+      "move": "e8e4",
+      "score": 238,
+      "depth": 6,
+      "elapsedMS": 11249,
+      "considered": 916634,
+      "heapBeforeBytes": 2840425584,
+      "heapAfterBytes": 2859425472,
+      "cacheWritesBefore": 18350617,
+      "cacheWritesAfter": 18735950,
+      "gcCPUSeconds": 65.63808663600003,
+      "gcCycles": 20
+    },
+    {
+      "stage": "fresh-history",
+      "move": "f2e4",
+      "score": 1,
+      "depth": 7,
+      "elapsedMS": 11232,
+      "considered": 2157039,
+      "heapBeforeBytes": 16774264,
+      "heapAfterBytes": 281255536,
+      "cacheWritesBefore": 0,
+      "cacheWritesAfter": 929698,
+      "gcCPUSeconds": 1.0209546599999157,
+      "gcCycles": 20
+    }
+  ],
+  "baselineCPUProfile": {
+    "warmSampledCPUSeconds": 77.18,
+    "warmGCObjectScanCumulativePercent": 71.24,
+    "freshSampledCPUSeconds": 34.05
+  },
+  "heapProfileLimit": "Baseline heap dump excluded: compiler liveness allowed the old player to be collected before the dump. CPU profiles and in-search runtime counters remain valid. Subsequent harness uses runtime.KeepAlive.",
+  "change": "Clear player caches above three quarters of the Go runtime memory limit; release owned ABDADA workers before GC",
+  "newRegression": "Forced clearing and memory-pressure cleanup failed before patch; focused regression now passes in 0.016s",
+  "candidateSha256": "a6df9359c39b657d903714218d61abb21394f8a6ca4e3bdc1d5929fa764dcbfe",
+  "tests": {
+    "focusedCacheRegressionSeconds": 0.016,
+    "targetedRaceSeconds": 16.806,
+    "fullSuiteAttempts": [
+      {
+        "seconds": 90.685,
+        "onlyFailure": "TestLazySMPFindsHangingKnight"
+      },
+      {
+        "seconds": 91.524,
+        "onlyFailure": "TestLazySMPFindsHangingKnight"
+      }
+    ],
+    "baselineLazySMPRepeat": {
+      "runs": 5,
+      "failures": 1
+    },
+    "candidateLazySMPRepeat": {
+      "runs": 5,
+      "failures": 0
+    },
+    "explicitSkip": "TestAIBestMovesSame",
+    "testExpectationsChanged": false
+  },
+  "candidateProbeSession": 6890,
+  "candidateReplayStatus": "completed",
+  "candidateTrace": [
+    {
+      "after": {
+        "cache": {
+          "evaluationHits": 775514,
+          "evaluationReads": 1759017,
+          "evaluationWrites": 983503,
+          "parentTTWrites": 1
+        },
+        "gcCPUSeconds": 1.058270369,
+        "heapAlloc": 441337040,
+        "heapInuse": 508338176,
+        "heapObjects": 5634566,
+        "numGC": 21,
+        "pauseNS": 2901772,
+        "totalAlloc": 6172115456
+      },
+      "before": {
+        "cache": {
+          "evaluationHits": 0,
+          "evaluationReads": 0,
+          "evaluationWrites": 0,
+          "parentTTWrites": 0
+        },
+        "gcCPUSeconds": 0.000207776,
+        "heapAlloc": 17643712,
+        "heapInuse": 18251776,
+        "heapObjects": 8705,
+        "numGC": 0,
+        "pauseNS": 0,
+        "totalAlloc": 17643712
+      },
+      "considered": 2239602,
+      "depth": 8,
+      "elapsedMS": 10534,
+      "move": "f2e4",
+      "score": 23,
+      "stage": "cold-fen"
+    },
+    {
+      "beforePly": 5,
+      "depth": 4,
+      "elapsedMS": 1080,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 34024,
+          "evaluationReads": 102202,
+          "evaluationWrites": 68178,
+          "parentTTWrites": 1
+        },
+        "gcCPUSeconds": 1.125892956,
+        "heapAlloc": 43695040,
+        "heapInuse": 56958976,
+        "heapObjects": 405685,
+        "numGC": 26,
+        "pauseNS": 3321437,
+        "totalAlloc": 6527528040
+      }
+    },
+    {
+      "chosen": "e7e6",
+      "depth": 7,
+      "elapsedMS": 14917,
+      "played": "e7e6",
+      "ply": 6,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 773142,
+          "evaluationReads": 1784628,
+          "evaluationWrites": 1011486,
+          "parentTTWrites": 2
+        },
+        "gcCPUSeconds": 2.081602703,
+        "heapAlloc": 725814784,
+        "heapInuse": 751108096,
+        "heapObjects": 12419214,
+        "numGC": 42,
+        "pauseNS": 8353078,
+        "totalAlloc": 12190087688
+      }
+    },
+    {
+      "beforePly": 7,
+      "depth": 4,
+      "elapsedMS": 1161,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 872260,
+          "evaluationReads": 1980770,
+          "evaluationWrites": 1108510,
+          "parentTTWrites": 3
+        },
+        "gcCPUSeconds": 2.226556595,
+        "heapAlloc": 689518328,
+        "heapInuse": 721305600,
+        "heapObjects": 12162073,
+        "numGC": 43,
+        "pauseNS": 8432366,
+        "totalAlloc": 12806944760
+      }
+    },
+    {
+      "chosen": "f8b4",
+      "depth": 6,
+      "elapsedMS": 14936,
+      "played": "f8b4",
+      "ply": 8,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 1539252,
+          "evaluationReads": 3554046,
+          "evaluationWrites": 2014794,
+          "parentTTWrites": 4
+        },
+        "gcCPUSeconds": 3.309499705,
+        "heapAlloc": 1449462736,
+        "heapInuse": 1490223104,
+        "heapObjects": 24913601,
+        "numGC": 48,
+        "pauseNS": 9226818,
+        "totalAlloc": 18291213728
+      }
+    },
+    {
+      "beforePly": 9,
+      "depth": 7,
+      "elapsedMS": 13481,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 2368836,
+          "evaluationReads": 4983511,
+          "evaluationWrites": 2614675,
+          "parentTTWrites": 5
+        },
+        "gcCPUSeconds": 4.699585568,
+        "heapAlloc": 854278352,
+        "heapInuse": 1009426432,
+        "heapObjects": 11790441,
+        "numGC": 52,
+        "pauseNS": 9519269,
+        "totalAlloc": 22899995360
+      }
+    },
+    {
+      "chosen": "c8e6",
+      "depth": 6,
+      "elapsedMS": 14768,
+      "played": "c8e6",
+      "ply": 10,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 3449989,
+          "evaluationReads": 7070465,
+          "evaluationWrites": 3620476,
+          "parentTTWrites": 6
+        },
+        "gcCPUSeconds": 7.14811035,
+        "heapAlloc": 1354300096,
+        "heapInuse": 1440989184,
+        "heapObjects": 22135093,
+        "numGC": 57,
+        "pauseNS": 10039747,
+        "totalAlloc": 29818308152
+      }
+    },
+    {
+      "beforePly": 11,
+      "depth": 4,
+      "elapsedMS": 1241,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 3546186,
+          "evaluationReads": 7222244,
+          "evaluationWrites": 3676058,
+          "parentTTWrites": 7
+        },
+        "gcCPUSeconds": 7.851715381,
+        "heapAlloc": 721933232,
+        "heapInuse": 900292608,
+        "heapObjects": 6505234,
+        "numGC": 58,
+        "pauseNS": 10156505,
+        "totalAlloc": 30296788560
+      }
+    },
+    {
+      "chosen": "f6e4",
+      "depth": 5,
+      "elapsedMS": 14603,
+      "played": "f6e4",
+      "ply": 12,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 4217430,
+          "evaluationReads": 8709394,
+          "evaluationWrites": 4491964,
+          "parentTTWrites": 8
+        },
+        "gcCPUSeconds": 10.392421453,
+        "heapAlloc": 1424798576,
+        "heapInuse": 1507147776,
+        "heapObjects": 20491064,
+        "numGC": 62,
+        "pauseNS": 10525038,
+        "totalAlloc": 35333016656
+      }
+    },
+    {
+      "beforePly": 13,
+      "depth": 4,
+      "elapsedMS": 1161,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 4282271,
+          "evaluationReads": 8821477,
+          "evaluationWrites": 4539206,
+          "parentTTWrites": 9
+        },
+        "gcCPUSeconds": 11.081100873,
+        "heapAlloc": 771725392,
+        "heapInuse": 941539328,
+        "heapObjects": 6226444,
+        "numGC": 63,
+        "pauseNS": 10606906,
+        "totalAlloc": 35700343040
+      }
+    },
+    {
+      "chosen": "e6f5",
+      "depth": 6,
+      "elapsedMS": 14440,
+      "played": "e6f5",
+      "ply": 14,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 4862823,
+          "evaluationReads": 10059744,
+          "evaluationWrites": 5196921,
+          "parentTTWrites": 10
+        },
+        "gcCPUSeconds": 14.25610362,
+        "heapAlloc": 1153412320,
+        "heapInuse": 1262927872,
+        "heapObjects": 13087681,
+        "numGC": 67,
+        "pauseNS": 10930689,
+        "totalAlloc": 40058900832
+      }
+    },
+    {
+      "beforePly": 15,
+      "depth": 3,
+      "elapsedMS": 1241,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 4916376,
+          "evaluationReads": 10172860,
+          "evaluationWrites": 5256484,
+          "parentTTWrites": 11
+        },
+        "gcCPUSeconds": 14.25610362,
+        "heapAlloc": 1531565152,
+        "heapInuse": 1592582144,
+        "heapObjects": 21425143,
+        "numGC": 67,
+        "pauseNS": 10930689,
+        "totalAlloc": 40437053664
+      }
+    },
+    {
+      "chosen": "b4c3",
+      "depth": 8,
+      "elapsedMS": 14281,
+      "played": "b4c3",
+      "ply": 16,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 5759463,
+          "evaluationReads": 12441054,
+          "evaluationWrites": 6681591,
+          "parentTTWrites": 12
+        },
+        "gcCPUSeconds": 25.233333456,
+        "heapAlloc": 1606689600,
+        "heapInuse": 1683554304,
+        "heapObjects": 18020303,
+        "numGC": 78,
+        "pauseNS": 14225014,
+        "totalAlloc": 48822381696
+      }
+    },
+    {
+      "beforePly": 17,
+      "depth": 7,
+      "elapsedMS": 1162,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 5794070,
+          "evaluationReads": 12519536,
+          "evaluationWrites": 6725466,
+          "parentTTWrites": 13
+        },
+        "gcCPUSeconds": 26.332872842,
+        "heapAlloc": 1240253128,
+        "heapInuse": 1357832192,
+        "heapObjects": 10473917,
+        "numGC": 79,
+        "pauseNS": 14293333,
+        "totalAlloc": 49098591888
+      }
+    },
+    {
+      "chosen": "e4g3",
+      "depth": 8,
+      "elapsedMS": 14123,
+      "played": "e4g3",
+      "ply": 18,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 6394070,
+          "evaluationReads": 14241320,
+          "evaluationWrites": 7847250,
+          "parentTTWrites": 14
+        },
+        "gcCPUSeconds": 38.352969611,
+        "heapAlloc": 1483848472,
+        "heapInuse": 1565802496,
+        "heapObjects": 13411428,
+        "numGC": 89,
+        "pauseNS": 15641738,
+        "totalAlloc": 55369492528
+      }
+    },
+    {
+      "beforePly": 19,
+      "depth": 5,
+      "elapsedMS": 1241,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 6484035,
+          "evaluationReads": 14384696,
+          "evaluationWrites": 7900661,
+          "parentTTWrites": 15
+        },
+        "gcCPUSeconds": 39.56686028,
+        "heapAlloc": 1468394240,
+        "heapInuse": 1550155776,
+        "heapObjects": 13405299,
+        "numGC": 90,
+        "pauseNS": 15749300,
+        "totalAlloc": 55841679688
+      }
+    },
+    {
+      "chosen": "g3h1",
+      "depth": 9,
+      "elapsedMS": 13969,
+      "played": "g3h1",
+      "ply": 20,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 6792301,
+          "evaluationReads": 15368739,
+          "evaluationWrites": 8576438,
+          "parentTTWrites": 16
+        },
+        "gcCPUSeconds": 50.741050388,
+        "heapAlloc": 1367011992,
+        "heapInuse": 1457135616,
+        "heapObjects": 9820240,
+        "numGC": 98,
+        "pauseNS": 16270316,
+        "totalAlloc": 59602547896
+      }
+    },
+    {
+      "beforePly": 21,
+      "depth": 5,
+      "elapsedMS": 3481,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 6918674,
+          "evaluationReads": 15674312,
+          "evaluationWrites": 8755638,
+          "parentTTWrites": 17
+        },
+        "gcCPUSeconds": 53.797392111,
+        "heapAlloc": 1572355360,
+        "heapInuse": 1637777408,
+        "heapObjects": 13647837,
+        "numGC": 100,
+        "pauseNS": 16434653,
+        "totalAlloc": 60665797464
+      }
+    },
+    {
+      "chosen": "f5c8",
+      "depth": 6,
+      "elapsedMS": 17064,
+      "played": "f5c8",
+      "ply": 22,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 7341887,
+          "evaluationReads": 16845886,
+          "evaluationWrites": 9503999,
+          "parentTTWrites": 18
+        },
+        "gcCPUSeconds": 68.207701594,
+        "heapAlloc": 1724924400,
+        "heapInuse": 1769201664,
+        "heapObjects": 15596141,
+        "numGC": 110,
+        "pauseNS": 17154231,
+        "totalAlloc": 64942752344
+      }
+    },
+    {
+      "beforePly": 23,
+      "depth": 3,
+      "elapsedMS": 1241,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 7341887,
+          "evaluationReads": 16845886,
+          "evaluationWrites": 9503999,
+          "parentTTWrites": 18
+        },
+        "gcCPUSeconds": 69.75190579,
+        "heapAlloc": 1806613256,
+        "heapInuse": 1841340416,
+        "heapObjects": 17298529,
+        "numGC": 111,
+        "pauseNS": 17197875,
+        "totalAlloc": 65328708664
+      }
+    },
+    {
+      "chosen": "d8f6",
+      "depth": 8,
+      "elapsedMS": 17070,
+      "played": "d8f6",
+      "ply": 24,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 907809,
+          "evaluationReads": 2656972,
+          "evaluationWrites": 1749163,
+          "parentTTWrites": 1
+        },
+        "gcCPUSeconds": 71.837438936,
+        "heapAlloc": 519349040,
+        "heapInuse": 668901376,
+        "heapObjects": 3201589,
+        "numGC": 135,
+        "pauseNS": 20142362,
+        "totalAlloc": 75259316352
+      }
+    },
+    {
+      "beforePly": 25,
+      "depth": 2,
+      "elapsedMS": 1245,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 951132,
+          "evaluationReads": 2760659,
+          "evaluationWrites": 1809527,
+          "parentTTWrites": 2
+        },
+        "gcCPUSeconds": 71.837438936,
+        "heapAlloc": 752537480,
+        "heapInuse": 860299264,
+        "heapObjects": 10504746,
+        "numGC": 135,
+        "pauseNS": 20142362,
+        "totalAlloc": 75616758360
+      }
+    },
+    {
+      "chosen": "b8d7",
+      "depth": 7,
+      "elapsedMS": 16764,
+      "played": "b8c6",
+      "ply": 26,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 1869450,
+          "evaluationReads": 4859876,
+          "evaluationWrites": 2990426,
+          "parentTTWrites": 3
+        },
+        "gcCPUSeconds": 73.719956405,
+        "heapAlloc": 1630722312,
+        "heapInuse": 1694900224,
+        "heapObjects": 25489402,
+        "numGC": 140,
+        "pauseNS": 21393649,
+        "totalAlloc": 83098300656
+      }
+    },
+    {
+      "beforePly": 27,
+      "depth": 5,
+      "elapsedMS": 1241,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 1869450,
+          "evaluationReads": 4859876,
+          "evaluationWrites": 2990426,
+          "parentTTWrites": 3
+        },
+        "gcCPUSeconds": 74.251494082,
+        "heapAlloc": 1146968600,
+        "heapInuse": 1254236160,
+        "heapObjects": 16040604,
+        "numGC": 141,
+        "pauseNS": 21450556,
+        "totalAlloc": 83740068624
+      }
+    },
+    {
+      "chosen": "a7a6",
+      "depth": 5,
+      "elapsedMS": 16515,
+      "played": "a7a6",
+      "ply": 28,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 2476811,
+          "evaluationReads": 6161920,
+          "evaluationWrites": 3685109,
+          "parentTTWrites": 4
+        },
+        "gcCPUSeconds": 76.362776015,
+        "heapAlloc": 622005624,
+        "heapInuse": 780025856,
+        "heapObjects": 4755808,
+        "numGC": 145,
+        "pauseNS": 21720543,
+        "totalAlloc": 88095487928
+      }
+    },
+    {
+      "beforePly": 29,
+      "depth": 5,
+      "elapsedMS": 1241,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 2561589,
+          "evaluationReads": 6302508,
+          "evaluationWrites": 3740919,
+          "parentTTWrites": 5
+        },
+        "gcCPUSeconds": 76.362776015,
+        "heapAlloc": 1082966744,
+        "heapInuse": 1184718848,
+        "heapObjects": 14758095,
+        "numGC": 145,
+        "pauseNS": 21720543,
+        "totalAlloc": 88556449048
+      }
+    },
+    {
+      "chosen": "b7c6",
+      "depth": 11,
+      "elapsedMS": 16272,
+      "played": "b7c6",
+      "ply": 30,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 2885424,
+          "evaluationReads": 7401044,
+          "evaluationWrites": 4515620,
+          "parentTTWrites": 6
+        },
+        "gcCPUSeconds": 78.346226489,
+        "heapAlloc": 1442446552,
+        "heapInuse": 1511407616,
+        "heapObjects": 18867358,
+        "numGC": 148,
+        "pauseNS": 21932249,
+        "totalAlloc": 92433358544
+      }
+    },
+    {
+      "beforePly": 31,
+      "depth": 4,
+      "elapsedMS": 1161,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 2966061,
+          "evaluationReads": 7553390,
+          "evaluationWrites": 4587329,
+          "parentTTWrites": 7
+        },
+        "gcCPUSeconds": 79.179854972,
+        "heapAlloc": 817397448,
+        "heapInuse": 953573376,
+        "heapObjects": 6938668,
+        "numGC": 149,
+        "pauseNS": 22046190,
+        "totalAlloc": 92940661160
+      }
+    },
+    {
+      "chosen": "f6e6",
+      "depth": 8,
+      "elapsedMS": 14464,
+      "played": "f6e6",
+      "ply": 32,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 3812692,
+          "evaluationReads": 9420409,
+          "evaluationWrites": 5607717,
+          "parentTTWrites": 8
+        },
+        "gcCPUSeconds": 85.090485591,
+        "heapAlloc": 932955592,
+        "heapInuse": 1064427520,
+        "heapObjects": 6570779,
+        "numGC": 156,
+        "pauseNS": 24449924,
+        "totalAlloc": 99311916192
+      }
+    },
+    {
+      "beforePly": 33,
+      "depth": 5,
+      "elapsedMS": 1322,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 3949462,
+          "evaluationReads": 9605965,
+          "evaluationWrites": 5656503,
+          "parentTTWrites": 9
+        },
+        "gcCPUSeconds": 85.090485591,
+        "heapAlloc": 1454155808,
+        "heapInuse": 1520320512,
+        "heapObjects": 18296847,
+        "numGC": 156,
+        "pauseNS": 24449924,
+        "totalAlloc": 99833116408
+      }
+    },
+    {
+      "chosen": "f7f6",
+      "depth": 8,
+      "elapsedMS": 15827,
+      "played": "f7f6",
+      "ply": 34,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 5099799,
+          "evaluationReads": 12114025,
+          "evaluationWrites": 7014226,
+          "parentTTWrites": 10
+        },
+        "gcCPUSeconds": 97.622432983,
+        "heapAlloc": 1580014456,
+        "heapInuse": 1642496000,
+        "heapObjects": 17044886,
+        "numGC": 168,
+        "pauseNS": 28655616,
+        "totalAlloc": 108172382920
+      }
+    },
+    {
+      "beforePly": 35,
+      "depth": 5,
+      "elapsedMS": 1161,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 5206595,
+          "evaluationReads": 12288801,
+          "evaluationWrites": 7082206,
+          "parentTTWrites": 11
+        },
+        "gcCPUSeconds": 98.759571003,
+        "heapAlloc": 1505863720,
+        "heapInuse": 1570381824,
+        "heapObjects": 15813318,
+        "numGC": 169,
+        "pauseNS": 28729929,
+        "totalAlloc": 108711957352
+      }
+    },
+    {
+      "chosen": "e6f5",
+      "depth": 6,
+      "elapsedMS": 12519,
+      "played": "e6f5",
+      "ply": 36,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 5694937,
+          "evaluationReads": 13383324,
+          "evaluationWrites": 7688387,
+          "parentTTWrites": 12
+        },
+        "gcCPUSeconds": 106.386322316,
+        "heapAlloc": 1575575544,
+        "heapInuse": 1635500032,
+        "heapObjects": 15293083,
+        "numGC": 175,
+        "pauseNS": 29240401,
+        "totalAlloc": 112274871584
+      }
+    },
+    {
+      "beforePly": 37,
+      "depth": 4,
+      "elapsedMS": 3321,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 5901664,
+          "evaluationReads": 13715885,
+          "evaluationWrites": 7814221,
+          "parentTTWrites": 13
+        },
+        "gcCPUSeconds": 108.925492718,
+        "heapAlloc": 1530039088,
+        "heapInuse": 1585954816,
+        "heapObjects": 15483089,
+        "numGC": 177,
+        "pauseNS": 29393983,
+        "totalAlloc": 113243375584
+      }
+    },
+    {
+      "chosen": "f5g6",
+      "depth": 7,
+      "elapsedMS": 12390,
+      "played": "f5g6",
+      "ply": 38,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 6705484,
+          "evaluationReads": 15501208,
+          "evaluationWrites": 8795724,
+          "parentTTWrites": 14
+        },
+        "gcCPUSeconds": 126.639692261,
+        "heapAlloc": 1414790968,
+        "heapInuse": 1492008960,
+        "heapObjects": 10019433,
+        "numGC": 190,
+        "pauseNS": 30839231,
+        "totalAlloc": 119217995648
+      }
+    },
+    {
+      "beforePly": 39,
+      "depth": 7,
+      "elapsedMS": 10362,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 7495993,
+          "evaluationReads": 16951412,
+          "evaluationWrites": 9455419,
+          "parentTTWrites": 15
+        },
+        "gcCPUSeconds": 145.27166225,
+        "heapAlloc": 1679291392,
+        "heapInuse": 1732165632,
+        "heapObjects": 13430605,
+        "numGC": 202,
+        "pauseNS": 31988780,
+        "totalAlloc": 123833420736
+      }
+    },
+    {
+      "chosen": "c8f5",
+      "depth": 5,
+      "elapsedMS": 12310,
+      "played": "c8f5",
+      "ply": 40,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 472139,
+          "evaluationReads": 1084181,
+          "evaluationWrites": 612042,
+          "parentTTWrites": 1
+        },
+        "gcCPUSeconds": 145.834129404,
+        "heapAlloc": 370130144,
+        "heapInuse": 389210112,
+        "heapObjects": 5592419,
+        "numGC": 220,
+        "pauseNS": 33214216,
+        "totalAlloc": 127412344336
+      }
+    },
+    {
+      "beforePly": 41,
+      "depth": 2,
+      "elapsedMS": 1178,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 543160,
+          "evaluationReads": 1200343,
+          "evaluationWrites": 657183,
+          "parentTTWrites": 2
+        },
+        "gcCPUSeconds": 145.907275059,
+        "heapAlloc": 312251752,
+        "heapInuse": 338534400,
+        "heapObjects": 4816839,
+        "numGC": 221,
+        "pauseNS": 33271681,
+        "totalAlloc": 127757457288
+      }
+    },
+    {
+      "chosen": "e8f7",
+      "depth": 5,
+      "elapsedMS": 12155,
+      "played": "e8f7",
+      "ply": 42,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 1234366,
+          "evaluationReads": 2538352,
+          "evaluationWrites": 1303986,
+          "parentTTWrites": 3
+        },
+        "gcCPUSeconds": 146.771353568,
+        "heapAlloc": 482366376,
+        "heapInuse": 534355968,
+        "heapObjects": 6577816,
+        "numGC": 228,
+        "pauseNS": 33854247,
+        "totalAlloc": 132027133960
+      }
+    },
+    {
+      "beforePly": 43,
+      "depth": 2,
+      "elapsedMS": 1168,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 1317200,
+          "evaluationReads": 2689930,
+          "evaluationWrites": 1372730,
+          "parentTTWrites": 4
+        },
+        "gcCPUSeconds": 146.771353568,
+        "heapAlloc": 947686008,
+        "heapInuse": 966983680,
+        "heapObjects": 16253844,
+        "numGC": 228,
+        "pauseNS": 33854247,
+        "totalAlloc": 132492453592
+      }
+    },
+    {
+      "chosen": "f7g8",
+      "depth": 8,
+      "elapsedMS": 10636,
+      "played": "f7g8",
+      "ply": 44,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 1664565,
+          "evaluationReads": 3539830,
+          "evaluationWrites": 1875265,
+          "parentTTWrites": 5
+        },
+        "gcCPUSeconds": 147.400178812,
+        "heapAlloc": 1242093000,
+        "heapInuse": 1264861184,
+        "heapObjects": 20156093,
+        "numGC": 231,
+        "pauseNS": 34036980,
+        "totalAlloc": 135326520888
+      }
+    },
+    {
+      "beforePly": 45,
+      "depth": 5,
+      "elapsedMS": 3962,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 1961235,
+          "evaluationReads": 4003348,
+          "evaluationWrites": 2042113,
+          "parentTTWrites": 6
+        },
+        "gcCPUSeconds": 147.674174453,
+        "heapAlloc": 1540803672,
+        "heapInuse": 1572585472,
+        "heapObjects": 27943065,
+        "numGC": 232,
+        "pauseNS": 34099889,
+        "totalAlloc": 136719831560
+      }
+    },
+    {
+      "chosen": "f5d3",
+      "depth": 7,
+      "elapsedMS": 11912,
+      "played": "f5d3",
+      "ply": 46,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 3171869,
+          "evaluationReads": 6686569,
+          "evaluationWrites": 3514700,
+          "parentTTWrites": 7
+        },
+        "gcCPUSeconds": 151.151208822,
+        "heapAlloc": 834812688,
+        "heapInuse": 960954368,
+        "heapObjects": 7898697,
+        "numGC": 240,
+        "pauseNS": 35069122,
+        "totalAlloc": 145771131240
+      }
+    },
+    {
+      "beforePly": 47,
+      "depth": 4,
+      "elapsedMS": 1242,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 3276345,
+          "evaluationReads": 6818658,
+          "evaluationWrites": 3542313,
+          "parentTTWrites": 8
+        },
+        "gcCPUSeconds": 151.151208822,
+        "heapAlloc": 1205236096,
+        "heapInuse": 1284456448,
+        "heapObjects": 16200708,
+        "numGC": 240,
+        "pauseNS": 35069122,
+        "totalAlloc": 146141554648
+      }
+    },
+    {
+      "chosen": "h1f2",
+      "depth": 7,
+      "elapsedMS": 11798,
+      "played": "h1f2",
+      "ply": 48,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 4281867,
+          "evaluationReads": 8819428,
+          "evaluationWrites": 4537561,
+          "parentTTWrites": 9
+        },
+        "gcCPUSeconds": 154.776036436,
+        "heapAlloc": 1629780360,
+        "heapInuse": 1675075584,
+        "heapObjects": 21935845,
+        "numGC": 246,
+        "pauseNS": 35848754,
+        "totalAlloc": 152703334736
+      }
+    },
+    {
+      "beforePly": 49,
+      "depth": 2,
+      "elapsedMS": 3641,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 4281867,
+          "evaluationReads": 8819428,
+          "evaluationWrites": 4537561,
+          "parentTTWrites": 9
+        },
+        "gcCPUSeconds": 157.074681668,
+        "heapAlloc": 817282008,
+        "heapInuse": 945913856,
+        "heapObjects": 5986563,
+        "numGC": 249,
+        "pauseNS": 36019302,
+        "totalAlloc": 153621195064
+      }
+    },
+    {
+      "chosen": "a8e8",
+      "depth": 7,
+      "elapsedMS": 11677,
+      "played": "a8e8",
+      "ply": 50,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 5083858,
+          "evaluationReads": 11216599,
+          "evaluationWrites": 6132741,
+          "parentTTWrites": 10
+        },
+        "gcCPUSeconds": 165.672512341,
+        "heapAlloc": 1547818304,
+        "heapInuse": 1614045184,
+        "heapObjects": 16606784,
+        "numGC": 259,
+        "pauseNS": 38172075,
+        "totalAlloc": 162182945272
+      }
+    },
+    {
+      "beforePly": 51,
+      "depth": 2,
+      "elapsedMS": 2525,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 5159456,
+          "evaluationReads": 11409052,
+          "evaluationWrites": 6249596,
+          "parentTTWrites": 11
+        },
+        "gcCPUSeconds": 166.684802155,
+        "heapAlloc": 1618168592,
+        "heapInuse": 1674035200,
+        "heapObjects": 17806455,
+        "numGC": 260,
+        "pauseNS": 38239928,
+        "totalAlloc": 162875666992
+      }
+    },
+    {
+      "chosen": "d3e4",
+      "depth": 6,
+      "elapsedMS": 11630,
+      "played": "d3e4",
+      "ply": 52,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 356365,
+          "evaluationReads": 1152529,
+          "evaluationWrites": 796164,
+          "parentTTWrites": 1
+        },
+        "gcCPUSeconds": 167.325482935,
+        "heapAlloc": 637167984,
+        "heapInuse": 652869632,
+        "heapObjects": 9364151,
+        "numGC": 277,
+        "pauseNS": 42127534,
+        "totalAlloc": 167054281328
+      }
+    },
+    {
+      "beforePly": 53,
+      "depth": 4,
+      "elapsedMS": 1242,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 420062,
+          "evaluationReads": 1280386,
+          "evaluationWrites": 860324,
+          "parentTTWrites": 2
+        },
+        "gcCPUSeconds": 167.468407369,
+        "heapAlloc": 472422000,
+        "heapInuse": 500744192,
+        "heapObjects": 7152179,
+        "numGC": 278,
+        "pauseNS": 42187329,
+        "totalAlloc": 167471571720
+      }
+    },
+    {
+      "chosen": "e4d5",
+      "depth": 6,
+      "elapsedMS": 11451,
+      "played": "e4d5",
+      "ply": 54,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 868974,
+          "evaluationReads": 2390874,
+          "evaluationWrites": 1521900,
+          "parentTTWrites": 3
+        },
+        "gcCPUSeconds": 168.228808884,
+        "heapAlloc": 1018858232,
+        "heapInuse": 1038827520,
+        "heapObjects": 15580425,
+        "numGC": 283,
+        "pauseNS": 42545209,
+        "totalAlloc": 171406981720
+      }
+    },
+    {
+      "beforePly": 55,
+      "depth": 2,
+      "elapsedMS": 1245,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 929921,
+          "evaluationReads": 2510886,
+          "evaluationWrites": 1580965,
+          "parentTTWrites": 4
+        },
+        "gcCPUSeconds": 168.450455719,
+        "heapAlloc": 505859872,
+        "heapInuse": 579190784,
+        "heapObjects": 6364291,
+        "numGC": 284,
+        "pauseNS": 42613573,
+        "totalAlloc": 171797313576
+      }
+    },
+    {
+      "chosen": "g6h6",
+      "depth": 7,
+      "elapsedMS": 11349,
+      "played": "g6h6",
+      "ply": 56,
+      "stage": "warm",
+      "state": {
+        "cache": {
+          "evaluationHits": 1915581,
+          "evaluationReads": 4532884,
+          "evaluationWrites": 2617303,
+          "parentTTWrites": 5
+        },
+        "gcCPUSeconds": 170.13663578,
+        "heapAlloc": 1144518400,
+        "heapInuse": 1255038976,
+        "heapObjects": 16739942,
+        "numGC": 289,
+        "pauseNS": 43394671,
+        "totalAlloc": 178368271096
+      }
+    },
+    {
+      "beforePly": 57,
+      "depth": 6,
+      "elapsedMS": 2603,
+      "stage": "ponder",
+      "state": {
+        "cache": {
+          "evaluationHits": 2089471,
+          "evaluationReads": 4853758,
+          "evaluationWrites": 2764287,
+          "parentTTWrites": 6
+        },
+        "gcCPUSeconds": 170.608578026,
+        "heapAlloc": 959602520,
+        "heapInuse": 1088765952,
+        "heapObjects": 12963604,
+        "numGC": 290,
+        "pauseNS": 43487423,
+        "totalAlloc": 179440456792
+      }
+    },
+    {
+      "hash": "000002000ca050cc06000c00004c00000070c0000dc0d090000800dd0000033b9d",
+      "historyLength": 2,
+      "repeats": 0,
+      "stage": "ready",
+      "state": {
+        "cache": {
+          "evaluationHits": 2089471,
+          "evaluationReads": 4853758,
+          "evaluationWrites": 2764287,
+          "parentTTWrites": 6
+        },
+        "gcCPUSeconds": 170.608578026,
+        "heapAlloc": 959610128,
+        "heapInuse": 1088765952,
+        "heapObjects": 12963726,
+        "numGC": 290,
+        "pauseNS": 43487423,
+        "totalAlloc": 179440464400
+      }
+    },
+    {
+      "after": {
+        "cache": {
+          "evaluationHits": 2905630,
+          "evaluationReads": 6609153,
+          "evaluationWrites": 3703523,
+          "parentTTWrites": 7
+        },
+        "gcCPUSeconds": 173.103707982,
+        "heapAlloc": 1159314808,
+        "heapInuse": 1261191168,
+        "heapObjects": 14683717,
+        "numGC": 295,
+        "pauseNS": 45185852,
+        "totalAlloc": 185511901496
+      },
+      "before": {
+        "cache": {
+          "evaluationHits": 2089471,
+          "evaluationReads": 4853758,
+          "evaluationWrites": 2764287,
+          "parentTTWrites": 6
+        },
+        "gcCPUSeconds": 170.608578026,
+        "heapAlloc": 959612032,
+        "heapInuse": 1088765952,
+        "heapObjects": 12963770,
+        "numGC": 290,
+        "pauseNS": 43487423,
+        "totalAlloc": 179440466304
+      },
+      "considered": 2239200,
+      "depth": 7,
+      "elapsedMS": 11230,
+      "move": "f2e4",
+      "score": 1,
+      "stage": "warm-history"
+    },
+    {
+      "after": {
+        "cache": {
+          "evaluationHits": 4510146,
+          "evaluationReads": 8803739,
+          "evaluationWrites": 4293593,
+          "parentTTWrites": 7
+        },
+        "gcCPUSeconds": 176.754169878,
+        "heapAlloc": 1618840168,
+        "heapInuse": 1672839168,
+        "heapObjects": 22830029,
+        "numGC": 301,
+        "pauseNS": 46993733,
+        "totalAlloc": 192230492592
+      },
+      "before": {
+        "cache": {
+          "evaluationHits": 2905630,
+          "evaluationReads": 6609153,
+          "evaluationWrites": 3703523,
+          "parentTTWrites": 7
+        },
+        "gcCPUSeconds": 173.103707982,
+        "heapAlloc": 1159321080,
+        "heapInuse": 1261191168,
+        "heapObjects": 14683803,
+        "numGC": 295,
+        "pauseNS": 45185852,
+        "totalAlloc": 185511907768
+      },
+      "considered": 2792302,
+      "depth": 8,
+      "elapsedMS": 10950,
+      "move": "f2e4",
+      "score": 10,
+      "stage": "warm-repeat-1"
+    },
+    {
+      "after": {
+        "cache": {
+          "evaluationHits": 791627,
+          "evaluationReads": 1786980,
+          "evaluationWrites": 995353,
+          "parentTTWrites": 1
+        },
+        "gcCPUSeconds": 177.826626499,
+        "heapAlloc": 391367704,
+        "heapInuse": 464740352,
+        "heapObjects": 4559798,
+        "numGC": 322,
+        "pauseNS": 50386530,
+        "totalAlloc": 198464884448
+      },
+      "before": {
+        "cache": {
+          "evaluationHits": 4510146,
+          "evaluationReads": 8803739,
+          "evaluationWrites": 4293593,
+          "parentTTWrites": 7
+        },
+        "gcCPUSeconds": 176.754169878,
+        "heapAlloc": 1618846440,
+        "heapInuse": 1672839168,
+        "heapObjects": 22830115,
+        "numGC": 301,
+        "pauseNS": 46993733,
+        "totalAlloc": 192230498864
+      },
+      "considered": 2273044,
+      "depth": 8,
+      "elapsedMS": 11050,
+      "move": "f2e4",
+      "score": 10,
+      "stage": "warm-repeat-2"
+    },
+    {
+      "after": {
+        "cache": {
+          "evaluationHits": 751503,
+          "evaluationReads": 1672922,
+          "evaluationWrites": 921419,
+          "parentTTWrites": 1
+        },
+        "gcCPUSeconds": 178.863579279,
+        "heapAlloc": 885952736,
+        "heapInuse": 907026432,
+        "heapObjects": 14764232,
+        "numGC": 343,
+        "pauseNS": 52390841,
+        "totalAlloc": 204363125496
+      },
+      "before": {
+        "cache": {
+          "evaluationHits": 0,
+          "evaluationReads": 0,
+          "evaluationWrites": 0,
+          "parentTTWrites": 0
+        },
+        "gcCPUSeconds": 178.011454934,
+        "heapAlloc": 16792640,
+        "heapInuse": 17743872,
+        "heapObjects": 2669,
+        "numGC": 324,
+        "pauseNS": 50486005,
+        "totalAlloc": 198548534744
+      },
+      "considered": 2137241,
+      "depth": 7,
+      "elapsedMS": 11231,
+      "move": "f2e4",
+      "score": 1,
+      "stage": "fresh-history"
+    },
+    {
+      "productionChanged": false,
+      "stage": "completed"
+    }
+  ],
+  "warmCorpus": {
+    "positions": 27,
+    "sfDepth": 18,
+    "rows": [
+      {
+        "fen": "rnbqkb1r/ppp1pppp/5n2/3P4/3P4/8/PP2PPPP/RNBQKBNR b KQkq - 0 3",
+        "tag": "mv1fVMW2-warm-ply6",
+        "refereeBest": "c7c6",
+        "before": "e7e6",
+        "after": "e7e6",
+        "beforeLoss": 21,
+        "afterLoss": 21,
+        "beforeDepth": 7,
+        "afterDepth": 7
+      },
+      {
+        "fen": "rnbqkb1r/ppp2ppp/4Pn2/8/3P4/8/PP2PPPP/RNBQKBNR b KQkq - 0 4",
+        "tag": "mv1fVMW2-warm-ply8",
+        "refereeBest": "c8e6",
+        "before": "f8b4",
+        "after": "f8b4",
+        "beforeLoss": 91,
+        "afterLoss": 91,
+        "beforeDepth": 6,
+        "afterDepth": 6
+      },
+      {
+        "fen": "rnbqk2r/ppp2ppp/4Pn2/8/1b1P4/2N5/PP2PPPP/R1BQKBNR b KQkq - 2 5",
+        "tag": "mv1fVMW2-warm-ply10",
+        "refereeBest": "c8e6",
+        "before": "c8e6",
+        "after": "c8e6",
+        "beforeLoss": 0,
+        "afterLoss": 0,
+        "beforeDepth": 6,
+        "afterDepth": 6
+      },
+      {
+        "fen": "rn1qk2r/ppp2ppp/4bn2/8/1b1P4/2N2N2/PP2PPPP/R1BQKB1R b KQkq - 1 6",
+        "tag": "mv1fVMW2-warm-ply12",
+        "refereeBest": "c7c5",
+        "before": "f6e4",
+        "after": "f6e4",
+        "beforeLoss": 116,
+        "afterLoss": 116,
+        "beforeDepth": 5,
+        "afterDepth": 5
+      },
+      {
+        "fen": "rn1qk2r/ppp2ppp/4b3/8/1b1Pn3/2N2N2/PPQ1PPPP/R1B1KB1R b KQkq - 3 7",
+        "tag": "mv1fVMW2-warm-ply14",
+        "refereeBest": "e6f5",
+        "before": "e6f5",
+        "after": "e6f5",
+        "beforeLoss": 0,
+        "afterLoss": 0,
+        "beforeDepth": 6,
+        "afterDepth": 6
+      },
+      {
+        "fen": "rn1qk2r/ppp2ppp/8/5b2/1b1Pn3/2N1PN2/PPQ2PPP/R1B1KB1R b KQkq - 0 8",
+        "tag": "mv1fVMW2-warm-ply16",
+        "refereeBest": "b4c3",
+        "before": "b4c3",
+        "after": "b4c3",
+        "beforeLoss": 0,
+        "afterLoss": 0,
+        "beforeDepth": 8,
+        "afterDepth": 8
+      },
+      {
+        "fen": "rn1qk2r/ppp2ppp/8/5b2/3Pn3/2P1PN2/P1Q2PPP/R1B1KB1R b KQkq - 0 9",
+        "tag": "mv1fVMW2-warm-ply18",
+        "refereeBest": "e4g3",
+        "before": "e4g3",
+        "after": "e4g3",
+        "beforeLoss": 0,
+        "afterLoss": 0,
+        "beforeDepth": 8,
+        "afterDepth": 8
+      },
+      {
+        "fen": "rn1qk2r/ppp2ppp/8/5b2/3P4/1QP1PNn1/P4PPP/R1B1KB1R b KQkq - 2 10",
+        "tag": "mv1fVMW2-warm-ply20",
+        "refereeBest": "g3h1",
+        "before": "g3h1",
+        "after": "g3h1",
+        "beforeLoss": 0,
+        "afterLoss": 0,
+        "beforeDepth": 9,
+        "afterDepth": 9
+      },
+      {
+        "fen": "rn1qk2r/ppp2ppp/8/5b2/3P4/BQP1PN2/P4PPP/R3KB1n b Qkq - 1 11",
+        "tag": "mv1fVMW2-warm-ply22",
+        "refereeBest": "b8d7",
+        "before": "b8d7",
+        "after": "f5c8",
+        "beforeLoss": 0,
+        "afterLoss": 199,
+        "beforeDepth": 5,
+        "afterDepth": 6
+      },
+      {
+        "fen": "rnbqk2r/ppp2ppp/8/4N3/3P4/BQP1P3/P4PPP/R3KB1n b Qkq - 3 12",
+        "tag": "mv1fVMW2-warm-ply24",
+        "refereeBest": "d8f6",
+        "before": "d8f6",
+        "after": "d8f6",
+        "beforeLoss": 0,
+        "afterLoss": 0,
+        "beforeDepth": 8,
+        "afterDepth": 8
+      },
+      {
+        "fen": "rnb1k2r/ppp2ppp/5q2/4N3/3P1P2/BQP1P3/P5PP/R3KB1n b Qkq f3 0 13",
+        "tag": "mv1fVMW2-warm-ply26",
+        "refereeBest": "b8d7",
+        "before": "b8c6",
+        "after": "b8d7",
+        "beforeLoss": 45,
+        "afterLoss": 0,
+        "beforeDepth": 6,
+        "afterDepth": 7
+      },
+      {
+        "fen": "r1b1k2r/ppp2ppp/2n2q2/1B2N3/3P1P2/BQP1P3/P5PP/R3K2n b Qkq - 2 14",
+        "tag": "mv1fVMW2-warm-ply28",
+        "refereeBest": "h7h5",
+        "before": "a7a6",
+        "after": "a7a6",
+        "beforeLoss": 0,
+        "afterLoss": 0,
+        "beforeDepth": 5,
+        "afterDepth": 5
+      },
+      {
+        "fen": "r1b1k2r/1pp2ppp/p1B2q2/4N3/3P1P2/BQP1P3/P5PP/R3K2n b Qkq - 0 15",
+        "tag": "mv1fVMW2-warm-ply30",
+        "refereeBest": "b7c6",
+        "before": "b7c6",
+        "after": "b7c6",
+        "beforeLoss": 0,
+        "afterLoss": 0,
+        "beforeDepth": 10,
+        "afterDepth": 11
+      },
+      {
+        "fen": "r1b1k2r/2p2ppp/p1p2q2/4N3/3P1P2/BQP1P3/P3K1PP/R6n b kq - 1 16",
+        "tag": "mv1fVMW2-warm-ply32",
+        "refereeBest": "f6e6",
+        "before": "g7g5",
+        "after": "f6e6",
+        "beforeLoss": 41,
+        "afterLoss": 0,
+        "beforeDepth": 5,
+        "afterDepth": 8
+      },
+      {
+        "fen": "r1b1k2r/2p2ppp/p1p1q3/4N3/2PP1P2/BQ2P3/P3K1PP/R6n b kq - 0 17",
+        "tag": "mv1fVMW2-warm-ply34",
+        "refereeBest": "f7f6",
+        "before": "f7f6",
+        "after": "f7f6",
+        "beforeLoss": 0,
+        "afterLoss": 0,
+        "beforeDepth": 7,
+        "afterDepth": 8
+      },
+      {
+        "fen": "r1b1k2r/2p3pp/p1p1qp2/3PN3/2P2P2/BQ2P3/P3K1PP/R6n b kq - 0 18",
+        "tag": "mv1fVMW2-warm-ply36",
+        "refereeBest": "c6d5",
+        "before": "e6f5",
+        "after": "e6f5",
+        "beforeLoss": 200,
+        "afterLoss": 200,
+        "beforeDepth": 6,
+        "afterDepth": 6
+      },
+      {
+        "fen": "r1b1k2r/2p3pp/p1p2p2/3P1q2/2P2P2/BQ2PN2/P3K1PP/R6n b kq - 2 19",
+        "tag": "mv1fVMW2-warm-ply38",
+        "refereeBest": "f5g4",
+        "before": "f5g6",
+        "after": "f5g6",
+        "beforeLoss": 8,
+        "afterLoss": 8,
+        "beforeDepth": 6,
+        "afterDepth": 7
+      },
+      {
+        "fen": "r1b1k2r/2p3pp/p1p2pq1/3P4/2P2P2/BQ2PN2/P3K1PP/6Rn b kq - 4 20",
+        "tag": "mv1fVMW2-warm-ply40",
+        "refereeBest": "e8f7",
+        "before": "c8f5",
+        "after": "c8f5",
+        "beforeLoss": 35,
+        "afterLoss": 35,
+        "beforeDepth": 5,
+        "afterDepth": 5
+      },
+      {
+        "fen": "r3k2r/1Qp3pp/p1p2pq1/3P1b2/2P2P2/B3PN2/P3K1PP/6Rn b kq - 6 21",
+        "tag": "mv1fVMW2-warm-ply42",
+        "refereeBest": "a8c8",
+        "before": "e8f7",
+        "after": "e8f7",
+        "beforeLoss": 36,
+        "afterLoss": 36,
+        "beforeDepth": 4,
+        "afterDepth": 5
+      },
+      {
+        "fen": "r6r/2Q2kpp/p1p2pq1/3P1b2/2P2P2/B3PN2/P3K1PP/6Rn b - - 0 22",
+        "tag": "mv1fVMW2-warm-ply44",
+        "refereeBest": "f7g8",
+        "before": "f7g8",
+        "after": "f7g8",
+        "beforeLoss": 0,
+        "afterLoss": 0,
+        "beforeDepth": 7,
+        "afterDepth": 8
+      },
+      {
+        "fen": "r5kr/2Q3pp/p1p2pq1/3P1b2/2PN1P2/B3P3/P3K1PP/6Rn b - - 2 23",
+        "tag": "mv1fVMW2-warm-ply46",
+        "refereeBest": "h7h5",
+        "before": "f5d3",
+        "after": "f5d3",
+        "beforeLoss": 51,
+        "afterLoss": 51,
+        "beforeDepth": 6,
+        "afterDepth": 7
+      },
+      {
+        "fen": "r5kr/2Q3pp/p1p2pq1/3P4/2PN1P2/B2bP3/P2K2PP/6Rn b - - 4 24",
+        "tag": "mv1fVMW2-warm-ply48",
+        "refereeBest": "d3c4",
+        "before": "h1f2",
+        "after": "h1f2",
+        "beforeLoss": 117,
+        "afterLoss": 117,
+        "beforeDepth": 7,
+        "afterDepth": 7
+      },
+      {
+        "fen": "r5kr/6pp/p1Q2pq1/3P4/2PN1P2/B2bP3/P2K1nPP/6R1 b - - 0 25",
+        "tag": "mv1fVMW2-warm-ply50",
+        "refereeBest": "a8e8",
+        "before": "a8e8",
+        "after": "a8e8",
+        "beforeLoss": 0,
+        "afterLoss": 0,
+        "beforeDepth": 7,
+        "afterDepth": 7
+      },
+      {
+        "fen": "4r1kr/6pp/p1QP1pq1/8/2PN1P2/B2bP3/P2K1nPP/6R1 b - - 0 26",
+        "tag": "mv1fVMW2-warm-ply52",
+        "refereeBest": "g6f7",
+        "before": "d3e4",
+        "after": "d3e4",
+        "beforeLoss": 102,
+        "afterLoss": 102,
+        "beforeDepth": 6,
+        "afterDepth": 6
+      },
+      {
+        "fen": "4r1kr/2Q3pp/p2P1pq1/8/2PNbP2/B3P3/P2K1nPP/6R1 b - - 2 27",
+        "tag": "mv1fVMW2-warm-ply54",
+        "refereeBest": "e4f5",
+        "before": "e4d5",
+        "after": "e4d5",
+        "beforeLoss": 64,
+        "afterLoss": 64,
+        "beforeDepth": 6,
+        "afterDepth": 6
+      },
+      {
+        "fen": "4r1kr/2Q3pp/p2P1pq1/3b1P2/2PN4/B3P3/P2K1nPP/6R1 b - - 0 28",
+        "tag": "mv1fVMW2-warm-ply56",
+        "refereeBest": "g6g5",
+        "before": "g6h6",
+        "after": "g6h6",
+        "beforeLoss": 47,
+        "afterLoss": 47,
+        "beforeDepth": 6,
+        "afterDepth": 7
+      },
+      {
+        "fen": "4r1kr/2Q3pp/p2P1p1q/3b1P2/2PN4/B3P3/P2K1nPP/4R3 b - - 2 29",
+        "tag": "mv1fVMW2-warm-ply58",
+        "refereeBest": "f2e4",
+        "before": "e8e4",
+        "after": "f2e4",
+        "beforeLoss": 1237,
+        "afterLoss": 0,
+        "beforeDepth": 6,
+        "afterDepth": 7
+      }
+    ],
+    "before": {
+      "cappedMeanLoss": 73.1,
+      "lossesAtLeast100cp": 5,
+      "lossesAtLeast200cp": 2,
+      "mateScaleLosses": 0
+    },
+    "after": {
+      "cappedMeanLoss": 40.3,
+      "lossesAtLeast100cp": 5,
+      "lossesAtLeast200cp": 1,
+      "mateScaleLosses": 0
+    },
+    "newMateScaleLosses": [],
+    "largeRegressions": [
+      {
+        "fen": "rn1qk2r/ppp2ppp/8/5b2/3P4/BQP1PN2/P4PPP/R3KB1n b Qkq - 1 11",
+        "tag": "mv1fVMW2-warm-ply22",
+        "refereeBest": "b8d7",
+        "before": "b8d7",
+        "after": "f5c8",
+        "beforeLoss": 0,
+        "afterLoss": 199,
+        "beforeDepth": 5,
+        "afterDepth": 6
+      }
+    ]
+  },
+  "limitations": [
+    "Single full warmed replay per build; repeated target searches share the candidate replay state",
+    "One 199cp regression at ply22; overall capped mean improves",
+    "LazySMP one-second test remains unstable on both baseline and candidate; suite not fully green",
+    "No fresh-game or Elo gain established"
+  ],
+  "deployment": {
+    "timestamp": "2026-10-15T00:03:14.138243-07:00",
+    "oldPid": 1668078,
+    "pid": 1769388,
+    "binarySha256": "a6df9359c39b657d903714218d61abb21394f8a6ca4e3bdc1d5929fa764dcbfe",
+    "rollbackBinary": "/tmp/chess-oct15-main-before-cache-pressure",
+    "noActiveGamesConfirmed": true,
+    "preservedLogBytes": 30010944,
+    "webServerPidPreserved": 1931717,
+    "runningHashVerified": "a6df9359c39b657d903714218d61abb21394f8a6ca4e3bdc1d5929fa764dcbfe"
+  },
+  "firstFreshGame": {
+    "id": "FZUllGuc",
+    "status": "mate",
+    "winner": "white",
+    "botColor": "white",
+    "plies": 83,
+    "opponentRating": 1675,
+    "observedPressureCleanupCount": 9,
+    "interpretation": "Operational win only; one weaker opponent does not establish Elo improvement"
+  }
+}

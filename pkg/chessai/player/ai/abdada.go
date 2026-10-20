@@ -11,6 +11,7 @@ import (
 	"github.com/Vadman97/GolangChessAI/pkg/chessai/util"
 	"log"
 	"math"
+	"math/bits"
 	"runtime"
 	"sync"
 	"sync/atomic"
@@ -304,9 +305,9 @@ func (ab *ABDADA) ABDADA(root *board.Board, depth, alpha, beta int, exclusivePro
 	originalAlpha := alpha
 	best.Score, best.Move = ttAnswer.score, ttAnswer.bestMove
 
-	if ab.player.terminalNode(root, movesArr) {
+	if ab.player.terminalNode(root, len(*movesArr) > 0) {
 		return ScoredMove{
-			Score: AdjustMateScore(ab.player.EvaluateBoard(root, currentPlayer).TotalScore, depth),
+			Score: AdjustMateScore(ab.player.EvaluateBoard(root, currentPlayer, previousMove).TotalScore, depth),
 			// Repetition/50-move terminals depend on path counters that are
 			// not in the position hash; checkmate/stalemate/material do not.
 			PathDependentDraw: root.CurrentPositionRepeats >= 2 || root.MovesSinceNoDraw >= 100,
@@ -321,7 +322,11 @@ func (ab *ABDADA) ABDADA(root *board.Board, depth, alpha, beta int, exclusivePro
 		extensions--
 	}
 
-	if alpha >= beta || best.Score == OnEvaluation {
+	// A busy entry can have no move yet; defer it before its sentinel enters a search window.
+	if best.Score == OnEvaluation {
+		return best
+	}
+	if alpha >= beta {
 		// Only prune if we have a valid best move to return. A zero BestMove in
 		// the TT means the entry was written before any move was evaluated (e.g.
 		// after an abort). Returning it would propagate a zero-move to the root.
@@ -344,7 +349,7 @@ func (ab *ABDADA) ABDADA(root *board.Board, depth, alpha, beta int, exclusivePro
 	// eval >= beta is the standard NMP precondition and also naturally disables
 	// null move at full-window PV nodes where beta is PosInf.
 	if !ab.DisableNullMove && nullMoveOk && !inCheck && depth >= nullMoveMinDepth && !onlyKingAndPawns(root, currentPlayer) && ply > 0 {
-		staticEval := ab.player.EvaluateBoard(root, currentPlayer).TotalScore
+		staticEval := ab.player.EvaluateBoard(root, currentPlayer, previousMove).TotalScore
 		if staticEval >= beta {
 			R := nullMoveR
 			if depth >= 7 {
@@ -367,7 +372,7 @@ func (ab *ABDADA) ABDADA(root *board.Board, depth, alpha, beta int, exclusivePro
 	var standPat int
 	var canFutilityPrune bool
 	if !inCheck && depth <= futilityMaxDepth && alpha < WinScore && beta > LossScore && (!ab.DisableFutility || !ab.DisableRazoring) {
-		standPat = ab.player.EvaluateBoard(root, currentPlayer).TotalScore
+		standPat = ab.player.EvaluateBoard(root, currentPlayer, previousMove).TotalScore
 		canFutilityPrune = !ab.DisableFutility
 
 		// Razoring at depth 1: if the static eval is far below alpha, drop to qsearch.
@@ -463,7 +468,10 @@ func (ab *ABDADA) ABDADA(root *board.Board, depth, alpha, beta int, exclusivePro
 				var value ScoredMove
 				child, pm := ab.player.applyMove(root, &move)
 
-				if doLMR {
+				// Quiet moves can close escape squares before the first check in a mating net.
+				quietMateThreat := doLMR && !child.IsKingInCheck(currentPlayer^1) &&
+					addsKingRingAttack(root, child, move, currentPlayer) && hasMateInOne(child, nil, currentPlayer)
+				if doLMR && !quietMateThreat {
 					reduction := int(math.Log(float64(depth)) * math.Log(float64(moveIdx)) / 2.0)
 					if reduction < 1 {
 						reduction = 1
@@ -536,7 +544,7 @@ func (ab *ABDADA) getBestMove(b *board.Board, depth, alpha, beta int, previousMo
 
 	movesArr := b.GetAllMoves(ab.player.PlayerColor, previousMove)
 	if len(*movesArr) == 0 {
-		return ScoredMove{Score: ab.player.EvaluateBoard(b, ab.player.PlayerColor).TotalScore}
+		return ScoredMove{Score: ab.player.EvaluateBoard(b, ab.player.PlayerColor, previousMove).TotalScore}
 	}
 	ttAnswer := ab.ttRead(b, ab.player.PlayerColor, uint16(depth), alpha, beta, false, true)
 	orderedMoves := orderMoves(*movesArr, ttAnswer.bestMove, [2]location.Move{}, ab, b, previousMove)
@@ -1188,7 +1196,7 @@ func (ab *ABDADA) iterativeABDADA(b *board.Board, previousMove *board.LastMove) 
 	rootMoves := b.GetAllMoves(ab.player.PlayerColor, previousMove)
 	if len(*rootMoves) == 1 {
 		m := (*rootMoves)[0]
-		score := ab.player.EvaluateBoard(b, ab.player.PlayerColor).TotalScore
+		score := ab.player.EvaluateBoard(b, ab.player.PlayerColor, previousMove).TotalScore
 		ab.player.LastSearchDepth = 0
 		ab.player.printer <- fmt.Sprintf("%s easy move (only legal move): %s\n", ab.GetName(), m)
 		return ScoredMove{Move: m, Score: score}
@@ -1325,6 +1333,22 @@ func isEnPassantMove(b *board.Board, m location.Move) bool {
 		return false
 	}
 	return b.IsEmpty(m.End) && m.Start.GetCol() != m.End.GetCol()
+}
+
+func addsKingRingAttack(before, after *board.Board, move location.Move, side color.Color) bool {
+	enemyKing := after.GetPiece(after.KingLocations[side^1])
+	ring := enemyKing.GetAttackableMoves(after)
+	ring.SetLocation(enemyKing.GetPosition())
+	oldAttacks := before.GetPiece(move.Start).GetAttackableMoves(before)
+	newAttacks := after.GetPiece(move.End).GetAttackableMoves(after)
+	for squares := uint64(newAttacks & ^oldAttacks & ring); squares != 0; squares &= squares - 1 {
+		index := bits.TrailingZeros64(squares)
+		square := location.NewLocation(location.CoordinateType(index/board.Width), location.CoordinateType(index%board.Width))
+		if square.Equals(enemyKing.GetPosition()) || after.IsEmpty(square) {
+			return true
+		}
+	}
+	return false
 }
 
 func isMoveInList(m location.Move, moves *[]location.Move) bool {

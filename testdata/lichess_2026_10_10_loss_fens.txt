@@ -1,0 +1,12 @@
+1r3rk1/p1q2ppp/4bn2/2pp4/B7/2NP1Pb1/PPP1R2P/R1BQ2K1 b - - 1 16 | 0U5AJQZN-ply32 | g3h4 | e6h3 | cold-hash SF16 loss 83 cp; clock before 836.03s
+1r3rk1/p1q2ppp/5n2/1Npp4/B7/3P1Pbb/PPP1R2P/R1BQ2K1 b - - 3 17 | 0U5AJQZN-ply34 | g3h2 | b8b5 | cold-hash SF16 loss 147 cp; clock before 828.43s
+5rk1/2q2ppp/B4n2/2pp4/8/3P1Pbb/PPP1R2P/R1BQ2K1 b - - 0 19 | 0U5AJQZN-ply38 | f6h5 | f8a8 | cold-hash SF16 loss 138 cp; clock before 816.83s
+r5k1/2q2ppp/5n2/1Bpp4/8/3P1Pbb/PPP1R2P/R1BQ2K1 b - - 2 20 | 0U5AJQZN-ply40 | f6h5 | g3h4 | cold-hash SF16 loss 105 cp; clock before 813.07s
+1rb5/p1p1q2k/4p2p/2b2rp1/5pN1/1P1Q4/PBP2PPP/R3R1K1 b - - 3 21 | 99MAHDYX-ply42 | h6h5 | e6e5 | cold-hash SF16 loss 333 cp; clock before 157.87s
+1rb5/p1p1q2k/7p/2b1Rrp1/5pN1/1P1Q4/PBP2PPP/R5K1 b - - 0 22 | 99MAHDYX-ply44 | e7f7 | e7d6 | cold-hash SF16 loss 93 cp; clock before 156.75s
+rnbqkb1r/ppp2ppp/4Pn2/8/3P4/8/PP2PPPP/RNBQKBNR b KQkq - 0 4 | rqwLdsu1-ply8 | c8e6 | f8b4 | cold-hash SF16 loss 83 cp; clock before 888.67s
+4r1k1/pQp3pp/3q4/8/1n1PN3/1b3N2/1P3PPP/2K2B1R b - - 2 19 | rqwLdsu1-ply38 | d6f8 | d6f4 | cold-hash SF16 loss 169 cp; clock before 693.87s
+4r1k1/pQp3pp/8/8/1n1PNq2/1b6/1P1N1PPP/2K2B1R b - - 4 20 | rqwLdsu1-ply40 | a7a5 | c7c5 | cold-hash SF16 loss 116 cp; clock before 686.35s
+4r1k1/1Q4pp/7q/p1P5/1n2N3/1b4P1/1P1N1PBP/2K4R b - - 1 23 | rqwLdsu1-ply46 | h6e6 | b3c2 | cold-hash SF16 loss 136 cp; clock before 659.39s
+4r1k1/1Q4pp/3N3q/p1P5/1n6/6P1/1PbN1PBP/2K4R b - - 3 24 | rqwLdsu1-ply48 | c2g6 | h6h5 | cold-hash SF16 loss 142 cp; clock before 650.03s
+4qk2/1Q4pp/8/p1P5/1nB5/6P1/1PbN1P1P/2K4R b - - 3 27 | rqwLdsu1-ply54 | g7g5 | e8g6 | cold-hash SF16 loss 587 cp; clock before 623.39s

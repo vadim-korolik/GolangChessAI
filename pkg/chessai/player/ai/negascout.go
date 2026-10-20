@@ -98,8 +98,8 @@ func (n *NegaScout) search(root *board.Board, depth, alpha, beta int, currentPla
 	}
 
 	movesArr := root.GetAllMoves(currentPlayer, previousMove)
-	if n.player.terminalNode(root, movesArr) {
-		return ScoredMove{Score: AdjustMateScore(n.player.EvaluateBoard(root, currentPlayer).TotalScore, depth)}
+	if n.player.terminalNode(root, len(*movesArr) > 0) {
+		return ScoredMove{Score: AdjustMateScore(n.player.EvaluateBoard(root, currentPlayer, previousMove).TotalScore, depth)}
 	}
 	if len(*movesArr) == 1 && extensions > 0 {
 		depth++
@@ -130,7 +130,7 @@ func (n *NegaScout) search(root *board.Board, depth, alpha, beta int, currentPla
 	var standPat int
 	canFutilityPrune := false
 	if negaScoutForwardPruning && !inCheck && depth <= futilityMaxDepth && alpha < WinScore && beta > LossScore {
-		standPat = n.player.EvaluateBoard(root, currentPlayer).TotalScore
+		standPat = n.player.EvaluateBoard(root, currentPlayer, previousMove).TotalScore
 		canFutilityPrune = true
 		if depth == razorDepth && standPat+razorMargin < alpha && ply > 0 {
 			qScore := n.player.Quiesce(root, alpha-1, alpha, currentPlayer, previousMove)
@@ -233,7 +233,7 @@ func (n *NegaScout) getBestMove(b *board.Board, depth, alpha, beta int, previous
 	originalAlpha := alpha
 	movesArr := b.GetAllMoves(n.player.PlayerColor, previousMove)
 	if len(*movesArr) == 0 {
-		return ScoredMove{Score: n.player.EvaluateBoard(b, n.player.PlayerColor).TotalScore}
+		return ScoredMove{Score: n.player.EvaluateBoard(b, n.player.PlayerColor, previousMove).TotalScore}
 	}
 	ttAnswer := n.ttRead(b, n.player.PlayerColor, uint16(depth), alpha, beta)
 	orderedMoves := n.orderMoves(*movesArr, ttAnswer.bestMove, b, previousMove, 0)

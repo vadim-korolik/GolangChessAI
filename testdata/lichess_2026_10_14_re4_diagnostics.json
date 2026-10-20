@@ -1,0 +1,46 @@
+{
+  "gameId": "mv1fVMW2",
+  "ply": 58,
+  "fen": "4r1kr/2Q3pp/p2P1p1q/3b1P2/2PN4/B3P3/P2K1nPP/4R3 b - - 2 29",
+  "fixedDepthReplay": {
+    "workers": 8,
+    "depth": 6,
+    "move": "e8e4",
+    "score": 238,
+    "elapsedMS": 2441,
+    "nodesPerSecond": 171924,
+    "log": "/tmp/chess-oct15-re4-depth6.txt"
+  },
+  "live": {
+    "budgetMS": 11229,
+    "elapsedMS": 11261.302041,
+    "completedDepth": 6,
+    "move": "e8e4",
+    "score": 238
+  },
+  "matchingDebugSequences": [
+    {
+      "line": 1744146,
+      "considered": 979611,
+      "evaluationCacheWrites": 19855754
+    },
+    {
+      "line": 1822355,
+      "considered": 1006627,
+      "evaluationCacheWrites": 19680892
+    }
+  ],
+  "debugAttributionLimit": "moveDebug.log has no timestamps or game IDs; these blocks match the preceding Black score sequence 655,740,238, but attribution to one specific game is not independently established",
+  "runtimeConfiguration": {
+    "cacheMaxPlayerElements": 20000000,
+    "gcPercent": 400,
+    "memoryLimitBytes": 2147483648
+  },
+  "verifiedSourceFacts": [
+    "Worker-local transposition tables reset at move boundaries",
+    "The shared evaluation cache survives across moves up to its configured write threshold",
+    "Repetition history drops after irreversible moves"
+  ],
+  "interpretation": "A cold search reproduces the exact live move and score at completed depth six; at the actual time budget it reaches depth seven/eight and avoids Re4. Runtime/cache/GC costs require profiling; no cache corruption is established.",
+  "productionChanged": false
+}

@@ -17,7 +17,7 @@ func TestEvaluateBoardMateNotMaskedByPriorRepetitionHistory(t *testing.T) {
 	parsed.Board.CurrentPositionRepeats = 0
 
 	player := ai.NewAIPlayer(color.Black, &ai.Random{})
-	score := player.EvaluateBoard(parsed.Board, color.Black).TotalScore
+	score := player.EvaluateBoard(parsed.Board, color.Black, parsed.Previous).TotalScore
 	if score > ai.LossScore {
 		t.Fatalf("expected checkmate to remain a loss despite prior repetition history, got %d", score)
 	}

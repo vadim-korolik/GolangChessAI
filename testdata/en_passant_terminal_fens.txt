@@ -1,0 +1,4 @@
+8/8/8/6pP/5k1K/8/5n2/8 w - g6 0 1 | ep-only-white-check | h5g6 | | only check evasion; evaluation must not report mate
+5n2/8/5k1K/6pP/8/8/8/8 w - g6 0 1 | ep-only-white-stalemate | h5g6 | | sole legal move; evaluation must not report stalemate
+8/5N2/8/5K1k/6Pp/8/8/8 b - g3 0 1 | ep-only-black-check | h4g3 | | mirrored check evasion
+8/8/8/8/6Pp/5K1k/8/5N2 b - g3 0 1 | ep-only-black-stalemate | h4g3 | | mirrored sole legal move

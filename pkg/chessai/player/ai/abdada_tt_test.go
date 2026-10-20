@@ -430,6 +430,28 @@ func TestABDADATTUpperBoundCutoffReturnsBoundScore(t *testing.T) {
 	}
 }
 
+func TestABDADATTBusyEntryWithoutMoveDefersSearch(t *testing.T) {
+	for _, window := range [][2]int{{NegInf, PosInf}, {-50, 50}} {
+		b := &board.Board{}
+		b.ResetDefault()
+		p := NewAIPlayer(color.White, &ABDADA{})
+		p.TranspositionTableEnabled = true
+		p.PrintInfo = false
+		p.Debug = false
+		ab := &ABDADA{player: p}
+		h := b.Hash()
+		p.transpositionTable.Store(&h, color.White, &transposition_table.TranspositionTableEntryABDADA{
+			EntryType:     transposition_table.Unset,
+			Depth:         3,
+			NumProcessors: 1,
+		})
+		got := ab.ABDADA(b, 3, window[0], window[1], true, color.White, nil, true, 1, maxExtensions, false)
+		if got.Score != OnEvaluation || p.Metrics.MovesConsidered != 0 {
+			t.Fatalf("busy entry must defer without searching: window=%v score=%d nodes=%d", window, got.Score, p.Metrics.MovesConsidered)
+		}
+	}
+}
+
 func TestABDADASelectRootBestPrefersHighestScoreOverVoteCount(t *testing.T) {
 	popularMove := location.Move{
 		Start: location.NewLocation(1, 4),

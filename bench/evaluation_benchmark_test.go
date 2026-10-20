@@ -14,7 +14,7 @@ func BenchmarkEvaluate(b *testing.B) {
 	bo1.ResetDefault()
 	var eval *ai.Evaluation
 	for i := 0; i < b.N; i++ {
-		eval = p.EvaluateBoard(&bo1, color.Black)
+		eval = p.EvaluateBoard(&bo1, color.Black, nil)
 	}
 	assert.NotNil(b, eval)
 	if eval != nil {
@@ -29,7 +29,7 @@ func BenchmarkEvaluateParallel(b *testing.B) {
 		bo1 := board.Board{}
 		bo1.ResetDefault()
 		for pb.Next() {
-			p.EvaluateBoard(&bo1, color.Black)
+			p.EvaluateBoard(&bo1, color.Black, nil)
 		}
 	})
 }

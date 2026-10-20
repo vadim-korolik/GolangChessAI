@@ -16,7 +16,7 @@ func TestQuiesceKeepsCaptureDefendedOnlyByPinnedKnight(t *testing.T) {
 		t.Fatal(err)
 	}
 	p := ai.NewAIPlayer(position.Active, &ai.ABDADA{NumThreads: 1})
-	standPat := p.EvaluateBoard(position.Board, position.Active).TotalScore
+	standPat := p.EvaluateBoard(position.Board, position.Active, position.Previous).TotalScore
 	got := p.Quiesce(position.Board, ai.NegInf, ai.PosInf, position.Active, position.Previous)
 	if got <= standPat {
 		t.Fatalf("quiescence missed the free pawn: score=%d standPat=%d", got, standPat)

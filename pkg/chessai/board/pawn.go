@@ -42,7 +42,10 @@ func (r *Pawn) GetMoves(board *Board, onlyFirstMove bool) *[]location.Move {
 	if onlyFirstMove && len(moves) > 0 {
 		return &moves
 	}
-	moves = append(moves, *r.getForwardMoves(board, onlyFirstMove)...)
+	// A quiet move can promote only from the opponent's starting pawn rank.
+	if !board.captureOrPromotionOnly || r.Location.GetRow() == StartRow[r.Color^1]["Pawn"] {
+		moves = append(moves, *r.getForwardMoves(board, onlyFirstMove)...)
+	}
 	return &moves
 }
 

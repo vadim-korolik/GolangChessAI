@@ -321,3 +321,38 @@ func TestPositionBlindBookStopsBeforeOpponentCentralBreak(t *testing.T) {
 	assert.Equal(t, exd5.End, got.End)
 	assert.Equal(t, OpeningNone, p.Opening, "position-blind script must stop before move three")
 }
+
+func TestPositionAwareCentralRepliesOverrideBlindScripts(t *testing.T) {
+	for _, tt := range []struct {
+		name  string
+		line  []string
+		reply string
+	}{
+		{"queens-gambit", []string{"d2d4", "d7d5", "c2c4"}, "e7e6"},
+		{"english", []string{"g1f3", "d7d5", "c2c4"}, "d5d4"},
+	} {
+		t.Run(tt.name, func(t *testing.T) {
+			for _, opening := range []int{OpeningNone, 0, 1} {
+				b := &board.Board{}
+				b.ResetDefault()
+				var previous *board.LastMove
+				for ply, uci := range tt.line {
+					previous = gateApply(t, b, previous, color.Color(ply%2), uci)
+				}
+				nf6 := location.Move{Start: gateSquare(t, "g8"), End: gateSquare(t, "f6")}
+				p := NewAIPlayer(color.Black, &fixedOpeningRegressionAlgorithm{move: nf6})
+				p.Opening, p.TurnCount = opening, 1
+				hash := b.Hash()
+				got := p.GetBestMove(b, previous, nil)
+				want := location.Move{Start: gateSquare(t, tt.reply[:2]), End: gateSquare(t, tt.reply[2:])}
+				if *got != want {
+					t.Fatalf("opening=%d: exact central response must be %s, got %v", opening, tt.reply, *got)
+				}
+				require.Equal(t, hash, b.Hash(), "choosing an opening reply must preserve the board")
+				require.Nil(t, p.positionAwareOpeningResponse(b, nil), "last move must match the line")
+				b.SetFlag(board.FlagKingMoved, color.Black, true)
+				require.Nil(t, p.positionAwareOpeningResponse(b, previous), "castling rights must match the line")
+			}
+		})
+	}
+}

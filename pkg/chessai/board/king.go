@@ -40,7 +40,7 @@ func (r *King) GetPosition() location.Location {
 func (r *King) GetMoves(board *Board, onlyFirstMove bool) *[]location.Move {
 	var moves []location.Move
 	moves = append(moves, *r.GetNormalMoves(board, onlyFirstMove)...)
-	if onlyFirstMove && len(moves) > 0 {
+	if board.captureOrPromotionOnly || (onlyFirstMove && len(moves) > 0) {
 		return &moves
 	}
 	moves = append(moves, *r.GetCastleMoves(board, onlyFirstMove)...)
@@ -60,6 +60,9 @@ func (r *King) GetNormalMoves(board *Board, onlyFirstMove bool) *[]location.Move
 				if inBounds {
 					data := board.getPieceData(l)
 					if data == 0 || data&0x1 != r.Color {
+						if board.captureOrPromotionOnly && data == 0 {
+							continue
+						}
 						possibleMove := location.Move{Start: r.GetPosition(), End: l}
 						if !board.willMoveLeaveKingInCheck(r.Color, possibleMove) {
 							moves = append(moves, possibleMove)
@@ -157,32 +160,28 @@ func (r *King) Move(m *location.Move, b *Board) {
  */
 func (r *King) canCastle(m *location.Move, b *Board) bool {
 	// rook can be under attack - only need to check two spaces where king will move
-	var leftLocation, rightLocation location.Location
+	row, col := m.Start.Get()
+	if row != StartRow[r.Color]["Piece"] || col != 3 {
+		return false
+	}
+	step, rookCol := 1, 7
 	if m.End.GetCol() < m.Start.GetCol() {
-		leftLocation = m.End
-		rightLocation = m.Start
-		leftLocation, _ = leftLocation.AddRelative(location.LeftMove)
-	} else {
-		leftLocation = m.Start
-		rightLocation = m.End
-		rightLocation, _ = rightLocation.AddRelative(location.RightMove)
+		step, rookCol = -1, 0
+	}
+	rook := b.GetPiece(location.NewLocation(row, location.CoordinateType(rookCol)))
+	if rook == nil || rook.GetPieceType() != piece.RookType || rook.GetColor() != r.Color {
+		return false
 	}
 	// A blocked path cannot be used regardless of enemy attacks. Check the
 	// cheap occupancy condition before constructing the full attack map.
-	llRow, llCol := leftLocation.Get()
-	for c := llCol; c <= rightLocation.GetCol(); c++ {
-		loc := location.NewLocation(llRow, c)
-		data := b.getPieceData(loc)
-		if data != 0 {
-			t := (data & 0xE) >> 1
-			if t != piece.KingType && t != piece.RookType {
-				return false
-			}
+	for c := int(col) + step; c != rookCol; c += step {
+		if b.getPieceData(location.NewLocation(row, location.CoordinateType(c))) != 0 {
+			return false
 		}
 	}
 	enemyAttacks := b.GetAllAttackableMoves(r.Color ^ 1)
-	for c := llCol; c <= rightLocation.GetCol(); c++ {
-		if enemyAttacks.IsLocationSet(location.NewLocation(llRow, c)) {
+	for i := 0; i <= 2; i++ {
+		if enemyAttacks.IsLocationSet(location.NewLocation(row, location.CoordinateType(int(col)+i*step))) {
 			return false
 		}
 	}

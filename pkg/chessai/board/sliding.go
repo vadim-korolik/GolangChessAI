@@ -46,14 +46,16 @@ func (b *Board) appendSlidingMoves(pieceColor byte, start location.Location, dir
 			if data != 0 && data&0x1 == pieceColor {
 				break // friendly piece blocks the ray
 			}
-			possibleMove := location.Move{
-				Start: start,
-				End:   location.NewLocation(location.CoordinateType(r), location.CoordinateType(c)),
-			}
-			if !b.willMoveLeaveKingInCheck(pieceColor, possibleMove) {
-				*moves = append(*moves, possibleMove)
-				if onlyFirstMove {
-					return true
+			if !b.captureOrPromotionOnly || data != 0 {
+				possibleMove := location.Move{
+					Start: start,
+					End:   location.NewLocation(location.CoordinateType(r), location.CoordinateType(c)),
+				}
+				if !b.willMoveLeaveKingInCheck(pieceColor, possibleMove) {
+					*moves = append(*moves, possibleMove)
+					if onlyFirstMove {
+						return true
+					}
 				}
 			}
 			if data != 0 {

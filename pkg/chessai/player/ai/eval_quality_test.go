@@ -42,8 +42,8 @@ func TestBishopPairValuedInMiddlegame(t *testing.T) {
 		"B_R|B_N|B_B|B_Q|B_K|   |   |B_R ",
 	})
 
-	evWith := EvaluateBoardNoCache(withPair, color.White).TotalScore
-	evNo := EvaluateBoardNoCache(noPair, color.White).TotalScore
+	evWith := EvaluateBoardNoCache(withPair, color.White, nil).TotalScore
+	evNo := EvaluateBoardNoCache(noPair, color.White, nil).TotalScore
 	// evWith includes +300 bishop material AND the pair bonus; evNo lacks both.
 	// The pair bonus alone is (evWith - evNo) - 300 (material) - any PST for f1 bishop.
 	// We only need a coarse lower bound: keeping the pair must be worth clearly more
@@ -118,8 +118,8 @@ func TestRookBlockadesAdvancedEnemyPasser(t *testing.T) {
 		"B_K|   |   |   |   |   |   |   ",
 	})
 
-	blockadeScore := EvaluateBoardNoCache(blockade, color.White).TotalScore
-	passiveScore := EvaluateBoardNoCache(passive, color.White).TotalScore
+	blockadeScore := EvaluateBoardNoCache(blockade, color.White, nil).TotalScore
+	passiveScore := EvaluateBoardNoCache(passive, color.White, nil).TotalScore
 	assert.Truef(t, blockadeScore-passiveScore > 30,
 		"rook directly blockading an advanced passed pawn should be clearly preferred; got diff %d",
 		blockadeScore-passiveScore)
@@ -150,8 +150,8 @@ func TestDefendingKingApproachesAdvancedPasser(t *testing.T) {
 		"   |   |   |   |   |   |B_R|   ",
 	})
 
-	passiveScore := EvaluateBoardNoCache(passive, color.Black).TotalScore
-	activeScore := EvaluateBoardNoCache(active, color.Black).TotalScore
+	passiveScore := EvaluateBoardNoCache(passive, color.Black, nil).TotalScore
+	activeScore := EvaluateBoardNoCache(active, color.Black, nil).TotalScore
 	assert.Truef(t, activeScore > passiveScore,
 		"defending king should be rewarded for approaching an advanced passed pawn; passive=%d active=%d",
 		passiveScore, activeScore)
