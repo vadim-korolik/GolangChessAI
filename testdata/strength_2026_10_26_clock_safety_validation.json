@@ -1,0 +1,136 @@
+{
+  "status": "Validated clock cap deployed; source, process hash, log prefix, supervisor, PGO and online status verified. Fresh-game Elo benefit unverified.",
+  "baselineSha256": "5937b371dc34cd2aefa442b64aad4218ea30d3fa0ecae66ddf2694d6ecabb3f1",
+  "candidateSha256": "b8da417d2a5ed96ea25160a4c01b67c6bbbae5d9b9641689b10f5bd03df31c34",
+  "pgoSha256": "fd489831db47b5aa5fbd41e581a2a56d876223aeb19b4c67073c57c46cbc88ab",
+  "failure": {
+    "gameId": "Fz4rRXOm",
+    "fixture": "testdata/lichess_2026_10_26_increment_flag_game.json",
+    "side": "black",
+    "clockBeforeMs": 1160,
+    "incrementMs": 1000,
+    "oldThinkMs": 1000,
+    "newThinkMs": 580,
+    "lastAcknowledgedClockMs": 1160,
+    "previousMoveThinkSeconds": 1.008332694,
+    "previousOwnClockBeforeMs": 1340,
+    "previousOwnClockAfterMs": 1160,
+    "estimatedPreviousTurnOverheadMs": 171.667306,
+    "mechanism": "Allocator adds full future increment even after its reserve exhausts. Thinking near one second plus measured overhead exceeds the 1.16-second bank before increment is earned.",
+    "attemptedOwnPly": 246,
+    "lastMovePostHttpStatus": 200,
+    "finishedExportPlies": 245
+  },
+  "fix": "Cap both ordinary and critical final budgets at half of currently available clock. Keep a 1ms minimum because MaxThinkTime=0 disables the deadline.",
+  "sourcePatch": "--- production/lichess.go\n+++ candidate/lichess.go\n@@ -318,7 +318,7 @@\n \tif think > maxThink {\n \t\tthink = maxThink\n \t}\n-\treturn think\n+\treturn limitThinkTimeToClock(think, timeLeft)\n }\n \n // maxThinkTimeForClock caps a single move's think time. The configured\n@@ -361,6 +361,19 @@\n \t}\n \tif think > criticalMax {\n \t\tthink = criticalMax\n+\t}\n+\treturn limitThinkTimeToClock(think, timeLeft)\n+}\n+\n+// The increment arrives after delivery; keep half the current clock for overhead.\n+func limitThinkTimeToClock(think, timeLeft time.Duration) time.Duration {\n+\tlimit := timeLeft / 2\n+\tif limit < time.Millisecond {\n+\t\t// A zero MaxThinkTime means unlimited search, including with a missing clock.\n+\t\tlimit = time.Millisecond\n+\t}\n+\tif think > limit {\n+\t\treturn limit\n \t}\n \treturn think\n }\n",
+  "testSource": "package server\n\nimport (\n\t\"encoding/json\"\n\t\"os\"\n\t\"testing\"\n\t\"time\"\n\n\t\"github.com/Vadman97/GolangChessAI/pkg/chessai/analysis\"\n\t\"github.com/Vadman97/GolangChessAI/pkg/chessai/color\"\n\t\"github.com/Vadman97/GolangChessAI/pkg/chessai/game_config\"\n)\n\nfunc TestThinkTimeForClockReservesAvailableTimeBeforeIncrement(t *testing.T) {\n\tcases := []struct {\n\t\tname                      string\n\t\tclock, increment, maximum time.Duration\n\t}{\n\t\t{\"recorded_flag\", 1160 * time.Millisecond, time.Second, 580 * time.Millisecond},\n\t\t{\"increment_exceeds_clock\", 250 * time.Millisecond, 5 * time.Second, 125 * time.Millisecond},\n\t\t{\"below_old_floor\", 80 * time.Millisecond, 0, 40 * time.Millisecond},\n\t\t{\"unknown_clock\", 0, time.Second, time.Millisecond},\n\t\t{\"expired_clock\", -time.Second, time.Second, time.Millisecond},\n\t}\n\tfor _, tc := range cases {\n\t\tt.Run(tc.name, func(t *testing.T) {\n\t\t\tgot := thinkTimeForClock(tc.clock, tc.increment, 122)\n\t\t\tif got <= 0 || got > tc.maximum {\n\t\t\t\tt.Fatalf(\"think time %s must stay positive and <= %s with %s available before %s increment\", got, tc.maximum, tc.clock, tc.increment)\n\t\t\t}\n\t\t})\n\t}\n}\n\nfunc TestThinkTimeForPositionRecordedIncrementFlag(t *testing.T) {\n\tdata, err := os.ReadFile(\"../../../testdata/lichess_2026_10_26_increment_flag_game.json\")\n\tif err != nil {\n\t\tt.Fatal(err)\n\t}\n\tvar recorded struct{ Moves string }\n\tif err := json.Unmarshal(data, &recorded); err != nil {\n\t\tt.Fatal(err)\n\t}\n\treplay, err := analysis.ReplaySANMoves(recorded.Moves)\n\tif err != nil {\n\t\tt.Fatal(err)\n\t}\n\tif len(replay) != 245 || replay[244].UCI != \"c5c6\" {\n\t\tt.Fatal(\"recorded clock-loss fixture changed\")\n\t}\n\tlast := replay[244]\n\tparsed, err := analysis.ParseFEN(last.FENAfter)\n\tif err != nil {\n\t\tt.Fatal(err)\n\t}\n\tif !isCriticalSearchPosition(parsed.Board, color.Black) {\n\t\tt.Fatal(\"recorded rook ending must remain critical\")\n\t}\n\tgot := thinkTimeForPosition(1160*time.Millisecond, time.Second, 122, parsed.Board, color.Black)\n\tif got <= 0 || got > 580*time.Millisecond {\n\t\tt.Fatalf(\"recorded clock loss allocated %s with only 1.16s available\", got)\n\t}\n}\n\nfunc TestCriticalClockBoostCannotSpendUnearnedIncrement(t *testing.T) {\n\tconf := game_config.Get()\n\tbefore := conf.AIMaxThinkTimeMs\n\tconf.AIMaxThinkTimeMs = 30000\n\tdefer func() { conf.AIMaxThinkTimeMs = before }()\n\tparsed, err := analysis.ParseFEN(\"8/7k/4r3/1K4RP/4N1P1/5P2/8/8 b - g3 0 65\")\n\tif err != nil {\n\t\tt.Fatal(err)\n\t}\n\tgot := thinkTimeForPosition(9*time.Second, 20*time.Second, 65, parsed.Board, color.Black)\n\tif got <= 0 || got > 4500*time.Millisecond {\n\t\tt.Fatalf(\"critical boost exceeded available-clock safety cap: %s\", got)\n\t}\n}\n",
+  "red": "--- FAIL: TestThinkTimeForClockReservesAvailableTimeBeforeIncrement (0.00s)\n    --- FAIL: TestThinkTimeForClockReservesAvailableTimeBeforeIncrement/recorded_flag (0.00s)\n        clock_safety_test.go:29: think time 1s must stay positive and <= 580ms with 1.16s available before 1s increment\n    --- FAIL: TestThinkTimeForClockReservesAvailableTimeBeforeIncrement/increment_exceeds_clock (0.00s)\n        clock_safety_test.go:29: think time 3s must stay positive and <= 125ms with 250ms available before 5s increment\n    --- FAIL: TestThinkTimeForClockReservesAvailableTimeBeforeIncrement/below_old_floor (0.00s)\n        clock_safety_test.go:29: think time 50ms must stay positive and <= 40ms with 80ms available before 0s increment\n    --- FAIL: TestThinkTimeForClockReservesAvailableTimeBeforeIncrement/unknown_clock (0.00s)\n        clock_safety_test.go:29: think time 1s must stay positive and <= 1ms with 0s available before 1s increment\n    --- FAIL: TestThinkTimeForClockReservesAvailableTimeBeforeIncrement/expired_clock (0.00s)\n        clock_safety_test.go:29: think time 1s must stay positive and <= 1ms with -1s available before 1s increment\n--- FAIL: TestThinkTimeForPositionRecordedIncrementFlag (0.00s)\n    clock_safety_test.go:61: recorded clock loss allocated 1s with only 1.16s available\n--- FAIL: TestCriticalClockBoostCannotSpendUnearnedIncrement (0.00s)\n    clock_safety_test.go:76: critical boost exceeded available-clock safety cap: 20.9s\nFAIL\nFAIL\tgithub.com/Vadman97/GolangChessAI/pkg/chessai/server\t0.006s\nFAIL\n",
+  "focused": "=== RUN   TestThinkTimeForClockReservesAvailableTimeBeforeIncrement\n=== RUN   TestThinkTimeForClockReservesAvailableTimeBeforeIncrement/recorded_flag\n=== RUN   TestThinkTimeForClockReservesAvailableTimeBeforeIncrement/increment_exceeds_clock\n=== RUN   TestThinkTimeForClockReservesAvailableTimeBeforeIncrement/below_old_floor\n=== RUN   TestThinkTimeForClockReservesAvailableTimeBeforeIncrement/unknown_clock\n=== RUN   TestThinkTimeForClockReservesAvailableTimeBeforeIncrement/expired_clock\n--- PASS: TestThinkTimeForClockReservesAvailableTimeBeforeIncrement (0.00s)\n    --- PASS: TestThinkTimeForClockReservesAvailableTimeBeforeIncrement/recorded_flag (0.00s)\n    --- PASS: TestThinkTimeForClockReservesAvailableTimeBeforeIncrement/increment_exceeds_clock (0.00s)\n    --- PASS: TestThinkTimeForClockReservesAvailableTimeBeforeIncrement/below_old_floor (0.00s)\n    --- PASS: TestThinkTimeForClockReservesAvailableTimeBeforeIncrement/unknown_clock (0.00s)\n    --- PASS: TestThinkTimeForClockReservesAvailableTimeBeforeIncrement/expired_clock (0.00s)\n=== RUN   TestThinkTimeForPositionRecordedIncrementFlag\n--- PASS: TestThinkTimeForPositionRecordedIncrementFlag (0.00s)\n=== RUN   TestCriticalClockBoostCannotSpendUnearnedIncrement\n--- PASS: TestCriticalClockBoostCannotSpendUnearnedIncrement (0.00s)\n=== RUN   TestThinkTimeForClockHonorsConfiguredCap\n--- PASS: TestThinkTimeForClockHonorsConfiguredCap (0.00s)\n=== RUN   TestThinkTimeForClockBoostsHealthyMidgame\n--- PASS: TestThinkTimeForClockBoostsHealthyMidgame (0.00s)\n=== RUN   TestThinkTimeForClockScalesCapForLongerTimeControls\n--- PASS: TestThinkTimeForClockScalesCapForLongerTimeControls (0.00s)\n=== RUN   TestThinkTimeForClockBudgetsSearchAfterLeavingBook\n--- PASS: TestThinkTimeForClockBudgetsSearchAfterLeavingBook (0.00s)\n=== RUN   TestThinkTimeForPositionAllowsPetroffRecaptureSearch\n--- PASS: TestThinkTimeForPositionAllowsPetroffRecaptureSearch (0.00s)\n=== RUN   TestThinkTimeForClockShrinksAndBuffersEndgame\n--- PASS: TestThinkTimeForClockShrinksAndBuffersEndgame (0.00s)\n=== RUN   TestThinkTimeForClockSpendsSurplusDeepEndgameClock\n--- PASS: TestThinkTimeForClockSpendsSurplusDeepEndgameClock (0.00s)\n=== RUN   TestThinkTimeForPositionExtendsCriticalQueenPasserEndgame\n--- PASS: TestThinkTimeForPositionExtendsCriticalQueenPasserEndgame (0.00s)\n=== RUN   TestThinkTimeForPositionBoostsHealthyCriticalQueenPasserEndgame\n--- PASS: TestThinkTimeForPositionBoostsHealthyCriticalQueenPasserEndgame (0.00s)\n=== RUN   TestThinkTimeForPositionExtendsLowMaterialRookEndgame\n--- PASS: TestThinkTimeForPositionExtendsLowMaterialRookEndgame (0.00s)\n=== RUN   TestThinkTimeForPositionAvoidsTwentySecondCliff\n--- PASS: TestThinkTimeForPositionAvoidsTwentySecondCliff (0.00s)\n=== RUN   TestThinkTimeForPositionExtendsQueenKingRingAttack\n--- PASS: TestThinkTimeForPositionExtendsQueenKingRingAttack (0.00s)\n=== RUN   TestThinkTimeForPositionDoesNotExtendQuietOpening\n--- PASS: TestThinkTimeForPositionDoesNotExtendQuietOpening (0.00s)\nPASS\nok  \tgithub.com/Vadman97/GolangChessAI/pkg/chessai/server\t0.006s\n",
+  "fullServerRace": "ok  \tgithub.com/Vadman97/GolangChessAI/pkg/chessai/server\t4.573s\n",
+  "freshClockReplay": {
+    "botTurns": 2175,
+    "changedTurns": [
+      {
+        "clockMs": 1970,
+        "gameId": "Fz4rRXOm",
+        "incrementMs": 1000,
+        "newMs": 985,
+        "oldMs": 1000,
+        "ply": 236
+      },
+      {
+        "clockMs": 1790,
+        "gameId": "Fz4rRXOm",
+        "incrementMs": 1000,
+        "newMs": 895,
+        "oldMs": 1000,
+        "ply": 238
+      },
+      {
+        "clockMs": 1610,
+        "gameId": "Fz4rRXOm",
+        "incrementMs": 1000,
+        "newMs": 805,
+        "oldMs": 1000,
+        "ply": 240
+      },
+      {
+        "clockMs": 1520,
+        "gameId": "Fz4rRXOm",
+        "incrementMs": 1000,
+        "newMs": 760,
+        "oldMs": 1000,
+        "ply": 242
+      },
+      {
+        "clockMs": 1340,
+        "gameId": "Fz4rRXOm",
+        "incrementMs": 1000,
+        "newMs": 670,
+        "oldMs": 1000,
+        "ply": 244
+      }
+    ],
+    "games": 43,
+    "healthyClockTurnsUnchanged": 2070,
+    "method": "Exact SAN/FEN and exported pre-move own clocks; compare production allocator against capped allocator with identical critical-position classification."
+  },
+  "freshClockReplayOutput": "=== RUN   TestClockSafetyFreshGameComparison\nClock replay: 43 games, 2175 bot turns, 2070 healthy unchanged, 5 low-clock changes\n--- PASS: TestClockSafetyFreshGameComparison (0.23s)\nPASS\nok  \tgithub.com/Vadman97/GolangChessAI/pkg/chessai/server\t0.231s\n",
+  "freshClockReplaySource": "package server\n\nimport (\n\t\"encoding/json\"\n\"fmt\"\n\"github.com/Vadman97/GolangChessAI/pkg/chessai/board\"\n\t\"os\"\n\t\"testing\"\n\t\"time\"\n\n\t\"github.com/Vadman97/GolangChessAI/pkg/chessai/analysis\"\n\t\"github.com/Vadman97/GolangChessAI/pkg/chessai/color\"\n\t\"github.com/Vadman97/GolangChessAI/pkg/chessai/game_config\"\n)\n\nfunc TestThinkTimeForClockReservesAvailableTimeBeforeIncrement(t *testing.T) {\n\tcases := []struct {\n\t\tname                      string\n\t\tclock, increment, maximum time.Duration\n\t}{\n\t\t{\"recorded_flag\", 1160 * time.Millisecond, time.Second, 580 * time.Millisecond},\n\t\t{\"increment_exceeds_clock\", 250 * time.Millisecond, 5 * time.Second, 125 * time.Millisecond},\n\t\t{\"below_old_floor\", 80 * time.Millisecond, 0, 40 * time.Millisecond},\n\t\t{\"unknown_clock\", 0, time.Second, time.Millisecond},\n\t\t{\"expired_clock\", -time.Second, time.Second, time.Millisecond},\n\t}\n\tfor _, tc := range cases {\n\t\tt.Run(tc.name, func(t *testing.T) {\n\t\t\tgot := thinkTimeForClock(tc.clock, tc.increment, 122)\n\t\t\tif got <= 0 || got > tc.maximum {\n\t\t\t\tt.Fatalf(\"think time %s must stay positive and <= %s with %s available before %s increment\", got, tc.maximum, tc.clock, tc.increment)\n\t\t\t}\n\t\t})\n\t}\n}\n\nfunc TestThinkTimeForPositionRecordedIncrementFlag(t *testing.T) {\n\tdata, err := os.ReadFile(\"../../../testdata/lichess_2026_10_26_increment_flag_game.json\")\n\tif err != nil {\n\t\tt.Fatal(err)\n\t}\n\tvar recorded struct{ Moves string }\n\tif err := json.Unmarshal(data, &recorded); err != nil {\n\t\tt.Fatal(err)\n\t}\n\treplay, err := analysis.ReplaySANMoves(recorded.Moves)\n\tif err != nil {\n\t\tt.Fatal(err)\n\t}\n\tif len(replay) != 245 || replay[244].UCI != \"c5c6\" {\n\t\tt.Fatal(\"recorded clock-loss fixture changed\")\n\t}\n\tlast := replay[244]\n\tparsed, err := analysis.ParseFEN(last.FENAfter)\n\tif err != nil {\n\t\tt.Fatal(err)\n\t}\n\tif !isCriticalSearchPosition(parsed.Board, color.Black) {\n\t\tt.Fatal(\"recorded rook ending must remain critical\")\n\t}\n\tgot := thinkTimeForPosition(1160*time.Millisecond, time.Second, 122, parsed.Board, color.Black)\n\tif got <= 0 || got > 580*time.Millisecond {\n\t\tt.Fatalf(\"recorded clock loss allocated %s with only 1.16s available\", got)\n\t}\n}\n\nfunc TestCriticalClockBoostCannotSpendUnearnedIncrement(t *testing.T) {\n\tconf := game_config.Get()\n\tbefore := conf.AIMaxThinkTimeMs\n\tconf.AIMaxThinkTimeMs = 30000\n\tdefer func() { conf.AIMaxThinkTimeMs = before }()\n\tparsed, err := analysis.ParseFEN(\"8/7k/4r3/1K4RP/4N1P1/5P2/8/8 b - g3 0 65\")\n\tif err != nil {\n\t\tt.Fatal(err)\n\t}\n\tgot := thinkTimeForPosition(9*time.Second, 20*time.Second, 65, parsed.Board, color.Black)\n\tif got <= 0 || got > 4500*time.Millisecond {\n\t\tt.Fatalf(\"critical boost exceeded available-clock safety cap: %s\", got)\n\t}\n}\n\nfunc baselineThinkTimeForClock(timeLeft, increment time.Duration, turnCount int) time.Duration {\n\tconst baseReserve = 3 * time.Second\n\tconst maxExtraReserve = 15 * time.Second // larger buffer once we reach the endgame\n\tconst midgameStart = 10\n\n\t// Endgame begins ~35 ply, i.e. this side's ~17th move (TurnCount counts our\n\t// own moves). reserveRamp is the number of our moves over which the reserve\n\t// climbs from baseReserve to baseReserve+maxExtraReserve.\n\tconst endgameStart = 17\n\tconst reserveRamp = 13\n\n\t// Reserve ramps up through the endgame so we always keep a healthy buffer.\n\treserve := baseReserve\n\tif turnCount > endgameStart {\n\t\tgrown := time.Duration(turnCount-endgameStart) * (maxExtraReserve / reserveRamp)\n\t\tif grown > maxExtraReserve {\n\t\t\tgrown = maxExtraReserve\n\t\t}\n\t\treserve += grown\n\t}\n\n\t// Estimated moves remaining for THIS side. Low in the midgame (spend more of\n\t// the clock where it matters), then rising through the endgame so per-move\n\t// time shrinks aggressively and the growing reserve survives.\n\tvar movesLeft time.Duration\n\tswitch {\n\tcase turnCount < midgameStart:\n\t\tmovesLeft = 45\n\tcase turnCount < endgameStart:\n\t\tmovesLeft = 18\n\tcase turnCount < 25:\n\t\tmovesLeft = 28\n\tcase turnCount < 35:\n\t\tmovesLeft = 34\n\tdefault:\n\t\tmovesLeft = 40\n\t}\n\n\tusable := timeLeft - reserve\n\tif usable < 0 {\n\t\tusable = 0\n\t}\n\tthink := usable/movesLeft + increment\n\t// In long endgames we still want the larger reserve, but not at the cost of\n\t// blitzing critical queen/pawn positions while a minute remains. Spend a\n\t// controlled slice of clock above 45s; below that, keep the conservative\n\t// scramble behavior covered by TestThinkTimeForClockShrinksAndBuffersEndgame.\n\tif turnCount >= 35 && timeLeft > 45*time.Second {\n\t\tthink += (timeLeft - 45*time.Second) / 15\n\t}\n\tif think < 50*time.Millisecond {\n\t\tthink = 50 * time.Millisecond\n\t}\n\tmaxThink := maxThinkTimeForClock(timeLeft)\n\tif turnCount >= midgameStart && turnCount < endgameStart && timeLeft > 60*time.Second {\n\t\tmaxThink += maxThink / 4\n\t}\n\tif think > maxThink {\n\t\tthink = maxThink\n\t}\n\treturn think\n}\n\n\nfunc baselineThinkTimeForPosition(timeLeft, increment time.Duration, turnCount int, b *board.Board, side color.Color) time.Duration {\n\tthink := baselineThinkTimeForClock(timeLeft, increment, turnCount)\n\tconst criticalScrambleCutoff = 8 * time.Second\n\tif b == nil || !isCriticalSearchPosition(b, side) || timeLeft <= criticalScrambleCutoff {\n\t\treturn think\n\t}\n\tminThink := 2500*time.Millisecond + increment\n\tcriticalMax := maxThinkTimeForClock(timeLeft)\n\tif timeLeft > 60*time.Second {\n\t\tminThink = 5*time.Second + increment\n\t\tcriticalMax *= 2\n\t} else if timeLeft < 20*time.Second {\n\t\t// Avoid a hard quality cliff when the clock crosses 20 seconds. Spend a\n\t\t// bounded tenth of the remaining clock on a critical position, preserving\n\t\t// enough time for the scramble while still allowing a real search.\n\t\tminThink = timeLeft/10 + increment\n\t}\n\tif think < minThink {\n\t\tthink = minThink\n\t}\n\tif think > criticalMax {\n\t\tthink = criticalMax\n\t}\n\treturn think\n}\n\nfunc TestClockSafetyFreshGameComparison(t *testing.T) {\n data,err:=os.ReadFile(\"../../../testdata/lichess_2026_10_26_post_build_games.json\");if err!=nil {t.Fatal(err)}\n var games []struct {\n  ID,Moves string\n  Players map[string]struct{User struct{ID string}}\n  Clock struct{Initial,Increment int}\n  Clocks []int\n }\n if err:=json.Unmarshal(data,&games);err!=nil {t.Fatal(err)}\n total,healthy:=0,0\n changed:=[]map[string]any{}\n for _,g:=range games {\n  side:=color.Black;if g.Players[\"white\"].User.ID==\"vadbot\" {side=color.White}\n  replay,err:=analysis.ReplaySANMoves(g.Moves);if err!=nil {t.Fatal(err)}\n  for _,r:=range replay {\n   if r.SideToMove!=side {continue}\n   clock:=time.Duration(g.Clock.Initial)*time.Second\n   if r.Ply>=3 {clock=time.Duration(g.Clocks[r.Ply-3])*10*time.Millisecond}\n   increment:=time.Duration(g.Clock.Increment)*time.Second\n   parsed,err:=analysis.ParseFEN(r.FENBefore);if err!=nil {t.Fatal(err)}\n   turn:=(r.Ply-1)/2\n   old:=baselineThinkTimeForPosition(clock,increment,turn,parsed.Board,side)\n   current:=thinkTimeForPosition(clock,increment,turn,parsed.Board,side)\n   total++\n   limit:=clock/2;if limit<time.Millisecond {limit=time.Millisecond}\n   if current<=0 || current>limit {t.Fatalf(\"unsafe clock budget for %s ply %d: %s/%s\",g.ID,r.Ply,current,clock)}\n   if clock>=8*time.Second {\n    healthy++\n    if old!=current {t.Fatalf(\"healthy budget changed for %s ply %d: %s -> %s\",g.ID,r.Ply,old,current)}\n   }\n   if old!=current {changed=append(changed,map[string]any{\"gameId\":g.ID,\"ply\":r.Ply,\"clockMs\":clock.Milliseconds(),\"incrementMs\":increment.Milliseconds(),\"oldMs\":old.Milliseconds(),\"newMs\":current.Milliseconds()})}\n  }\n }\n result:=map[string]any{\"games\":len(games),\"botTurns\":total,\"healthyClockTurnsUnchanged\":healthy,\"changedTurns\":changed,\"method\":\"Exact SAN/FEN and exported pre-move own clocks; compare production allocator against capped allocator with identical critical-position classification.\"}\n output,_:=json.MarshalIndent(result,\"\",\"  \")\n if err:=os.WriteFile(\"/tmp/chess-oct26-clock-corpus-comparison.json\",append(output,'\\n'),0600);err!=nil {t.Fatal(err)}\n fmt.Printf(\"Clock replay: %d games, %d bot turns, %d healthy unchanged, %d low-clock changes\\n\",len(games),total,healthy,len(changed))\n}\n",
+  "priorDeliveryFixRuntimeEvidence": {
+    "gameId": "UNpKsgsg",
+    "events": [
+      {
+        "failure": "time=\"2026-10-26T11:25:15-07:00\" level=warning msg=\"move e1e7 not acknowledged for game UNpKsgsg; resyncing: move delivery unconfirmed: Post \\\"https://lichess.org/api/bot/game/UNpKsgsg/move/e1e7?offeringDraw=false\\\": read tcp <address omitted>: read: connection reset by peer\"",
+        "following": [
+          "time=\"2026-10-26T11:25:18-07:00\" level=info msg=\"make move /api/bot/game/UNpKsgsg/move/e1e7?offeringDraw=false status 200 OK 200 {\\\"ok\\\":true}\""
+        ]
+      },
+      {
+        "failure": "time=\"2026-10-26T11:26:45-07:00\" level=warning msg=\"move g2g3 not acknowledged for game UNpKsgsg; resyncing: move delivery unconfirmed: Post \\\"https://lichess.org/api/bot/game/UNpKsgsg/move/g2g3?offeringDraw=false\\\": read tcp <address omitted>: read: connection reset by peer\"",
+        "following": [
+          "time=\"2026-10-26T11:26:48-07:00\" level=info msg=\"make move /api/bot/game/UNpKsgsg/move/g2g3?offeringDraw=false status 200 OK 200 {\\\"ok\\\":true}\""
+        ]
+      }
+    ],
+    "result": "black mate win; bot White continued playing after both recovered connection resets",
+    "scope": "Functional delivery recovery evidence, not an isolated Elo gain."
+  },
+  "limits": [
+    "Replayed budgets are counterfactual; they do not prove a different result in the flagged game.",
+    "No Elo increase is claimed; current rapid rating is 1983.",
+    "AI search/evaluation source unchanged and restored rebuild matches deployed 5937 hash before this clock-only change."
+  ],
+  "deployment": {
+    "timestamp": "2026-10-26T20:40:58.583509-07:00",
+    "oldPid": 2161165,
+    "pid": 3368784,
+    "binarySha256": "b8da417d2a5ed96ea25160a4c01b67c6bbbae5d9b9641689b10f5bd03df31c34",
+    "rollbackBinary": "/tmp/chess-oct26-main-before-clock-safety",
+    "noActiveGamesConfirmed": true,
+    "preservedLogBytes": 93296523,
+    "preservedLogPrefixSha256": "28ddfaa0212f9998ca29714ac259d7e8f7ffc9ceca1a288a83cb9bfb0ecc8fec",
+    "webServerPidPreserved": 1931717,
+    "onlineVerification": {
+      "checkedAt": "2026-10-26T20:42:54.542224-07:00",
+      "status": [
+        {
+          "name": "vadbot",
+          "title": "BOT",
+          "flair": "smileys.distorted-face",
+          "id": "vadbot",
+          "online": true
+        }
+      ],
+      "playing": {
+        "nowPlaying": [],
+        "nbMyTurn": 0
+      },
+      "ratings": {
+        "bullet": 1897,
+        "blitz": 1813,
+        "rapid": 1983
+      }
+    }
+  }
+}

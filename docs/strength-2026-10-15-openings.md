@@ -1,8 +1,8 @@
 # Central opening replies, October 15, 2026
 
 Status: deployed October 15 at 00:37:14 America/Los_Angeles / 07:37:14 UTC.
-The bot is online. Its first completed game is recorded below; the new
-central opening replies have not appeared in fresh play.
+The bot is online. Subsequent retained builds played both central opening
+replies correctly in fresh games, as recorded below.
 
 Seventeen games from the previous deployment enter either 1.d4 d5 2.c4 Nf6
 or 1.Nf3 d5 2.c4 Nf6. They comprise seven wins and ten losses against different
@@ -73,3 +73,14 @@ Rapid rating increased from 1936 to 1939. One expected win against a weaker
 opponent does not isolate the opening changes or establish an Elo gain.
 The exported game, including clocks, is preserved in
 `testdata/lichess_2026_10_15_central_opening_games.json`.
+
+## Fresh reply observations through October 19
+
+The later retained build has 193 completed post-deployment standard games.
+Twenty-two Black games enter 1.d4 d5 2.c4, and all reply 2...e6. One enters
+1.Nf3 d5 2.c4 and replies 2...d4. Queen's Gambit outcomes are twelve wins,
+nine losses, and one draw; the English game is a loss. This confirms the exact
+response behavior in actual play. It does not isolate an Elo gain: later
+retained changes and varying opponents also affect the games. Game IDs and
+observations are appended to the existing validation JSON; full exports are
+in `testdata/lichess_2026_10_19_post_build_games.json`.

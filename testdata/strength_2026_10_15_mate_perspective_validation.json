@@ -1,5 +1,5 @@
 {
-  "status": "validated local fix; deployment pending; no Elo claim",
+  "status": "deployed October 15; running executable verified October 19; 2400 objective unmet",
   "baselineSha256": "de2b65f4e5a4dbbe29ca8c1be8c114ba93b43015571c6e43e07ceb8deeecb698",
   "candidateSha256": "7217302225e78e0bed5a04c472ac585a987bd2cd18c8d62723da7d830fdc51f1",
   "pgoSha256": "fd489831db47b5aa5fbd41e581a2a56d876223aeb19b4c67073c57c46cbc88ab",
@@ -461,5 +461,16 @@
   },
   "cpuJobsUsedIdleSupervisor": true,
   "coreBenchRerun": false,
-  "coreBenchReason": "Core-search benchmarks bypass the changed outer safety guard; synthetic real-player and historical guard replays exercise it directly."
+  "coreBenchReason": "Core-search benchmarks bypass the changed outer safety guard; synthetic real-player and historical guard replays exercise it directly.",
+  "deployment": {
+    "timestamp": "2026-10-15T01:45:29.035381-07:00",
+    "oldPid": 1870344,
+    "pid": 1893577,
+    "binarySha256": "7217302225e78e0bed5a04c472ac585a987bd2cd18c8d62723da7d830fdc51f1",
+    "rollbackBinary": "/tmp/chess-oct15-main-before-mate-perspective",
+    "noActiveGamesConfirmed": true,
+    "preservedLogBytes": 30259542,
+    "preservedLogPrefixSha256": "8c2608697abc0daf18135fa9e03fd043a51766c55a28337331b5cf1a534fe889",
+    "webServerPidPreserved": 1931717
+  }
 }

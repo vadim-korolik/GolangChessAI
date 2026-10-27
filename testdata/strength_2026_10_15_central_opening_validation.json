@@ -219,5 +219,219 @@
     "preservedLogBytes": 30113777,
     "webServerPidPreserved": 1931717,
     "runningHashVerified": "c66509fe05ee95e65e718746124ad9a33371654470b76734b8c603f6a35395ef"
+  },
+  "freshObservations2026_10_19": {
+    "source": "testdata/lichess_2026_10_19_post_build_games.json",
+    "positions": [
+      {
+        "id": "kAB1gHM4",
+        "line": "qgd",
+        "reply": "e6",
+        "expected": "e6",
+        "correct": true,
+        "speed": "bullet",
+        "result": "loss"
+      },
+      {
+        "id": "J1nIaIHT",
+        "line": "qgd",
+        "reply": "e6",
+        "expected": "e6",
+        "correct": true,
+        "speed": "blitz",
+        "result": "loss"
+      },
+      {
+        "id": "ZoOWseVI",
+        "line": "qgd",
+        "reply": "e6",
+        "expected": "e6",
+        "correct": true,
+        "speed": "blitz",
+        "result": "win"
+      },
+      {
+        "id": "TkAgeoX9",
+        "line": "qgd",
+        "reply": "e6",
+        "expected": "e6",
+        "correct": true,
+        "speed": "bullet",
+        "result": "draw"
+      },
+      {
+        "id": "tprh6yCF",
+        "line": "qgd",
+        "reply": "e6",
+        "expected": "e6",
+        "correct": true,
+        "speed": "rapid",
+        "result": "loss"
+      },
+      {
+        "id": "jdSNE7c6",
+        "line": "qgd",
+        "reply": "e6",
+        "expected": "e6",
+        "correct": true,
+        "speed": "blitz",
+        "result": "win"
+      },
+      {
+        "id": "06GIYjh7",
+        "line": "qgd",
+        "reply": "e6",
+        "expected": "e6",
+        "correct": true,
+        "speed": "bullet",
+        "result": "win"
+      },
+      {
+        "id": "7YtDGwh2",
+        "line": "qgd",
+        "reply": "e6",
+        "expected": "e6",
+        "correct": true,
+        "speed": "rapid",
+        "result": "win"
+      },
+      {
+        "id": "wwfyMqPz",
+        "line": "qgd",
+        "reply": "e6",
+        "expected": "e6",
+        "correct": true,
+        "speed": "blitz",
+        "result": "win"
+      },
+      {
+        "id": "f6xbxMSj",
+        "line": "qgd",
+        "reply": "e6",
+        "expected": "e6",
+        "correct": true,
+        "speed": "blitz",
+        "result": "win"
+      },
+      {
+        "id": "YycJ0Upm",
+        "line": "qgd",
+        "reply": "e6",
+        "expected": "e6",
+        "correct": true,
+        "speed": "bullet",
+        "result": "win"
+      },
+      {
+        "id": "ZviFJ9fZ",
+        "line": "qgd",
+        "reply": "e6",
+        "expected": "e6",
+        "correct": true,
+        "speed": "rapid",
+        "result": "win"
+      },
+      {
+        "id": "ga0aLiWo",
+        "line": "qgd",
+        "reply": "e6",
+        "expected": "e6",
+        "correct": true,
+        "speed": "blitz",
+        "result": "loss"
+      },
+      {
+        "id": "dVtDy56T",
+        "line": "qgd",
+        "reply": "e6",
+        "expected": "e6",
+        "correct": true,
+        "speed": "rapid",
+        "result": "win"
+      },
+      {
+        "id": "Q9oAIG0h",
+        "line": "english",
+        "reply": "d4",
+        "expected": "d4",
+        "correct": true,
+        "speed": "rapid",
+        "result": "loss"
+      },
+      {
+        "id": "eMr2xRsm",
+        "line": "qgd",
+        "reply": "e6",
+        "expected": "e6",
+        "correct": true,
+        "speed": "rapid",
+        "result": "loss"
+      },
+      {
+        "id": "OutVSFo9",
+        "line": "qgd",
+        "reply": "e6",
+        "expected": "e6",
+        "correct": true,
+        "speed": "blitz",
+        "result": "loss"
+      },
+      {
+        "id": "nurN6VMa",
+        "line": "qgd",
+        "reply": "e6",
+        "expected": "e6",
+        "correct": true,
+        "speed": "bullet",
+        "result": "loss"
+      },
+      {
+        "id": "2GVcvSFT",
+        "line": "qgd",
+        "reply": "e6",
+        "expected": "e6",
+        "correct": true,
+        "speed": "blitz",
+        "result": "win"
+      },
+      {
+        "id": "h4QHTxQ7",
+        "line": "qgd",
+        "reply": "e6",
+        "expected": "e6",
+        "correct": true,
+        "speed": "blitz",
+        "result": "win"
+      },
+      {
+        "id": "enxbt9r3",
+        "line": "qgd",
+        "reply": "e6",
+        "expected": "e6",
+        "correct": true,
+        "speed": "blitz",
+        "result": "win"
+      },
+      {
+        "id": "JTj9KdPO",
+        "line": "qgd",
+        "reply": "e6",
+        "expected": "e6",
+        "correct": true,
+        "speed": "blitz",
+        "result": "loss"
+      },
+      {
+        "id": "a73hZRGs",
+        "line": "qgd",
+        "reply": "e6",
+        "expected": "e6",
+        "correct": true,
+        "speed": "blitz",
+        "result": "loss"
+      }
+    ],
+    "allCorrect": true,
+    "limits": "Behavioral confirmation only. Later search/evaluation changes and varying opponents prevent isolating opening strength."
   }
 }

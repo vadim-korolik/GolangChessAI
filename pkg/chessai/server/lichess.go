@@ -118,6 +118,8 @@ type Lichess struct {
 	// movesApplied tracks how many total moves from lichess events we've applied
 	// to our local board. Used to skip duplicate events (e.g. after stream reconnect).
 	movesApplied int
+	// pendingMove is applied locally but not yet acknowledged by Lichess.
+	pendingMove string
 
 	// clockIncrement is the per-move increment for the current game, set from
 	// the first gameState event and used by thinkTimeForClock.
@@ -133,8 +135,8 @@ type Lichess struct {
 	boardStreamCancel context.CancelFunc
 
 	// Pondering: search during the opponent's turn to warm the TT.
-	ponderStop chan struct{}
-	ponderDone chan struct{}
+	ponderCancel context.CancelFunc
+	ponderDone   chan struct{}
 }
 
 func ConnectLichess() Server {
@@ -184,22 +186,15 @@ func (l *Lichess) startPonder() {
 	ponderPlayer := l.Player.NewPonderPlayer(ponderColor)
 	ponderPlayer.MaxThinkTime = 60 * time.Second
 
-	stop := make(chan struct{})
+	ctx, cancel := context.WithCancel(context.Background())
 	done := make(chan struct{})
-	l.ponderStop = stop
+	l.ponderCancel = cancel
 	l.ponderDone = done
 
 	go func() {
 		defer close(done)
-		// When stop is closed, set the abort flag so the search returns promptly.
-		go func() {
-			select {
-			case <-stop:
-				ponderPlayer.Abort()
-			case <-done:
-			}
-		}()
-		ponderPlayer.GetBestMove(boardSnap, prevMove, nil)
+		// Cancellation must survive abort resets when search starts or deepens.
+		ponderPlayer.GetBestMoveContext(ctx, boardSnap, prevMove, nil)
 		log.Debugf("ponder finished naturally for %s", color.Names[ponderColor])
 	}()
 	log.Debugf("pondering started for %s", color.Names[ponderColor])
@@ -209,20 +204,15 @@ func (l *Lichess) startPonder() {
 // Safe to call when no ponder is running. Must be called before starting
 // the main search so the two searches don't race on the abort flag.
 func (l *Lichess) stopPonder() {
-	stop, done := l.ponderStop, l.ponderDone
-	if stop == nil {
+	cancel, done := l.ponderCancel, l.ponderDone
+	if cancel == nil {
 		return
 	}
-	select {
-	case <-stop:
-		// already stopped (ponder finished naturally before opponent moved)
-	default:
-		close(stop)
-	}
+	cancel()
 	if done != nil {
 		<-done
 	}
-	l.ponderStop = nil
+	l.ponderCancel = nil
 	l.ponderDone = nil
 	if l.Player != nil {
 		l.Player.ResetAbort()
@@ -246,6 +236,8 @@ func (l *Lichess) resetGame() {
 	l.Player = nil
 	l.Game = nil
 	l.movesApplied = 0
+	l.pendingMove = ""
+	l.offerDrawNextMove = false
 }
 
 // thinkTimeForClock allocates think time from the remaining clock.
@@ -326,7 +318,7 @@ func thinkTimeForClock(timeLeft, increment time.Duration, turnCount int) time.Du
 	if think > maxThink {
 		think = maxThink
 	}
-	return think
+	return limitThinkTimeToClock(think, timeLeft)
 }
 
 // maxThinkTimeForClock caps a single move's think time. The configured
@@ -369,6 +361,19 @@ func thinkTimeForPosition(timeLeft, increment time.Duration, turnCount int, b *b
 	}
 	if think > criticalMax {
 		think = criticalMax
+	}
+	return limitThinkTimeToClock(think, timeLeft)
+}
+
+// The increment arrives after delivery; keep half the current clock for overhead.
+func limitThinkTimeToClock(think, timeLeft time.Duration) time.Duration {
+	limit := timeLeft / 2
+	if limit < time.Millisecond {
+		// A zero MaxThinkTime means unlimited search, including with a missing clock.
+		limit = time.Millisecond
+	}
+	if think > limit {
+		return limit
 	}
 	return think
 }
@@ -497,11 +502,52 @@ func isPassedPawnForSearch(b *board.Board, row, col location.CoordinateType, paw
 	return true
 }
 
+// restartBoardStream requests a fresh snapshot after uncertain move delivery.
+// Must be called with the mutex held.
+func (l *Lichess) restartBoardStream(gameID string, delay time.Duration) {
+	if l.boardStreamCancel != nil {
+		l.boardStreamCancel()
+	}
+	ctx, cancel := context.WithCancel(context.Background())
+	l.boardStreamCancel = cancel
+	go func() {
+		if delay > 0 {
+			select {
+			case <-ctx.Done():
+				return
+			case <-time.After(delay):
+			}
+		}
+		backoff := 3 * time.Second
+		for ctx.Err() == nil {
+			err := l.StreamBoardUpdate(ctx, gameID, l.GameEvents)
+			if ctx.Err() != nil {
+				return
+			}
+			if err != nil {
+				log.Errorf("failed to stream board update %s — reconnecting in %s", err, backoff)
+			}
+			select {
+			case <-ctx.Done():
+				return
+			case <-time.After(backoff):
+			}
+			if backoff < 30*time.Second {
+				backoff *= 2
+			}
+		}
+	}()
+}
+
 func (l *Lichess) handleEvent(event *Event) error {
 	l.Mutex.Lock()
 	defer l.Mutex.Unlock()
 	switch event.Type {
 	case EventTypeGameStart:
+		if l.Game != nil && l.GameID == event.Game.GameID {
+			log.Debugf("ignoring duplicate gameStart for active game %s", l.GameID)
+			return nil
+		}
 		if l.Game != nil {
 			log.Warnf("gameStart received while game %s active — resetting stale game state", l.GameID)
 			l.resetGame()
@@ -534,37 +580,14 @@ func (l *Lichess) handleEvent(event *Event) error {
 		l.Game.TimeLimit = game_config.Get().SecondsToPlay * time.Second
 		l.movesApplied = 0
 
-		ctx, cancel := context.WithCancel(context.Background())
-		l.boardStreamCancel = cancel
-		go func() {
-			backoff := 3 * time.Second
-			for ctx.Err() == nil {
-				err := l.StreamBoardUpdate(ctx, event.Game.GameID, l.GameEvents)
-				if ctx.Err() != nil {
-					return
-				}
-				if err != nil {
-					log.Errorf("failed to stream board update %s — reconnecting in %s", err, backoff)
-				}
-				select {
-				case <-ctx.Done():
-					return
-				case <-time.After(backoff):
-				}
-				if backoff < 30*time.Second {
-					backoff *= 2
-				}
-			}
-		}()
+		l.restartBoardStream(event.Game.GameID, 0)
 
 		if l.Game.CurrentTurnColor == playerColor {
 			l.Game.PlayTurn()
-			if err := l.MakeMove(event.Game.GameID, l.Game.PreviousMove); err != nil {
-				log.Errorf("first move rejected by lichess, resetting game state: %s", err)
-				l.resetGame()
+			if !l.postOwnMoveLocked() {
 				return nil
 			}
-			l.movesApplied++ // our move is now on the board; keep movesApplied in sync
+			// our move is now on the board; keep movesApplied in sync
 		}
 		// Ponder while waiting for the opponent's first move.
 		l.startPonder()
@@ -676,6 +699,15 @@ func (l *Lichess) handleBoardUpdate(event *GameEvent) error {
 		log.Debugf("discarding stale event from game %s (current: %s)", event.GameID, l.GameID)
 		return nil
 	}
+	state := event
+	if event.Type == StateTypeGameFull {
+		state = event.State
+	}
+	if (event.Type == StateTypeGame || event.Type == StateTypeGameFull) && l.pendingMove != "" && state != nil && (state.Status == "" || state.Status == "started") {
+		if !l.confirmPendingMoveLocked(state) {
+			return nil
+		}
+	}
 	switch event.Type {
 	case StateTypeGameFull:
 		if event.State == nil {
@@ -714,13 +746,17 @@ func (l *Lichess) handleGameFullLocked(state *GameEvent) error {
 		}
 		return nil
 	}
-	if state.Moves == "" {
+	moves := strings.Fields(state.Moves)
+	if len(moves) < l.movesApplied {
+		log.Debugf("ignoring stale gameFull with %d moves (applied %d)", len(moves), l.movesApplied)
+		return nil
+	}
+	if len(moves) == 0 {
 		// No moves yet: game just started. If we're White, gameStart already
 		// handled our first move; if Black, just wait for the opponent.
 		l.startPonder()
 		return nil
 	}
-	moves := strings.Split(state.Moves, " ")
 	// Replay any moves we haven't applied yet (all of them on a fresh reconnect).
 	log.Infof("gameFull: replaying moves %d..%d to sync board", l.movesApplied, len(moves)-1)
 	l.stopPonder()
@@ -758,11 +794,10 @@ func (l *Lichess) handleGameFullLocked(state *GameEvent) error {
 			return nil
 		}
 		l.Game.PlayTurn()
-		if err := l.MakeMove(l.GameID, l.Game.PreviousMove); err != nil {
-			l.handleRejectedMove(err)
+		if !l.postOwnMoveLocked() {
 			return nil
 		}
-		l.movesApplied++ // our reply is now on the board; keep movesApplied in sync
+		// our reply is now on the board; keep movesApplied in sync
 	}
 	l.startPonder()
 	return nil
@@ -873,17 +908,80 @@ func (l *Lichess) handleBoardUpdateLocked(event *GameEvent) error {
 			return nil
 		}
 		l.Game.PlayTurn()
-		if err := l.MakeMove(l.GameID, l.Game.PreviousMove); err != nil {
-			l.handleRejectedMove(err)
+		if !l.postOwnMoveLocked() {
 			return nil
 		}
-		l.movesApplied++ // our reply is now on the board; keep movesApplied in sync
+		// our reply is now on the board; keep movesApplied in sync
 		// Begin pondering on the resulting position while the opponent thinks.
 		l.startPonder()
 	default:
 		log.Warnf("unhandled game event %+v", *event)
 	}
 	return nil
+}
+
+var errMoveUnconfirmed = errors.New("move delivery unconfirmed")
+var errMoveRateLimited = errors.New("HTTP 429")
+
+func lichessMoveUCI(move *board.LastMove) string {
+	result := move.Move.UCIString()
+	if move.PromotionPiece != nil {
+		result += strings.ToLower(string((*move.PromotionPiece).GetChar()))
+	}
+	return result
+}
+
+// postOwnMoveLocked preserves the selected move when its HTTP result is uncertain.
+// The next full snapshot either confirms it or retries it without searching again.
+func (l *Lichess) postOwnMoveLocked() bool {
+	retrying := l.pendingMove != ""
+	l.pendingMove = lichessMoveUCI(l.Game.PreviousMove)
+	if err := l.MakeMove(l.GameID, l.Game.PreviousMove); err != nil {
+		if errors.Is(err, errMoveUnconfirmed) || (retrying && isMoveTurnRace(err)) {
+			log.Warnf("move %s not acknowledged for game %s; resyncing: %s", l.pendingMove, l.GameID, err)
+			delay := 3 * time.Second
+			if errors.Is(err, errMoveRateLimited) {
+				delay = time.Minute
+			}
+			l.restartBoardStream(l.GameID, delay)
+		} else {
+			l.handleRejectedMove(err)
+		}
+		return false
+	}
+	l.pendingMove = ""
+	l.movesApplied++
+	return true
+}
+
+// confirmPendingMoveLocked reconciles a locally applied reply with server history.
+func (l *Lichess) confirmPendingMoveLocked(state *GameEvent) bool {
+	moves := strings.Fields(state.Moves)
+	if len(moves) <= l.movesApplied {
+		if len(moves) == l.movesApplied && l.postOwnMoveLocked() {
+			l.startPonder()
+		} else if len(moves) < l.movesApplied {
+			l.restartBoardStream(l.GameID, 3*time.Second)
+		}
+		return false
+	}
+	if moves[l.movesApplied] != l.pendingMove {
+		log.Errorf("server move %s differs from pending %s; dropping desynced game %s", moves[l.movesApplied], l.pendingMove, l.GameID)
+		l.resetGame()
+		return false
+	}
+	l.movesApplied++
+	l.pendingMove = ""
+	l.offerDrawNextMove = false
+	if len(moves) == l.movesApplied {
+		l.startPonder()
+		return false
+	}
+	return true
+}
+
+func isMoveTurnRace(err error) bool {
+	return strings.Contains(err.Error(), "game already over") || strings.Contains(err.Error(), "Not your turn")
 }
 
 // handleRejectedMove cleans up after Lichess rejects one of our moves, then
@@ -897,8 +995,7 @@ func (l *Lichess) handleBoardUpdateLocked(event *GameEvent) error {
 // fixed upstream so this path should not be reached in normal play.
 // Must be called with the mutex held.
 func (l *Lichess) handleRejectedMove(originalErr error) {
-	errMsg := originalErr.Error()
-	if strings.Contains(errMsg, "game already over") || strings.Contains(errMsg, "Not your turn") {
+	if isMoveTurnRace(originalErr) {
 		log.Warnf("move rejected: game already over on server — cleaning up: %s", originalErr)
 	} else {
 		log.Errorf("move rejected by Lichess (illegal move / board desync — this is a bug) — abandoning game: %s", originalErr)
@@ -1069,29 +1166,35 @@ func (l *Lichess) AcceptChallenge(challengeID string) error {
 }
 
 func (l *Lichess) MakeMove(gameID string, move *board.LastMove) error {
-	moveStr := move.Move.UCIString()
-	if move.PromotionPiece != nil {
-		moveStr += strings.ToLower(string((*move.PromotionPiece).GetChar()))
-	}
+	moveStr := lichessMoveUCI(move)
+
 	oferringDraw := "false"
 	if l.offerDrawNextMove || game.IsClaimableDraw(l.Game.GameStatus) {
 		oferringDraw = "true"
 	}
-	l.offerDrawNextMove = false
-	u := fmt.Sprintf("/api/bot/game/%s/move/%s?offeringDraw=%s", gameID, moveStr, oferringDraw)
+	u := fmt.Sprintf("/api/bot/game/%s/move/%s", gameID, moveStr)
 	r, err := l.Client.newRequest("POST", u, nil)
 	if err != nil {
 		return err
 	}
+	r.URL.RawQuery = "offeringDraw=" + oferringDraw
 	resp, err := l.Client.HttpClient.Do(r)
 	if err != nil {
-		return err
+		return fmt.Errorf("%w: %w", errMoveUnconfirmed, err)
 	}
+	defer resp.Body.Close()
 	bodyBytes, err := io.ReadAll(resp.Body)
 	if err != nil {
-		return err
+		return fmt.Errorf("%w: %w", errMoveUnconfirmed, err)
 	}
-	log.Infof("make move %s status %+v %d %s", u, resp.Status, resp.StatusCode, string(bodyBytes))
+	log.Infof("make move %s status %+v %d %s", r.URL.RequestURI(), resp.Status, resp.StatusCode, string(bodyBytes))
+	if resp.StatusCode == http.StatusTooManyRequests {
+		return fmt.Errorf("%w: %w: %s", errMoveUnconfirmed, errMoveRateLimited, string(bodyBytes))
+	}
+	if resp.StatusCode >= 500 {
+		return fmt.Errorf("%w: HTTP %d: %s", errMoveUnconfirmed, resp.StatusCode, string(bodyBytes))
+	}
+	l.offerDrawNextMove = false
 	if resp.StatusCode != http.StatusOK {
 		return fmt.Errorf("make move rejected: %s", string(bodyBytes))
 	}
@@ -1186,7 +1289,11 @@ func (l *Lichess) StreamBoardUpdate(ctx context.Context, gameID string, s chan<-
 			log.Errorf("failed to unmarshal line to game event %s", line)
 		}
 		event.GameID = gameID
-		s <- event
+		select {
+		case s <- event:
+		case <-ctx.Done():
+			return ctx.Err()
+		}
 	}
 }
 

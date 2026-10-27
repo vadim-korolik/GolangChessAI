@@ -1,0 +1,2 @@
+# JsmSeUmZ: 10+1 rapid, White had 226.59 seconds; production chose Bxd5 at a 6000 ms budget.
+3k4/7R/4p3/3b4/2p1BK2/8/3r4/8 w - - 4 65 | JsmSeUmZ-ply129 | f4e3 | e4d5 | preserve bishop rather than create connected rook passers

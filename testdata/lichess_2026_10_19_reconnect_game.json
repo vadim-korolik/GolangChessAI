@@ -1,0 +1,111 @@
+{
+  "id": "sC7DT4Vs",
+  "rated": true,
+  "variant": "standard",
+  "speed": "blitz",
+  "perf": "blitz",
+  "createdAt": 1792458465850,
+  "lastMoveAt": 1792458773974,
+  "status": "outoftime",
+  "source": "friend",
+  "players": {
+    "white": {
+      "user": {
+        "name": "SpringerBot",
+        "title": "BOT",
+        "flair": "objects.shield",
+        "patron": true,
+        "patronColor": 1,
+        "id": "springerbot"
+      },
+      "rating": 1765,
+      "ratingDiff": 5
+    },
+    "black": {
+      "user": {
+        "name": "vadbot",
+        "title": "BOT",
+        "flair": "smileys.distorted-face",
+        "id": "vadbot"
+      },
+      "rating": 1745,
+      "ratingDiff": -5
+    }
+  },
+  "winner": "white",
+  "opening": {
+    "eco": "D02",
+    "name": "Queen's Pawn Game: Symmetrical Variation",
+    "ply": 4
+  },
+  "moves": "Nf3 d5 d4 Nf6 Nc3 Bf5 e3 Nc6 Bb5 Qd6 Ne5 h5 a4 g6 Bxc6+ bxc6 b3 Ng4 Nxg4 hxg4 Ba3 Qf6 Bc5 e6 Bxf8 Kxf8 Qe2 e5 Qa6 Bxc2 Rc1 Qf5 Qxc6 Kg7 Nxd5 Be4 Ne7 Bxc6 Nxf5+ Kf6 Rxc6+ Kxf5 dxe5 Kxe5 O-O a6 Rxc7 f5 b4 Rhc8 Rcc1 Rab8 b5 Rxc1 Rxc1 axb5 Rb1",
+  "clocks": [
+    18003,
+    18003,
+    17587,
+    18179,
+    17195,
+    18059,
+    16803,
+    17939,
+    16427,
+    17819,
+    16059,
+    17699,
+    15691,
+    17579,
+    15347,
+    17163,
+    15003,
+    17035,
+    14667,
+    16979,
+    14339,
+    16787,
+    14027,
+    16619,
+    13715,
+    16443,
+    13419,
+    16251,
+    13123,
+    16059,
+    12835,
+    15955,
+    12547,
+    15539,
+    12275,
+    15123,
+    12011,
+    14707,
+    11755,
+    14291,
+    11499,
+    13867,
+    11251,
+    13747,
+    11011,
+    13627,
+    10779,
+    13515,
+    10555,
+    13419,
+    10331,
+    13355,
+    10115,
+    13227,
+    9899,
+    7557,
+    9694,
+    0
+  ],
+  "clock": {
+    "initial": 180,
+    "increment": 2,
+    "totalTime": 260
+  },
+  "division": {
+    "middle": 14,
+    "end": 39
+  }
+}

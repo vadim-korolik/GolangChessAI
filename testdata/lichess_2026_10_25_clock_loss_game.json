@@ -1,0 +1,88 @@
+{
+  "id": "gswcqxUK",
+  "rated": true,
+  "variant": "standard",
+  "speed": "blitz",
+  "perf": "blitz",
+  "createdAt": 1792478974645,
+  "lastMoveAt": 1792479213597,
+  "status": "outoftime",
+  "source": "friend",
+  "players": {
+    "white": {
+      "user": {
+        "name": "vadbot",
+        "title": "BOT",
+        "flair": "smileys.distorted-face",
+        "id": "vadbot"
+      },
+      "rating": 1745
+    },
+    "black": {
+      "user": {
+        "name": "TorrinoBOT",
+        "title": "BOT",
+        "id": "torrinobot"
+      },
+      "rating": 1746
+    }
+  },
+  "fullId": "gswcqxUKdytR",
+  "winner": "black",
+  "opening": {
+    "eco": "D02",
+    "name": "Queen's Pawn Game: Chigorin Variation",
+    "ply": 4
+  },
+  "moves": "d4 d5 Nf3 Nc6 Nc3 Nf6 Bf4 e6 Nb5 Bb4+ c3 Ba5 b4 Bb6 a4 a6 a5 axb5 axb6 Rxa1 Qxa1 cxb6 e3 Nh5 Bg3 Bd7 Bd6 Ne7 Bd3 Nf6 Ne5 Nc8 Bb8 O-O O-O Ne7 Ba7 Be8 f3 Qc7 Qb2 Nc6",
+  "clocks": [
+    18003,
+    18003,
+    18083,
+    17443,
+    17867,
+    16899,
+    17643,
+    16507,
+    17427,
+    16259,
+    16915,
+    15955,
+    16691,
+    15467,
+    16475,
+    14995,
+    16299,
+    14531,
+    16075,
+    14091,
+    15803,
+    13867,
+    15507,
+    13627,
+    15219,
+    13459,
+    14923,
+    13259,
+    14643,
+    12899,
+    14355,
+    12547,
+    14051,
+    12291,
+    13835,
+    11923,
+    13619,
+    11563,
+    13395,
+    11371,
+    13182,
+    6055,
+    0
+  ],
+  "clock": {
+    "initial": 180,
+    "increment": 1,
+    "totalTime": 220
+  }
+}

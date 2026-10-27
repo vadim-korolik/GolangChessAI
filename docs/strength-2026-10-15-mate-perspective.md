@@ -1,6 +1,7 @@
 # Mate-safety evaluation perspective, October 15, 2026
 
-Status: validated locally; deployment pending. No Elo gain is established.
+Status: deployed October 15. Running executable verified October 19.
+No isolated Elo gain from this fix is established.
 
 After search proposes a move permitting mate in one, the production player
 examines safe alternatives. It previously evaluated each child using its own
@@ -54,3 +55,16 @@ Exact referee lines and ablations are saved in
 `testdata/lichess_2026_10_15_queen_horizon_diagnostics.json`.
 The existing deeper normal-budget choice is winning; this diagnosis does not
 justify a new tactical exception.
+
+## Verified deployment
+
+Deployed at 2026-10-15T01:45:29.035381-07:00 while authenticated playing status was idle.
+PID 1893577 still runs SHA-256
+`7217302225e78e0bed5a04c472ac585a987bd2cd18c8d62723da7d830fdc51f1`; installed and running hashes match.
+All 30,259,542 prior log bytes were preserved. Rollback:
+`/tmp/chess-oct15-main-before-mate-perspective`. The separate web server, PID 1931717,
+remains running. On October 19, Lichess reports the bot online and idle.
+The post-build game export contains 193 completed standard games. Current
+rapid rating is 1993, versus 1939 before this deployment; these games combine
+all retained changes and varying opposition, so that difference does not
+isolate this one-line fix or establish 2400-level strength.

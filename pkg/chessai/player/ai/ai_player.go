@@ -1,6 +1,7 @@
 package ai
 
 import (
+	"context"
 	"fmt"
 	"github.com/Vadman97/GolangChessAI/pkg/chessai/board"
 	"github.com/Vadman97/GolangChessAI/pkg/chessai/color"
@@ -124,6 +125,7 @@ type AIPlayer struct {
 	transpositionTable *util.ConcurrentBoardMap
 	printer            chan string
 	abort              uint32
+	searchContext      context.Context
 	// ttGeneration is incremented on ponder miss so stale ponder entries
 	// are demoted to move-ordering-only and cannot cause alpha/beta cutoffs.
 	ttGeneration uint32
@@ -256,6 +258,13 @@ func betterMove(maximizingP bool, currentBest *ScoredMove, candidate *ScoredMove
 		return candidate.Score > currentBest.Score
 	}
 	return candidate.Score < currentBest.Score
+}
+
+// GetBestMoveContext keeps owner cancellation separate from per-search abort resets.
+func (p *AIPlayer) GetBestMoveContext(ctx context.Context, b *board.Board, previousMove *board.LastMove, logger *PerformanceLogger) *location.Move {
+	p.searchContext = ctx
+	defer func() { p.searchContext = nil }()
+	return p.GetBestMove(b, previousMove, logger)
 }
 
 func (p *AIPlayer) GetBestMove(b *board.Board, previousMove *board.LastMove, logger *PerformanceLogger) *location.Move {
@@ -479,6 +488,10 @@ func (p *AIPlayer) earlyOpeningPreference(b *board.Board, previousMove *board.La
 		for _, move := range *legalMoves {
 			if !move.Start.Equals(pref.Start) || !move.End.Equals(pref.End) {
 				continue
+			}
+			// Falling back from book must not restore a move that skips a profitable capture.
+			if p.bookMoveMissesFreeCapture(b, previousMove, move) {
+				break
 			}
 			if p.preferenceMoveHangsMaterial(b, move) {
 				break // this preference is unsafe; try the next preference
@@ -727,6 +740,13 @@ func (p *AIPlayer) Abort() { p.setAbort(true) }
 func (p *AIPlayer) ResetAbort() { p.setAbort(false) }
 
 func (p *AIPlayer) isAborted() bool {
+	if p.searchContext != nil {
+		select {
+		case <-p.searchContext.Done():
+			return true
+		default:
+		}
+	}
 	return atomic.LoadUint32(&p.abort) != 0
 }
 

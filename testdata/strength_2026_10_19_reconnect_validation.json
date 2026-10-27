@@ -1,0 +1,298 @@
+{
+  "status": "deployed; online and running hash verified; fresh-game validation pending; 2400 objective unmet",
+  "baselineSha256": "7217302225e78e0bed5a04c472ac585a987bd2cd18c8d62723da7d830fdc51f1",
+  "candidateSha256": "4df7a2365b64fa52a7817e8c95b18a46954946d9fc1bd50c3d7c486182e1654a",
+  "pgoSha256": "fd489831db47b5aa5fbd41e581a2a56d876223aeb19b4c67073c57c46cbc88ab",
+  "sourceSha256": {
+    "pkg/chessai/player/ai/ai_player.go": "8fa950f5f29022408bbb771b28de89ea31669c7b62f69f943de78b98014b6981",
+    "pkg/chessai/player/ai/search_context_test.go": "df07da0a71bf02c4e2c94c6c5d65a17f53247079e4ad55cc25bab2c79ad0ec9a",
+    "pkg/chessai/server/lichess.go": "b70992e2abb95811b308bc28f629a52b204ef34eced130771b9ea1cb331187af",
+    "pkg/chessai/server/reconnect_test.go": "9054d2b8fa0e9409c9b6d673089762a4e977b610d28e2057b8f6b464e0e599c1"
+  },
+  "liveFailure": {
+    "game": "sC7DT4Vs",
+    "export": "testdata/lichess_2026_10_19_reconnect_game.json",
+    "result": "outoftime loss",
+    "lastServerBlackClockMs": 75570,
+    "appliedPlies": 56,
+    "staleFullStatePlies": 55,
+    "nextOpponentPly": 57,
+    "logEvidence": [
+      "time=\"2026-10-19T18:11:47-07:00\" level=warning msg=\"gameStart received while game sC7DT4Vs active \u2014 resetting stale game state\"",
+      "time=\"2026-10-19T18:12:49-07:00\" level=info msg=\"make move /api/bot/game/sC7DT4Vs/move/a6b5?offeringDraw=false status 200 OK 200 {\\\"ok\\\":true}\"",
+      "time=\"2026-10-19T18:12:49-07:00\" level=info msg=\"gameFull: replaying moves 56..54 to sync board\"",
+      "time=\"2026-10-19T18:13:49-07:00\" level=error msg=\"board desync: local turn is 0 but Lichess says it is our (1) turn \u2014 abandoning game to avoid idling on the clock\""
+    ]
+  },
+  "mechanism": [
+    "Duplicate gameStart resets an existing game of the same ID.",
+    "A shorter gameFull snapshot then derives the turn from stale history while retaining a newer local board.",
+    "One-shot ponder Abort can be erased by search startup and root-depth abort resets, causing 60-second waits.",
+    "Cancelled board streams can remain blocked delivering an event to an unbuffered channel."
+  ],
+  "fix": [
+    "Ignore duplicate gameStart for the current game.",
+    "Ignore full-state histories shorter than movesApplied.",
+    "Context cancellation remains visible across ordinary abort resets.",
+    "Cancelled board streams can stop while their event delivery is blocked."
+  ],
+  "tests": {
+    "regressionsFailBefore": "time=\"2026-10-19T18:18:48-07:00\" level=warning msg=\"gameStart received while game reconnect active \u2014 resetting stale game state\"\n--- FAIL: TestDuplicateGameStartPreservesActiveGame (0.01s)\n    reconnect_test.go:74: duplicate gameStart must preserve the active game, player, board, and move count\ntime=\"2026-10-19T18:18:48-07:00\" level=info msg=\"gameFull: replaying moves 2..0 to sync board\"\ntime=\"2026-10-19T18:18:48-07:00\" level=info msg=\"gameFull: our turn after replay, thinking... have time 3m0s, inc 0s, set max to 3s\"\ntime=\"2026-10-19T18:18:48-07:00\" level=error msg=\"board desync: local turn is 0 but Lichess says it is our (1) turn \u2014 abandoning game to avoid idling on the clock\"\n--- FAIL: TestStaleGameFullCannotUndoPostedReply (0.00s)\n    reconnect_test.go:95: a snapshot older than our posted reply must not reset or advance the board\nFAIL\nFAIL\tgithub.com/Vadman97/GolangChessAI/pkg/chessai/server\t0.015s\nFAIL\n",
+    "focusedAfter": "ok  \tgithub.com/Vadman97/GolangChessAI/pkg/chessai/server\t0.026s\nok  \tgithub.com/Vadman97/GolangChessAI/pkg/chessai/player/ai\t0.013s\n",
+    "serverSeconds": 0.124,
+    "targetedRaceServerSeconds": 1.168,
+    "targetedRaceAiSeconds": 1.06,
+    "fullServerRaceAfterExactReplaySeconds": 1.306,
+    "aiSeconds": 76.447,
+    "excluded": [
+      "TestAIBestMovesSame",
+      "TestLazySMPFindsHangingKnight"
+    ],
+    "existingInTestSkipsRetained": true,
+    "existingAssertionsChanged": false,
+    "exactGameReplay": "Replays all 57 actual plies. At local ply 56, the stale 55-ply snapshot preserves the board; the next opponent move receives exactly one legal reply, advancing to ply 58.",
+    "cancellation": "Before startup and during startup, after an explicit per-search ResetAbort; ten immediate real ABDADA ponder start/stop cycles; blocked stream delivery cancellation."
+  },
+  "fixedComparisons": [
+    {
+      "case": "queen",
+      "batch": 0,
+      "side": "before",
+      "score": 356,
+      "stable": 8,
+      "runs": 8,
+      "nodesPerSecond": 107191
+    },
+    {
+      "case": "queen",
+      "batch": 0,
+      "side": "after",
+      "score": 356,
+      "stable": 8,
+      "runs": 8,
+      "nodesPerSecond": 104805
+    },
+    {
+      "case": "queen",
+      "batch": 1,
+      "side": "after",
+      "score": 356,
+      "stable": 8,
+      "runs": 8,
+      "nodesPerSecond": 106614
+    },
+    {
+      "case": "queen",
+      "batch": 1,
+      "side": "before",
+      "score": 356,
+      "stable": 8,
+      "runs": 8,
+      "nodesPerSecond": 106211
+    },
+    {
+      "case": "queen",
+      "batch": 2,
+      "side": "before",
+      "score": 356,
+      "stable": 8,
+      "runs": 8,
+      "nodesPerSecond": 109641
+    },
+    {
+      "case": "queen",
+      "batch": 2,
+      "side": "after",
+      "score": 356,
+      "stable": 8,
+      "runs": 8,
+      "nodesPerSecond": 109980
+    },
+    {
+      "case": "queen",
+      "batch": 3,
+      "side": "after",
+      "score": 356,
+      "stable": 8,
+      "runs": 8,
+      "nodesPerSecond": 102546
+    },
+    {
+      "case": "queen",
+      "batch": 3,
+      "side": "before",
+      "score": 356,
+      "stable": 8,
+      "runs": 8,
+      "nodesPerSecond": 107796
+    },
+    {
+      "case": "quiet-mate",
+      "batch": 0,
+      "side": "before",
+      "score": -1000000002,
+      "stable": 8,
+      "runs": 8,
+      "nodesPerSecond": 144254
+    },
+    {
+      "case": "quiet-mate",
+      "batch": 0,
+      "side": "after",
+      "score": -1000000002,
+      "stable": 8,
+      "runs": 8,
+      "nodesPerSecond": 145408
+    },
+    {
+      "case": "quiet-mate",
+      "batch": 1,
+      "side": "after",
+      "score": -1000000002,
+      "stable": 8,
+      "runs": 8,
+      "nodesPerSecond": 139023
+    },
+    {
+      "case": "quiet-mate",
+      "batch": 1,
+      "side": "before",
+      "score": -1000000002,
+      "stable": 8,
+      "runs": 8,
+      "nodesPerSecond": 141600
+    },
+    {
+      "case": "quiet-mate",
+      "batch": 2,
+      "side": "before",
+      "score": -1000000002,
+      "stable": 8,
+      "runs": 8,
+      "nodesPerSecond": 147408
+    },
+    {
+      "case": "quiet-mate",
+      "batch": 2,
+      "side": "after",
+      "score": -1000000002,
+      "stable": 8,
+      "runs": 8,
+      "nodesPerSecond": 146611
+    },
+    {
+      "case": "quiet-mate",
+      "batch": 3,
+      "side": "after",
+      "score": -1000000002,
+      "stable": 8,
+      "runs": 8,
+      "nodesPerSecond": 144185
+    },
+    {
+      "case": "quiet-mate",
+      "batch": 3,
+      "side": "before",
+      "score": -1000000002,
+      "stable": 8,
+      "runs": 8,
+      "nodesPerSecond": 145308
+    }
+  ],
+  "runtimeIncidents": {
+    "counts": {
+      "duplicate_or_stale_start": 11,
+      "rejected_move": 4,
+      "replay_older": 3,
+      "desync": 3
+    },
+    "desyncLines": [
+      "time=\"2026-10-19T09:55:53-07:00\" level=error msg=\"board desync: local turn is 0 but Lichess says it is our (1) turn \u2014 abandoning game to avoid idling on the clock\"",
+      "time=\"2026-10-19T09:56:45-07:00\" level=error msg=\"board desync: local turn is 0 but Lichess says it is our (1) turn \u2014 abandoning game to avoid idling on the clock\"",
+      "time=\"2026-10-19T18:13:49-07:00\" level=error msg=\"board desync: local turn is 0 but Lichess says it is our (1) turn \u2014 abandoning game to avoid idling on the clock\""
+    ]
+  },
+  "coldFreshLossReplay": [
+    "Waiting for live game sC7DT4Vs",
+    "Waiting for live game sC7DT4Vs",
+    "Waiting for live game sC7DT4Vs",
+    "Waiting for live game sC7DT4Vs",
+    "Started /tmp/chess-oct19-a73hZRGs-42-3000",
+    "Finished /tmp/chess-oct19-a73hZRGs-42-3000 exit 0",
+    "abdada-4-tt      move=g7g5 score=+627 stable=3/3 avg=3.002s depth=5 nodes/s=142339 tt-pruned=226590 timeout=true",
+    "Started /tmp/chess-oct19-a73hZRGs-42-6000",
+    "Finished /tmp/chess-oct19-a73hZRGs-42-6000 exit 0",
+    "abdada-4-tt      move=d7f6 score=+522 stable=2/3 avg=6.002s depth=5 nodes/s=123012 tt-pruned=268547 timeout=true",
+    "Started /tmp/chess-oct19-qkmR1kyN-30-5271",
+    "Finished /tmp/chess-oct19-qkmR1kyN-30-5271 exit 0",
+    "abdada-4-tt      move=g4h3 score=+387 stable=3/3 avg=5.273s depth=7 nodes/s=232984 tt-pruned=887834 timeout=true",
+    "Started /tmp/chess-oct19-SYmzLcwj-50-9858",
+    "Finished /tmp/chess-oct19-SYmzLcwj-50-9858 exit 0",
+    "abdada-4-tt      move=d8e8 score=+428 stable=3/3 avg=8.066s depth=6 nodes/s=138457 tt-pruned=398946 timeout=false",
+    "Completed cold reproduction; no production changes."
+  ],
+  "limits": "No fresh-game or Elo strength improvement from this fix has yet been established. The fixed-depth performance check covers two fixtures; source search scoring/pruning is unchanged. All CPU jobs used the authenticated idle-game supervisor.",
+  "deployment": {
+    "timestamp": "2026-10-19T18:26:14.541919-07:00",
+    "oldPid": 1893577,
+    "pid": 3188358,
+    "binarySha256": "4df7a2365b64fa52a7817e8c95b18a46954946d9fc1bd50c3d7c486182e1654a",
+    "rollbackBinary": "/tmp/chess-oct19-main-before-reconnect",
+    "noActiveGamesConfirmed": true,
+    "preservedLogBytes": 56233627,
+    "preservedLogPrefixSha256": "94ace87aaf3a0c92d2ef24cc7dbe39b480d9746b0c7748b85f3ac37fc5cd0209",
+    "webServerPidPreserved": 1931717,
+    "onlineStatus": [
+      {
+        "name": "vadbot",
+        "title": "BOT",
+        "flair": "smileys.distorted-face",
+        "id": "vadbot",
+        "online": true
+      }
+    ],
+    "playingStatusAfterDeploy": {
+      "nowPlaying": [],
+      "nbMyTurn": 0
+    },
+    "ratingsVerified": {
+      "bullet": 1859,
+      "blitz": 1740,
+      "rapid": 1993,
+      "classical": 2000,
+      "correspondence": 2000,
+      "antichess": 603
+    }
+  },
+  "firstFreshGame": {
+    "id": "I5P3lAmh",
+    "status": "mate",
+    "winner": "black",
+    "plies": 192,
+    "opponentRating": 1937,
+    "rapidBefore": 1993,
+    "rapidAfter": 1999,
+    "export": "testdata/lichess_2026_10_19_reconnect_fresh_game.json",
+    "postDeploymentDesyncErrors": 0,
+    "postDeploymentActiveGameResets": 0,
+    "maximumLoggedBlackMoveSeconds": 8.751976056,
+    "limits": "One win and absence of errors in this game do not establish an isolated strength gain or exercise every reconnect race."
+  },
+  "secondFreshGame": {
+    "id": "700OXquu",
+    "speed": "bullet",
+    "timeControl": "1+2",
+    "botSide": "black",
+    "opponent": "ElaChessBot",
+    "opponentRating": 1633,
+    "result": "black mate win",
+    "plies": 100,
+    "botRatingBefore": 1859,
+    "botRatingAfter": 1862,
+    "loggedSearches": 48,
+    "maxLoggedSearchSeconds": 3.169418709,
+    "errorsAfterGameStart": [],
+    "export": "testdata/lichess_2026_10_19_reconnect_bullet_game.json",
+    "scope": "Functional runtime evidence on reconnect build; no pin-pressure candidate deployed; not an isolated Elo gain."
+  }
+}

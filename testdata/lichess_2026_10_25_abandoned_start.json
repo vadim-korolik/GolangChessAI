@@ -1,0 +1,103 @@
+{
+  "observedAt": "2026-10-25T21:29:06.232561-07:00",
+  "before": {
+    "id": "Wf1ggcpp",
+    "rated": true,
+    "variant": "standard",
+    "speed": "blitz",
+    "perf": "blitz",
+    "createdAt": 1792951380185,
+    "lastMoveAt": 1792951380392,
+    "status": "started",
+    "source": "friend",
+    "players": {
+      "white": {
+        "user": {
+          "name": "vadbot",
+          "title": "BOT",
+          "flair": "smileys.distorted-face",
+          "id": "vadbot"
+        },
+        "rating": 1802
+      },
+      "black": {
+        "user": {
+          "name": "alain_bot",
+          "title": "BOT",
+          "id": "alain_bot"
+        },
+        "rating": 2071
+      }
+    },
+    "opening": {
+      "eco": "A40",
+      "name": "Queen's Pawn Game",
+      "ply": 1
+    },
+    "moves": "d4",
+    "clocks": [
+      18000
+    ],
+    "clock": {
+      "initial": 180,
+      "increment": 2,
+      "totalTime": 260
+    },
+    "division": {}
+  },
+  "opponentStatusBefore": {
+    "name": "alain_bot",
+    "title": "BOT",
+    "id": "alain_bot"
+  },
+  "abortResponse": {
+    "ok": true
+  },
+  "after": {
+    "id": "Wf1ggcpp",
+    "rated": true,
+    "variant": "standard",
+    "speed": "blitz",
+    "perf": "blitz",
+    "createdAt": 1792951380185,
+    "lastMoveAt": 1792951380392,
+    "status": "aborted",
+    "source": "friend",
+    "players": {
+      "white": {
+        "user": {
+          "name": "vadbot",
+          "title": "BOT",
+          "flair": "smileys.distorted-face",
+          "id": "vadbot"
+        },
+        "rating": 1802
+      },
+      "black": {
+        "user": {
+          "name": "alain_bot",
+          "title": "BOT",
+          "id": "alain_bot"
+        },
+        "rating": 2071
+      }
+    },
+    "opening": {
+      "eco": "A40",
+      "name": "Queen's Pawn Game",
+      "ply": 1
+    },
+    "moves": "d4",
+    "clocks": [
+      18000,
+      18000
+    ],
+    "clock": {
+      "initial": 180,
+      "increment": 2,
+      "totalTime": 260
+    },
+    "division": {}
+  },
+  "reason": "Unstarted game stalled over ten hours at one ply against offline opponent; blocks all challenges and authenticated idle validation."
+}

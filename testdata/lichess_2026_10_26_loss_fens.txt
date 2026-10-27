@@ -1,0 +1,15 @@
+r4rk1/1p1qnppn/p2p2p1/3p4/3Pp1P1/P1N1P2P/1PPQBP2/R4RK1 w - - 1 17 | WJMX9IM7-ply33 | f2f4 | h3h4 | SF16 loss=90cp; clock=257.87s; blitz
+3r1rk1/1p2nppn/p2pq1p1/3p4/3Pp1PP/P1N1PP2/1PPQB3/R4RK1 w - - 1 19 | WJMX9IM7-ply37 | f3f4 | f3e4 | SF16 loss=110cp; clock=252.19s; blitz
+3r1rk1/4npp1/p2pq1p1/1p6/3PpRPP/P3P3/1PPQB3/5RK1 w - b6 0 23 | WJMX9IM7-ply45 | c2c3 | b2b3 | SF16 loss=122cp; clock=242.67s; blitz
+r5k1/5p2/pR4p1/n1Pp2qp/3PpRP1/4P3/r7/3BQ1K1 w - - 0 39 | WJMX9IM7-ply77 | c5c6 | b6f6 | SF16 loss=89cp; clock=211.55s; blitz
+r5k1/5R2/p5p1/2Pp2qp/2nPpRP1/4P3/8/r2BQ1K1 w - - 1 41 | WJMX9IM7-ply81 | c5c6 | e1e2 | SF16 loss=282cp; clock=208.19s; blitz
+r7/5k2/p5p1/2Pp3p/3P1Kn1/4p3/8/1R6 w - - 0 49 | WJMX9IM7-ply97 | b1b7 | f4g5 | SF16 loss=97cp; clock=190.43s; blitz
+2r2r2/1p2b1pp/1P2pk2/p2p4/2PP4/1R2N3/P4PPP/2R3K1 b - - 0 25 | fu9Ek8Fg-ply50 | a5a4 | f6g5 | SF16 loss=175cp; clock=206.83s; blitz
+r4r2/1p4pp/1P2pb2/3p4/2PPk3/4N1P1/P2R1P1P/2R3K1 b - - 6 31 | fu9Ek8Fg-ply62 | d5c4 | f6g5 | SF16 loss=92cp; clock=184.27s; blitz
+r1b1k2r/pp1p1ppp/2n1pn2/qN4B1/4P3/2P5/P1P2PPP/R2QKB1R w KQkq - 3 9 | JsmSeUmZ-ply17 | g5f6 | d1d6 | SF16 loss=142cp; clock=548.03s; rapid
+8/2kb1p1p/2p1p3/4P1r1/r1p1K1P1/p7/P1P1B2P/1R1R4 w - - 0 29 | JsmSeUmZ-ply57 | h2h4 | e4f4 | SF16 loss=145cp; clock=398.03s; rapid
+3k4/3b4/2p1p3/4P3/5K1P/5B2/p6r/R7 w - - 0 52 | JsmSeUmZ-ply103 | h4h5 | f4e3 | SF16 loss=119cp; clock=288.27s; rapid
+3k4/3b4/4p3/2p1P3/4r3/8/R2KB3/8 w - - 1 56 | JsmSeUmZ-ply111 | a2a8 | d2c3 | SF16 loss=103cp; clock=272.03s; rapid
+3k4/R7/4p3/3b4/2p2K2/8/2B5/6r1 w - - 0 63 | JsmSeUmZ-ply125 | f4e5 | a7h7 | SF16 loss=149cp; clock=236.91s; rapid
+3k4/7R/4p3/3b4/2p1BK2/8/3r4/8 w - - 4 65 | JsmSeUmZ-ply129 | f4e3 | e4d5 | SF16 loss=302cp; clock=226.59s; rapid
+5k2/7R/4K3/3p4/8/2p5/3r4/8 w - - 4 69 | JsmSeUmZ-ply137 | h7f7 | h7a7 | SF16 loss=176cp; clock=206.83s; rapid

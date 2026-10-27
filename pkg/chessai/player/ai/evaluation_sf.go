@@ -749,7 +749,8 @@ func (e *sfEval) kingDanger(us color.Color) sfScore {
 			}
 			if attackerHasQueen &&
 				(p.pt == piece.KnightType || p.pt == piece.BishopType) &&
-				sfChebyshev(p.row, p.col, kr, kc) <= 2 {
+				sfChebyshev(p.row, p.col, kr, kc) <= 2 &&
+				!e.pinnedToQueen(p) {
 				closeQueenMinorPressure += 1000 + 180*ringHits
 			}
 		}
@@ -789,6 +790,42 @@ func (e *sfEval) kingDanger(us color.Color) sfScore {
 	return s2(kingDanger*kingDanger/4096, kingDanger/16)
 }
 
+// A minor pinned to its queen cannot freely join the king attack.
+func (e *sfEval) pinnedToQueen(p pcGeneric) bool {
+	square := board.BitBoard(1) << uint(board.Width*p.row+p.col)
+	for _, q := range e.pieces {
+		if q.c != p.c || q.pt != piece.QueenType || q.attacks&square == 0 {
+			continue
+		}
+		dr, dc := p.row-q.row, p.col-q.col
+		diagonal := dr != 0 && dc != 0
+		if dr > 0 {
+			dr = 1
+		} else if dr < 0 {
+			dr = -1
+		}
+		if dc > 0 {
+			dc = 1
+		} else if dc < 0 {
+			dc = -1
+		}
+		for r, c := p.row+dr, p.col+dc; r >= 0 && r < board.Height && c >= 0 && c < board.Width; r, c = r+dr, c+dc {
+			if e.occAll&(board.BitBoard(1)<<uint(board.Width*r+c)) == 0 {
+				continue
+			}
+			pt, side, _ := e.b.GetPieceTypeColor(location.NewLocation(location.CoordinateType(r), location.CoordinateType(c)))
+			if side != p.c && (pt == piece.QueenType || (diagonal && pt == piece.BishopType) || (!diagonal && pt == piece.RookType)) {
+				// Capturing the pinner removes the constraint without exposing the queen.
+				if p.attacks&(board.BitBoard(1)<<uint(board.Width*r+c)) == 0 {
+					return true
+				}
+			}
+			break
+		}
+	}
+	return false
+}
+
 // queenlessKingActivity rewards stepping the king into the game once queens are
 // off and the remaining material is rook/minor scale. The normal tapered king PSQT
 // underweights this because multiple rooks keep the phase high.
@@ -821,7 +858,13 @@ func (e *sfEval) queenlessKingActivity(us color.Color) sfScore {
 		centerActivity = 0
 	}
 
-	activity := 110*relRank + 10*centerActivity
+	activity := 10 * centerActivity
+	whiteHasPawns := e.pieceCount[color.White][piece.PawnType] != 0
+	blackHasPawns := e.pieceCount[color.Black][piece.PawnType] != 0
+	// With pawns on only one side, king roles depend on the passers, not forward rank.
+	if whiteHasPawns == blackHasPawns {
+		activity += 110 * relRank
+	}
 	return s2(activity, activity)
 }
 
