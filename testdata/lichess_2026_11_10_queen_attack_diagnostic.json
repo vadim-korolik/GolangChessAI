@@ -1,0 +1,298 @@
+{
+  "fen": "r5k1/ppp5/4r3/b2qnp1Q/5B2/P3P3/1P3PPP/3R1RK1 b - - 1 22",
+  "game": "1DXrx7fP",
+  "ply": 44,
+  "botPid": 3617949,
+  "sha256": {
+    "main": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095",
+    "supervisor": "e03397a4102e6a62884d1e201c820e23ca6e3a9ea754e1a7bba63e0c137ca689",
+    "stockfish": "4c22bce76bb3b08b20d761e5c268b802df2d52bdbbd98494d558e880bd6beceb",
+    "sfWorker": "dddc8fd2ab86f91d6c023c4005d2fd6494e90cd7ae9844d058892715cfebe424"
+  },
+  "method": "fresh processes; post-exit idle supervisor; cold FEN, no historical TT",
+  "runs": [
+    {
+      "label": "native-15000",
+      "command": [
+        "python3",
+        "/tmp/chess-oct10-idle-run.py",
+        "./main",
+        "abdada-matrix",
+        "--fen",
+        "r5k1/ppp5/4r3/b2qnp1Q/5B2/P3P3/1P3PPP/3R1RK1 b - - 1 22",
+        "--modes",
+        "abdada8tt",
+        "--think-ms",
+        "15000"
+      ],
+      "log": "/tmp/chess-nov10-queen-attack-native-15000-attempt1.log",
+      "attempt": 1,
+      "output": "FEN 1/1: r5k1/ppp5/4r3/b2qnp1Q/5B2/P3P3/1P3PPP/3R1RK1 b - - 1 22\nTag: single-fen\nabdada-8-tt      move=d5e4 score=+6 stable=1/1 avg=14.272s depth=7 nodes/s=124312 tt-pruned=698690 timeout=false\n\nMatrix summary: positions=1 modes=1 runs-per-mode=1 flags=0\n"
+    },
+    {
+      "label": "native-30000",
+      "command": [
+        "python3",
+        "/tmp/chess-oct10-idle-run.py",
+        "./main",
+        "abdada-matrix",
+        "--fen",
+        "r5k1/ppp5/4r3/b2qnp1Q/5B2/P3P3/1P3PPP/3R1RK1 b - - 1 22",
+        "--modes",
+        "abdada8tt",
+        "--think-ms",
+        "30000"
+      ],
+      "log": "/tmp/chess-nov10-queen-attack-native-30000-attempt1.log",
+      "attempt": 1,
+      "output": "FEN 1/1: r5k1/ppp5/4r3/b2qnp1Q/5B2/P3P3/1P3PPP/3R1RK1 b - - 1 22\nTag: single-fen\nabdada-8-tt      move=d5c6 score=+131 stable=1/1 avg=30.002s depth=8 nodes/s=135642 tt-pruned=2436972 timeout=true\n\nMatrix summary: positions=1 modes=1 runs-per-mode=1 flags=0\n"
+    },
+    {
+      "label": "sf22-d5e4",
+      "command": [
+        "python3",
+        "/tmp/chess-oct10-idle-run.py",
+        "python3",
+        "/tmp/chess-nov10-native-replay-sf-worker.py",
+        "r5k1/ppp5/4r3/b2qnp1Q/5B2/P3P3/1P3PPP/3R1RK1 b - - 1 22",
+        "d5e4"
+      ],
+      "log": "/tmp/chess-nov10-queen-attack-sf22-d5e4-attempt1.log",
+      "attempt": 1,
+      "output": "{\"best\": {\"depth\": 22, \"score\": {\"type\": \"cp\", \"value\": -29}, \"pv\": [\"d5c6\", \"h5f5\", \"a8f8\", \"f5h3\", \"e5g6\", \"h3g3\", \"g8h7\", \"f4g5\", \"a5b6\", \"b2b4\", \"f8e8\", \"g1h1\", \"e6e4\", \"h2h3\", \"c6e6\", \"d1d2\", \"g6e5\", \"a3a4\", \"e4b4\"], \"bestmove\": \"d5c6\"}, \"played\": {\"depth\": 22, \"score\": {\"type\": \"cp\", \"value\": -532}, \"pv\": [\"d5e4\", \"d1d4\", \"e4c6\", \"f4e5\", \"e6e5\", \"d4h4\", \"c6f6\", \"h5h7\", \"g8f8\", \"h7h8\", \"f6h8\", \"h4h8\", \"f8f7\", \"h8a8\", \"a5b6\", \"g2g3\", \"e5b5\", \"b2b4\", \"c7c5\", \"b4c5\", \"b6c5\", \"f1d1\", \"f7g6\", \"h2h4\", \"c5e3\"], \"bestmove\": \"d5e4\"}}\n",
+      "stockfish": {
+        "best": {
+          "depth": 22,
+          "score": {
+            "type": "cp",
+            "value": -29
+          },
+          "pv": [
+            "d5c6",
+            "h5f5",
+            "a8f8",
+            "f5h3",
+            "e5g6",
+            "h3g3",
+            "g8h7",
+            "f4g5",
+            "a5b6",
+            "b2b4",
+            "f8e8",
+            "g1h1",
+            "e6e4",
+            "h2h3",
+            "c6e6",
+            "d1d2",
+            "g6e5",
+            "a3a4",
+            "e4b4"
+          ],
+          "bestmove": "d5c6"
+        },
+        "played": {
+          "depth": 22,
+          "score": {
+            "type": "cp",
+            "value": -532
+          },
+          "pv": [
+            "d5e4",
+            "d1d4",
+            "e4c6",
+            "f4e5",
+            "e6e5",
+            "d4h4",
+            "c6f6",
+            "h5h7",
+            "g8f8",
+            "h7h8",
+            "f6h8",
+            "h4h8",
+            "f8f7",
+            "h8a8",
+            "a5b6",
+            "g2g3",
+            "e5b5",
+            "b2b4",
+            "c7c5",
+            "b4c5",
+            "b6c5",
+            "f1d1",
+            "f7g6",
+            "h2h4",
+            "c5e3"
+          ],
+          "bestmove": "d5e4"
+        }
+      }
+    },
+    {
+      "label": "sf22-d5c6",
+      "command": [
+        "python3",
+        "/tmp/chess-oct10-idle-run.py",
+        "python3",
+        "/tmp/chess-nov10-native-replay-sf-worker.py",
+        "r5k1/ppp5/4r3/b2qnp1Q/5B2/P3P3/1P3PPP/3R1RK1 b - - 1 22",
+        "d5c6"
+      ],
+      "log": "/tmp/chess-nov10-queen-attack-sf22-d5c6-attempt1.log",
+      "attempt": 1,
+      "output": "{\"best\": {\"depth\": 22, \"score\": {\"type\": \"cp\", \"value\": -29}, \"pv\": [\"d5c6\", \"h5f5\", \"a8f8\", \"f5h3\", \"e5g6\", \"h3g3\", \"g8h7\", \"f4g5\", \"a5b6\", \"b2b4\", \"f8e8\", \"g1h1\", \"e6e4\", \"h2h3\", \"c6e6\", \"d1d2\", \"g6e5\", \"a3a4\", \"e4b4\"], \"bestmove\": \"d5c6\"}, \"played\": {\"depth\": 22, \"score\": {\"type\": \"cp\", \"value\": -44}, \"pv\": [\"d5c6\", \"h5f5\", \"a8f8\", \"f5h3\", \"e5g6\", \"h3g3\", \"a5b6\", \"d1c1\", \"c6b5\", \"f4c7\", \"b5b2\", \"c7b6\", \"b2b6\", \"c1b1\", \"b6d6\", \"g3d6\", \"e6d6\", \"b1b7\", \"d6a6\", \"b7b3\", \"g6e5\", \"h2h3\", \"e5c4\"], \"bestmove\": \"d5c6\"}}\n",
+      "stockfish": {
+        "best": {
+          "depth": 22,
+          "score": {
+            "type": "cp",
+            "value": -29
+          },
+          "pv": [
+            "d5c6",
+            "h5f5",
+            "a8f8",
+            "f5h3",
+            "e5g6",
+            "h3g3",
+            "g8h7",
+            "f4g5",
+            "a5b6",
+            "b2b4",
+            "f8e8",
+            "g1h1",
+            "e6e4",
+            "h2h3",
+            "c6e6",
+            "d1d2",
+            "g6e5",
+            "a3a4",
+            "e4b4"
+          ],
+          "bestmove": "d5c6"
+        },
+        "played": {
+          "depth": 22,
+          "score": {
+            "type": "cp",
+            "value": -44
+          },
+          "pv": [
+            "d5c6",
+            "h5f5",
+            "a8f8",
+            "f5h3",
+            "e5g6",
+            "h3g3",
+            "a5b6",
+            "d1c1",
+            "c6b5",
+            "f4c7",
+            "b5b2",
+            "c7b6",
+            "b2b6",
+            "c1b1",
+            "b6d6",
+            "g3d6",
+            "e6d6",
+            "b1b7",
+            "d6a6",
+            "b7b3",
+            "g6e5",
+            "h2h3",
+            "e5c4"
+          ],
+          "bestmove": "d5c6"
+        }
+      }
+    },
+    {
+      "label": "abdada1tt-d5e4-depth7",
+      "command": [
+        "python3",
+        "/tmp/chess-oct10-idle-run.py",
+        "./main",
+        "abdada-matrix",
+        "--fen",
+        "r5k1/ppp5/4r3/b2qnp1Q/5B2/P3P3/1P3PPP/3R1RK1 b - - 1 22",
+        "--depth",
+        "7",
+        "--force-move",
+        "d5e4",
+        "--modes",
+        "abdada1tt",
+        "--runs",
+        "1"
+      ],
+      "log": "/tmp/chess-nov10-queen-attack-abdada1tt-d5e4-depth7-attempt1.log",
+      "attempt": 1,
+      "output": "FEN 1/1: r5k1/ppp5/4r3/b2qnp1Q/5B2/P3P3/1P3PPP/3R1RK1 b - - 1 22\nTag: single-fen\nabdada-1-tt      move=d5e4 score=+92 stable=1/1 avg=349ms depth=7 nodes/s=89118 tt-pruned=5149 timeout=false\n\nMatrix summary: positions=1 modes=1 runs-per-mode=1 flags=0\n"
+    },
+    {
+      "label": "abdada1tt-e5d3-depth7",
+      "command": [
+        "python3",
+        "/tmp/chess-oct10-idle-run.py",
+        "./main",
+        "abdada-matrix",
+        "--fen",
+        "r5k1/ppp5/4r3/b2qnp1Q/5B2/P3P3/1P3PPP/3R1RK1 b - - 1 22",
+        "--depth",
+        "7",
+        "--force-move",
+        "e5d3",
+        "--modes",
+        "abdada1tt",
+        "--runs",
+        "1"
+      ],
+      "log": "/tmp/chess-nov10-queen-attack-abdada1tt-e5d3-depth7-attempt1.log",
+      "attempt": 1,
+      "output": "FEN 1/1: r5k1/ppp5/4r3/b2qnp1Q/5B2/P3P3/1P3PPP/3R1RK1 b - - 1 22\nTag: single-fen\nabdada-1-tt      move=e5d3 score=-80 stable=1/1 avg=757ms depth=7 nodes/s=94855 tt-pruned=11041 timeout=false\n\nMatrix summary: positions=1 modes=1 runs-per-mode=1 flags=0\n"
+    },
+    {
+      "label": "abdada1nolmr-d5e4-depth7",
+      "command": [
+        "python3",
+        "/tmp/chess-oct10-idle-run.py",
+        "./main",
+        "abdada-matrix",
+        "--fen",
+        "r5k1/ppp5/4r3/b2qnp1Q/5B2/P3P3/1P3PPP/3R1RK1 b - - 1 22",
+        "--depth",
+        "7",
+        "--force-move",
+        "d5e4",
+        "--modes",
+        "abdada1nolmr",
+        "--runs",
+        "1"
+      ],
+      "log": "/tmp/chess-nov10-queen-attack-abdada1nolmr-d5e4-depth7-attempt1.log",
+      "attempt": 1,
+      "output": "FEN 1/1: r5k1/ppp5/4r3/b2qnp1Q/5B2/P3P3/1P3PPP/3R1RK1 b - - 1 22\nTag: single-fen\nabdada-1-no-lmr  move=d5e4 score=+92 stable=1/1 avg=2.169s depth=7 nodes/s=89099 tt-pruned=240707 timeout=false\n\nMatrix summary: positions=1 modes=1 runs-per-mode=1 flags=0\n"
+    },
+    {
+      "label": "abdada1nolmr-e5d3-depth7",
+      "command": [
+        "python3",
+        "/tmp/chess-oct10-idle-run.py",
+        "./main",
+        "abdada-matrix",
+        "--fen",
+        "r5k1/ppp5/4r3/b2qnp1Q/5B2/P3P3/1P3PPP/3R1RK1 b - - 1 22",
+        "--depth",
+        "7",
+        "--force-move",
+        "e5d3",
+        "--modes",
+        "abdada1nolmr",
+        "--runs",
+        "1"
+      ],
+      "log": "/tmp/chess-nov10-queen-attack-abdada1nolmr-e5d3-depth7-attempt1.log",
+      "attempt": 1,
+      "output": "FEN 1/1: r5k1/ppp5/4r3/b2qnp1Q/5B2/P3P3/1P3PPP/3R1RK1 b - - 1 22\nTag: single-fen\nabdada-1-no-lmr  move=e5d3 score=+0 stable=1/1 avg=3.974s depth=7 nodes/s=87582 tt-pruned=242177 timeout=false\n\nMatrix summary: positions=1 modes=1 runs-per-mode=1 flags=0\n"
+    }
+  ],
+  "complete": true
+}

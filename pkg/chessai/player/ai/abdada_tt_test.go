@@ -355,7 +355,7 @@ func TestABDADARootAspirationFailLowStoresUpperBound(t *testing.T) {
 	ab := &ABDADA{player: p, NumThreads: 1}
 
 	alpha, beta := 50000, 50100
-	got := ab.getBestMove(b, 1, alpha, beta, nil)
+	got, _ := ab.getBestMove(b, 1, alpha, beta, nil)
 	if got.Score > alpha {
 		t.Fatalf("test setup expected fail-low score <= alpha %d, got %d", alpha, got.Score)
 	}
@@ -382,7 +382,7 @@ func TestABDADARootAspirationFailHighStoresLowerBound(t *testing.T) {
 	ab := &ABDADA{player: p, NumThreads: 1}
 
 	alpha, beta := -50100, -50000
-	got := ab.getBestMove(b, 1, alpha, beta, nil)
+	got, _ := ab.getBestMove(b, 1, alpha, beta, nil)
 	if got.Score < beta {
 		t.Fatalf("test setup expected fail-high score >= beta %d, got %d", beta, got.Score)
 	}

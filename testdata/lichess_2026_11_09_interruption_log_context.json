@@ -1,0 +1,1104 @@
+[
+  {
+    "ply": 2,
+    "played": "d7d5",
+    "prefixUCI": "d2d4",
+    "thinking": [
+      "time=\"2026-11-09T21:11:31-08:00\" level=info msg=\"player thinking... have time 10m0s, inc 5s, set max to 10s\""
+    ],
+    "iterations": []
+  },
+  {
+    "ply": 4,
+    "played": "e7e6",
+    "prefixUCI": "d2d4 d7d5 c2c4",
+    "thinking": [
+      "time=\"2026-11-09T21:11:32-08:00\" level=info msg=\"player thinking... have time 10m0s, inc 5s, set max to 10s\""
+    ],
+    "iterations": []
+  },
+  {
+    "ply": 6,
+    "played": "e6d5",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5",
+    "thinking": [
+      "time=\"2026-11-09T21:11:33-08:00\" level=info msg=\"player thinking... have time 10m4.84s, inc 5s, set max to 10.080666666s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (7, 1) to (5, 2) score:56",
+      "Best D:2 M:move from (7, 1) to (5, 2) score:36",
+      "Best D:3 M:move from (7, 1) to (5, 2) score:36",
+      "Best D:4 M:move from (7, 1) to (5, 2) score:7",
+      "Best D:5 M:move from (5, 3) to (4, 4) score:44",
+      "Best D:6 M:move from (5, 3) to (4, 4) score:-9"
+    ]
+  },
+  {
+    "ply": 8,
+    "played": "g8f6",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3",
+    "thinking": [
+      "time=\"2026-11-09T21:11:45-08:00\" level=info msg=\"player thinking... have time 9m59.59s, inc 5s, set max to 9.993166666s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (7, 6) to (5, 5) score:30",
+      "Best D:2 M:move from (7, 2) to (3, 6) score:11",
+      "Best D:3 M:move from (7, 1) to (5, 2) score:31",
+      "Best D:4 M:move from (7, 1) to (5, 2) score:-2",
+      "Best D:5 M:move from (7, 1) to (5, 2) score:8",
+      "Best D:6 M:move from (7, 1) to (5, 2) score:-5"
+    ]
+  },
+  {
+    "ply": 10,
+    "played": "b8c6",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3",
+    "thinking": [
+      "time=\"2026-11-09T21:11:54-08:00\" level=info msg=\"player thinking... have time 9m56.16s, inc 5s, set max to 9.936s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (7, 6) to (5, 5) score:31",
+      "Best D:2 M:move from (7, 6) to (5, 5) score:-13",
+      "Best D:3 M:move from (7, 6) to (5, 5) score:44",
+      "Best D:4 M:move from (7, 6) to (5, 5) score:10",
+      "Best D:5 M:move from (7, 6) to (5, 5) score:9"
+    ]
+  },
+  {
+    "ply": 12,
+    "played": "h7h6",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5",
+    "thinking": [
+      "time=\"2026-11-09T21:12:05-08:00\" level=info msg=\"player thinking... have time 9m51.06s, inc 5s, set max to 9.851s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (6, 0) to (5, 0) score:47",
+      "Best D:2 M:move from (6, 0) to (5, 0) score:9",
+      "Best D:3 M:move from (6, 0) to (5, 0) score:47",
+      "Best D:4 M:move from (7, 2) to (3, 6) score:35",
+      "Best D:5 M:move from (7, 2) to (3, 6) score:16",
+      "Best D:6 M:move from (6, 0) to (5, 0) score:1"
+    ]
+  },
+  {
+    "ply": 14,
+    "played": "g7f6",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6",
+    "thinking": [
+      "time=\"2026-11-09T21:12:16-08:00\" level=info msg=\"player thinking... have time 9m46.04s, inc 5s, set max to 9.767333333s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (6, 1) to (5, 2) score:47",
+      "Best D:2 M:move from (6, 1) to (5, 2) score:-6",
+      "Best D:3 M:move from (6, 1) to (5, 2) score:5",
+      "Best D:4 M:move from (6, 1) to (5, 2) score:1",
+      "Best D:5 M:move from (6, 1) to (5, 2) score:18",
+      "Best D:6 M:move from (6, 1) to (5, 2) score:18",
+      "Best D:7 M:move from (6, 1) to (5, 2) score:8"
+    ]
+  },
+  {
+    "ply": 16,
+    "played": "f8b4",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3",
+    "thinking": [
+      "time=\"2026-11-09T21:12:28-08:00\" level=info msg=\"player thinking... have time 9m40.95s, inc 5s, set max to 9.6825s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (7, 5) to (3, 1) score:26",
+      "Best D:2 M:move from (7, 0) to (7, 1) score:15",
+      "Best D:3 M:move from (7, 0) to (7, 1) score:34",
+      "Best D:4 M:move from (6, 7) to (5, 7) score:-28",
+      "Best D:5 M:move from (7, 0) to (7, 1) score:-15",
+      "Best D:6 M:move from (7, 2) to (3, 6) score:-23"
+    ]
+  },
+  {
+    "ply": 18,
+    "played": "d8d6",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3",
+    "thinking": [
+      "time=\"2026-11-09T21:12:50-08:00\" level=info msg=\"player thinking... have time 9m36.09s, inc 5s, set max to 9.6015s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (7, 0) to (7, 1) score:55",
+      "Best D:2 M:move from (7, 0) to (7, 1) score:-1",
+      "Best D:3 M:move from (7, 0) to (7, 1) score:43",
+      "Best D:4 M:move from (7, 4) to (5, 4) score:-21",
+      "Best D:5 M:move from (7, 0) to (7, 1) score:-25",
+      "Best D:6 M:move from (7, 4) to (5, 4) score:-16"
+    ]
+  },
+  {
+    "ply": 20,
+    "played": "h8g8",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1",
+    "thinking": [
+      "time=\"2026-11-09T21:13:00-08:00\" level=info msg=\"player thinking... have time 9m31.3s, inc 5s, set max to 9.521666666s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (7, 0) to (7, 1) score:16",
+      "Best D:2 M:move from (7, 3) to (7, 1) score:-29",
+      "Best D:3 M:move from (7, 3) to (7, 1) score:-14",
+      "Best D:4 M:move from (3, 6) to (2, 5) score:-60",
+      "Best D:5 M:move from (7, 0) to (7, 1) score:-5",
+      "Best D:6 M:move from (7, 0) to (7, 1) score:-19"
+    ]
+  },
+  {
+    "ply": 22,
+    "played": "d6e7",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5",
+    "thinking": [
+      "time=\"2026-11-09T21:13:13-08:00\" level=info msg=\"player thinking... have time 9m27.71s, inc 5s, set max to 11.827291666s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (5, 4) to (6, 3) score:-28",
+      "Best D:2 M:move from (5, 4) to (7, 4) score:-94",
+      "Best D:3 M:move from (5, 4) to (6, 3) score:43",
+      "Best D:4 M:move from (5, 4) to (6, 3) score:-12",
+      "Best D:5 M:move from (5, 4) to (6, 3) score:20",
+      "Best D:6 M:move from (5, 4) to (6, 3) score:8"
+    ]
+  },
+  {
+    "ply": 24,
+    "played": "a7a6",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4",
+    "thinking": [
+      "time=\"2026-11-09T21:13:39-08:00\" level=info msg=\"player thinking... have time 9m20.72s, inc 5s, set max to 11.681666666s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (7, 5) to (2, 0) score:153",
+      "Best D:2 M:move from (7, 5) to (2, 0) score:8",
+      "Best D:3 M:move from (6, 7) to (5, 7) score:16",
+      "Best D:4 M:move from (6, 7) to (5, 7) score:-21",
+      "Best D:5 M:move from (6, 7) to (5, 7) score:-35",
+      "Best D:6 M:move from (6, 7) to (5, 7) score:43"
+    ]
+  },
+  {
+    "ply": 26,
+    "played": "g8g5",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3",
+    "thinking": [
+      "time=\"2026-11-09T21:13:52-08:00\" level=info msg=\"player thinking... have time 9m13.79s, inc 5s, set max to 11.537291666s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (6, 3) to (5, 4) score:16",
+      "Best D:2 M:move from (7, 5) to (2, 0) score:-23",
+      "Best D:3 M:move from (3, 6) to (2, 5) score:105",
+      "Best D:4 M:move from (3, 6) to (2, 5) score:-83",
+      "Best D:5 M:move from (7, 1) to (4, 1) score:-43",
+      "Best D:6 M:move from (7, 1) to (4, 1) score:-45"
+    ]
+  },
+  {
+    "ply": 28,
+    "played": "g5h5",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3",
+    "thinking": [
+      "time=\"2026-11-09T21:14:15-08:00\" level=info msg=\"player thinking... have time 9m8.83s, inc 5s, set max to 11.433958332s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (7, 5) to (3, 1) score:-11",
+      "Best D:2 M:move from (4, 1) to (4, 0) score:-71",
+      "Best D:3 M:move from (4, 1) to (4, 0) score:-8",
+      "Best D:4 M:move from (7, 5) to (3, 1) score:-58",
+      "Best D:5 M:move from (4, 1) to (4, 0) score:-76",
+      "Best D:6 M:move from (4, 1) to (4, 0) score:-85",
+      "Best D:7 M:move from (4, 1) to (4, 0) score:-55"
+    ]
+  },
+  {
+    "ply": 30,
+    "played": "c6e5",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5",
+    "thinking": [
+      "time=\"2026-11-09T21:14:41-08:00\" level=info msg=\"player thinking... have time 9m2.23s, inc 5s, set max to 11.296458332s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (5, 5) to (4, 3) score:-6",
+      "Best D:2 M:move from (5, 5) to (4, 3) score:-6",
+      "Best D:3 M:move from (5, 5) to (4, 3) score:-6",
+      "Best D:4 M:move from (5, 5) to (4, 3) score:-6",
+      "Best D:5 M:move from (5, 5) to (4, 3) score:20",
+      "Best D:6 M:move from (5, 5) to (4, 3) score:1",
+      "Best D:7 M:move from (5, 5) to (4, 3) score:20"
+    ]
+  },
+  {
+    "ply": 32,
+    "played": "e5d3",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5",
+    "thinking": [
+      "time=\"2026-11-09T21:14:54-08:00\" level=info msg=\"player thinking... have time 8m55.77s, inc 5s, set max to 11.161875s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (4, 3) to (2, 4) score:-6",
+      "Best D:2 M:move from (4, 3) to (2, 4) score:-6",
+      "Best D:3 M:move from (4, 3) to (2, 4) score:31",
+      "Best D:4 M:move from (4, 3) to (2, 4) score:1",
+      "Best D:5 M:move from (4, 3) to (2, 4) score:31",
+      "Best D:6 M:move from (4, 3) to (2, 4) score:31",
+      "Best D:7 M:move from (4, 3) to (2, 4) score:3",
+      "Best D:8 M:move from (4, 3) to (2, 4) score:-44",
+      "Best D:9 M:move from (4, 3) to (2, 4) score:-27",
+      "Best D:10 M:move from (4, 3) to (2, 4) score:-13"
+    ]
+  },
+  {
+    "ply": 34,
+    "played": "e7d6",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5",
+    "thinking": [
+      "time=\"2026-11-09T21:15:03-08:00\" level=info msg=\"player thinking... have time 8m52.09s, inc 5s, set max to 11.085208332s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (6, 3) to (5, 4) score:31",
+      "Best D:2 M:move from (6, 3) to (5, 4) score:1",
+      "Best D:3 M:move from (6, 3) to (5, 4) score:-18",
+      "Best D:4 M:move from (6, 3) to (5, 4) score:31",
+      "Best D:5 M:move from (6, 3) to (5, 4) score:-28",
+      "Best D:6 M:move from (6, 3) to (5, 4) score:-27",
+      "Best D:7 M:move from (6, 3) to (5, 4) score:5"
+    ]
+  },
+  {
+    "ply": 36,
+    "played": "d6b4",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4",
+    "thinking": [
+      "time=\"2026-11-09T21:15:13-08:00\" level=info msg=\"player thinking... have time 8m48.17s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (5, 4) to (3, 6) score:31",
+      "Best D:2 M:move from (5, 4) to (3, 6) score:31",
+      "Best D:3 M:move from (5, 4) to (3, 6) score:61",
+      "Best D:4 M:move from (5, 4) to (3, 6) score:17",
+      "Best D:5 M:move from (5, 4) to (3, 6) score:-23",
+      "Best D:6 M:move from (2, 4) to (3, 6) score:-49",
+      "Best D:7 M:move from (5, 4) to (3, 6) score:-36"
+    ]
+  },
+  {
+    "ply": 38,
+    "played": "d3b2",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1",
+    "thinking": [
+      "time=\"2026-11-09T21:15:35-08:00\" level=info msg=\"player thinking... have time 8m43s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (2, 4) to (1, 6) score:61",
+      "Best D:2 M:move from (2, 4) to (1, 6) score:-10",
+      "Best D:3 M:move from (3, 6) to (3, 5) score:35",
+      "Best D:4 M:move from (2, 4) to (1, 6) score:-58",
+      "Best D:5 M:move from (2, 4) to (1, 6) score:-36",
+      "Best D:6 M:move from (2, 4) to (1, 6) score:-36",
+      "Best D:7 M:move from (2, 4) to (1, 6) score:-9"
+    ]
+  },
+  {
+    "ply": 40,
+    "played": "c7c6",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1",
+    "thinking": [
+      "time=\"2026-11-09T21:16:00-08:00\" level=info msg=\"player thinking... have time 8m37.82s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (1, 6) to (3, 5) score:17",
+      "Best D:2 M:move from (1, 6) to (3, 5) score:17",
+      "Best D:3 M:move from (3, 6) to (5, 6) score:37",
+      "Best D:4 M:move from (6, 5) to (5, 5) score:-4",
+      "Best D:5 M:move from (6, 5) to (5, 5) score:60",
+      "Best D:6 M:move from (6, 5) to (5, 5) score:30"
+    ]
+  },
+  {
+    "ply": 42,
+    "played": "e8e7",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6",
+    "thinking": [
+      "time=\"2026-11-09T21:16:12-08:00\" level=info msg=\"player thinking... have time 8m32.65s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (1, 6) to (2, 4) score:7",
+      "Best D:2 M:move from (1, 6) to (2, 4) score:7",
+      "Best D:3 M:move from (7, 3) to (6, 3) score:43",
+      "Best D:4 M:move from (7, 3) to (6, 3) score:56",
+      "Best D:5 M:move from (7, 3) to (6, 3) score:43",
+      "Best D:6 M:move from (7, 3) to (6, 3) score:66",
+      "Best D:7 M:move from (7, 3) to (6, 3) score:45"
+    ]
+  },
+  {
+    "ply": 44,
+    "played": "a6a5",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8",
+    "thinking": [
+      "time=\"2026-11-09T21:16:32-08:00\" level=info msg=\"player thinking... have time 8m27.48s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (1, 6) to (2, 4) score:103",
+      "Best D:2 M:move from (1, 6) to (2, 4) score:30",
+      "Best D:3 M:move from (3, 6) to (1, 4) score:118",
+      "Best D:4 M:move from (3, 6) to (1, 4) score:98",
+      "Best D:5 M:move from (7, 7) to (7, 6) score:73",
+      "Best D:6 M:move from (5, 7) to (4, 7) score:76"
+    ]
+  },
+  {
+    "ply": 46,
+    "played": "b4d6",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5",
+    "thinking": [
+      "time=\"2026-11-09T21:16:49-08:00\" level=info msg=\"player thinking... have time 8m22.31s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (1, 6) to (2, 4) score:159",
+      "Best D:2 M:move from (1, 6) to (2, 4) score:91",
+      "Best D:3 M:move from (3, 6) to (5, 4) score:102",
+      "Best D:4 M:move from (3, 6) to (5, 4) score:74",
+      "Best D:5 M:move from (3, 6) to (1, 4) score:114",
+      "Best D:6 M:move from (3, 6) to (5, 4) score:67"
+    ]
+  },
+  {
+    "ply": 48,
+    "played": "b7c6",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6",
+    "thinking": [
+      "time=\"2026-11-09T21:17:00-08:00\" level=info msg=\"player thinking... have time 8m16.94s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (1, 6) to (2, 4) score:102",
+      "Best D:2 M:move from (1, 6) to (2, 4) score:78",
+      "Best D:3 M:move from (6, 6) to (5, 5) score:93",
+      "Best D:4 M:move from (6, 6) to (5, 5) score:67",
+      "Best D:5 M:move from (6, 6) to (5, 5) score:68",
+      "Best D:6 M:move from (6, 6) to (5, 5) score:56"
+    ]
+  },
+  {
+    "ply": 50,
+    "played": "b2d3",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2",
+    "thinking": [
+      "time=\"2026-11-09T21:17:27-08:00\" level=info msg=\"player thinking... have time 8m11.77s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (1, 6) to (2, 4) score:109",
+      "Best D:2 M:move from (1, 6) to (2, 4) score:62",
+      "Best D:3 M:move from (7, 5) to (6, 6) score:89",
+      "Best D:4 M:move from (1, 6) to (2, 4) score:43",
+      "Best D:5 M:move from (1, 6) to (2, 4) score:48",
+      "Best D:6 M:move from (1, 6) to (2, 4) score:60"
+    ]
+  },
+  {
+    "ply": 52,
+    "played": "c8g4",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1",
+    "thinking": [
+      "time=\"2026-11-09T21:18:00-08:00\" level=info msg=\"player thinking... have time 8m6.6s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (7, 7) to (7, 6) score:90",
+      "Best D:2 M:move from (7, 7) to (7, 6) score:67",
+      "Best D:3 M:move from (5, 4) to (4, 4) score:82",
+      "Best D:4 M:move from (5, 4) to (4, 4) score:60",
+      "Best D:5 M:move from (5, 4) to (4, 4) score:63",
+      "Best D:6 M:move from (7, 5) to (3, 1) score:24"
+    ]
+  },
+  {
+    "ply": 54,
+    "played": "g4d1",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8",
+    "thinking": [
+      "time=\"2026-11-09T21:18:12-08:00\" level=info msg=\"player thinking... have time 8m1.43s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (3, 1) to (0, 4) score:-6",
+      "Best D:2 M:move from (3, 1) to (0, 4) score:-6",
+      "Best D:3 M:move from (3, 1) to (0, 4) score:28",
+      "Best D:4 M:move from (3, 1) to (0, 4) score:27",
+      "Best D:5 M:move from (3, 1) to (0, 4) score:43",
+      "Best D:6 M:move from (3, 1) to (0, 4) score:24",
+      "Best D:7 M:move from (3, 1) to (0, 4) score:-40",
+      "Best D:8 M:move from (3, 1) to (0, 4) score:-91",
+      "Best D:9 M:move from (3, 1) to (0, 4) score:-107",
+      "Best D:10 M:move from (3, 1) to (0, 4) score:-88"
+    ]
+  },
+  {
+    "ply": 56,
+    "played": "d1g4",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2",
+    "thinking": [
+      "time=\"2026-11-09T21:18:24-08:00\" level=info msg=\"player thinking... have time 7m56.26s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (0, 4) to (3, 1) score:67",
+      "Best D:2 M:move from (0, 4) to (3, 1) score:12",
+      "Best D:3 M:move from (0, 4) to (3, 1) score:43",
+      "Best D:4 M:move from (0, 4) to (3, 1) score:25",
+      "Best D:5 M:move from (0, 4) to (3, 1) score:30",
+      "Best D:6 M:move from (0, 4) to (4, 0) score:17",
+      "Best D:7 M:move from (0, 4) to (3, 1) score:8"
+    ]
+  },
+  {
+    "ply": 58,
+    "played": "g4d7",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7",
+    "thinking": [
+      "time=\"2026-11-09T21:18:47-08:00\" level=info msg=\"player thinking... have time 7m51.04s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (6, 3) to (7, 2) score:88",
+      "Best D:2 M:move from (3, 1) to (6, 4) score:43",
+      "Best D:3 M:move from (3, 1) to (6, 4) score:52",
+      "Best D:4 M:move from (3, 1) to (6, 4) score:50",
+      "Best D:5 M:move from (3, 1) to (6, 4) score:51",
+      "Best D:6 M:move from (6, 3) to (7, 2) score:19",
+      "Best D:7 M:move from (3, 1) to (6, 4) score:-5"
+    ]
+  },
+  {
+    "ply": 60,
+    "played": "d7e6",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5",
+    "thinking": [
+      "time=\"2026-11-09T21:19:09-08:00\" level=info msg=\"player thinking... have time 7m45.87s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (6, 3) to (7, 2) score:52",
+      "Best D:2 M:move from (6, 3) to (7, 2) score:38",
+      "Best D:3 M:move from (5, 4) to (4, 5) score:48",
+      "Best D:4 M:move from (5, 4) to (4, 5) score:71",
+      "Best D:5 M:move from (5, 4) to (4, 5) score:-10",
+      "Best D:6 M:move from (5, 4) to (4, 5) score:4",
+      "Best D:7 M:move from (6, 4) to (5, 3) score:-10"
+    ]
+  },
+  {
+    "ply": 62,
+    "played": "c6c5",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1",
+    "thinking": [
+      "time=\"2026-11-09T21:19:32-08:00\" level=info msg=\"player thinking... have time 7m40.7s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (5, 3) to (3, 1) score:127",
+      "Best D:2 M:move from (6, 3) to (7, 2) score:53",
+      "Best D:3 M:move from (5, 5) to (4, 5) score:59",
+      "Best D:4 M:move from (5, 5) to (4, 5) score:62",
+      "Best D:5 M:move from (5, 5) to (4, 5) score:56",
+      "Best D:6 M:move from (5, 5) to (4, 5) score:52"
+    ]
+  },
+  {
+    "ply": 64,
+    "played": "e6d7",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7",
+    "thinking": [
+      "time=\"2026-11-09T21:19:53-08:00\" level=info msg=\"player thinking... have time 7m35.44s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (6, 3) to (7, 2) score:75",
+      "Best D:2 M:move from (6, 3) to (7, 2) score:59",
+      "Best D:3 M:move from (6, 3) to (7, 2) score:69",
+      "Best D:4 M:move from (5, 3) to (6, 4) score:62",
+      "Best D:5 M:move from (5, 3) to (6, 4) score:66",
+      "Best D:6 M:move from (5, 3) to (6, 4) score:59",
+      "Best D:7 M:move from (5, 3) to (6, 4) score:57"
+    ]
+  },
+  {
+    "ply": 66,
+    "played": "c5c4",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3",
+    "thinking": [
+      "time=\"2026-11-09T21:20:14-08:00\" level=info msg=\"player thinking... have time 7m30.27s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (4, 5) to (3, 5) score:81",
+      "Best D:2 M:move from (4, 5) to (3, 5) score:68",
+      "Best D:3 M:move from (4, 5) to (3, 5) score:74",
+      "Best D:4 M:move from (4, 5) to (3, 5) score:56",
+      "Best D:5 M:move from (4, 5) to (3, 5) score:68",
+      "Best D:6 M:move from (4, 5) to (3, 5) score:67"
+    ]
+  },
+  {
+    "ply": 68,
+    "played": "d6c5",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5",
+    "thinking": [
+      "time=\"2026-11-09T21:20:35-08:00\" level=info msg=\"player thinking... have time 7m25.01s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (5, 4) to (4, 3) score:106",
+      "Best D:2 M:move from (6, 4) to (5, 5) score:68",
+      "Best D:3 M:move from (6, 4) to (5, 5) score:90",
+      "Best D:4 M:move from (5, 4) to (4, 5) score:64",
+      "Best D:5 M:move from (6, 3) to (7, 2) score:69",
+      "Best D:6 M:move from (5, 4) to (4, 5) score:64"
+    ]
+  },
+  {
+    "ply": 70,
+    "played": "d3c5",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5",
+    "thinking": [
+      "time=\"2026-11-09T21:20:56-08:00\" level=info msg=\"player thinking... have time 7m19.84s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (2, 4) to (4, 5) score:71",
+      "Best D:2 M:move from (2, 4) to (4, 5) score:45",
+      "Best D:3 M:move from (2, 4) to (4, 5) score:69",
+      "Best D:4 M:move from (2, 4) to (4, 5) score:45",
+      "Best D:5 M:move from (2, 4) to (4, 5) score:54",
+      "Best D:6 M:move from (2, 4) to (4, 5) score:30",
+      "Best D:7 M:move from (2, 4) to (4, 5) score:72",
+      "Best D:8 M:move from (2, 4) to (4, 5) score:77",
+      "Best D:9 M:move from (2, 4) to (4, 5) score:87",
+      "Best D:10 M:move from (2, 4) to (4, 5) score:49",
+      "Best D:11 M:move from (2, 4) to (4, 5) score:72",
+      "Best D:12 M:move from (2, 4) to (4, 5) score:76"
+    ]
+  },
+  {
+    "ply": 72,
+    "played": "d7e6",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1",
+    "thinking": [
+      "time=\"2026-11-09T21:21:17-08:00\" level=info msg=\"player thinking... have time 7m15.73s, inc 5s, set max to 7.262166666s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (6, 4) to (4, 6) score:74",
+      "Best D:2 M:move from (6, 4) to (5, 3) score:45",
+      "Best D:3 M:move from (6, 4) to (5, 3) score:141",
+      "Best D:4 M:move from (6, 4) to (5, 3) score:92",
+      "Best D:5 M:move from (6, 4) to (5, 3) score:113",
+      "Best D:6 M:move from (6, 4) to (5, 3) score:98",
+      "Best D:7 M:move from (6, 4) to (5, 3) score:111",
+      "Best D:8 M:move from (6, 4) to (5, 3) score:117"
+    ]
+  },
+  {
+    "ply": 74,
+    "played": "c5d3",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1 d7e6 g1f1",
+    "thinking": [
+      "time=\"2026-11-09T21:21:37-08:00\" level=info msg=\"player thinking... have time 7m13.19s, inc 5s, set max to 7.219833333s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (4, 5) to (2, 4) score:135",
+      "Best D:2 M:move from (4, 5) to (2, 4) score:62",
+      "Best D:3 M:move from (4, 5) to (2, 4) score:141",
+      "Best D:4 M:move from (6, 3) to (5, 4) score:118",
+      "Best D:5 M:move from (4, 5) to (2, 4) score:127",
+      "Best D:6 M:move from (4, 5) to (2, 4) score:134",
+      "Best D:7 M:move from (4, 5) to (2, 4) score:122",
+      "Best D:8 M:move from (4, 5) to (2, 4) score:118"
+    ]
+  },
+  {
+    "ply": 76,
+    "played": "e7d6",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1 d7e6 g1f1 c5d3 c1c3",
+    "thinking": [
+      "time=\"2026-11-09T21:21:45-08:00\" level=info msg=\"player thinking... have time 7m11.48s, inc 5s, set max to 7.191333333s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (6, 3) to (5, 4) score:160",
+      "Best D:2 M:move from (6, 3) to (5, 4) score:70",
+      "Best D:3 M:move from (6, 3) to (5, 4) score:150",
+      "Best D:4 M:move from (6, 3) to (5, 4) score:133",
+      "Best D:5 M:move from (6, 3) to (5, 4) score:160",
+      "Best D:6 M:move from (5, 2) to (4, 2) score:136",
+      "Best D:7 M:move from (5, 2) to (4, 2) score:129",
+      "Best D:8 M:move from (6, 3) to (5, 4) score:144"
+    ]
+  },
+  {
+    "ply": 78,
+    "played": "d6c5",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1 d7e6 g1f1 c5d3 c1c3 e7d6 f1e2",
+    "thinking": [
+      "time=\"2026-11-09T21:22:10-08:00\" level=info msg=\"player thinking... have time 7m9.12s, inc 5s, set max to 7.152s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (5, 4) to (4, 5) score:150",
+      "Best D:2 M:move from (5, 4) to (4, 5) score:108",
+      "Best D:3 M:move from (5, 4) to (4, 5) score:171",
+      "Best D:4 M:move from (5, 4) to (4, 3) score:138",
+      "Best D:5 M:move from (5, 4) to (4, 5) score:140",
+      "Best D:6 M:move from (5, 4) to (4, 3) score:132",
+      "Best D:7 M:move from (5, 4) to (4, 5) score:123"
+    ]
+  },
+  {
+    "ply": 80,
+    "played": "e6d5",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1 d7e6 g1f1 c5d3 c1c3 e7d6 f1e2 d6c5 h3h4",
+    "thinking": [
+      "time=\"2026-11-09T21:22:28-08:00\" level=info msg=\"player thinking... have time 7m6.66s, inc 5s, set max to 7.111s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (4, 5) to (3, 6) score:215",
+      "Best D:2 M:move from (4, 5) to (3, 6) score:168",
+      "Best D:3 M:move from (5, 3) to (4, 4) score:163",
+      "Best D:4 M:move from (4, 5) to (3, 6) score:169",
+      "Best D:5 M:move from (5, 3) to (4, 4) score:155",
+      "Best D:6 M:move from (5, 3) to (4, 4) score:141",
+      "Best D:7 M:move from (5, 3) to (4, 4) score:145"
+    ]
+  },
+  {
+    "ply": 82,
+    "played": "c5b4",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1 d7e6 g1f1 c5d3 c1c3 e7d6 f1e2 d6c5 h3h4 e6d5 h4h5",
+    "thinking": [
+      "time=\"2026-11-09T21:22:51-08:00\" level=info msg=\"player thinking... have time 7m4.37s, inc 5s, set max to 7.072833333s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (4, 5) to (3, 6) score:218",
+      "Best D:2 M:move from (4, 5) to (3, 6) score:186",
+      "Best D:3 M:move from (4, 4) to (1, 1) score:217",
+      "Best D:4 M:move from (4, 4) to (1, 1) score:162",
+      "Best D:5 M:move from (4, 4) to (1, 1) score:139",
+      "Best D:6 M:move from (4, 4) to (1, 1) score:134",
+      "Best D:7 M:move from (4, 5) to (3, 6) score:141"
+    ]
+  },
+  {
+    "ply": 84,
+    "played": "c4d3",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1 d7e6 g1f1 c5d3 c1c3 e7d6 f1e2 d6c5 h3h4 e6d5 h4h5 c5b4 c3d3",
+    "thinking": [
+      "time=\"2026-11-09T21:23:01-08:00\" level=info msg=\"player thinking... have time 7m2.13s, inc 5s, set max to 7.0355s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (3, 5) to (2, 4) score:224",
+      "Best D:2 M:move from (3, 5) to (2, 4) score:224",
+      "Best D:3 M:move from (3, 5) to (2, 4) score:187",
+      "Best D:4 M:move from (3, 5) to (2, 4) score:217",
+      "Best D:5 M:move from (3, 5) to (2, 4) score:160",
+      "Best D:6 M:move from (3, 5) to (2, 4) score:109",
+      "Best D:7 M:move from (3, 5) to (2, 4) score:109",
+      "Best D:8 M:move from (3, 5) to (2, 4) score:118",
+      "Best D:9 M:move from (3, 5) to (2, 4) score:103",
+      "Best D:10 M:move from (3, 5) to (2, 4) score:84",
+      "Best D:11 M:move from (3, 5) to (2, 4) score:7",
+      "Best D:12 M:move from (3, 5) to (2, 4) score:7"
+    ]
+  },
+  {
+    "ply": 86,
+    "played": "d5e6",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1 d7e6 g1f1 c5d3 c1c3 e7d6 f1e2 d6c5 h3h4 e6d5 h4h5 c5b4 c3d3 c4d3 e2d3",
+    "thinking": [
+      "time=\"2026-11-09T21:23:09-08:00\" level=info msg=\"player thinking... have time 6m59.92s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (4, 4) to (1, 1) score:224",
+      "Best D:2 M:move from (5, 2) to (4, 2) score:187",
+      "Best D:3 M:move from (5, 2) to (4, 2) score:88",
+      "Best D:4 M:move from (4, 4) to (1, 1) score:84",
+      "Best D:5 M:move from (3, 6) to (4, 5) score:136",
+      "Best D:6 M:move from (4, 4) to (1, 7) score:99",
+      "Best D:7 M:move from (4, 4) to (1, 7) score:-320",
+      "Best D:8 M:move from (4, 4) to (1, 7) score:77",
+      "Best D:9 M:move from (4, 4) to (5, 3) score:19",
+      "Best D:10 M:move from (4, 4) to (5, 3) score:16",
+      "Best D:11 M:move from (4, 4) to (5, 3) score:0",
+      "Best D:12 M:move from (4, 4) to (5, 3) score:-22"
+    ]
+  },
+  {
+    "ply": 88,
+    "played": "e6a2",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1 d7e6 g1f1 c5d3 c1c3 e7d6 f1e2 d6c5 h3h4 e6d5 h4h5 c5b4 c3d3 c4d3 e2d3 d5e6 d3e4",
+    "thinking": [
+      "time=\"2026-11-09T21:23:21-08:00\" level=info msg=\"player thinking... have time 6m54.66s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (5, 3) to (1, 7) score:115",
+      "Best D:2 M:move from (5, 2) to (4, 2) score:73",
+      "Best D:3 M:move from (3, 6) to (4, 5) score:55",
+      "Best D:4 M:move from (5, 3) to (1, 7) score:43",
+      "Best D:5 M:move from (5, 3) to (1, 7) score:19",
+      "Best D:6 M:move from (5, 3) to (1, 7) score:1",
+      "Best D:7 M:move from (5, 3) to (1, 7) score:0",
+      "Best D:8 M:move from (5, 3) to (1, 7) score:-320",
+      "Best D:9 M:move from (5, 3) to (1, 7) score:-273",
+      "Best D:10 M:move from (5, 3) to (1, 7) score:-2"
+    ]
+  },
+  {
+    "ply": 90,
+    "played": "a2e6",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1 d7e6 g1f1 c5d3 c1c3 e7d6 f1e2 d6c5 h3h4 e6d5 h4h5 c5b4 c3d3 c4d3 e2d3 d5e6 d3e4 e6a2 e4f5",
+    "thinking": [
+      "time=\"2026-11-09T21:23:34-08:00\" level=info msg=\"player thinking... have time 6m49.49s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (1, 7) to (4, 4) score:100",
+      "Best D:2 M:move from (1, 7) to (5, 3) score:66",
+      "Best D:3 M:move from (3, 6) to (2, 5) score:10",
+      "Best D:4 M:move from (1, 7) to (5, 3) score:1",
+      "Best D:5 M:move from (3, 6) to (3, 5) score:0",
+      "Best D:6 M:move from (1, 7) to (5, 3) score:-15",
+      "Best D:7 M:move from (3, 6) to (4, 5) score:-88",
+      "Best D:8 M:move from (1, 7) to (5, 3) score:-433",
+      "Best D:9 M:move from (1, 7) to (5, 3) score:-351",
+      "Best D:10 M:move from (1, 7) to (5, 3) score:-433",
+      "Best D:11 M:move from (1, 7) to (5, 3) score:-633",
+      "Best D:12 M:move from (1, 7) to (5, 3) score:-833"
+    ]
+  },
+  {
+    "ply": 92,
+    "played": "e6a2",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1 d7e6 g1f1 c5d3 c1c3 e7d6 f1e2 d6c5 h3h4 e6d5 h4h5 c5b4 c3d3 c4d3 e2d3 d5e6 d3e4 e6a2 e4f5 a2e6 f5f6",
+    "thinking": [
+      "time=\"2026-11-09T21:23:44-08:00\" level=info msg=\"player thinking... have time 6m44.58s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (5, 3) to (4, 4) score:66",
+      "Best D:2 M:move from (5, 3) to (4, 4) score:43",
+      "Best D:3 M:move from (5, 3) to (4, 4) score:1",
+      "Best D:4 M:move from (5, 3) to (4, 4) score:0",
+      "Best D:5 M:move from (5, 3) to (4, 4) score:-14",
+      "Best D:6 M:move from (5, 3) to (2, 6) score:-89",
+      "Best D:7 M:move from (5, 3) to (1, 7) score:-103",
+      "Best D:8 M:move from (5, 3) to (2, 6) score:-207",
+      "Best D:9 M:move from (5, 3) to (4, 4) score:-103",
+      "Best D:10 M:move from (5, 3) to (1, 7) score:-870",
+      "Best D:11 M:move from (5, 3) to (1, 7) score:-903"
+    ]
+  },
+  {
+    "ply": 94,
+    "played": "a2b1",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1 d7e6 g1f1 c5d3 c1c3 e7d6 f1e2 d6c5 h3h4 e6d5 h4h5 c5b4 c3d3 c4d3 e2d3 d5e6 d3e4 e6a2 e4f5 a2e6 f5f6 e6a2 h5h6",
+    "thinking": [
+      "time=\"2026-11-09T21:24:07-08:00\" level=info msg=\"player thinking... have time 6m40.22s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (1, 7) to (4, 4) score:10",
+      "Best D:2 M:move from (1, 7) to (0, 6) score:-39",
+      "Best D:3 M:move from (1, 7) to (0, 6) score:-19",
+      "Best D:4 M:move from (1, 7) to (0, 6) score:-37",
+      "Best D:5 M:move from (1, 7) to (0, 6) score:-36",
+      "Best D:6 M:move from (1, 7) to (0, 6) score:-89",
+      "Best D:7 M:move from (1, 7) to (0, 6) score:-103",
+      "Best D:8 M:move from (1, 7) to (0, 6) score:-207",
+      "Best D:9 M:move from (1, 7) to (0, 6) score:-220",
+      "Best D:10 M:move from (1, 7) to (0, 6) score:-139",
+      "Best D:11 M:move from (1, 7) to (0, 6) score:-139",
+      "Best D:12 M:move from (1, 7) to (0, 6) score:-171",
+      "Best D:13 M:move from (1, 7) to (0, 6) score:-509",
+      "Best D:14 M:move from (1, 7) to (0, 6) score:-540"
+    ]
+  },
+  {
+    "ply": 96,
+    "played": "b1g6",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1 d7e6 g1f1 c5d3 c1c3 e7d6 f1e2 d6c5 h3h4 e6d5 h4h5 c5b4 c3d3 c4d3 e2d3 d5e6 d3e4 e6a2 e4f5 a2e6 f5f6 e6a2 h5h6 a2b1 g2g4",
+    "thinking": [
+      "time=\"2026-11-09T21:24:18-08:00\" level=info msg=\"player thinking... have time 6m34.96s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (0, 6) to (3, 3) score:-19",
+      "Best D:2 M:move from (0, 6) to (3, 3) score:-19",
+      "Best D:3 M:move from (0, 6) to (3, 3) score:-54",
+      "Best D:4 M:move from (0, 6) to (5, 1) score:-87",
+      "Best D:5 M:move from (3, 6) to (2, 5) score:-90",
+      "Best D:6 M:move from (3, 6) to (4, 5) score:-221",
+      "Best D:7 M:move from (3, 6) to (2, 5) score:-199",
+      "Best D:8 M:move from (3, 6) to (2, 5) score:-93",
+      "Best D:9 M:move from (0, 6) to (3, 3) score:-365",
+      "Best D:10 M:move from (3, 6) to (2, 5) score:-170",
+      "Best D:11 M:move from (0, 6) to (5, 1) score:-287"
+    ]
+  },
+  {
+    "ply": 98,
+    "played": "b4b3",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1 d7e6 g1f1 c5d3 c1c3 e7d6 f1e2 d6c5 h3h4 e6d5 h4h5 c5b4 c3d3 c4d3 e2d3 d5e6 d3e4 e6a2 e4f5 a2e6 f5f6 e6a2 h5h6 a2b1 g2g4 b1g6 f2f4",
+    "thinking": [
+      "time=\"2026-11-09T21:24:30-08:00\" level=info msg=\"player thinking... have time 6m29.79s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (3, 6) to (3, 5) score:5",
+      "Best D:2 M:move from (5, 1) to (3, 3) score:-6",
+      "Best D:3 M:move from (5, 1) to (2, 4) score:-70",
+      "Best D:4 M:move from (5, 1) to (3, 3) score:-469",
+      "Best D:5 M:move from (3, 6) to (2, 5) score:-307",
+      "Best D:6 M:move from (3, 6) to (2, 5) score:-307",
+      "Best D:7 M:move from (3, 6) to (2, 5) score:-287",
+      "Best D:8 M:move from (3, 6) to (2, 5) score:-296",
+      "Best D:9 M:move from (3, 6) to (2, 5) score:-1233",
+      "Best D:10 M:move from (3, 6) to (2, 5) score:-455",
+      "Best D:11 M:move from (3, 6) to (2, 6) score:-945"
+    ]
+  },
+  {
+    "ply": 100,
+    "played": "g6h7",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1 d7e6 g1f1 c5d3 c1c3 e7d6 f1e2 d6c5 h3h4 e6d5 h4h5 c5b4 c3d3 c4d3 e2d3 d5e6 d3e4 e6a2 e4f5 a2e6 f5f6 e6a2 h5h6 a2b1 g2g4 b1g6 f2f4 b4b3 f4f5",
+    "thinking": [
+      "time=\"2026-11-09T21:24:41-08:00\" level=info msg=\"player thinking... have time 6m24.62s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (5, 1) to (6, 0) score:-146",
+      "Best D:2 M:move from (5, 1) to (6, 0) score:-146",
+      "Best D:3 M:move from (5, 1) to (6, 0) score:-344",
+      "Best D:4 M:move from (5, 1) to (6, 0) score:-344",
+      "Best D:5 M:move from (5, 1) to (6, 0) score:-398",
+      "Best D:6 M:move from (5, 1) to (6, 0) score:-398",
+      "Best D:7 M:move from (5, 1) to (6, 0) score:-371",
+      "Best D:8 M:move from (5, 1) to (6, 0) score:-452",
+      "Best D:9 M:move from (5, 1) to (6, 0) score:-465",
+      "Best D:10 M:move from (5, 1) to (6, 0) score:-528",
+      "Best D:11 M:move from (5, 1) to (6, 0) score:-1077",
+      "Best D:12 M:move from (5, 1) to (6, 0) score:-1308",
+      "Best D:13 M:move from (5, 1) to (6, 0) score:-1398",
+      "Best D:14 M:move from (5, 1) to (6, 0) score:-1428",
+      "Best D:15 M:move from (5, 1) to (6, 0) score:-1428"
+    ]
+  },
+  {
+    "ply": 102,
+    "played": "b3c4",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1 d7e6 g1f1 c5d3 c1c3 e7d6 f1e2 d6c5 h3h4 e6d5 h4h5 c5b4 c3d3 c4d3 e2d3 d5e6 d3e4 e6a2 e4f5 a2e6 f5f6 e6a2 h5h6 a2b1 g2g4 b1g6 f2f4 b4b3 f4f5 g6h7 f6g7",
+    "thinking": [
+      "time=\"2026-11-09T21:25:03-08:00\" level=info msg=\"player thinking... have time 6m19.67s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (2, 6) to (3, 5) score:-344",
+      "Best D:2 M:move from (2, 6) to (3, 5) score:-344",
+      "Best D:3 M:move from (2, 6) to (1, 5) score:-406",
+      "Best D:4 M:move from (2, 6) to (1, 5) score:-427",
+      "Best D:5 M:move from (2, 6) to (1, 5) score:-1268",
+      "Best D:6 M:move from (2, 6) to (1, 5) score:-1268",
+      "Best D:7 M:move from (2, 6) to (1, 5) score:-1295",
+      "Best D:8 M:move from (2, 6) to (1, 5) score:-1295",
+      "Best D:9 M:move from (2, 6) to (1, 5) score:-1398",
+      "Best D:10 M:move from (2, 6) to (1, 5) score:-1401",
+      "Best D:11 M:move from (2, 6) to (1, 5) score:-1468",
+      "Best D:12 M:move from (2, 6) to (3, 5) score:-1471",
+      "Best D:13 M:move from (2, 6) to (1, 5) score:-1569",
+      "Best D:14 M:move from (2, 6) to (3, 5) score:-1569"
+    ]
+  },
+  {
+    "ply": 104,
+    "played": "c4d3",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1 d7e6 g1f1 c5d3 c1c3 e7d6 f1e2 d6c5 h3h4 e6d5 h4h5 c5b4 c3d3 c4d3 e2d3 d5e6 d3e4 e6a2 e4f5 a2e6 f5f6 e6a2 h5h6 a2b1 g2g4 b1g6 f2f4 b4b3 f4f5 g6h7 f6g7 b3c4 g7h7",
+    "thinking": [
+      "time=\"2026-11-09T21:25:15-08:00\" level=info msg=\"player thinking... have time 6m14.37s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (3, 5) to (2, 4) score:-274",
+      "Best D:2 M:move from (3, 5) to (2, 4) score:-347",
+      "Best D:3 M:move from (3, 5) to (2, 4) score:-1268",
+      "Best D:4 M:move from (3, 5) to (4, 4) score:-1379",
+      "Best D:5 M:move from (3, 5) to (2, 5) score:-473",
+      "Best D:6 M:move from (3, 5) to (2, 4) score:-1268",
+      "Best D:7 M:move from (3, 5) to (2, 4) score:-1398",
+      "Best D:8 M:move from (3, 5) to (2, 4) score:-1401",
+      "Best D:9 M:move from (3, 5) to (2, 4) score:-1468",
+      "Best D:10 M:move from (3, 5) to (2, 4) score:-1471",
+      "Best D:11 M:move from (3, 5) to (2, 4) score:-1568",
+      "Best D:12 M:move from (3, 5) to (2, 4) score:-1569",
+      "Best D:13 M:move from (3, 5) to (2, 4) score:-2598"
+    ]
+  },
+  {
+    "ply": 106,
+    "played": "d3e2",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1 d7e6 g1f1 c5d3 c1c3 e7d6 f1e2 d6c5 h3h4 e6d5 h4h5 c5b4 c3d3 c4d3 e2d3 d5e6 d3e4 e6a2 e4f5 a2e6 f5f6 e6a2 h5h6 a2b1 g2g4 b1g6 f2f4 b4b3 f4f5 g6h7 f6g7 b3c4 g7h7 c4d3 h7g7",
+    "thinking": [
+      "time=\"2026-11-09T21:25:26-08:00\" level=info msg=\"player thinking... have time 6m9.2s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (2, 4) to (3, 3) score:-406",
+      "Best D:2 M:move from (2, 4) to (3, 3) score:-427",
+      "Best D:3 M:move from (2, 4) to (2, 3) score:-1268",
+      "Best D:4 M:move from (2, 4) to (2, 3) score:-1268",
+      "Best D:5 M:move from (2, 4) to (2, 3) score:-1398",
+      "Best D:6 M:move from (2, 4) to (2, 3) score:-1398",
+      "Best D:7 M:move from (2, 4) to (2, 3) score:-1468",
+      "Best D:8 M:move from (2, 4) to (2, 3) score:-1468",
+      "Best D:9 M:move from (2, 4) to (2, 3) score:-1569",
+      "Best D:10 M:move from (2, 4) to (2, 3) score:-1574",
+      "Best D:11 M:move from (2, 4) to (2, 3) score:-2598",
+      "Best D:12 M:move from (2, 4) to (1, 3) score:-2601"
+    ]
+  },
+  {
+    "ply": 108,
+    "played": "e2d2",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1 d7e6 g1f1 c5d3 c1c3 e7d6 f1e2 d6c5 h3h4 e6d5 h4h5 c5b4 c3d3 c4d3 e2d3 d5e6 d3e4 e6a2 e4f5 a2e6 f5f6 e6a2 h5h6 a2b1 g2g4 b1g6 f2f4 b4b3 f4f5 g6h7 f6g7 b3c4 g7h7 c4d3 h7g7 d3e2 h6h7",
+    "thinking": [
+      "time=\"2026-11-09T21:25:37-08:00\" level=info msg=\"player thinking... have time 6m4.03s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (1, 3) to (2, 2) score:-1379",
+      "Best D:2 M:move from (1, 3) to (2, 2) score:-1379",
+      "Best D:3 M:move from (1, 3) to (2, 3) score:-1348",
+      "Best D:4 M:move from (1, 3) to (2, 3) score:-1446",
+      "Best D:5 M:move from (1, 3) to (2, 3) score:-1494",
+      "Best D:6 M:move from (1, 3) to (2, 3) score:-1500",
+      "Best D:7 M:move from (1, 3) to (2, 3) score:-1547",
+      "Best D:8 M:move from (1, 3) to (2, 3) score:-1571",
+      "Best D:9 M:move from (1, 3) to (2, 3) score:-2598",
+      "Best D:10 M:move from (1, 3) to (2, 3) score:-2598",
+      "Best D:11 M:move from (1, 3) to (1, 4) score:-2442"
+    ]
+  },
+  {
+    "ply": 110,
+    "played": "d2e3",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1 d7e6 g1f1 c5d3 c1c3 e7d6 f1e2 d6c5 h3h4 e6d5 h4h5 c5b4 c3d3 c4d3 e2d3 d5e6 d3e4 e6a2 e4f5 a2e6 f5f6 e6a2 h5h6 a2b1 g2g4 b1g6 f2f4 b4b3 f4f5 g6h7 f6g7 b3c4 g7h7 c4d3 h7g7 d3e2 h6h7 e2d2 h7h8q",
+    "thinking": [
+      "time=\"2026-11-09T21:25:49-08:00\" level=info msg=\"player thinking... have time 5m58.86s, inc 5s, set max to 5.981s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (1, 4) to (2, 3) score:-1505",
+      "Best D:2 M:move from (1, 4) to (2, 3) score:-1505",
+      "Best D:3 M:move from (1, 4) to (2, 3) score:-1446",
+      "Best D:4 M:move from (1, 4) to (2, 3) score:-1518",
+      "Best D:5 M:move from (1, 4) to (2, 3) score:-1503",
+      "Best D:6 M:move from (1, 4) to (2, 3) score:-1505",
+      "Best D:7 M:move from (1, 4) to (2, 3) score:-1567",
+      "Best D:8 M:move from (1, 4) to (2, 3) score:-1577",
+      "Best D:9 M:move from (1, 4) to (0, 4) score:-2684",
+      "Best D:10 M:move from (1, 4) to (2, 3) score:-2747"
+    ]
+  },
+  {
+    "ply": 112,
+    "played": "e3f4",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1 d7e6 g1f1 c5d3 c1c3 e7d6 f1e2 d6c5 h3h4 e6d5 h4h5 c5b4 c3d3 c4d3 e2d3 d5e6 d3e4 e6a2 e4f5 a2e6 f5f6 e6a2 h5h6 a2b1 g2g4 b1g6 f2f4 b4b3 f4f5 g6h7 f6g7 b3c4 g7h7 c4d3 h7g7 d3e2 h6h7 e2d2 h7h8q d2e3 g7f7",
+    "thinking": [
+      "time=\"2026-11-09T21:26:08-08:00\" level=info msg=\"player thinking... have time 5m57.7s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (2, 3) to (3, 2) score:-1442",
+      "Best D:2 M:move from (2, 3) to (3, 2) score:-1507",
+      "Best D:3 M:move from (2, 3) to (3, 3) score:-1480",
+      "Best D:4 M:move from (2, 3) to (3, 3) score:-1598",
+      "Best D:5 M:move from (2, 3) to (3, 3) score:-2598",
+      "Best D:6 M:move from (2, 3) to (3, 3) score:-2598",
+      "Best D:7 M:move from (2, 3) to (2, 2) score:-2640",
+      "Best D:8 M:move from (2, 3) to (3, 3) score:-2817",
+      "Best D:9 M:move from (2, 3) to (3, 2) score:-2831",
+      "Best D:10 M:move from (2, 3) to (3, 2) score:-2860"
+    ]
+  },
+  {
+    "ply": 114,
+    "played": "f4g3",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1 d7e6 g1f1 c5d3 c1c3 e7d6 f1e2 d6c5 h3h4 e6d5 h4h5 c5b4 c3d3 c4d3 e2d3 d5e6 d3e4 e6a2 e4f5 a2e6 f5f6 e6a2 h5h6 a2b1 g2g4 b1g6 f2f4 b4b3 f4f5 g6h7 f6g7 b3c4 g7h7 c4d3 h7g7 d3e2 h6h7 e2d2 h7h8q d2e3 g7f7 e3f4 h8d4",
+    "thinking": [
+      "time=\"2026-11-09T21:26:21-08:00\" level=info msg=\"player thinking... have time 5m52.53s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (3, 2) to (4, 1) score:-1507",
+      "Best D:2 M:move from (3, 2) to (4, 1) score:-1530",
+      "Best D:3 M:move from (3, 2) to (2, 2) score:-1688",
+      "Best D:4 M:move from (3, 2) to (4, 1) score:-1708",
+      "Best D:5 M:move from (3, 2) to (2, 2) score:-2788",
+      "Best D:6 M:move from (3, 2) to (2, 1) score:-2788",
+      "Best D:7 M:move from (3, 2) to (4, 1) score:-1783",
+      "Best D:8 M:move from (3, 2) to (4, 1) score:-1783",
+      "Best D:9 M:move from (3, 2) to (2, 1) score:-1000000001",
+      "Best D:10 M:move from (3, 2) to (2, 1) score:-2947"
+    ]
+  },
+  {
+    "ply": 116,
+    "played": "g3f3",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1 d7e6 g1f1 c5d3 c1c3 e7d6 f1e2 d6c5 h3h4 e6d5 h4h5 c5b4 c3d3 c4d3 e2d3 d5e6 d3e4 e6a2 e4f5 a2e6 f5f6 e6a2 h5h6 a2b1 g2g4 b1g6 f2f4 b4b3 f4f5 g6h7 f6g7 b3c4 g7h7 c4d3 h7g7 d3e2 h6h7 e2d2 h7h8q d2e3 g7f7 e3f4 h8d4 f4g3 g4g5",
+    "thinking": [
+      "time=\"2026-11-09T21:26:44-08:00\" level=info msg=\"player thinking... have time 5m47.36s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (2, 1) to (2, 2) score:-1614",
+      "Best D:2 M:move from (2, 1) to (2, 2) score:-1669",
+      "Best D:3 M:move from (2, 1) to (2, 2) score:-1690",
+      "Best D:4 M:move from (2, 1) to (1, 1) score:-2788",
+      "Best D:5 M:move from (2, 1) to (1, 0) score:-2836",
+      "Best D:6 M:move from (2, 1) to (1, 1) score:-999999999",
+      "Best D:7 M:move from (2, 1) to (2, 2) score:-1000000000",
+      "Best D:8 M:move from (2, 1) to (2, 2) score:-3128",
+      "Best D:9 M:move from (2, 1) to (2, 2) score:-2946"
+    ]
+  },
+  {
+    "ply": 118,
+    "played": "f3e2",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1 d7e6 g1f1 c5d3 c1c3 e7d6 f1e2 d6c5 h3h4 e6d5 h4h5 c5b4 c3d3 c4d3 e2d3 d5e6 d3e4 e6a2 e4f5 a2e6 f5f6 e6a2 h5h6 a2b1 g2g4 b1g6 f2f4 b4b3 f4f5 g6h7 f6g7 b3c4 g7h7 c4d3 h7g7 d3e2 h6h7 e2d2 h7h8q d2e3 g7f7 e3f4 h8d4 f4g3 g4g5 g3f3 g5g6",
+    "thinking": [
+      "time=\"2026-11-09T21:26:55-08:00\" level=info msg=\"player thinking... have time 5m42.19s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (2, 2) to (2, 1) score:-1690",
+      "Best D:2 M:move from (2, 2) to (2, 1) score:-1758",
+      "Best D:3 M:move from (2, 2) to (1, 1) score:-2788",
+      "Best D:4 M:move from (2, 2) to (1, 1) score:-2947",
+      "Best D:5 M:move from (2, 2) to (1, 1) score:-1000000001",
+      "Best D:6 M:move from (2, 2) to (1, 3) score:-1000000001",
+      "Best D:7 M:move from (2, 2) to (1, 1) score:-1000000002",
+      "Best D:8 M:move from (2, 2) to (1, 3) score:-1000000004"
+    ]
+  },
+  {
+    "ply": 120,
+    "played": "e2f1",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1 d7e6 g1f1 c5d3 c1c3 e7d6 f1e2 d6c5 h3h4 e6d5 h4h5 c5b4 c3d3 c4d3 e2d3 d5e6 d3e4 e6a2 e4f5 a2e6 f5f6 e6a2 h5h6 a2b1 g2g4 b1g6 f2f4 b4b3 f4f5 g6h7 f6g7 b3c4 g7h7 c4d3 h7g7 d3e2 h6h7 e2d2 h7h8q d2e3 g7f7 e3f4 h8d4 f4g3 g4g5 g3f3 g5g6 f3e2 g6g7",
+    "thinking": [
+      "time=\"2026-11-09T21:27:05-08:00\" level=info msg=\"player thinking... have time 5m37.02s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (1, 3) to (0, 2) score:-2810",
+      "Best D:2 M:move from (1, 3) to (0, 2) score:-2810",
+      "Best D:3 M:move from (1, 3) to (0, 2) score:-2855",
+      "Best D:4 M:move from (1, 3) to (0, 3) score:-1000000002",
+      "Best D:5 M:move from (1, 3) to (0, 2) score:-3130",
+      "Best D:6 M:move from (1, 3) to (0, 2) score:-1000000004",
+      "Best D:7 M:move from (1, 3) to (0, 2) score:-1000000004"
+    ]
+  },
+  {
+    "ply": 122,
+    "played": "f1e1",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1 d7e6 g1f1 c5d3 c1c3 e7d6 f1e2 d6c5 h3h4 e6d5 h4h5 c5b4 c3d3 c4d3 e2d3 d5e6 d3e4 e6a2 e4f5 a2e6 f5f6 e6a2 h5h6 a2b1 g2g4 b1g6 f2f4 b4b3 f4f5 g6h7 f6g7 b3c4 g7h7 c4d3 h7g7 d3e2 h6h7 e2d2 h7h8q d2e3 g7f7 e3f4 h8d4 f4g3 g4g5 g3f3 g5g6 f3e2 g6g7 e2f1 g7g8q",
+    "thinking": [
+      "time=\"2026-11-09T21:27:16-08:00\" level=info msg=\"player thinking... have time 5m31.85s, inc 5s, set max to 10s\""
+    ],
+    "iterations": [
+      "Best D:1 M:move from (0, 2) to (0, 3) score:-2830",
+      "Best D:2 M:move from (0, 2) to (0, 3) score:-2947",
+      "Best D:3 M:move from (0, 2) to (0, 3) score:-3130",
+      "Best D:4 M:move from (0, 2) to (0, 3) score:-1000000004",
+      "Best D:5 M:move from (0, 2) to (0, 3) score:-1000000004",
+      "Best D:6 M:move from (0, 2) to (0, 3) score:-1000000005"
+    ]
+  },
+  {
+    "ply": 124,
+    "played": "e1e2",
+    "prefixUCI": "d2d4 d7d5 c2c4 e7e6 c4d5 e6d5 g1f3 g8f6 b1c3 b8c6 c1g5 h7h6 g5f6 g7f6 e2e3 f8b4 f1d3 d8d6 e1g1 h8g8 c3b5 d6e7 f3h4 a7a6 b5c3 g8g5 h4f3 g5h5 f3e5 c6e5 d1h5 e5d3 c3d5 e7d6 d5b4 d6b4 a1d1 d3b2 d1c1 c7c6 h5h6 e8e7 h6h8 a6a5 d4d5 b4d6 d5c6 b7c6 c1c2 b2d3 f1d1 c8g4 h8a8 g4d1 c2d2 d1g4 a8a7 g4d7 a7a5 d7e6 d2d1 c6c5 a5a7 e6d7 h2h3 c5c4 a7a5 d6c5 a5c5 d3c5 d1c1 d7e6 g1f1 c5d3 c1c3 e7d6 f1e2 d6c5 h3h4 e6d5 h4h5 c5b4 c3d3 c4d3 e2d3 d5e6 d3e4 e6a2 e4f5 a2e6 f5f6 e6a2 h5h6 a2b1 g2g4 b1g6 f2f4 b4b3 f4f5 g6h7 f6g7 b3c4 g7h7 c4d3 h7g7 d3e2 h6h7 e2d2 h7h8q d2e3 g7f7 e3f4 h8d4 f4g3 g4g5 g3f3 g5g6 f3e2 g6g7 e2f1 g7g8q f1e1 g8g1",
+    "thinking": [
+      "time=\"2026-11-09T21:27:26-08:00\" level=info msg=\"player thinking... have time 5m26.68s, inc 5s, set max to 10s\""
+    ],
+    "iterations": []
+  }
+]

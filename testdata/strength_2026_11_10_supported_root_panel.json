@@ -1,0 +1,3384 @@
+{
+  "metadata": {
+    "scriptSha256": {
+      "runner": "89cbb26f811bdadaf4517d8ffd43efdd3ac5fd007fa4ab9b7a7170687346692d",
+      "supervisor": "6ddf86a1418be4e88ad94b51822f5f107f4d1a0b7e5b0eae314a6f863aa8d9f8",
+      "referee": "ffc29ae531817984bc1b81ddec3ead90561d4c5179a52b32461a7b133c066287"
+    },
+    "binariesSha256": {
+      "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+      "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+    },
+    "sourceSha256": {
+      "testdata/strength_2026_11_10_check_lmr_corpus.json": "64752b5fc4d8764f6fc232ac4ed9db6e419114885c95b8bc211f23f3b794e9a9",
+      "testdata/lichess_opening_search_fens.txt": "6af3ba1bdeed92077f4f671d4fcd16b77027268dfc762f762c75a97f92b12dfd"
+    },
+    "stockfishSha256": "4c22bce76bb3b08b20d761e5c268b802df2d52bdbbd98494d558e880bd6beceb",
+    "refereeDepth": 18,
+    "refereeThreads": 1,
+    "method": "fresh process per side, paired alternating order; authenticated idle supervisor; common referee cold hash per score",
+    "jobs": [
+      {
+        "index": 0,
+        "group": "fresh10",
+        "line": "r2q1k1r/p3nppp/2pp4/5b2/8/2PB1N2/P1P2PPP/R2Q1RK1 b - - 1 14 | lichess-AwQCDMkP-ply28 | g7g6 | d8a5 | SF16 loss 88 cp; clock 256.67 s",
+        "thinkMs": 6000,
+        "threads": 4,
+        "sourceIndex": 94
+      },
+      {
+        "index": 1,
+        "group": "fresh10",
+        "line": "4rk1r/p2bnppp/3p4/q1p5/2P1B3/5N2/P1P2PPP/1R1QR1K1 b - - 1 18 | lichess-AwQCDMkP-ply36 | e7c8 | f7f5 | SF16 loss 177 cp; clock 240.27 s",
+        "thinkMs": 6000,
+        "threads": 4,
+        "sourceIndex": 95
+      },
+      {
+        "index": 2,
+        "group": "fresh10",
+        "line": "4rk1r/p2Qn1pp/8/q1p5/2P1p3/5N2/P1P2PPP/1R2R1K1 b - - 0 20 | lichess-AwQCDMkP-ply40 | a5d8 | e4f3 | SF16 loss 99569 cp; clock 231.95 s",
+        "thinkMs": 6000,
+        "threads": 4,
+        "sourceIndex": 96
+      },
+      {
+        "index": 3,
+        "group": "fresh10",
+        "line": "2rq1rk1/1b1n1ppp/p3pb2/3p4/5B2/2N5/PPPQBPPP/3RR1K1 w - - 7 18 | lichess-ymx2uvTy-ply35 | c3e4 | f4d6 | SF16 loss 107 cp; clock 525.15 s",
+        "thinkMs": 6000,
+        "threads": 4,
+        "sourceIndex": 97
+      },
+      {
+        "index": 4,
+        "group": "fresh10",
+        "line": "2rr2k1/1b3pp1/pq2pb1p/8/3p4/B1P5/PPQ1BPPP/3RR1K1 w - - 0 24 | lichess-ymx2uvTy-ply47 | c3c4 | e2d3 | SF16 loss 214 cp; clock 499.47 s",
+        "thinkMs": 6000,
+        "threads": 4,
+        "sourceIndex": 98
+      },
+      {
+        "index": 5,
+        "group": "fresh10",
+        "line": "2rr2k1/1b3pp1/pq2pb1p/8/8/B1pB4/PPQ2PPP/3RR1K1 w - - 0 25 | lichess-ymx2uvTy-ply49 | b2b3 | d3h7 | SF16 loss 89 cp; clock 495.95 s",
+        "thinkMs": 6000,
+        "threads": 4,
+        "sourceIndex": 99
+      },
+      {
+        "index": 6,
+        "group": "fresh10",
+        "line": "2rq3k/1b3ppB/p3pb1p/8/8/B1p5/PPQ2PPP/4R1K1 w - - 0 27 | lichess-ymx2uvTy-ply53 | b2b3 | e1d1 | SF16 loss 84 cp; clock 485.39 s",
+        "thinkMs": 6000,
+        "threads": 4,
+        "sourceIndex": 100
+      },
+      {
+        "index": 7,
+        "group": "fresh10",
+        "line": "2r4k/1b3ppB/p3pb1p/q7/8/B1p5/PPQ2PPP/3R2K1 w - - 2 28 | lichess-ymx2uvTy-ply55 | c2b1 | b2b4 | SF16 loss 121 cp; clock 482.11 s",
+        "thinkMs": 6000,
+        "threads": 4,
+        "sourceIndex": 101
+      },
+      {
+        "index": 8,
+        "group": "fresh10",
+        "line": "r1bqk2r/pp2bp2/2p2p1p/2p5/2P1PP2/2NP4/PP5P/R2QK1NR b KQkq - 0 11 | lichess-04VH6uRt-ply22 | f6f5 | e8g8 | SF16 loss 257 cp; clock 271.07 s",
+        "thinkMs": 6000,
+        "threads": 4,
+        "sourceIndex": 102
+      },
+      {
+        "index": 9,
+        "group": "fresh10",
+        "line": "5kr1/pp2qp2/2pb1p2/2p2Q2/2P1PP2/2NP2P1/PP6/2K4R b - - 0 25 | lichess-04VH6uRt-ply50 | e7e6 | d6c7 | SF16 loss 93 cp; clock 210.67 s",
+        "thinkMs": 6000,
+        "threads": 4,
+        "sourceIndex": 103
+      },
+      {
+        "index": 10,
+        "group": "fresh7",
+        "line": "8/5pkp/2R2p2/5K2/p6P/6P1/r7/8 w - - 0 27 | W692ODie-ply53 | f5g4 | c6c3 | SF16 logged move; original budget 8s",
+        "loggedBudgetNs": 8000000000,
+        "thinkMs": 8000,
+        "threads": 4,
+        "loggedThinkingLine": "time=\"2026-11-10T04:02:48-08:00\" level=info msg=\"player thinking... have time 4m0.95s, inc 3s, set max to 8s\"",
+        "sourceIndex": 104
+      },
+      {
+        "index": 11,
+        "group": "fresh7",
+        "line": "8/5pkp/5p2/5K2/7P/p1R3P1/r7/8 w - - 0 28 | W692ODie-ply55 | f5g4 | c3f3 | SF16 logged move; original budget 7.859333332s",
+        "loggedBudgetNs": 7859333332,
+        "thinkMs": 7859,
+        "threads": 4,
+        "loggedThinkingLine": "time=\"2026-11-10T04:02:56-08:00\" level=info msg=\"player thinking... have time 3m55.78s, inc 3s, set max to 7.859333332s\"",
+        "sourceIndex": 105
+      },
+      {
+        "index": 12,
+        "group": "fresh7",
+        "line": "8/5pk1/7p/5K1P/6P1/8/p4R2/r7 w - - 3 36 | W692ODie-ply71 | f5f4 | g4g5 | SF16 logged move; original budget 6.714s",
+        "loggedBudgetNs": 6714000000,
+        "thinkMs": 6714,
+        "threads": 4,
+        "loggedThinkingLine": "time=\"2026-11-10T04:03:55-08:00\" level=info msg=\"player thinking... have time 3m21.42s, inc 3s, set max to 6.714s\"",
+        "sourceIndex": 106
+      },
+      {
+        "index": 13,
+        "group": "fresh7",
+        "line": "1r1r2k1/pp1b1ppp/2nbp3/7q/3PB3/5N1P/PP1B1PP1/2RQR1K1 b - - 0 15 | DpU8WcGP-ply30 | c6e7 | h5b5 | SF16 logged move; original budget 5.241458332s",
+        "loggedBudgetNs": 5241458332,
+        "thinkMs": 5241,
+        "threads": 4,
+        "loggedThinkingLine": "time=\"2026-11-10T06:24:22-08:00\" level=info msg=\"player thinking... have time 4m11.59s, inc 1s, set max to 5.241458332s\"",
+        "sourceIndex": 107
+      },
+      {
+        "index": 14,
+        "group": "fresh7",
+        "line": "1r1r2k1/pp1b2pp/2Bbp3/1q3p2/3P4/1P3N1P/P2B1PP1/2RQR1K1 b - - 0 17 | DpU8WcGP-ply34 | d7c6 | b7c6 | SF16 logged move; original budget 5.055833332s",
+        "loggedBudgetNs": 5055833332,
+        "thinkMs": 5055,
+        "threads": 4,
+        "loggedThinkingLine": "time=\"2026-11-10T06:24:44-08:00\" level=info msg=\"player thinking... have time 4m2.68s, inc 1s, set max to 5.055833332s\"",
+        "sourceIndex": 108
+      },
+      {
+        "index": 15,
+        "group": "fresh7",
+        "line": "8/p1KQR1pk/2p4p/2q2p2/7P/1P6/P4Pb1/8 b - - 1 35 | DpU8WcGP-ply70 | c5b6 | h7h8 | SF16 logged move; original budget 3s",
+        "loggedBudgetNs": 3000000000,
+        "thinkMs": 3000,
+        "threads": 4,
+        "loggedThinkingLine": "time=\"2026-11-10T06:27:36-08:00\" level=info msg=\"player thinking... have time 2m45.18s, inc 1s, set max to 3s\"",
+        "sourceIndex": 109
+      },
+      {
+        "index": 16,
+        "group": "fresh7",
+        "line": "r1bq1rk1/p1p2ppp/2B5/3p4/1b2n3/2N2P2/PPP3PP/R1BQK2R w KQ - 0 10 | yA6gLPUd-ply19 | e1g1 | c6a8 | SF16 logged move; original budget 27.190333333s",
+        "loggedBudgetNs": 27190333333,
+        "thinkMs": 27190,
+        "threads": 8,
+        "loggedThinkingLine": "time=\"2026-11-10T05:25:47-08:00\" level=info msg=\"player thinking... have time 27m11.42s, inc 2s, set max to 27.190333333s\"",
+        "sourceIndex": 110
+      },
+      {
+        "index": 17,
+        "group": "openings11",
+        "line": "rnbqkb1r/ppp1pppp/3p1n2/8/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 2 3 | lichess-qlDlv2bD-ply5 | | | 10+10 rapid; initial clock search cap 10s",
+        "thinkMs": 10000,
+        "threads": 8
+      },
+      {
+        "index": 18,
+        "group": "openings11",
+        "line": "rnbqkb1r/pp2pppp/2pp1n2/8/3P4/4PN2/PPP2PPP/RNBQKB1R w KQkq - 0 4 | lichess-qlDlv2bD-ply7 | | | 10+10 rapid; initial clock search cap 10s",
+        "thinkMs": 10000,
+        "threads": 8
+      },
+      {
+        "index": 19,
+        "group": "openings11",
+        "line": "rnbqkb1r/ppp1pppp/5n2/3P4/3P4/8/PP2PPPP/RNBQKBNR b KQkq - 0 3 | lichess-RrxHqA6J-ply6 | | | 3+2 blitz; initial clock search cap 3s",
+        "thinkMs": 3000,
+        "threads": 4
+      },
+      {
+        "index": 20,
+        "group": "openings11",
+        "line": "rnbqkb1r/ppp2ppp/4Pn2/8/3P4/8/PP2PPPP/RNBQKBNR b KQkq - 0 4 | lichess-RrxHqA6J-ply8 | | | 3+2 blitz; initial clock search cap 3s",
+        "thinkMs": 3000,
+        "threads": 4
+      },
+      {
+        "index": 21,
+        "group": "openings11",
+        "line": "rnbqkb1r/pppp1ppp/4pn2/8/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3 | lichess-Lmd5Up7B-ply5 | | | 5+2 blitz; initial clock search cap 5s",
+        "thinkMs": 5000,
+        "threads": 4
+      },
+      {
+        "index": 22,
+        "group": "openings11",
+        "line": "rnbqkb1r/pp1p1ppp/4pn2/2p5/3P4/4PN2/PPP2PPP/RNBQKB1R w KQkq c6 0 4 | lichess-Lmd5Up7B-ply7 | | | 5+2 blitz; initial clock search cap 5s",
+        "thinkMs": 5000,
+        "threads": 4
+      },
+      {
+        "index": 23,
+        "group": "openings11",
+        "line": "rnbqkb1r/ppp1pppp/5n2/3p4/2PP4/5N2/PP2PPPP/RNBQKB1R b KQkq c3 0 3 | lichess-KO5FXfxz-ply6 | | | 15+5 rapid; initial clock search cap 15s",
+        "thinkMs": 15000,
+        "threads": 8
+      },
+      {
+        "index": 24,
+        "group": "openings11",
+        "line": "rnbqkb1r/ppp2ppp/4pn2/3P4/3P4/5N2/PP2PPPP/RNBQKB1R b KQkq - 0 4 | lichess-KO5FXfxz-ply8 | | | 15+5 rapid; initial clock search cap 15s",
+        "thinkMs": 15000,
+        "threads": 8
+      },
+      {
+        "index": 25,
+        "group": "openings11",
+        "line": "r1bqkbnr/pp1ppppp/2n5/2p5/4P3/5NP1/PPPP1P1P/RNBQKB1R b KQkq e3 0 3 | lichess-Op67WYFO-ply6 | | | 1+2 bullet; initial clock search cap 3s",
+        "thinkMs": 3000,
+        "threads": 4
+      },
+      {
+        "index": 26,
+        "group": "openings11",
+        "line": "r1bqkbnr/pp2pppp/2np4/2p5/4P3/5NP1/PPPP1PBP/RNBQK2R b KQkq - 1 4 | lichess-Op67WYFO-ply8 | | | 1+2 bullet; initial clock search cap 3s",
+        "thinkMs": 3000,
+        "threads": 4
+      },
+      {
+        "index": 27,
+        "group": "openings11",
+        "line": "rnbqkb1r/ppp2ppp/3p1n2/8/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 4 | lichess-5JLfZAn3-ply8 | f6e4 | b8d7,b8c6 | 15+1 rapid; 1.2s search missed pawn recapture; depth 6 and 15s find it",
+        "thinkMs": 15000,
+        "threads": 8
+      }
+    ]
+  },
+  "summary": {
+    "fresh10": {
+      "before": {
+        "positions": 10,
+        "meanLoss": 89.4,
+        "cappedMeanLoss1000": 89.4,
+        "lossAtLeast100": 4,
+        "lossAtLeast200": 2,
+        "mateScaleLosses": 0,
+        "expectedMoveHits": 3,
+        "knownBadMoves": 7,
+        "meanCompletedDepth": 6.2
+      },
+      "after": {
+        "positions": 10,
+        "meanLoss": 102.3,
+        "cappedMeanLoss1000": 102.3,
+        "lossAtLeast100": 5,
+        "lossAtLeast200": 2,
+        "mateScaleLosses": 0,
+        "expectedMoveHits": 2,
+        "knownBadMoves": 7,
+        "meanCompletedDepth": 6.1
+      }
+    },
+    "fresh7": {
+      "before": {
+        "positions": 7,
+        "meanLoss": 239.0,
+        "cappedMeanLoss1000": 239.0,
+        "lossAtLeast100": 6,
+        "lossAtLeast200": 4,
+        "mateScaleLosses": 0,
+        "expectedMoveHits": 1,
+        "knownBadMoves": 5,
+        "meanCompletedDepth": 6.57
+      },
+      "after": {
+        "positions": 7,
+        "meanLoss": 146.0,
+        "cappedMeanLoss1000": 146.0,
+        "lossAtLeast100": 4,
+        "lossAtLeast200": 3,
+        "mateScaleLosses": 0,
+        "expectedMoveHits": 3,
+        "knownBadMoves": 3,
+        "meanCompletedDepth": 6.86
+      }
+    },
+    "openings11": {
+      "before": {
+        "positions": 11,
+        "meanLoss": 10.73,
+        "cappedMeanLoss1000": 10.73,
+        "lossAtLeast100": 0,
+        "lossAtLeast200": 0,
+        "mateScaleLosses": 0,
+        "expectedMoveHits": 1,
+        "knownBadMoves": 0,
+        "meanCompletedDepth": 5.45
+      },
+      "after": {
+        "positions": 11,
+        "meanLoss": 12.82,
+        "cappedMeanLoss1000": 12.82,
+        "lossAtLeast100": 0,
+        "lossAtLeast200": 0,
+        "mateScaleLosses": 0,
+        "expectedMoveHits": 1,
+        "knownBadMoves": 0,
+        "meanCompletedDepth": 5.55
+      }
+    },
+    "all28": {
+      "before": {
+        "positions": 28,
+        "meanLoss": 95.89,
+        "cappedMeanLoss1000": 95.89,
+        "lossAtLeast100": 10,
+        "lossAtLeast200": 6,
+        "mateScaleLosses": 0,
+        "expectedMoveHits": 5,
+        "knownBadMoves": 12,
+        "meanCompletedDepth": 6.0
+      },
+      "after": {
+        "positions": 28,
+        "meanLoss": 78.07,
+        "cappedMeanLoss1000": 78.07,
+        "lossAtLeast100": 9,
+        "lossAtLeast200": 5,
+        "mateScaleLosses": 0,
+        "expectedMoveHits": 6,
+        "knownBadMoves": 10,
+        "meanCompletedDepth": 6.07
+      }
+    }
+  },
+  "changedPositions": [
+    {
+      "index": 9,
+      "fen": "5kr1/pp2qp2/2pb1p2/2p2Q2/2P1PP2/2NP2P1/PP6/2K4R b - - 0 25",
+      "tag": "lichess-04VH6uRt-ply50",
+      "refereeBest": "e7e6",
+      "before": "e7e6",
+      "after": "e7d8",
+      "beforeLoss": 0,
+      "afterLoss": 129,
+      "beforeDepth": 7,
+      "afterDepth": 6,
+      "deltaLoss": 129
+    },
+    {
+      "index": 12,
+      "fen": "8/5pk1/7p/5K1P/6P1/8/p4R2/r7 w - - 3 36",
+      "tag": "W692ODie-ply71",
+      "refereeBest": "f5f4",
+      "before": "g4g5",
+      "after": "f5f4",
+      "beforeLoss": 494,
+      "afterLoss": 0,
+      "beforeDepth": 8,
+      "afterDepth": 9,
+      "deltaLoss": -494
+    },
+    {
+      "index": 14,
+      "fen": "1r1r2k1/pp1b2pp/2Bbp3/1q3p2/3P4/1P3N1P/P2B1PP1/2RQR1K1 b - - 0 17",
+      "tag": "DpU8WcGP-ply34",
+      "refereeBest": "d7c6",
+      "before": "b7c6",
+      "after": "d7c6",
+      "beforeLoss": 157,
+      "afterLoss": 0,
+      "beforeDepth": 6,
+      "afterDepth": 7,
+      "deltaLoss": -157
+    },
+    {
+      "index": 25,
+      "fen": "r1bqkbnr/pp1ppppp/2n5/2p5/4P3/5NP1/PPPP1P1P/RNBQKB1R b KQkq e3 0 3",
+      "tag": "lichess-Op67WYFO-ply6",
+      "refereeBest": "g8f6",
+      "before": "g8f6",
+      "after": "d7d5",
+      "beforeLoss": 0,
+      "afterLoss": 23,
+      "beforeDepth": 5,
+      "afterDepth": 6,
+      "deltaLoss": 23
+    }
+  ],
+  "commonScores": [
+    {
+      "fen": "r2q1k1r/p3nppp/2pp4/5b2/8/2PB1N2/P1P2PPP/R2Q1RK1 b - - 1 14",
+      "tag": "lichess-AwQCDMkP-ply28",
+      "refereeBest": "g7g6",
+      "before": "d8a5",
+      "after": "d8a5",
+      "beforeLoss": 115,
+      "afterLoss": 115,
+      "beforeDepth": 6,
+      "afterDepth": 6
+    },
+    {
+      "fen": "4rk1r/p2bnppp/3p4/q1p5/2P1B3/5N2/P1P2PPP/1R1QR1K1 b - - 1 18",
+      "tag": "lichess-AwQCDMkP-ply36",
+      "refereeBest": "e7c8",
+      "before": "e7c8",
+      "after": "e7c8",
+      "beforeLoss": 0,
+      "afterLoss": 0,
+      "beforeDepth": 6,
+      "afterDepth": 6
+    },
+    {
+      "fen": "4rk1r/p2Qn1pp/8/q1p5/2P1p3/5N2/P1P2PPP/1R2R1K1 b - - 0 20",
+      "tag": "lichess-AwQCDMkP-ply40",
+      "refereeBest": "a5d8",
+      "before": "a5d8",
+      "after": "a5d8",
+      "beforeLoss": 0,
+      "afterLoss": 0,
+      "beforeDepth": 7,
+      "afterDepth": 7
+    },
+    {
+      "fen": "2rq1rk1/1b1n1ppp/p3pb2/3p4/5B2/2N5/PPPQBPPP/3RR1K1 w - - 7 18",
+      "tag": "lichess-ymx2uvTy-ply35",
+      "refereeBest": "c3e4",
+      "before": "f4d6",
+      "after": "f4d6",
+      "beforeLoss": 96,
+      "afterLoss": 96,
+      "beforeDepth": 5,
+      "afterDepth": 5
+    },
+    {
+      "fen": "2rr2k1/1b3pp1/pq2pb1p/8/3p4/B1P5/PPQ1BPPP/3RR1K1 w - - 0 24",
+      "tag": "lichess-ymx2uvTy-ply47",
+      "refereeBest": "c3c4",
+      "before": "e2d3",
+      "after": "e2d3",
+      "beforeLoss": 237,
+      "afterLoss": 237,
+      "beforeDepth": 6,
+      "afterDepth": 6
+    },
+    {
+      "fen": "2rr2k1/1b3pp1/pq2pb1p/8/8/B1pB4/PPQ2PPP/3RR1K1 w - - 0 25",
+      "tag": "lichess-ymx2uvTy-ply49",
+      "refereeBest": "b2b3",
+      "before": "d3h7",
+      "after": "d3h7",
+      "beforeLoss": 78,
+      "afterLoss": 78,
+      "beforeDepth": 6,
+      "afterDepth": 6
+    },
+    {
+      "fen": "2rq3k/1b3ppB/p3pb1p/8/8/B1p5/PPQ2PPP/4R1K1 w - - 0 27",
+      "tag": "lichess-ymx2uvTy-ply53",
+      "refereeBest": "e1d1",
+      "before": "e1d1",
+      "after": "e1d1",
+      "beforeLoss": 0,
+      "afterLoss": 0,
+      "beforeDepth": 6,
+      "afterDepth": 6
+    },
+    {
+      "fen": "2r4k/1b3ppB/p3pb1p/q7/8/B1p5/PPQ2PPP/3R2K1 w - - 2 28",
+      "tag": "lichess-ymx2uvTy-ply55",
+      "refereeBest": "c2b3",
+      "before": "b2b4",
+      "after": "b2b4",
+      "beforeLoss": 110,
+      "afterLoss": 110,
+      "beforeDepth": 7,
+      "afterDepth": 7
+    },
+    {
+      "fen": "r1bqk2r/pp2bp2/2p2p1p/2p5/2P1PP2/2NP4/PP5P/R2QK1NR b KQkq - 0 11",
+      "tag": "lichess-04VH6uRt-ply22",
+      "refereeBest": "f6f5",
+      "before": "e8g8",
+      "after": "e8g8",
+      "beforeLoss": 258,
+      "afterLoss": 258,
+      "beforeDepth": 6,
+      "afterDepth": 6
+    },
+    {
+      "fen": "5kr1/pp2qp2/2pb1p2/2p2Q2/2P1PP2/2NP2P1/PP6/2K4R b - - 0 25",
+      "tag": "lichess-04VH6uRt-ply50",
+      "refereeBest": "e7e6",
+      "before": "e7e6",
+      "after": "e7d8",
+      "beforeLoss": 0,
+      "afterLoss": 129,
+      "beforeDepth": 7,
+      "afterDepth": 6
+    },
+    {
+      "fen": "8/5pkp/2R2p2/5K2/p6P/6P1/r7/8 w - - 0 27",
+      "tag": "W692ODie-ply53",
+      "refereeBest": "f5g4",
+      "before": "c6c3",
+      "after": "c6c3",
+      "beforeLoss": 254,
+      "afterLoss": 254,
+      "beforeDepth": 7,
+      "afterDepth": 7
+    },
+    {
+      "fen": "8/5pkp/5p2/5K2/7P/p1R3P1/r7/8 w - - 0 28",
+      "tag": "W692ODie-ply55",
+      "refereeBest": "f5g4",
+      "before": "f5g4",
+      "after": "f5g4",
+      "beforeLoss": 0,
+      "afterLoss": 0,
+      "beforeDepth": 8,
+      "afterDepth": 8
+    },
+    {
+      "fen": "8/5pk1/7p/5K1P/6P1/8/p4R2/r7 w - - 3 36",
+      "tag": "W692ODie-ply71",
+      "refereeBest": "f5f4",
+      "before": "g4g5",
+      "after": "f5f4",
+      "beforeLoss": 494,
+      "afterLoss": 0,
+      "beforeDepth": 8,
+      "afterDepth": 9
+    },
+    {
+      "fen": "1r1r2k1/pp1b1ppp/2nbp3/7q/3PB3/5N1P/PP1B1PP1/2RQR1K1 b - - 0 15",
+      "tag": "DpU8WcGP-ply30",
+      "refereeBest": "c6e7",
+      "before": "h5b5",
+      "after": "h5b5",
+      "beforeLoss": 221,
+      "afterLoss": 221,
+      "beforeDepth": 5,
+      "afterDepth": 5
+    },
+    {
+      "fen": "1r1r2k1/pp1b2pp/2Bbp3/1q3p2/3P4/1P3N1P/P2B1PP1/2RQR1K1 b - - 0 17",
+      "tag": "DpU8WcGP-ply34",
+      "refereeBest": "d7c6",
+      "before": "b7c6",
+      "after": "d7c6",
+      "beforeLoss": 157,
+      "afterLoss": 0,
+      "beforeDepth": 6,
+      "afterDepth": 7
+    },
+    {
+      "fen": "8/p1KQR1pk/2p4p/2q2p2/7P/1P6/P4Pb1/8 b - - 1 35",
+      "tag": "DpU8WcGP-ply70",
+      "refereeBest": "c5b6",
+      "before": "h7h8",
+      "after": "h7h8",
+      "beforeLoss": 375,
+      "afterLoss": 375,
+      "beforeDepth": 5,
+      "afterDepth": 5
+    },
+    {
+      "fen": "r1bq1rk1/p1p2ppp/2B5/3p4/1b2n3/2N2P2/PPP3PP/R1BQK2R w KQ - 0 10",
+      "tag": "yA6gLPUd-ply19",
+      "refereeBest": "e1g1",
+      "before": "f3e4",
+      "after": "f3e4",
+      "beforeLoss": 172,
+      "afterLoss": 172,
+      "beforeDepth": 7,
+      "afterDepth": 7
+    },
+    {
+      "fen": "rnbqkb1r/ppp1pppp/3p1n2/8/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 2 3",
+      "tag": "lichess-qlDlv2bD-ply5",
+      "refereeBest": "c2c4",
+      "before": "b1c3",
+      "after": "b1c3",
+      "beforeLoss": 16,
+      "afterLoss": 16,
+      "beforeDepth": 6,
+      "afterDepth": 6
+    },
+    {
+      "fen": "rnbqkb1r/pp2pppp/2pp1n2/8/3P4/4PN2/PPP2PPP/RNBQKB1R w KQkq - 0 4",
+      "tag": "lichess-qlDlv2bD-ply7",
+      "refereeBest": "c2c4",
+      "before": "b1c3",
+      "after": "b1c3",
+      "beforeLoss": 13,
+      "afterLoss": 13,
+      "beforeDepth": 6,
+      "afterDepth": 6
+    },
+    {
+      "fen": "rnbqkb1r/ppp1pppp/5n2/3P4/3P4/8/PP2PPPP/RNBQKBNR b KQkq - 0 3",
+      "tag": "lichess-RrxHqA6J-ply6",
+      "refereeBest": "c7c6",
+      "before": "e7e6",
+      "after": "e7e6",
+      "beforeLoss": 21,
+      "afterLoss": 21,
+      "beforeDepth": 5,
+      "afterDepth": 5
+    },
+    {
+      "fen": "rnbqkb1r/ppp2ppp/4Pn2/8/3P4/8/PP2PPPP/RNBQKBNR b KQkq - 0 4",
+      "tag": "lichess-RrxHqA6J-ply8",
+      "refereeBest": "c8e6",
+      "before": "c8e6",
+      "after": "c8e6",
+      "beforeLoss": 0,
+      "afterLoss": 0,
+      "beforeDepth": 5,
+      "afterDepth": 5
+    },
+    {
+      "fen": "rnbqkb1r/pppp1ppp/4pn2/8/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3",
+      "tag": "lichess-Lmd5Up7B-ply5",
+      "refereeBest": "c2c4",
+      "before": "b1c3",
+      "after": "b1c3",
+      "beforeLoss": 33,
+      "afterLoss": 33,
+      "beforeDepth": 5,
+      "afterDepth": 5
+    },
+    {
+      "fen": "rnbqkb1r/pp1p1ppp/4pn2/2p5/3P4/4PN2/PPP2PPP/RNBQKB1R w KQkq c6 0 4",
+      "tag": "lichess-Lmd5Up7B-ply7",
+      "refereeBest": "c2c4",
+      "before": "b1c3",
+      "after": "b1c3",
+      "beforeLoss": 35,
+      "afterLoss": 35,
+      "beforeDepth": 5,
+      "afterDepth": 5
+    },
+    {
+      "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/2PP4/5N2/PP2PPPP/RNBQKB1R b KQkq c3 0 3",
+      "tag": "lichess-KO5FXfxz-ply6",
+      "refereeBest": "e7e6",
+      "before": "e7e6",
+      "after": "e7e6",
+      "beforeLoss": 0,
+      "afterLoss": 0,
+      "beforeDepth": 6,
+      "afterDepth": 6
+    },
+    {
+      "fen": "rnbqkb1r/ppp2ppp/4pn2/3P4/3P4/5N2/PP2PPPP/RNBQKB1R b KQkq - 0 4",
+      "tag": "lichess-KO5FXfxz-ply8",
+      "refereeBest": "e6d5",
+      "before": "e6d5",
+      "after": "e6d5",
+      "beforeLoss": 0,
+      "afterLoss": 0,
+      "beforeDepth": 6,
+      "afterDepth": 6
+    },
+    {
+      "fen": "r1bqkbnr/pp1ppppp/2n5/2p5/4P3/5NP1/PPPP1P1P/RNBQKB1R b KQkq e3 0 3",
+      "tag": "lichess-Op67WYFO-ply6",
+      "refereeBest": "g8f6",
+      "before": "g8f6",
+      "after": "d7d5",
+      "beforeLoss": 0,
+      "afterLoss": 23,
+      "beforeDepth": 5,
+      "afterDepth": 6
+    },
+    {
+      "fen": "r1bqkbnr/pp2pppp/2np4/2p5/4P3/5NP1/PPPP1PBP/RNBQK2R b KQkq - 1 4",
+      "tag": "lichess-Op67WYFO-ply8",
+      "refereeBest": "g8f6",
+      "before": "g8f6",
+      "after": "g8f6",
+      "beforeLoss": 0,
+      "afterLoss": 0,
+      "beforeDepth": 5,
+      "afterDepth": 5
+    },
+    {
+      "fen": "rnbqkb1r/ppp2ppp/3p1n2/8/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 4",
+      "tag": "lichess-5JLfZAn3-ply8",
+      "refereeBest": "f6e4",
+      "before": "f6e4",
+      "after": "f6e4",
+      "beforeLoss": 0,
+      "afterLoss": 0,
+      "beforeDepth": 6,
+      "afterDepth": 6
+    }
+  ],
+  "pairs": [
+    {
+      "job": {
+        "index": 0,
+        "group": "fresh10",
+        "line": "r2q1k1r/p3nppp/2pp4/5b2/8/2PB1N2/P1P2PPP/R2Q1RK1 b - - 1 14 | lichess-AwQCDMkP-ply28 | g7g6 | d8a5 | SF16 loss 88 cp; clock 256.67 s",
+        "thinkMs": 6000,
+        "threads": 4,
+        "sourceIndex": 94
+      },
+      "line": "r2q1k1r/p3nppp/2pp4/5b2/8/2PB1N2/P1P2PPP/R2Q1RK1 b - - 1 14 | lichess-AwQCDMkP-ply28 | g7g6 | d8a5 | SF16 loss 88 cp; clock 256.67 s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "before": {
+        "fen": "r2q1k1r/p3nppp/2pp4/5b2/8/2PB1N2/P1P2PPP/R2Q1RK1 b - - 1 14",
+        "tag": "lichess-AwQCDMkP-ply28",
+        "expected": [
+          "g7g6"
+        ],
+        "bad": [
+          "d8a5"
+        ],
+        "notes": "SF16 loss 88 cp; clock 256.67 s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "d8a5",
+              "score": -88,
+              "count": 1,
+              "depth": 6,
+              "avgElapsedMs": 6001,
+              "nodesPerSecond": 158583,
+              "prunedAb": 5585082,
+              "prunedTt": 595904,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "d8a5",
+                "score": -88,
+                "depth": 6,
+                "elapsedMs": 6001,
+                "considered": 951710,
+                "prunedAb": 5585082,
+                "prunedTt": 595904,
+                "ttImproved": 16656,
+                "timedOut": true
+              }
+            ],
+            "flags": [
+              "missed expected",
+              "known bad move"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "fen": "r2q1k1r/p3nppp/2pp4/5b2/8/2PB1N2/P1P2PPP/R2Q1RK1 b - - 1 14",
+        "tag": "lichess-AwQCDMkP-ply28",
+        "expected": [
+          "g7g6"
+        ],
+        "bad": [
+          "d8a5"
+        ],
+        "notes": "SF16 loss 88 cp; clock 256.67 s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "d8a5",
+              "score": -88,
+              "count": 1,
+              "depth": 6,
+              "avgElapsedMs": 6001,
+              "nodesPerSecond": 160119,
+              "prunedAb": 5614370,
+              "prunedTt": 582940,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "d8a5",
+                "score": -88,
+                "depth": 6,
+                "elapsedMs": 6001,
+                "considered": 960986,
+                "prunedAb": 5614370,
+                "prunedTt": 582940,
+                "ttImproved": 16327,
+                "timedOut": true
+              }
+            ],
+            "flags": [
+              "missed expected",
+              "known bad move"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 1,
+        "group": "fresh10",
+        "line": "4rk1r/p2bnppp/3p4/q1p5/2P1B3/5N2/P1P2PPP/1R1QR1K1 b - - 1 18 | lichess-AwQCDMkP-ply36 | e7c8 | f7f5 | SF16 loss 177 cp; clock 240.27 s",
+        "thinkMs": 6000,
+        "threads": 4,
+        "sourceIndex": 95
+      },
+      "line": "4rk1r/p2bnppp/3p4/q1p5/2P1B3/5N2/P1P2PPP/1R1QR1K1 b - - 1 18 | lichess-AwQCDMkP-ply36 | e7c8 | f7f5 | SF16 loss 177 cp; clock 240.27 s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "after": {
+        "fen": "4rk1r/p2bnppp/3p4/q1p5/2P1B3/5N2/P1P2PPP/1R1QR1K1 b - - 1 18",
+        "tag": "lichess-AwQCDMkP-ply36",
+        "expected": [
+          "e7c8"
+        ],
+        "bad": [
+          "f7f5"
+        ],
+        "notes": "SF16 loss 177 cp; clock 240.27 s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "e7c8",
+              "score": -125,
+              "count": 1,
+              "depth": 6,
+              "avgElapsedMs": 6001,
+              "nodesPerSecond": 156227,
+              "prunedAb": 4716563,
+              "prunedTt": 485996,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "e7c8",
+                "score": -125,
+                "depth": 6,
+                "elapsedMs": 6001,
+                "considered": 937641,
+                "prunedAb": 4716563,
+                "prunedTt": 485996,
+                "ttImproved": 12402,
+                "timedOut": true
+              }
+            ]
+          }
+        ]
+      },
+      "before": {
+        "fen": "4rk1r/p2bnppp/3p4/q1p5/2P1B3/5N2/P1P2PPP/1R1QR1K1 b - - 1 18",
+        "tag": "lichess-AwQCDMkP-ply36",
+        "expected": [
+          "e7c8"
+        ],
+        "bad": [
+          "f7f5"
+        ],
+        "notes": "SF16 loss 177 cp; clock 240.27 s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "e7c8",
+              "score": -125,
+              "count": 1,
+              "depth": 6,
+              "avgElapsedMs": 6001,
+              "nodesPerSecond": 160087,
+              "prunedAb": 4835870,
+              "prunedTt": 489980,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "e7c8",
+                "score": -125,
+                "depth": 6,
+                "elapsedMs": 6001,
+                "considered": 960803,
+                "prunedAb": 4835870,
+                "prunedTt": 489980,
+                "ttImproved": 12632,
+                "timedOut": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 2,
+        "group": "fresh10",
+        "line": "4rk1r/p2Qn1pp/8/q1p5/2P1p3/5N2/P1P2PPP/1R2R1K1 b - - 0 20 | lichess-AwQCDMkP-ply40 | a5d8 | e4f3 | SF16 loss 99569 cp; clock 231.95 s",
+        "thinkMs": 6000,
+        "threads": 4,
+        "sourceIndex": 96
+      },
+      "line": "4rk1r/p2Qn1pp/8/q1p5/2P1p3/5N2/P1P2PPP/1R2R1K1 b - - 0 20 | lichess-AwQCDMkP-ply40 | a5d8 | e4f3 | SF16 loss 99569 cp; clock 231.95 s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "before": {
+        "fen": "4rk1r/p2Qn1pp/8/q1p5/2P1p3/5N2/P1P2PPP/1R2R1K1 b - - 0 20",
+        "tag": "lichess-AwQCDMkP-ply40",
+        "expected": [
+          "a5d8"
+        ],
+        "bad": [
+          "e4f3"
+        ],
+        "notes": "SF16 loss 99569 cp; clock 231.95 s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "a5d8",
+              "score": -259,
+              "count": 1,
+              "depth": 7,
+              "avgElapsedMs": 5041,
+              "nodesPerSecond": 199153,
+              "prunedAb": 4930256,
+              "prunedTt": 328571,
+              "timedOut": false
+            },
+            "runs": [
+              {
+                "move": "a5d8",
+                "score": -259,
+                "depth": 7,
+                "elapsedMs": 5041,
+                "considered": 1004006,
+                "prunedAb": 4930256,
+                "prunedTt": 328571,
+                "ttImproved": 12657,
+                "timedOut": false
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "fen": "4rk1r/p2Qn1pp/8/q1p5/2P1p3/5N2/P1P2PPP/1R2R1K1 b - - 0 20",
+        "tag": "lichess-AwQCDMkP-ply40",
+        "expected": [
+          "a5d8"
+        ],
+        "bad": [
+          "e4f3"
+        ],
+        "notes": "SF16 loss 99569 cp; clock 231.95 s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "a5d8",
+              "score": -259,
+              "count": 1,
+              "depth": 7,
+              "avgElapsedMs": 5184,
+              "nodesPerSecond": 193672,
+              "prunedAb": 4930256,
+              "prunedTt": 328571,
+              "timedOut": false
+            },
+            "runs": [
+              {
+                "move": "a5d8",
+                "score": -259,
+                "depth": 7,
+                "elapsedMs": 5184,
+                "considered": 1004006,
+                "prunedAb": 4930256,
+                "prunedTt": 328571,
+                "ttImproved": 12657,
+                "timedOut": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 3,
+        "group": "fresh10",
+        "line": "2rq1rk1/1b1n1ppp/p3pb2/3p4/5B2/2N5/PPPQBPPP/3RR1K1 w - - 7 18 | lichess-ymx2uvTy-ply35 | c3e4 | f4d6 | SF16 loss 107 cp; clock 525.15 s",
+        "thinkMs": 6000,
+        "threads": 4,
+        "sourceIndex": 97
+      },
+      "line": "2rq1rk1/1b1n1ppp/p3pb2/3p4/5B2/2N5/PPPQBPPP/3RR1K1 w - - 7 18 | lichess-ymx2uvTy-ply35 | c3e4 | f4d6 | SF16 loss 107 cp; clock 525.15 s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "after": {
+        "fen": "2rq1rk1/1b1n1ppp/p3pb2/3p4/5B2/2N5/PPPQBPPP/3RR1K1 w - - 7 18",
+        "tag": "lichess-ymx2uvTy-ply35",
+        "expected": [
+          "c3e4"
+        ],
+        "bad": [
+          "f4d6"
+        ],
+        "notes": "SF16 loss 107 cp; clock 525.15 s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "f4d6",
+              "score": -10,
+              "count": 1,
+              "depth": 5,
+              "avgElapsedMs": 6001,
+              "nodesPerSecond": 145443,
+              "prunedAb": 3988901,
+              "prunedTt": 404181,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "f4d6",
+                "score": -10,
+                "depth": 5,
+                "elapsedMs": 6001,
+                "considered": 872916,
+                "prunedAb": 3988901,
+                "prunedTt": 404181,
+                "ttImproved": 10328,
+                "timedOut": true
+              }
+            ],
+            "flags": [
+              "missed expected",
+              "known bad move"
+            ]
+          }
+        ]
+      },
+      "before": {
+        "fen": "2rq1rk1/1b1n1ppp/p3pb2/3p4/5B2/2N5/PPPQBPPP/3RR1K1 w - - 7 18",
+        "tag": "lichess-ymx2uvTy-ply35",
+        "expected": [
+          "c3e4"
+        ],
+        "bad": [
+          "f4d6"
+        ],
+        "notes": "SF16 loss 107 cp; clock 525.15 s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "f4d6",
+              "score": -10,
+              "count": 1,
+              "depth": 5,
+              "avgElapsedMs": 6001,
+              "nodesPerSecond": 147040,
+              "prunedAb": 3994616,
+              "prunedTt": 416505,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "f4d6",
+                "score": -10,
+                "depth": 5,
+                "elapsedMs": 6001,
+                "considered": 882497,
+                "prunedAb": 3994616,
+                "prunedTt": 416505,
+                "ttImproved": 10692,
+                "timedOut": true
+              }
+            ],
+            "flags": [
+              "missed expected",
+              "known bad move"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 4,
+        "group": "fresh10",
+        "line": "2rr2k1/1b3pp1/pq2pb1p/8/3p4/B1P5/PPQ1BPPP/3RR1K1 w - - 0 24 | lichess-ymx2uvTy-ply47 | c3c4 | e2d3 | SF16 loss 214 cp; clock 499.47 s",
+        "thinkMs": 6000,
+        "threads": 4,
+        "sourceIndex": 98
+      },
+      "line": "2rr2k1/1b3pp1/pq2pb1p/8/3p4/B1P5/PPQ1BPPP/3RR1K1 w - - 0 24 | lichess-ymx2uvTy-ply47 | c3c4 | e2d3 | SF16 loss 214 cp; clock 499.47 s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "before": {
+        "fen": "2rr2k1/1b3pp1/pq2pb1p/8/3p4/B1P5/PPQ1BPPP/3RR1K1 w - - 0 24",
+        "tag": "lichess-ymx2uvTy-ply47",
+        "expected": [
+          "c3c4"
+        ],
+        "bad": [
+          "e2d3"
+        ],
+        "notes": "SF16 loss 214 cp; clock 499.47 s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "e2d3",
+              "score": 138,
+              "count": 1,
+              "depth": 6,
+              "avgElapsedMs": 6001,
+              "nodesPerSecond": 201391,
+              "prunedAb": 7416261,
+              "prunedTt": 906042,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "e2d3",
+                "score": 138,
+                "depth": 6,
+                "elapsedMs": 6001,
+                "considered": 1208616,
+                "prunedAb": 7416261,
+                "prunedTt": 906042,
+                "ttImproved": 22754,
+                "timedOut": true
+              }
+            ],
+            "flags": [
+              "missed expected",
+              "known bad move"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "fen": "2rr2k1/1b3pp1/pq2pb1p/8/3p4/B1P5/PPQ1BPPP/3RR1K1 w - - 0 24",
+        "tag": "lichess-ymx2uvTy-ply47",
+        "expected": [
+          "c3c4"
+        ],
+        "bad": [
+          "e2d3"
+        ],
+        "notes": "SF16 loss 214 cp; clock 499.47 s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "e2d3",
+              "score": 138,
+              "count": 1,
+              "depth": 6,
+              "avgElapsedMs": 6001,
+              "nodesPerSecond": 198918,
+              "prunedAb": 7359328,
+              "prunedTt": 880373,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "e2d3",
+                "score": 138,
+                "depth": 6,
+                "elapsedMs": 6001,
+                "considered": 1193833,
+                "prunedAb": 7359328,
+                "prunedTt": 880373,
+                "ttImproved": 22119,
+                "timedOut": true
+              }
+            ],
+            "flags": [
+              "missed expected",
+              "known bad move"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 5,
+        "group": "fresh10",
+        "line": "2rr2k1/1b3pp1/pq2pb1p/8/8/B1pB4/PPQ2PPP/3RR1K1 w - - 0 25 | lichess-ymx2uvTy-ply49 | b2b3 | d3h7 | SF16 loss 89 cp; clock 495.95 s",
+        "thinkMs": 6000,
+        "threads": 4,
+        "sourceIndex": 99
+      },
+      "line": "2rr2k1/1b3pp1/pq2pb1p/8/8/B1pB4/PPQ2PPP/3RR1K1 w - - 0 25 | lichess-ymx2uvTy-ply49 | b2b3 | d3h7 | SF16 loss 89 cp; clock 495.95 s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "after": {
+        "fen": "2rr2k1/1b3pp1/pq2pb1p/8/8/B1pB4/PPQ2PPP/3RR1K1 w - - 0 25",
+        "tag": "lichess-ymx2uvTy-ply49",
+        "expected": [
+          "b2b3"
+        ],
+        "bad": [
+          "d3h7"
+        ],
+        "notes": "SF16 loss 89 cp; clock 495.95 s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "d3h7",
+              "score": 83,
+              "count": 1,
+              "depth": 6,
+              "avgElapsedMs": 6001,
+              "nodesPerSecond": 257575,
+              "prunedAb": 8296467,
+              "prunedTt": 1013439,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "d3h7",
+                "score": 83,
+                "depth": 6,
+                "elapsedMs": 6001,
+                "considered": 1545803,
+                "prunedAb": 8296467,
+                "prunedTt": 1013439,
+                "ttImproved": 25889,
+                "timedOut": true
+              }
+            ],
+            "flags": [
+              "missed expected",
+              "known bad move"
+            ]
+          }
+        ]
+      },
+      "before": {
+        "fen": "2rr2k1/1b3pp1/pq2pb1p/8/8/B1pB4/PPQ2PPP/3RR1K1 w - - 0 25",
+        "tag": "lichess-ymx2uvTy-ply49",
+        "expected": [
+          "b2b3"
+        ],
+        "bad": [
+          "d3h7"
+        ],
+        "notes": "SF16 loss 89 cp; clock 495.95 s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "d3h7",
+              "score": 83,
+              "count": 1,
+              "depth": 6,
+              "avgElapsedMs": 6001,
+              "nodesPerSecond": 253346,
+              "prunedAb": 8128619,
+              "prunedTt": 1009095,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "d3h7",
+                "score": 83,
+                "depth": 6,
+                "elapsedMs": 6001,
+                "considered": 1520575,
+                "prunedAb": 8128619,
+                "prunedTt": 1009095,
+                "ttImproved": 25817,
+                "timedOut": true
+              }
+            ],
+            "flags": [
+              "missed expected",
+              "known bad move"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 6,
+        "group": "fresh10",
+        "line": "2rq3k/1b3ppB/p3pb1p/8/8/B1p5/PPQ2PPP/4R1K1 w - - 0 27 | lichess-ymx2uvTy-ply53 | b2b3 | e1d1 | SF16 loss 84 cp; clock 485.39 s",
+        "thinkMs": 6000,
+        "threads": 4,
+        "sourceIndex": 100
+      },
+      "line": "2rq3k/1b3ppB/p3pb1p/8/8/B1p5/PPQ2PPP/4R1K1 w - - 0 27 | lichess-ymx2uvTy-ply53 | b2b3 | e1d1 | SF16 loss 84 cp; clock 485.39 s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "before": {
+        "fen": "2rq3k/1b3ppB/p3pb1p/8/8/B1p5/PPQ2PPP/4R1K1 w - - 0 27",
+        "tag": "lichess-ymx2uvTy-ply53",
+        "expected": [
+          "b2b3"
+        ],
+        "bad": [
+          "e1d1"
+        ],
+        "notes": "SF16 loss 84 cp; clock 485.39 s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "e1d1",
+              "score": 27,
+              "count": 1,
+              "depth": 6,
+              "avgElapsedMs": 6001,
+              "nodesPerSecond": 205800,
+              "prunedAb": 6166903,
+              "prunedTt": 628912,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "e1d1",
+                "score": 27,
+                "depth": 6,
+                "elapsedMs": 6001,
+                "considered": 1235187,
+                "prunedAb": 6166903,
+                "prunedTt": 628912,
+                "ttImproved": 16463,
+                "timedOut": true
+              }
+            ],
+            "flags": [
+              "missed expected",
+              "known bad move"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "fen": "2rq3k/1b3ppB/p3pb1p/8/8/B1p5/PPQ2PPP/4R1K1 w - - 0 27",
+        "tag": "lichess-ymx2uvTy-ply53",
+        "expected": [
+          "b2b3"
+        ],
+        "bad": [
+          "e1d1"
+        ],
+        "notes": "SF16 loss 84 cp; clock 485.39 s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "e1d1",
+              "score": -44,
+              "count": 1,
+              "depth": 6,
+              "avgElapsedMs": 6001,
+              "nodesPerSecond": 199698,
+              "prunedAb": 6120492,
+              "prunedTt": 632574,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "e1d1",
+                "score": -44,
+                "depth": 6,
+                "elapsedMs": 6001,
+                "considered": 1198461,
+                "prunedAb": 6120492,
+                "prunedTt": 632574,
+                "ttImproved": 17065,
+                "timedOut": true
+              }
+            ],
+            "flags": [
+              "missed expected",
+              "known bad move"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 7,
+        "group": "fresh10",
+        "line": "2r4k/1b3ppB/p3pb1p/q7/8/B1p5/PPQ2PPP/3R2K1 w - - 2 28 | lichess-ymx2uvTy-ply55 | c2b1 | b2b4 | SF16 loss 121 cp; clock 482.11 s",
+        "thinkMs": 6000,
+        "threads": 4,
+        "sourceIndex": 101
+      },
+      "line": "2r4k/1b3ppB/p3pb1p/q7/8/B1p5/PPQ2PPP/3R2K1 w - - 2 28 | lichess-ymx2uvTy-ply55 | c2b1 | b2b4 | SF16 loss 121 cp; clock 482.11 s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "after": {
+        "fen": "2r4k/1b3ppB/p3pb1p/q7/8/B1p5/PPQ2PPP/3R2K1 w - - 2 28",
+        "tag": "lichess-ymx2uvTy-ply55",
+        "expected": [
+          "c2b1"
+        ],
+        "bad": [
+          "b2b4"
+        ],
+        "notes": "SF16 loss 121 cp; clock 482.11 s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "b2b4",
+              "score": -75,
+              "count": 1,
+              "depth": 7,
+              "avgElapsedMs": 4700,
+              "nodesPerSecond": 211399,
+              "prunedAb": 5196119,
+              "prunedTt": 537170,
+              "timedOut": false
+            },
+            "runs": [
+              {
+                "move": "b2b4",
+                "score": -75,
+                "depth": 7,
+                "elapsedMs": 4700,
+                "considered": 993645,
+                "prunedAb": 5196119,
+                "prunedTt": 537170,
+                "ttImproved": 13244,
+                "timedOut": false
+              }
+            ],
+            "flags": [
+              "missed expected",
+              "known bad move"
+            ]
+          }
+        ]
+      },
+      "before": {
+        "fen": "2r4k/1b3ppB/p3pb1p/q7/8/B1p5/PPQ2PPP/3R2K1 w - - 2 28",
+        "tag": "lichess-ymx2uvTy-ply55",
+        "expected": [
+          "c2b1"
+        ],
+        "bad": [
+          "b2b4"
+        ],
+        "notes": "SF16 loss 121 cp; clock 482.11 s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "b2b4",
+              "score": -75,
+              "count": 1,
+              "depth": 7,
+              "avgElapsedMs": 4617,
+              "nodesPerSecond": 219379,
+              "prunedAb": 5249983,
+              "prunedTt": 534687,
+              "timedOut": false
+            },
+            "runs": [
+              {
+                "move": "b2b4",
+                "score": -75,
+                "depth": 7,
+                "elapsedMs": 4617,
+                "considered": 1013024,
+                "prunedAb": 5249983,
+                "prunedTt": 534687,
+                "ttImproved": 13215,
+                "timedOut": false
+              }
+            ],
+            "flags": [
+              "missed expected",
+              "known bad move"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 8,
+        "group": "fresh10",
+        "line": "r1bqk2r/pp2bp2/2p2p1p/2p5/2P1PP2/2NP4/PP5P/R2QK1NR b KQkq - 0 11 | lichess-04VH6uRt-ply22 | f6f5 | e8g8 | SF16 loss 257 cp; clock 271.07 s",
+        "thinkMs": 6000,
+        "threads": 4,
+        "sourceIndex": 102
+      },
+      "line": "r1bqk2r/pp2bp2/2p2p1p/2p5/2P1PP2/2NP4/PP5P/R2QK1NR b KQkq - 0 11 | lichess-04VH6uRt-ply22 | f6f5 | e8g8 | SF16 loss 257 cp; clock 271.07 s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "before": {
+        "fen": "r1bqk2r/pp2bp2/2p2p1p/2p5/2P1PP2/2NP4/PP5P/R2QK1NR b KQkq - 0 11",
+        "tag": "lichess-04VH6uRt-ply22",
+        "expected": [
+          "f6f5"
+        ],
+        "bad": [
+          "e8g8"
+        ],
+        "notes": "SF16 loss 257 cp; clock 271.07 s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "e8g8",
+              "score": 85,
+              "count": 1,
+              "depth": 6,
+              "avgElapsedMs": 6001,
+              "nodesPerSecond": 138241,
+              "prunedAb": 5110796,
+              "prunedTt": 738132,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "e8g8",
+                "score": 85,
+                "depth": 6,
+                "elapsedMs": 6001,
+                "considered": 829682,
+                "prunedAb": 5110796,
+                "prunedTt": 738132,
+                "ttImproved": 23436,
+                "timedOut": true
+              }
+            ],
+            "flags": [
+              "missed expected",
+              "known bad move"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "fen": "r1bqk2r/pp2bp2/2p2p1p/2p5/2P1PP2/2NP4/PP5P/R2QK1NR b KQkq - 0 11",
+        "tag": "lichess-04VH6uRt-ply22",
+        "expected": [
+          "f6f5"
+        ],
+        "bad": [
+          "e8g8"
+        ],
+        "notes": "SF16 loss 257 cp; clock 271.07 s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "e8g8",
+              "score": 85,
+              "count": 1,
+              "depth": 6,
+              "avgElapsedMs": 6002,
+              "nodesPerSecond": 147279,
+              "prunedAb": 5462537,
+              "prunedTt": 858174,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "e8g8",
+                "score": 85,
+                "depth": 6,
+                "elapsedMs": 6002,
+                "considered": 884113,
+                "prunedAb": 5462537,
+                "prunedTt": 858174,
+                "ttImproved": 27173,
+                "timedOut": true
+              }
+            ],
+            "flags": [
+              "missed expected",
+              "known bad move"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 9,
+        "group": "fresh10",
+        "line": "5kr1/pp2qp2/2pb1p2/2p2Q2/2P1PP2/2NP2P1/PP6/2K4R b - - 0 25 | lichess-04VH6uRt-ply50 | e7e6 | d6c7 | SF16 loss 93 cp; clock 210.67 s",
+        "thinkMs": 6000,
+        "threads": 4,
+        "sourceIndex": 103
+      },
+      "line": "5kr1/pp2qp2/2pb1p2/2p2Q2/2P1PP2/2NP2P1/PP6/2K4R b - - 0 25 | lichess-04VH6uRt-ply50 | e7e6 | d6c7 | SF16 loss 93 cp; clock 210.67 s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "after": {
+        "fen": "5kr1/pp2qp2/2pb1p2/2p2Q2/2P1PP2/2NP2P1/PP6/2K4R b - - 0 25",
+        "tag": "lichess-04VH6uRt-ply50",
+        "expected": [
+          "e7e6"
+        ],
+        "bad": [
+          "d6c7"
+        ],
+        "notes": "SF16 loss 93 cp; clock 210.67 s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "e7d8",
+              "score": -123,
+              "count": 1,
+              "depth": 6,
+              "avgElapsedMs": 6001,
+              "nodesPerSecond": 167327,
+              "prunedAb": 4750919,
+              "prunedTt": 508656,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "e7d8",
+                "score": -123,
+                "depth": 6,
+                "elapsedMs": 6001,
+                "considered": 1004169,
+                "prunedAb": 4750919,
+                "prunedTt": 508656,
+                "ttImproved": 20047,
+                "timedOut": true
+              }
+            ],
+            "flags": [
+              "missed expected"
+            ]
+          }
+        ]
+      },
+      "before": {
+        "fen": "5kr1/pp2qp2/2pb1p2/2p2Q2/2P1PP2/2NP2P1/PP6/2K4R b - - 0 25",
+        "tag": "lichess-04VH6uRt-ply50",
+        "expected": [
+          "e7e6"
+        ],
+        "bad": [
+          "d6c7"
+        ],
+        "notes": "SF16 loss 93 cp; clock 210.67 s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "e7e6",
+              "score": -36,
+              "count": 1,
+              "depth": 7,
+              "avgElapsedMs": 5429,
+              "nodesPerSecond": 161404,
+              "prunedAb": 4170030,
+              "prunedTt": 474217,
+              "timedOut": false
+            },
+            "runs": [
+              {
+                "move": "e7e6",
+                "score": -36,
+                "depth": 7,
+                "elapsedMs": 5429,
+                "considered": 876421,
+                "prunedAb": 4170030,
+                "prunedTt": 474217,
+                "ttImproved": 18765,
+                "timedOut": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 10,
+        "group": "fresh7",
+        "line": "8/5pkp/2R2p2/5K2/p6P/6P1/r7/8 w - - 0 27 | W692ODie-ply53 | f5g4 | c6c3 | SF16 logged move; original budget 8s",
+        "loggedBudgetNs": 8000000000,
+        "thinkMs": 8000,
+        "threads": 4,
+        "loggedThinkingLine": "time=\"2026-11-10T04:02:48-08:00\" level=info msg=\"player thinking... have time 4m0.95s, inc 3s, set max to 8s\"",
+        "sourceIndex": 104
+      },
+      "line": "8/5pkp/2R2p2/5K2/p6P/6P1/r7/8 w - - 0 27 | W692ODie-ply53 | f5g4 | c6c3 | SF16 logged move; original budget 8s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 2,
+      "before": {
+        "fen": "8/5pkp/2R2p2/5K2/p6P/6P1/r7/8 w - - 0 27",
+        "tag": "W692ODie-ply53",
+        "expected": [
+          "f5g4"
+        ],
+        "bad": [
+          "c6c3"
+        ],
+        "notes": "SF16 logged move; original budget 8s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "c6c3",
+              "score": -86,
+              "count": 1,
+              "depth": 7,
+              "avgElapsedMs": 8001,
+              "nodesPerSecond": 234114,
+              "prunedAb": 5835568,
+              "prunedTt": 1264989,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "c6c3",
+                "score": -86,
+                "depth": 7,
+                "elapsedMs": 8001,
+                "considered": 1873321,
+                "prunedAb": 5835568,
+                "prunedTt": 1264989,
+                "ttImproved": 78472,
+                "timedOut": true
+              }
+            ],
+            "flags": [
+              "missed expected",
+              "known bad move"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "fen": "8/5pkp/2R2p2/5K2/p6P/6P1/r7/8 w - - 0 27",
+        "tag": "W692ODie-ply53",
+        "expected": [
+          "f5g4"
+        ],
+        "bad": [
+          "c6c3"
+        ],
+        "notes": "SF16 logged move; original budget 8s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "c6c3",
+              "score": -86,
+              "count": 1,
+              "depth": 7,
+              "avgElapsedMs": 8001,
+              "nodesPerSecond": 232968,
+              "prunedAb": 5805837,
+              "prunedTt": 1217183,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "c6c3",
+                "score": -86,
+                "depth": 7,
+                "elapsedMs": 8001,
+                "considered": 1864117,
+                "prunedAb": 5805837,
+                "prunedTt": 1217183,
+                "ttImproved": 75505,
+                "timedOut": true
+              }
+            ],
+            "flags": [
+              "missed expected",
+              "known bad move"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 11,
+        "group": "fresh7",
+        "line": "8/5pkp/5p2/5K2/7P/p1R3P1/r7/8 w - - 0 28 | W692ODie-ply55 | f5g4 | c3f3 | SF16 logged move; original budget 7.859333332s",
+        "loggedBudgetNs": 7859333332,
+        "thinkMs": 7859,
+        "threads": 4,
+        "loggedThinkingLine": "time=\"2026-11-10T04:02:56-08:00\" level=info msg=\"player thinking... have time 3m55.78s, inc 3s, set max to 7.859333332s\"",
+        "sourceIndex": 105
+      },
+      "line": "8/5pkp/5p2/5K2/7P/p1R3P1/r7/8 w - - 0 28 | W692ODie-ply55 | f5g4 | c3f3 | SF16 logged move; original budget 7.859333332s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "after": {
+        "fen": "8/5pkp/5p2/5K2/7P/p1R3P1/r7/8 w - - 0 28",
+        "tag": "W692ODie-ply55",
+        "expected": [
+          "f5g4"
+        ],
+        "bad": [
+          "c3f3"
+        ],
+        "notes": "SF16 logged move; original budget 7.859333332s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "f5g4",
+              "score": -112,
+              "count": 1,
+              "depth": 8,
+              "avgElapsedMs": 7860,
+              "nodesPerSecond": 244737,
+              "prunedAb": 6436095,
+              "prunedTt": 1403047,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "f5g4",
+                "score": -112,
+                "depth": 8,
+                "elapsedMs": 7860,
+                "considered": 1923878,
+                "prunedAb": 6436095,
+                "prunedTt": 1403047,
+                "ttImproved": 83321,
+                "timedOut": true
+              }
+            ]
+          }
+        ]
+      },
+      "before": {
+        "fen": "8/5pkp/5p2/5K2/7P/p1R3P1/r7/8 w - - 0 28",
+        "tag": "W692ODie-ply55",
+        "expected": [
+          "f5g4"
+        ],
+        "bad": [
+          "c3f3"
+        ],
+        "notes": "SF16 logged move; original budget 7.859333332s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "f5g4",
+              "score": -112,
+              "count": 1,
+              "depth": 8,
+              "avgElapsedMs": 7860,
+              "nodesPerSecond": 237908,
+              "prunedAb": 6304898,
+              "prunedTt": 1356208,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "f5g4",
+                "score": -112,
+                "depth": 8,
+                "elapsedMs": 7860,
+                "considered": 1870095,
+                "prunedAb": 6304898,
+                "prunedTt": 1356208,
+                "ttImproved": 80471,
+                "timedOut": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 12,
+        "group": "fresh7",
+        "line": "8/5pk1/7p/5K1P/6P1/8/p4R2/r7 w - - 3 36 | W692ODie-ply71 | f5f4 | g4g5 | SF16 logged move; original budget 6.714s",
+        "loggedBudgetNs": 6714000000,
+        "thinkMs": 6714,
+        "threads": 4,
+        "loggedThinkingLine": "time=\"2026-11-10T04:03:55-08:00\" level=info msg=\"player thinking... have time 3m21.42s, inc 3s, set max to 6.714s\"",
+        "sourceIndex": 106
+      },
+      "line": "8/5pk1/7p/5K1P/6P1/8/p4R2/r7 w - - 3 36 | W692ODie-ply71 | f5f4 | g4g5 | SF16 logged move; original budget 6.714s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "before": {
+        "fen": "8/5pk1/7p/5K1P/6P1/8/p4R2/r7 w - - 3 36",
+        "tag": "W692ODie-ply71",
+        "expected": [
+          "f5f4"
+        ],
+        "bad": [
+          "g4g5"
+        ],
+        "notes": "SF16 logged move; original budget 6.714s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "g4g5",
+              "score": -290,
+              "count": 1,
+              "depth": 8,
+              "avgElapsedMs": 6715,
+              "nodesPerSecond": 191174,
+              "prunedAb": 5037127,
+              "prunedTt": 1068693,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "g4g5",
+                "score": -290,
+                "depth": 8,
+                "elapsedMs": 6715,
+                "considered": 1283774,
+                "prunedAb": 5037127,
+                "prunedTt": 1068693,
+                "ttImproved": 60846,
+                "timedOut": true
+              }
+            ],
+            "flags": [
+              "missed expected",
+              "known bad move"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "fen": "8/5pk1/7p/5K1P/6P1/8/p4R2/r7 w - - 3 36",
+        "tag": "W692ODie-ply71",
+        "expected": [
+          "f5f4"
+        ],
+        "bad": [
+          "g4g5"
+        ],
+        "notes": "SF16 logged move; original budget 6.714s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "f5f4",
+              "score": -244,
+              "count": 1,
+              "depth": 9,
+              "avgElapsedMs": 6716,
+              "nodesPerSecond": 190376,
+              "prunedAb": 5020165,
+              "prunedTt": 1064227,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "f5f4",
+                "score": -244,
+                "depth": 9,
+                "elapsedMs": 6716,
+                "considered": 1278576,
+                "prunedAb": 5020165,
+                "prunedTt": 1064227,
+                "ttImproved": 60625,
+                "timedOut": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 13,
+        "group": "fresh7",
+        "line": "1r1r2k1/pp1b1ppp/2nbp3/7q/3PB3/5N1P/PP1B1PP1/2RQR1K1 b - - 0 15 | DpU8WcGP-ply30 | c6e7 | h5b5 | SF16 logged move; original budget 5.241458332s",
+        "loggedBudgetNs": 5241458332,
+        "thinkMs": 5241,
+        "threads": 4,
+        "loggedThinkingLine": "time=\"2026-11-10T06:24:22-08:00\" level=info msg=\"player thinking... have time 4m11.59s, inc 1s, set max to 5.241458332s\"",
+        "sourceIndex": 107
+      },
+      "line": "1r1r2k1/pp1b1ppp/2nbp3/7q/3PB3/5N1P/PP1B1PP1/2RQR1K1 b - - 0 15 | DpU8WcGP-ply30 | c6e7 | h5b5 | SF16 logged move; original budget 5.241458332s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "after": {
+        "fen": "1r1r2k1/pp1b1ppp/2nbp3/7q/3PB3/5N1P/PP1B1PP1/2RQR1K1 b - - 0 15",
+        "tag": "DpU8WcGP-ply30",
+        "expected": [
+          "c6e7"
+        ],
+        "bad": [
+          "h5b5"
+        ],
+        "notes": "SF16 logged move; original budget 5.241458332s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "h5b5",
+              "score": -12,
+              "count": 1,
+              "depth": 5,
+              "avgElapsedMs": 5243,
+              "nodesPerSecond": 133840,
+              "prunedAb": 4162728,
+              "prunedTt": 467809,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "h5b5",
+                "score": -12,
+                "depth": 5,
+                "elapsedMs": 5243,
+                "considered": 701730,
+                "prunedAb": 4162728,
+                "prunedTt": 467809,
+                "ttImproved": 10271,
+                "timedOut": true
+              }
+            ],
+            "flags": [
+              "missed expected",
+              "known bad move"
+            ]
+          }
+        ]
+      },
+      "before": {
+        "fen": "1r1r2k1/pp1b1ppp/2nbp3/7q/3PB3/5N1P/PP1B1PP1/2RQR1K1 b - - 0 15",
+        "tag": "DpU8WcGP-ply30",
+        "expected": [
+          "c6e7"
+        ],
+        "bad": [
+          "h5b5"
+        ],
+        "notes": "SF16 logged move; original budget 5.241458332s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "h5b5",
+              "score": -12,
+              "count": 1,
+              "depth": 5,
+              "avgElapsedMs": 5243,
+              "nodesPerSecond": 133729,
+              "prunedAb": 4156372,
+              "prunedTt": 443672,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "h5b5",
+                "score": -12,
+                "depth": 5,
+                "elapsedMs": 5243,
+                "considered": 701158,
+                "prunedAb": 4156372,
+                "prunedTt": 443672,
+                "ttImproved": 9785,
+                "timedOut": true
+              }
+            ],
+            "flags": [
+              "missed expected",
+              "known bad move"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 14,
+        "group": "fresh7",
+        "line": "1r1r2k1/pp1b2pp/2Bbp3/1q3p2/3P4/1P3N1P/P2B1PP1/2RQR1K1 b - - 0 17 | DpU8WcGP-ply34 | d7c6 | b7c6 | SF16 logged move; original budget 5.055833332s",
+        "loggedBudgetNs": 5055833332,
+        "thinkMs": 5055,
+        "threads": 4,
+        "loggedThinkingLine": "time=\"2026-11-10T06:24:44-08:00\" level=info msg=\"player thinking... have time 4m2.68s, inc 1s, set max to 5.055833332s\"",
+        "sourceIndex": 108
+      },
+      "line": "1r1r2k1/pp1b2pp/2Bbp3/1q3p2/3P4/1P3N1P/P2B1PP1/2RQR1K1 b - - 0 17 | DpU8WcGP-ply34 | d7c6 | b7c6 | SF16 logged move; original budget 5.055833332s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "before": {
+        "fen": "1r1r2k1/pp1b2pp/2Bbp3/1q3p2/3P4/1P3N1P/P2B1PP1/2RQR1K1 b - - 0 17",
+        "tag": "DpU8WcGP-ply34",
+        "expected": [
+          "d7c6"
+        ],
+        "bad": [
+          "b7c6"
+        ],
+        "notes": "SF16 logged move; original budget 5.055833332s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "b7c6",
+              "score": -42,
+              "count": 1,
+              "depth": 6,
+              "avgElapsedMs": 5056,
+              "nodesPerSecond": 103392,
+              "prunedAb": 4110111,
+              "prunedTt": 250327,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "b7c6",
+                "score": -42,
+                "depth": 6,
+                "elapsedMs": 5056,
+                "considered": 522787,
+                "prunedAb": 4110111,
+                "prunedTt": 250327,
+                "ttImproved": 6090,
+                "timedOut": true
+              }
+            ],
+            "flags": [
+              "missed expected",
+              "known bad move"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "fen": "1r1r2k1/pp1b2pp/2Bbp3/1q3p2/3P4/1P3N1P/P2B1PP1/2RQR1K1 b - - 0 17",
+        "tag": "DpU8WcGP-ply34",
+        "expected": [
+          "d7c6"
+        ],
+        "bad": [
+          "b7c6"
+        ],
+        "notes": "SF16 logged move; original budget 5.055833332s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "d7c6",
+              "score": -11,
+              "count": 1,
+              "depth": 7,
+              "avgElapsedMs": 5056,
+              "nodesPerSecond": 106034,
+              "prunedAb": 4207035,
+              "prunedTt": 256863,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "d7c6",
+                "score": -11,
+                "depth": 7,
+                "elapsedMs": 5056,
+                "considered": 536155,
+                "prunedAb": 4207035,
+                "prunedTt": 256863,
+                "ttImproved": 6250,
+                "timedOut": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 15,
+        "group": "fresh7",
+        "line": "8/p1KQR1pk/2p4p/2q2p2/7P/1P6/P4Pb1/8 b - - 1 35 | DpU8WcGP-ply70 | c5b6 | h7h8 | SF16 logged move; original budget 3s",
+        "loggedBudgetNs": 3000000000,
+        "thinkMs": 3000,
+        "threads": 4,
+        "loggedThinkingLine": "time=\"2026-11-10T06:27:36-08:00\" level=info msg=\"player thinking... have time 2m45.18s, inc 1s, set max to 3s\"",
+        "sourceIndex": 109
+      },
+      "line": "8/p1KQR1pk/2p4p/2q2p2/7P/1P6/P4Pb1/8 b - - 1 35 | DpU8WcGP-ply70 | c5b6 | h7h8 | SF16 logged move; original budget 3s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "after": {
+        "fen": "8/p1KQR1pk/2p4p/2q2p2/7P/1P6/P4Pb1/8 b - - 1 35",
+        "tag": "DpU8WcGP-ply70",
+        "expected": [
+          "c5b6"
+        ],
+        "bad": [
+          "h7h8"
+        ],
+        "notes": "SF16 logged move; original budget 3s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "h7h8",
+              "score": -122,
+              "count": 1,
+              "depth": 5,
+              "avgElapsedMs": 3002,
+              "nodesPerSecond": 172321,
+              "prunedAb": 2094329,
+              "prunedTt": 225290,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "h7h8",
+                "score": -122,
+                "depth": 5,
+                "elapsedMs": 3002,
+                "considered": 517320,
+                "prunedAb": 2094329,
+                "prunedTt": 225290,
+                "ttImproved": 11567,
+                "timedOut": true
+              }
+            ],
+            "flags": [
+              "missed expected",
+              "known bad move"
+            ]
+          }
+        ]
+      },
+      "before": {
+        "fen": "8/p1KQR1pk/2p4p/2q2p2/7P/1P6/P4Pb1/8 b - - 1 35",
+        "tag": "DpU8WcGP-ply70",
+        "expected": [
+          "c5b6"
+        ],
+        "bad": [
+          "h7h8"
+        ],
+        "notes": "SF16 logged move; original budget 3s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "h7h8",
+              "score": -122,
+              "count": 1,
+              "depth": 5,
+              "avgElapsedMs": 3001,
+              "nodesPerSecond": 173045,
+              "prunedAb": 2093741,
+              "prunedTt": 225695,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "h7h8",
+                "score": -122,
+                "depth": 5,
+                "elapsedMs": 3001,
+                "considered": 519367,
+                "prunedAb": 2093741,
+                "prunedTt": 225695,
+                "ttImproved": 11555,
+                "timedOut": true
+              }
+            ],
+            "flags": [
+              "missed expected",
+              "known bad move"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 16,
+        "group": "fresh7",
+        "line": "r1bq1rk1/p1p2ppp/2B5/3p4/1b2n3/2N2P2/PPP3PP/R1BQK2R w KQ - 0 10 | yA6gLPUd-ply19 | e1g1 | c6a8 | SF16 logged move; original budget 27.190333333s",
+        "loggedBudgetNs": 27190333333,
+        "thinkMs": 27190,
+        "threads": 8,
+        "loggedThinkingLine": "time=\"2026-11-10T05:25:47-08:00\" level=info msg=\"player thinking... have time 27m11.42s, inc 2s, set max to 27.190333333s\"",
+        "sourceIndex": 110
+      },
+      "line": "r1bq1rk1/p1p2ppp/2B5/3p4/1b2n3/2N2P2/PPP3PP/R1BQK2R w KQ - 0 10 | yA6gLPUd-ply19 | e1g1 | c6a8 | SF16 logged move; original budget 27.190333333s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "before": {
+        "fen": "r1bq1rk1/p1p2ppp/2B5/3p4/1b2n3/2N2P2/PPP3PP/R1BQK2R w KQ - 0 10",
+        "tag": "yA6gLPUd-ply19",
+        "expected": [
+          "e1g1"
+        ],
+        "bad": [
+          "c6a8"
+        ],
+        "notes": "SF16 logged move; original budget 27.190333333s",
+        "threads": [
+          {
+            "threads": 8,
+            "summary": {
+              "move": "f3e4",
+              "score": -25,
+              "count": 1,
+              "depth": 7,
+              "avgElapsedMs": 27191,
+              "nodesPerSecond": 141853,
+              "prunedAb": 24883497,
+              "prunedTt": 1648287,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "f3e4",
+                "score": -25,
+                "depth": 7,
+                "elapsedMs": 27191,
+                "considered": 3857246,
+                "prunedAb": 24883497,
+                "prunedTt": 1648287,
+                "ttImproved": 52491,
+                "timedOut": true
+              }
+            ],
+            "flags": [
+              "missed expected"
+            ]
+          }
+        ]
+      },
+      "after": {
+        "fen": "r1bq1rk1/p1p2ppp/2B5/3p4/1b2n3/2N2P2/PPP3PP/R1BQK2R w KQ - 0 10",
+        "tag": "yA6gLPUd-ply19",
+        "expected": [
+          "e1g1"
+        ],
+        "bad": [
+          "c6a8"
+        ],
+        "notes": "SF16 logged move; original budget 27.190333333s",
+        "threads": [
+          {
+            "threads": 8,
+            "summary": {
+              "move": "f3e4",
+              "score": -25,
+              "count": 1,
+              "depth": 7,
+              "avgElapsedMs": 27192,
+              "nodesPerSecond": 140883,
+              "prunedAb": 24763653,
+              "prunedTt": 1642107,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "f3e4",
+                "score": -25,
+                "depth": 7,
+                "elapsedMs": 27192,
+                "considered": 3830935,
+                "prunedAb": 24763653,
+                "prunedTt": 1642107,
+                "ttImproved": 52279,
+                "timedOut": true
+              }
+            ],
+            "flags": [
+              "missed expected"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 17,
+        "group": "openings11",
+        "line": "rnbqkb1r/ppp1pppp/3p1n2/8/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 2 3 | lichess-qlDlv2bD-ply5 | | | 10+10 rapid; initial clock search cap 10s",
+        "thinkMs": 10000,
+        "threads": 8
+      },
+      "line": "rnbqkb1r/ppp1pppp/3p1n2/8/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 2 3 | lichess-qlDlv2bD-ply5 | | | 10+10 rapid; initial clock search cap 10s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "after": {
+        "fen": "rnbqkb1r/ppp1pppp/3p1n2/8/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 2 3",
+        "tag": "lichess-qlDlv2bD-ply5",
+        "notes": "10+10 rapid; initial clock search cap 10s",
+        "threads": [
+          {
+            "threads": 8,
+            "summary": {
+              "move": "b1c3",
+              "score": 64,
+              "count": 1,
+              "depth": 6,
+              "avgElapsedMs": 8972,
+              "nodesPerSecond": 111286,
+              "prunedAb": 6069460,
+              "prunedTt": 621811,
+              "timedOut": false
+            },
+            "runs": [
+              {
+                "move": "b1c3",
+                "score": 64,
+                "depth": 6,
+                "elapsedMs": 8972,
+                "considered": 998557,
+                "prunedAb": 6069460,
+                "prunedTt": 621811,
+                "ttImproved": 19172,
+                "timedOut": false
+              }
+            ]
+          }
+        ]
+      },
+      "before": {
+        "fen": "rnbqkb1r/ppp1pppp/3p1n2/8/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 2 3",
+        "tag": "lichess-qlDlv2bD-ply5",
+        "notes": "10+10 rapid; initial clock search cap 10s",
+        "threads": [
+          {
+            "threads": 8,
+            "summary": {
+              "move": "b1c3",
+              "score": 64,
+              "count": 1,
+              "depth": 6,
+              "avgElapsedMs": 8912,
+              "nodesPerSecond": 111901,
+              "prunedAb": 6065701,
+              "prunedTt": 625165,
+              "timedOut": false
+            },
+            "runs": [
+              {
+                "move": "b1c3",
+                "score": 64,
+                "depth": 6,
+                "elapsedMs": 8912,
+                "considered": 997327,
+                "prunedAb": 6065701,
+                "prunedTt": 625165,
+                "ttImproved": 19264,
+                "timedOut": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 18,
+        "group": "openings11",
+        "line": "rnbqkb1r/pp2pppp/2pp1n2/8/3P4/4PN2/PPP2PPP/RNBQKB1R w KQkq - 0 4 | lichess-qlDlv2bD-ply7 | | | 10+10 rapid; initial clock search cap 10s",
+        "thinkMs": 10000,
+        "threads": 8
+      },
+      "line": "rnbqkb1r/pp2pppp/2pp1n2/8/3P4/4PN2/PPP2PPP/RNBQKB1R w KQkq - 0 4 | lichess-qlDlv2bD-ply7 | | | 10+10 rapid; initial clock search cap 10s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "before": {
+        "fen": "rnbqkb1r/pp2pppp/2pp1n2/8/3P4/4PN2/PPP2PPP/RNBQKB1R w KQkq - 0 4",
+        "tag": "lichess-qlDlv2bD-ply7",
+        "notes": "10+10 rapid; initial clock search cap 10s",
+        "threads": [
+          {
+            "threads": 8,
+            "summary": {
+              "move": "b1c3",
+              "score": 71,
+              "count": 1,
+              "depth": 6,
+              "avgElapsedMs": 10017,
+              "nodesPerSecond": 147462,
+              "prunedAb": 9435001,
+              "prunedTt": 1126861,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "b1c3",
+                "score": 71,
+                "depth": 6,
+                "elapsedMs": 10017,
+                "considered": 1477267,
+                "prunedAb": 9435001,
+                "prunedTt": 1126861,
+                "ttImproved": 33272,
+                "timedOut": true
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "fen": "rnbqkb1r/pp2pppp/2pp1n2/8/3P4/4PN2/PPP2PPP/RNBQKB1R w KQkq - 0 4",
+        "tag": "lichess-qlDlv2bD-ply7",
+        "notes": "10+10 rapid; initial clock search cap 10s",
+        "threads": [
+          {
+            "threads": 8,
+            "summary": {
+              "move": "b1c3",
+              "score": 71,
+              "count": 1,
+              "depth": 6,
+              "avgElapsedMs": 10003,
+              "nodesPerSecond": 140145,
+              "prunedAb": 8922792,
+              "prunedTt": 1059985,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "b1c3",
+                "score": 71,
+                "depth": 6,
+                "elapsedMs": 10003,
+                "considered": 1401989,
+                "prunedAb": 8922792,
+                "prunedTt": 1059985,
+                "ttImproved": 31195,
+                "timedOut": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 19,
+        "group": "openings11",
+        "line": "rnbqkb1r/ppp1pppp/5n2/3P4/3P4/8/PP2PPPP/RNBQKBNR b KQkq - 0 3 | lichess-RrxHqA6J-ply6 | | | 3+2 blitz; initial clock search cap 3s",
+        "thinkMs": 3000,
+        "threads": 4
+      },
+      "line": "rnbqkb1r/ppp1pppp/5n2/3P4/3P4/8/PP2PPPP/RNBQKBNR b KQkq - 0 3 | lichess-RrxHqA6J-ply6 | | | 3+2 blitz; initial clock search cap 3s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "after": {
+        "fen": "rnbqkb1r/ppp1pppp/5n2/3P4/3P4/8/PP2PPPP/RNBQKBNR b KQkq - 0 3",
+        "tag": "lichess-RrxHqA6J-ply6",
+        "notes": "3+2 blitz; initial clock search cap 3s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "e7e6",
+              "score": 29,
+              "count": 1,
+              "depth": 5,
+              "avgElapsedMs": 3001,
+              "nodesPerSecond": 149087,
+              "prunedAb": 2473070,
+              "prunedTt": 371841,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "e7e6",
+                "score": 29,
+                "depth": 5,
+                "elapsedMs": 3001,
+                "considered": 447488,
+                "prunedAb": 2473070,
+                "prunedTt": 371841,
+                "ttImproved": 11229,
+                "timedOut": true
+              }
+            ]
+          }
+        ]
+      },
+      "before": {
+        "fen": "rnbqkb1r/ppp1pppp/5n2/3P4/3P4/8/PP2PPPP/RNBQKBNR b KQkq - 0 3",
+        "tag": "lichess-RrxHqA6J-ply6",
+        "notes": "3+2 blitz; initial clock search cap 3s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "e7e6",
+              "score": 29,
+              "count": 1,
+              "depth": 5,
+              "avgElapsedMs": 3001,
+              "nodesPerSecond": 148850,
+              "prunedAb": 2469383,
+              "prunedTt": 372254,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "e7e6",
+                "score": 29,
+                "depth": 5,
+                "elapsedMs": 3001,
+                "considered": 446824,
+                "prunedAb": 2469383,
+                "prunedTt": 372254,
+                "ttImproved": 11226,
+                "timedOut": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 20,
+        "group": "openings11",
+        "line": "rnbqkb1r/ppp2ppp/4Pn2/8/3P4/8/PP2PPPP/RNBQKBNR b KQkq - 0 4 | lichess-RrxHqA6J-ply8 | | | 3+2 blitz; initial clock search cap 3s",
+        "thinkMs": 3000,
+        "threads": 4
+      },
+      "line": "rnbqkb1r/ppp2ppp/4Pn2/8/3P4/8/PP2PPPP/RNBQKBNR b KQkq - 0 4 | lichess-RrxHqA6J-ply8 | | | 3+2 blitz; initial clock search cap 3s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "before": {
+        "fen": "rnbqkb1r/ppp2ppp/4Pn2/8/3P4/8/PP2PPPP/RNBQKBNR b KQkq - 0 4",
+        "tag": "lichess-RrxHqA6J-ply8",
+        "notes": "3+2 blitz; initial clock search cap 3s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "c8e6",
+              "score": 29,
+              "count": 1,
+              "depth": 5,
+              "avgElapsedMs": 3001,
+              "nodesPerSecond": 160012,
+              "prunedAb": 2651612,
+              "prunedTt": 318529,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "c8e6",
+                "score": 29,
+                "depth": 5,
+                "elapsedMs": 3001,
+                "considered": 480238,
+                "prunedAb": 2651612,
+                "prunedTt": 318529,
+                "ttImproved": 8952,
+                "timedOut": true
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "fen": "rnbqkb1r/ppp2ppp/4Pn2/8/3P4/8/PP2PPPP/RNBQKBNR b KQkq - 0 4",
+        "tag": "lichess-RrxHqA6J-ply8",
+        "notes": "3+2 blitz; initial clock search cap 3s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "c8e6",
+              "score": 29,
+              "count": 1,
+              "depth": 5,
+              "avgElapsedMs": 3002,
+              "nodesPerSecond": 161952,
+              "prunedAb": 2701833,
+              "prunedTt": 327883,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "c8e6",
+                "score": 29,
+                "depth": 5,
+                "elapsedMs": 3002,
+                "considered": 486183,
+                "prunedAb": 2701833,
+                "prunedTt": 327883,
+                "ttImproved": 9250,
+                "timedOut": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 21,
+        "group": "openings11",
+        "line": "rnbqkb1r/pppp1ppp/4pn2/8/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3 | lichess-Lmd5Up7B-ply5 | | | 5+2 blitz; initial clock search cap 5s",
+        "thinkMs": 5000,
+        "threads": 4
+      },
+      "line": "rnbqkb1r/pppp1ppp/4pn2/8/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3 | lichess-Lmd5Up7B-ply5 | | | 5+2 blitz; initial clock search cap 5s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "after": {
+        "fen": "rnbqkb1r/pppp1ppp/4pn2/8/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3",
+        "tag": "lichess-Lmd5Up7B-ply5",
+        "notes": "5+2 blitz; initial clock search cap 5s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "b1c3",
+              "score": 58,
+              "count": 1,
+              "depth": 5,
+              "avgElapsedMs": 5002,
+              "nodesPerSecond": 124366,
+              "prunedAb": 3644961,
+              "prunedTt": 397030,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "b1c3",
+                "score": 58,
+                "depth": 5,
+                "elapsedMs": 5002,
+                "considered": 622102,
+                "prunedAb": 3644961,
+                "prunedTt": 397030,
+                "ttImproved": 12405,
+                "timedOut": true
+              }
+            ]
+          }
+        ]
+      },
+      "before": {
+        "fen": "rnbqkb1r/pppp1ppp/4pn2/8/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3",
+        "tag": "lichess-Lmd5Up7B-ply5",
+        "notes": "5+2 blitz; initial clock search cap 5s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "b1c3",
+              "score": 58,
+              "count": 1,
+              "depth": 5,
+              "avgElapsedMs": 5001,
+              "nodesPerSecond": 123886,
+              "prunedAb": 3631910,
+              "prunedTt": 397297,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "b1c3",
+                "score": 58,
+                "depth": 5,
+                "elapsedMs": 5001,
+                "considered": 619636,
+                "prunedAb": 3631910,
+                "prunedTt": 397297,
+                "ttImproved": 12422,
+                "timedOut": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 22,
+        "group": "openings11",
+        "line": "rnbqkb1r/pp1p1ppp/4pn2/2p5/3P4/4PN2/PPP2PPP/RNBQKB1R w KQkq c6 0 4 | lichess-Lmd5Up7B-ply7 | | | 5+2 blitz; initial clock search cap 5s",
+        "thinkMs": 5000,
+        "threads": 4
+      },
+      "line": "rnbqkb1r/pp1p1ppp/4pn2/2p5/3P4/4PN2/PPP2PPP/RNBQKB1R w KQkq c6 0 4 | lichess-Lmd5Up7B-ply7 | | | 5+2 blitz; initial clock search cap 5s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "before": {
+        "fen": "rnbqkb1r/pp1p1ppp/4pn2/2p5/3P4/4PN2/PPP2PPP/RNBQKB1R w KQkq c6 0 4",
+        "tag": "lichess-Lmd5Up7B-ply7",
+        "notes": "5+2 blitz; initial clock search cap 5s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "b1c3",
+              "score": 43,
+              "count": 1,
+              "depth": 5,
+              "avgElapsedMs": 5001,
+              "nodesPerSecond": 153486,
+              "prunedAb": 3324551,
+              "prunedTt": 368026,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "b1c3",
+                "score": 43,
+                "depth": 5,
+                "elapsedMs": 5001,
+                "considered": 767658,
+                "prunedAb": 3324551,
+                "prunedTt": 368026,
+                "ttImproved": 11061,
+                "timedOut": true
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "fen": "rnbqkb1r/pp1p1ppp/4pn2/2p5/3P4/4PN2/PPP2PPP/RNBQKB1R w KQkq c6 0 4",
+        "tag": "lichess-Lmd5Up7B-ply7",
+        "notes": "5+2 blitz; initial clock search cap 5s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "b1c3",
+              "score": 43,
+              "count": 1,
+              "depth": 5,
+              "avgElapsedMs": 5001,
+              "nodesPerSecond": 155014,
+              "prunedAb": 3353133,
+              "prunedTt": 367450,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "b1c3",
+                "score": 43,
+                "depth": 5,
+                "elapsedMs": 5001,
+                "considered": 775363,
+                "prunedAb": 3353133,
+                "prunedTt": 367450,
+                "ttImproved": 11063,
+                "timedOut": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 23,
+        "group": "openings11",
+        "line": "rnbqkb1r/ppp1pppp/5n2/3p4/2PP4/5N2/PP2PPPP/RNBQKB1R b KQkq c3 0 3 | lichess-KO5FXfxz-ply6 | | | 15+5 rapid; initial clock search cap 15s",
+        "thinkMs": 15000,
+        "threads": 8
+      },
+      "line": "rnbqkb1r/ppp1pppp/5n2/3p4/2PP4/5N2/PP2PPPP/RNBQKB1R b KQkq c3 0 3 | lichess-KO5FXfxz-ply6 | | | 15+5 rapid; initial clock search cap 15s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "after": {
+        "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/2PP4/5N2/PP2PPPP/RNBQKB1R b KQkq c3 0 3",
+        "tag": "lichess-KO5FXfxz-ply6",
+        "notes": "15+5 rapid; initial clock search cap 15s",
+        "threads": [
+          {
+            "threads": 8,
+            "summary": {
+              "move": "e7e6",
+              "score": -9,
+              "count": 1,
+              "depth": 6,
+              "avgElapsedMs": 15001,
+              "nodesPerSecond": 157763,
+              "prunedAb": 11353409,
+              "prunedTt": 1535740,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "e7e6",
+                "score": -9,
+                "depth": 6,
+                "elapsedMs": 15001,
+                "considered": 2366734,
+                "prunedAb": 11353409,
+                "prunedTt": 1535740,
+                "ttImproved": 46953,
+                "timedOut": true
+              }
+            ]
+          }
+        ]
+      },
+      "before": {
+        "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/2PP4/5N2/PP2PPPP/RNBQKB1R b KQkq c3 0 3",
+        "tag": "lichess-KO5FXfxz-ply6",
+        "notes": "15+5 rapid; initial clock search cap 15s",
+        "threads": [
+          {
+            "threads": 8,
+            "summary": {
+              "move": "e7e6",
+              "score": -9,
+              "count": 1,
+              "depth": 6,
+              "avgElapsedMs": 15001,
+              "nodesPerSecond": 157045,
+              "prunedAb": 11313259,
+              "prunedTt": 1515309,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "e7e6",
+                "score": -9,
+                "depth": 6,
+                "elapsedMs": 15001,
+                "considered": 2355944,
+                "prunedAb": 11313259,
+                "prunedTt": 1515309,
+                "ttImproved": 46318,
+                "timedOut": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 24,
+        "group": "openings11",
+        "line": "rnbqkb1r/ppp2ppp/4pn2/3P4/3P4/5N2/PP2PPPP/RNBQKB1R b KQkq - 0 4 | lichess-KO5FXfxz-ply8 | | | 15+5 rapid; initial clock search cap 15s",
+        "thinkMs": 15000,
+        "threads": 8
+      },
+      "line": "rnbqkb1r/ppp2ppp/4pn2/3P4/3P4/5N2/PP2PPPP/RNBQKB1R b KQkq - 0 4 | lichess-KO5FXfxz-ply8 | | | 15+5 rapid; initial clock search cap 15s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "before": {
+        "fen": "rnbqkb1r/ppp2ppp/4pn2/3P4/3P4/5N2/PP2PPPP/RNBQKB1R b KQkq - 0 4",
+        "tag": "lichess-KO5FXfxz-ply8",
+        "notes": "15+5 rapid; initial clock search cap 15s",
+        "threads": [
+          {
+            "threads": 8,
+            "summary": {
+              "move": "e6d5",
+              "score": 5,
+              "count": 1,
+              "depth": 6,
+              "avgElapsedMs": 15001,
+              "nodesPerSecond": 148016,
+              "prunedAb": 12475492,
+              "prunedTt": 1617722,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "e6d5",
+                "score": 5,
+                "depth": 6,
+                "elapsedMs": 15001,
+                "considered": 2220476,
+                "prunedAb": 12475492,
+                "prunedTt": 1617722,
+                "ttImproved": 47910,
+                "timedOut": true
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "fen": "rnbqkb1r/ppp2ppp/4pn2/3P4/3P4/5N2/PP2PPPP/RNBQKB1R b KQkq - 0 4",
+        "tag": "lichess-KO5FXfxz-ply8",
+        "notes": "15+5 rapid; initial clock search cap 15s",
+        "threads": [
+          {
+            "threads": 8,
+            "summary": {
+              "move": "e6d5",
+              "score": 5,
+              "count": 1,
+              "depth": 6,
+              "avgElapsedMs": 15001,
+              "nodesPerSecond": 146178,
+              "prunedAb": 12291886,
+              "prunedTt": 1589900,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "e6d5",
+                "score": 5,
+                "depth": 6,
+                "elapsedMs": 15001,
+                "considered": 2192884,
+                "prunedAb": 12291886,
+                "prunedTt": 1589900,
+                "ttImproved": 46956,
+                "timedOut": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 25,
+        "group": "openings11",
+        "line": "r1bqkbnr/pp1ppppp/2n5/2p5/4P3/5NP1/PPPP1P1P/RNBQKB1R b KQkq e3 0 3 | lichess-Op67WYFO-ply6 | | | 1+2 bullet; initial clock search cap 3s",
+        "thinkMs": 3000,
+        "threads": 4
+      },
+      "line": "r1bqkbnr/pp1ppppp/2n5/2p5/4P3/5NP1/PPPP1P1P/RNBQKB1R b KQkq e3 0 3 | lichess-Op67WYFO-ply6 | | | 1+2 bullet; initial clock search cap 3s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "after": {
+        "fen": "r1bqkbnr/pp1ppppp/2n5/2p5/4P3/5NP1/PPPP1P1P/RNBQKB1R b KQkq e3 0 3",
+        "tag": "lichess-Op67WYFO-ply6",
+        "notes": "1+2 bullet; initial clock search cap 3s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "d7d5",
+              "score": -6,
+              "count": 1,
+              "depth": 6,
+              "avgElapsedMs": 3001,
+              "nodesPerSecond": 126612,
+              "prunedAb": 2223562,
+              "prunedTt": 326192,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "d7d5",
+                "score": -6,
+                "depth": 6,
+                "elapsedMs": 3001,
+                "considered": 380022,
+                "prunedAb": 2223562,
+                "prunedTt": 326192,
+                "ttImproved": 10225,
+                "timedOut": true
+              }
+            ]
+          }
+        ]
+      },
+      "before": {
+        "fen": "r1bqkbnr/pp1ppppp/2n5/2p5/4P3/5NP1/PPPP1P1P/RNBQKB1R b KQkq e3 0 3",
+        "tag": "lichess-Op67WYFO-ply6",
+        "notes": "1+2 bullet; initial clock search cap 3s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "g8f6",
+              "score": 19,
+              "count": 1,
+              "depth": 5,
+              "avgElapsedMs": 3001,
+              "nodesPerSecond": 128225,
+              "prunedAb": 2281582,
+              "prunedTt": 318657,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "g8f6",
+                "score": 19,
+                "depth": 5,
+                "elapsedMs": 3001,
+                "considered": 384916,
+                "prunedAb": 2281582,
+                "prunedTt": 318657,
+                "ttImproved": 10011,
+                "timedOut": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 26,
+        "group": "openings11",
+        "line": "r1bqkbnr/pp2pppp/2np4/2p5/4P3/5NP1/PPPP1PBP/RNBQK2R b KQkq - 1 4 | lichess-Op67WYFO-ply8 | | | 1+2 bullet; initial clock search cap 3s",
+        "thinkMs": 3000,
+        "threads": 4
+      },
+      "line": "r1bqkbnr/pp2pppp/2np4/2p5/4P3/5NP1/PPPP1PBP/RNBQK2R b KQkq - 1 4 | lichess-Op67WYFO-ply8 | | | 1+2 bullet; initial clock search cap 3s",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "before": {
+        "fen": "r1bqkbnr/pp2pppp/2np4/2p5/4P3/5NP1/PPPP1PBP/RNBQK2R b KQkq - 1 4",
+        "tag": "lichess-Op67WYFO-ply8",
+        "notes": "1+2 bullet; initial clock search cap 3s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "g8f6",
+              "score": 7,
+              "count": 1,
+              "depth": 5,
+              "avgElapsedMs": 3001,
+              "nodesPerSecond": 140974,
+              "prunedAb": 2713251,
+              "prunedTt": 367988,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "g8f6",
+                "score": 7,
+                "depth": 5,
+                "elapsedMs": 3001,
+                "considered": 423193,
+                "prunedAb": 2713251,
+                "prunedTt": 367988,
+                "ttImproved": 11178,
+                "timedOut": true
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "fen": "r1bqkbnr/pp2pppp/2np4/2p5/4P3/5NP1/PPPP1PBP/RNBQK2R b KQkq - 1 4",
+        "tag": "lichess-Op67WYFO-ply8",
+        "notes": "1+2 bullet; initial clock search cap 3s",
+        "threads": [
+          {
+            "threads": 4,
+            "summary": {
+              "move": "g8f6",
+              "score": 7,
+              "count": 1,
+              "depth": 5,
+              "avgElapsedMs": 3002,
+              "nodesPerSecond": 141016,
+              "prunedAb": 2674745,
+              "prunedTt": 368499,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "g8f6",
+                "score": 7,
+                "depth": 5,
+                "elapsedMs": 3002,
+                "considered": 423343,
+                "prunedAb": 2674745,
+                "prunedTt": 368499,
+                "ttImproved": 11147,
+                "timedOut": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "job": {
+        "index": 27,
+        "group": "openings11",
+        "line": "rnbqkb1r/ppp2ppp/3p1n2/8/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 4 | lichess-5JLfZAn3-ply8 | f6e4 | b8d7,b8c6 | 15+1 rapid; 1.2s search missed pawn recapture; depth 6 and 15s find it",
+        "thinkMs": 15000,
+        "threads": 8
+      },
+      "line": "rnbqkb1r/ppp2ppp/3p1n2/8/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 4 | lichess-5JLfZAn3-ply8 | f6e4 | b8d7,b8c6 | 15+1 rapid; 1.2s search missed pawn recapture; depth 6 and 15s find it",
+      "binarySha256": {
+        "before": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "after": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095"
+      },
+      "attempt": 1,
+      "after": {
+        "fen": "rnbqkb1r/ppp2ppp/3p1n2/8/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 4",
+        "tag": "lichess-5JLfZAn3-ply8",
+        "expected": [
+          "f6e4"
+        ],
+        "bad": [
+          "b8d7",
+          "b8c6"
+        ],
+        "notes": "15+1 rapid; 1.2s search missed pawn recapture; depth 6 and 15s find it",
+        "threads": [
+          {
+            "threads": 8,
+            "summary": {
+              "move": "f6e4",
+              "score": -38,
+              "count": 1,
+              "depth": 6,
+              "avgElapsedMs": 15001,
+              "nodesPerSecond": 130683,
+              "prunedAb": 11904212,
+              "prunedTt": 1248414,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "f6e4",
+                "score": -38,
+                "depth": 6,
+                "elapsedMs": 15001,
+                "considered": 1960431,
+                "prunedAb": 11904212,
+                "prunedTt": 1248414,
+                "ttImproved": 36858,
+                "timedOut": true
+              }
+            ]
+          }
+        ]
+      },
+      "before": {
+        "fen": "rnbqkb1r/ppp2ppp/3p1n2/8/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 4",
+        "tag": "lichess-5JLfZAn3-ply8",
+        "expected": [
+          "f6e4"
+        ],
+        "bad": [
+          "b8d7",
+          "b8c6"
+        ],
+        "notes": "15+1 rapid; 1.2s search missed pawn recapture; depth 6 and 15s find it",
+        "threads": [
+          {
+            "threads": 8,
+            "summary": {
+              "move": "f6e4",
+              "score": -38,
+              "count": 1,
+              "depth": 6,
+              "avgElapsedMs": 15001,
+              "nodesPerSecond": 130644,
+              "prunedAb": 11901509,
+              "prunedTt": 1248223,
+              "timedOut": true
+            },
+            "runs": [
+              {
+                "move": "f6e4",
+                "score": -38,
+                "depth": 6,
+                "elapsedMs": 15001,
+                "considered": 1959831,
+                "prunedAb": 11901509,
+                "prunedTt": 1248223,
+                "ttImproved": 36850,
+                "timedOut": true
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

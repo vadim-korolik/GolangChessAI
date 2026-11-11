@@ -445,8 +445,11 @@ func (ab *ABDADA) ABDADA(root *board.Board, depth, alpha, beta int, exclusivePro
 					margin = futilityMargin2
 				}
 				if standPat+margin <= alpha {
-					atomic.AddUint64(&ab.player.Metrics.MovesPrunedAB, 1)
-					futilityPruned = true
+					// A static material deficit cannot rule out an immediate mating check.
+					if !root.IsCheckmatingMove(move) {
+						atomic.AddUint64(&ab.player.Metrics.MovesPrunedAB, 1)
+						futilityPruned = true
+					}
 				}
 			}
 
@@ -469,7 +472,8 @@ func (ab *ABDADA) ABDADA(root *board.Board, depth, alpha, beta int, exclusivePro
 				child, pm := ab.player.applyMove(root, &move)
 
 				// Quiet moves can close escape squares before the first check in a mating net.
-				quietMateThreat := doLMR && !child.IsKingInCheck(currentPlayer^1) &&
+				givesCheck := doLMR && child.IsKingInCheck(currentPlayer^1)
+				quietMateThreat := doLMR && !givesCheck &&
 					addsKingRingAttack(root, child, move, currentPlayer) && hasMateInOne(child, nil, currentPlayer)
 				if doLMR && !quietMateThreat {
 					reduction := int(math.Log(float64(depth)) * math.Log(float64(moveIdx)) / 2.0)
@@ -478,6 +482,9 @@ func (ab *ABDADA) ABDADA(root *board.Board, depth, alpha, beta int, exclusivePro
 					}
 					if reduction > depth-2 {
 						reduction = depth - 2
+					}
+					if givesCheck && reduction > 1 {
+						reduction = 1
 					}
 					lmr := ab.ABDADA(child, depth-1-reduction, -(util.MaxScore(alpha, best.Score) + 1), -util.MaxScore(alpha, best.Score), false, currentPlayer^1, pm, true, ply+1, extensions, inCheck)
 					lmr.Score = -lmr.Score
@@ -530,7 +537,7 @@ func (ab *ABDADA) ABDADA(root *board.Board, depth, alpha, beta int, exclusivePro
 	return best
 }
 
-func (ab *ABDADA) getBestMove(b *board.Board, depth, alpha, beta int, previousMove *board.LastMove) ScoredMove {
+func (ab *ABDADA) getBestMove(b *board.Board, depth, alpha, beta int, previousMove *board.LastMove) (ScoredMove, bool) {
 	ab.player.setAbort(false)
 	originalAlpha := alpha
 	originalBeta := beta
@@ -544,7 +551,7 @@ func (ab *ABDADA) getBestMove(b *board.Board, depth, alpha, beta int, previousMo
 
 	movesArr := b.GetAllMoves(ab.player.PlayerColor, previousMove)
 	if len(*movesArr) == 0 {
-		return ScoredMove{Score: ab.player.EvaluateBoard(b, ab.player.PlayerColor, previousMove).TotalScore}
+		return ScoredMove{Score: ab.player.EvaluateBoard(b, ab.player.PlayerColor, previousMove).TotalScore}, false
 	}
 	ttAnswer := ab.ttRead(b, ab.player.PlayerColor, uint16(depth), alpha, beta, false, true)
 	orderedMoves := orderMoves(*movesArr, ttAnswer.bestMove, [2]location.Move{}, ab, b, previousMove)
@@ -611,11 +618,11 @@ func (ab *ABDADA) getBestMove(b *board.Board, depth, alpha, beta int, previousMo
 			rootResults = append(rootResults, value)
 			best, second = updateRootTopTwo(best, second, value)
 		}
-		best = ab.verifyCloseRootMoves(b, depth, best, second, rootResults)
+		best, verified := ab.verifyCloseRootMoves(b, depth, best, second, rootResults)
 		if !best.Move.Start.Equals(best.Move.End) {
 			ab.syncTTWrite(b, ab.player.PlayerColor, uint16(depth), originalAlpha, originalBeta, &best)
 		}
-		return best
+		return best, verified
 	}
 
 	best := ScoredMove{Score: NegInf}
@@ -632,7 +639,7 @@ func (ab *ABDADA) getBestMove(b *board.Board, depth, alpha, beta int, previousMo
 		}
 		if alpha >= beta {
 			ab.syncTTWrite(b, ab.player.PlayerColor, uint16(depth), originalAlpha, originalBeta, &best)
-			return best
+			return best, false
 		}
 	}
 	remainingMoves := orderedMoves[1:]
@@ -640,7 +647,7 @@ func (ab *ABDADA) getBestMove(b *board.Board, depth, alpha, beta int, previousMo
 		if !best.Move.Start.Equals(best.Move.End) {
 			ab.syncTTWrite(b, ab.player.PlayerColor, uint16(depth), originalAlpha, originalBeta, &best)
 		}
-		return best
+		return best, false
 	}
 
 	workerCount := ab.NumThreads
@@ -704,11 +711,11 @@ collectResults:
 		rootResults = append(rootResults, result)
 		best, second = updateRootTopTwo(best, second, result)
 	}
-	best = ab.verifyCloseRootMoves(b, depth, best, second, rootResults)
+	best, verified := ab.verifyCloseRootMoves(b, depth, best, second, rootResults)
 	if !best.Move.Start.Equals(best.Move.End) {
 		ab.syncTTWrite(b, ab.player.PlayerColor, uint16(depth), originalAlpha, originalBeta, &best)
 	}
-	return best
+	return best, verified
 }
 
 // defaultABDADAThreads caps short searches at four workers. ABDADA's workers own
@@ -750,35 +757,35 @@ func sameRootMove(a, b ScoredMove) bool {
 	return a.Move.Start.Equals(b.Move.Start) && a.Move.End.Equals(b.Move.End)
 }
 
-func (ab *ABDADA) verifyCloseRootMoves(b *board.Board, depth int, best, second ScoredMove, candidates []ScoredMove) ScoredMove {
+func (ab *ABDADA) verifyCloseRootMoves(b *board.Board, depth int, best, second ScoredMove, candidates []ScoredMove) (ScoredMove, bool) {
 	if ab.player.isAborted() ||
 		best.Move.Start.Equals(best.Move.End) {
-		return best
+		return best, false
 	}
 
 	if depth < 4 {
 		margin, quietOnly, verifyDepth, ok := deepRootVerifyParams(b, ab.player.PlayerColor, depth, best, candidates)
 		if !ok {
-			return best
+			return best, false
 		}
-		return ab.verifyRootCandidates(b, verifyDepth, best, candidates, margin, quietOnly)
+		return ab.verifyRootCandidates(b, verifyDepth, best, candidates, margin, quietOnly), false
 	}
 
 	if ab.NumThreads <= 1 {
 		const verifyMargin = 150
 		if second.Move.Start.Equals(second.Move.End) || best.Score-second.Score > verifyMargin {
-			return best
+			return best, false
 		}
 		verifiedBest := ab.searchRootMoveForSelection(b, best.Move, depth, NegInf, PosInf)
 		verifiedSecond := ab.searchRootMoveForSelection(b, second.Move, depth, NegInf, PosInf)
 		if verifiedBest.Score == OnEvaluation || verifiedBest.Score == -OnEvaluation {
-			return best
+			return best, false
 		}
 		if verifiedSecond.Score != OnEvaluation && verifiedSecond.Score != -OnEvaluation && verifiedSecond.Score > verifiedBest.Score {
 			verifiedSecond.ReturnThisMove = true
-			return verifiedSecond
+			return verifiedSecond, false
 		}
-		return verifiedBest
+		return verifiedBest, false
 	}
 
 	// Root moves were already searched exactly (full window, or a scout followed
@@ -804,11 +811,11 @@ func (ab *ABDADA) verifyCloseRootMoves(b *board.Board, depth int, best, second S
 		verifyMargin = wideDeepVerifyMargin
 	}
 	if second.Move.Start.Equals(second.Move.End) || best.Score-second.Score > verifyMargin {
-		return best
+		return best, false
 	}
 	const minDeepRootVerifyTime = 2 * time.Second
 	if ab.player.MaxThinkTime > 0 && ab.player.MaxThinkTime < minDeepRootVerifyTime {
-		return best
+		return best, false
 	}
 	return ab.verifyParallelRootTie(b, depth, best, candidates, verifyMargin)
 }
@@ -818,7 +825,7 @@ func (ab *ABDADA) searchRootMoveFresh(b *board.Board, move location.Move, depth 
 	return worker.searchRootMove(b, move, depth, NegInf, PosInf)
 }
 
-func (ab *ABDADA) verifyParallelRootTie(b *board.Board, depth int, best ScoredMove, candidates []ScoredMove, margin int) ScoredMove {
+func (ab *ABDADA) verifyParallelRootTie(b *board.Board, depth int, best ScoredMove, candidates []ScoredMove, margin int) (ScoredMove, bool) {
 	// Worker-local TTs can disagree by a few centipawns at the root. First
 	// rescore every reported near-tie with fresh state at the SAME depth so the
 	// two moves sent to the deeper tie-break are genuinely the top two. This
@@ -832,7 +839,7 @@ func (ab *ABDADA) verifyParallelRootTie(b *board.Board, depth int, best ScoredMo
 		}
 		fresh := ab.searchRootMoveFresh(b, candidate.Move, depth)
 		if ab.player.isAborted() {
-			return best
+			return best, false
 		}
 		if fresh.Score == OnEvaluation || fresh.Score == -OnEvaluation {
 			continue
@@ -840,23 +847,28 @@ func (ab *ABDADA) verifyParallelRootTie(b *board.Board, depth int, best ScoredMo
 		freshBest, freshSecond = updateRootTopTwo(freshBest, freshSecond, fresh)
 	}
 	if freshBest.Move.Start.Equals(freshBest.Move.End) {
-		return best
+		return best, false
 	}
 	if freshSecond.Move.Start.Equals(freshSecond.Move.End) || freshBest.Score-freshSecond.Score > margin {
 		if !sameRootMove(freshBest, best) {
 			freshBest.ReturnThisMove = true
 		}
-		return freshBest
+		return freshBest, false
 	}
 
 	verifyDepth := depth + 2
 	deepBest := ab.searchRootMoveFresh(b, freshBest.Move, verifyDepth)
 	if ab.player.isAborted() || deepBest.Score == OnEvaluation || deepBest.Score == -OnEvaluation {
-		return best
+		return best, false
 	}
 	deepSecond := ab.searchRootMoveFresh(b, freshSecond.Move, verifyDepth)
 	if ab.player.isAborted() || deepSecond.Score == OnEvaluation || deepSecond.Score == -OnEvaluation {
-		return best
+		// Retain only a fully ranked leader supported by its completed deeper
+		// search when the runner-up search itself is interrupted.
+		if ab.player.isAborted() && deepBest.Score >= freshBest.Score {
+			return freshBest, true
+		}
+		return best, false
 	}
 	if deepSecond.Score > deepBest.Score {
 		deepBest = deepSecond
@@ -864,7 +876,7 @@ func (ab *ABDADA) verifyParallelRootTie(b *board.Board, depth int, best ScoredMo
 	if !sameRootMove(deepBest, best) {
 		deepBest.ReturnThisMove = true
 	}
-	return deepBest
+	return deepBest, false
 }
 
 func shouldDeepVerifyRoot(b *board.Board, side color.Color, depth int, best ScoredMove, candidates []ScoredMove) bool {
@@ -1230,19 +1242,23 @@ func (ab *ABDADA) iterativeABDADA(b *board.Board, previousMove *board.LastMove) 
 		// re-searches on ordinary between-depth score swings, so search once
 		// per depth instead.
 		var newGuess ScoredMove
+		var verified bool
 		thinking, done := make(chan bool), make(chan bool, 1)
 		go ab.player.trackThinkTime(thinking, done, start)
-		newGuess = ab.getBestMove(b, ab.currentSearchDepth, NegInf, PosInf, previousMove)
+		newGuess, verified = ab.getBestMove(b, ab.currentSearchDepth, NegInf, PosInf, previousMove)
 		close(thinking)
 		<-done
 
-		if !ab.player.isAborted() {
+		if !ab.player.isAborted() || verified {
 			prevForStability := best
 			best = stableDepthMove(best, newGuess)
 			ab.player.LastSearchDepth = ab.currentSearchDepth
 			// Feed the next iteration's soft-bound decision: was this depth stable?
 			unstable = searchUnstable(prevForStability, best)
 			ab.player.printer <- fmt.Sprintf("Best D:%d M:%s score:%d\n", ab.player.LastSearchDepth, best.Move, best.Score)
+			if ab.player.isAborted() {
+				break
+			}
 		} else {
 			// Use the partial result if we haven't found any valid move yet.
 			// Without this, a timeout on the very first IDA iteration leaves

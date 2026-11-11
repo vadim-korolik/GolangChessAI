@@ -1,0 +1,700 @@
+{
+  "metadata": {
+    "sha256": {
+      "main": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+      "supervisor": "6ddf86a1418be4e88ad94b51822f5f107f4d1a0b7e5b0eae314a6f863aa8d9f8",
+      "stockfish": "4c22bce76bb3b08b20d761e5c268b802df2d52bdbbd98494d558e880bd6beceb",
+      "sfWorker": "dddc8fd2ab86f91d6c023c4005d2fd6494e90cd7ae9844d058892715cfebe424",
+      "runner": "e1cb991a3cf11fd27b6be2f70e5f5f23e01568ccab4b5ff308a41910643e6ce8",
+      "source": "8cb5129dbc951d3bcd98a9209d9e387e6d3431807e9899cced14f8679653b80d"
+    },
+    "botPid": 3187851,
+    "fixedDepthWorkers": 1,
+    "method": "fresh process, forced-root fixed depth, authenticated post-exit idle supervisor",
+    "stockfishDepth": 22,
+    "stockfishThreads": 1,
+    "refereeHash": "cleared before each search",
+    "coldFenLimitation": "no historical transposition table or pondering"
+  },
+  "fixtures": {
+    "ply53": {
+      "fen": "8/5pkp/2R2p2/5K2/p6P/6P1/r7/8 w - - 0 27",
+      "depth": 7,
+      "played": "c6c3",
+      "preferred": "f5g4",
+      "loggedThinkMs": 8000,
+      "loggedWorkers": 4
+    },
+    "ply71": {
+      "fen": "8/5pk1/7p/5K1P/6P1/8/p4R2/r7 w - - 3 36",
+      "depth": 8,
+      "played": "g4g5",
+      "preferred": "f5f4",
+      "loggedThinkMs": 6714,
+      "loggedWorkers": 4
+    }
+  },
+  "runs": [
+    {
+      "fixture": "ply53",
+      "mode": "abdada1tt",
+      "moveKind": "played",
+      "move": "c6c3",
+      "score": -73,
+      "elapsed": "138ms",
+      "depth": 7,
+      "nodesPerSecond": 154976,
+      "attempt": 1,
+      "stdout": "/tmp/chess-nov10-rook-ending-ply53-abdada1tt-c6c3-attempt1.txt"
+    },
+    {
+      "fixture": "ply53",
+      "mode": "abdada1tt",
+      "moveKind": "preferred",
+      "move": "f5g4",
+      "score": -66,
+      "elapsed": "50ms",
+      "depth": 7,
+      "nodesPerSecond": 146376,
+      "attempt": 1,
+      "stdout": "/tmp/chess-nov10-rook-ending-ply53-abdada1tt-f5g4-attempt1.txt"
+    },
+    {
+      "fixture": "ply53",
+      "mode": "abdada1nonull",
+      "moveKind": "played",
+      "move": "c6c3",
+      "score": -73,
+      "elapsed": "137ms",
+      "depth": 7,
+      "nodesPerSecond": 151917,
+      "attempt": 1,
+      "stdout": "/tmp/chess-nov10-rook-ending-ply53-abdada1nonull-c6c3-attempt1.txt"
+    },
+    {
+      "fixture": "ply53",
+      "mode": "abdada1nonull",
+      "moveKind": "preferred",
+      "move": "f5g4",
+      "score": -74,
+      "elapsed": "86ms",
+      "depth": 7,
+      "nodesPerSecond": 155247,
+      "attempt": 1,
+      "stdout": "/tmp/chess-nov10-rook-ending-ply53-abdada1nonull-f5g4-attempt1.txt"
+    },
+    {
+      "fixture": "ply71",
+      "mode": "abdada1tt",
+      "moveKind": "played",
+      "move": "g4g5",
+      "score": -290,
+      "elapsed": "118ms",
+      "depth": 8,
+      "nodesPerSecond": 165007,
+      "attempt": 1,
+      "stdout": "/tmp/chess-nov10-rook-ending-ply71-abdada1tt-g4g5-attempt1.txt"
+    },
+    {
+      "fixture": "ply71",
+      "mode": "abdada1tt",
+      "moveKind": "preferred",
+      "move": "f5f4",
+      "score": -267,
+      "elapsed": "350ms",
+      "depth": 8,
+      "nodesPerSecond": 167341,
+      "attempt": 1,
+      "stdout": "/tmp/chess-nov10-rook-ending-ply71-abdada1tt-f5f4-attempt1.txt"
+    },
+    {
+      "fixture": "ply71",
+      "mode": "abdada1nonull",
+      "moveKind": "played",
+      "move": "g4g5",
+      "score": -290,
+      "elapsed": "139ms",
+      "depth": 8,
+      "nodesPerSecond": 157717,
+      "attempt": 1,
+      "stdout": "/tmp/chess-nov10-rook-ending-ply71-abdada1nonull-g4g5-attempt1.txt"
+    },
+    {
+      "fixture": "ply71",
+      "mode": "abdada1nonull",
+      "moveKind": "preferred",
+      "move": "f5f4",
+      "score": -267,
+      "elapsed": "352ms",
+      "depth": 8,
+      "nodesPerSecond": 167010,
+      "attempt": 1,
+      "stdout": "/tmp/chess-nov10-rook-ending-ply71-abdada1nonull-f5f4-attempt1.txt"
+    }
+  ],
+  "ply71Stockfish22": {
+    "result": {
+      "best": {
+        "depth": 22,
+        "score": {
+          "type": "cp",
+          "value": -413
+        },
+        "pv": [
+          "f5f4",
+          "g7f6",
+          "f4f3",
+          "f6e6",
+          "f2e2",
+          "e6d6",
+          "e2d2",
+          "d6e5",
+          "d2e2",
+          "e5d5",
+          "e2f2",
+          "f7f5",
+          "g4f5",
+          "d5e5",
+          "f3g2",
+          "a1g1",
+          "g2g1",
+          "a2a1q",
+          "f2f1",
+          "a1d4",
+          "f1f2",
+          "d4g4",
+          "g1h2",
+          "g4h5",
+          "h2g2",
+          "e5f6",
+          "g2g1",
+          "h5g5",
+          "g1h1",
+          "g5e3",
+          "h1g1",
+          "h6h5",
+          "g1g2",
+          "e3e1",
+          "f2f1",
+          "e1e5",
+          "g2g1"
+        ],
+        "bestmove": "f5f4"
+      },
+      "played": {
+        "depth": 22,
+        "score": {
+          "type": "cp",
+          "value": -569
+        },
+        "pv": [
+          "g4g5",
+          "h6g5",
+          "h5h6",
+          "g7h6",
+          "f5f6",
+          "a1h1",
+          "f2a2",
+          "h1f1",
+          "f6e5",
+          "g5g4",
+          "a2a8",
+          "h6g5",
+          "a8g8",
+          "g5h4",
+          "g8h8",
+          "h4g3",
+          "h8a8",
+          "g3g2",
+          "a8a4",
+          "g4g3",
+          "a4a5",
+          "f7f5"
+        ],
+        "bestmove": "g4g5"
+      }
+    },
+    "stdout": "/tmp/chess-nov10-rook-ending-ply71-stockfish22-attempt1.txt",
+    "attempt": 1
+  },
+  "complete": true,
+  "rootTraceEvidence": {
+    "status": "diagnostic; trace instrumentation and cold positions, not live replay",
+    "traceRunnerSource": {
+      "path": "/tmp/chess-root-trace-20261110/prepare.py",
+      "sha256": "3a29a6bf2c99143acf6dcc4ce8be72a06c6263e00154a2426ec0231c9a7bd7f6"
+    },
+    "instrumentedSource": {
+      "path": "/tmp/chess-root-trace-20261110/abdada.go",
+      "sha256": "f4908a03915acbebf81129d791d90558b3988646132f5aece5071a95c4b5291c"
+    },
+    "fixtures": {
+      "ply53": {
+        "log": {
+          "path": "/tmp/chess-root-trace-20261110/ply53.log",
+          "sha256": "c86bbabd06065f7bbe1352a705b06b9fd8cd0df93b1de91529619eb51e3e41c7"
+        },
+        "keyLines": [
+          "2026/11/10 16:08:27 ROOTTRACE d=8 move=move from (4, 2) to (3, 1) phase=verify-deep score=-107 abort=false",
+          "2026/11/10 16:08:28 ROOTTRACE d=8 move=move from (5, 5) to (5, 7) phase=verify-deep score=-97 abort=false",
+          "2026/11/10 16:08:31 ROOTTRACE d=8 phase=before-verifier collected=16 expected=16 candidates=15 best=move from (5, 5) to (2, 5):-94 second=move from (4, 2) to (3, 3):-102 abort=false",
+          "2026/11/10 16:08:31 ROOTTRACE d=8 move=move from (5, 5) to (4, 5) phase=verify-fresh score=-130 abort=false",
+          "2026/11/10 16:08:31 ROOTTRACE d=8 move=move from (5, 5) to (5, 6) phase=verify-fresh score=-148 abort=false",
+          "2026/11/10 16:08:32 ROOTTRACE d=8 move=move from (5, 5) to (3, 5) phase=verify-fresh score=-150 abort=false",
+          "2026/11/10 16:08:32 ROOTTRACE d=8 move=move from (5, 5) to (0, 5) phase=verify-fresh score=-151 abort=false",
+          "2026/11/10 16:08:32 ROOTTRACE d=8 move=move from (4, 2) to (3, 2) phase=verify-fresh score=-97 abort=false",
+          "2026/11/10 16:08:32 ROOTTRACE d=8 move=move from (4, 2) to (3, 1) phase=verify-fresh score=-107 abort=false",
+          "2026/11/10 16:08:32 ROOTTRACE d=8 move=move from (5, 5) to (7, 5) phase=verify-fresh score=-150 abort=false",
+          "2026/11/10 16:08:33 ROOTTRACE d=8 move=move from (4, 2) to (3, 3) phase=verify-fresh score=-97 abort=false",
+          "2026/11/10 16:08:33 ROOTTRACE d=8 move=move from (2, 1) to (3, 1) phase=verify-fresh score=-170 abort=false",
+          "2026/11/10 16:08:33 ROOTTRACE d=8 move=move from (5, 5) to (5, 7) phase=verify-fresh score=-97 abort=false",
+          "2026/11/10 16:08:33 ROOTTRACE d=8 move=move from (5, 5) to (5, 4) phase=verify-fresh score=-147 abort=false",
+          "2026/11/10 16:08:34 ROOTTRACE d=8 move=move from (5, 5) to (2, 5) phase=verify-fresh score=-94 abort=false",
+          "2026/11/10 16:08:34 ROOTTRACE d=8 move=move from (5, 5) to (6, 5) phase=verify-fresh score=-123 abort=false",
+          "2026/11/10 16:08:34 ROOTTRACE d=8 move=move from (3, 0) to (4, 0) phase=verify-fresh score=-135 abort=true",
+          "2026/11/10 16:08:34 ROOTTRACE d=8 phase=verifier-return move=move from (5, 5) to (2, 5) score=-94 abort=true",
+          "2026/11/10 16:08:34 ROOTTRACE d=8 phase=after-verifier best=move from (5, 5) to (2, 5):-94 abort=true",
+          "2026/11/10 16:08:34 ROOTTRACE d=8 phase=iteration-finish returned=move from (5, 5) to (2, 5):-94 prior=move from (5, 5) to (2, 5):-86 abort=true elapsed=8.001605017s",
+          "abdada-4-tt      move=c6c3 score=-86 stable=1/1 avg=8.002s depth=7 nodes/s=233361 tt-pruned=1262100 timeout=true"
+        ]
+      },
+      "ply71": {
+        "log": {
+          "path": "/tmp/chess-root-trace-20261110/ply71.log",
+          "sha256": "9467157262149396f9d57973f30f70bbb7eba4ea40fe1516834aa89525a46db6"
+        },
+        "keyLines": [
+          "2026/11/10 16:08:57 ROOTTRACE d=9 phase=before-verifier collected=13 expected=13 candidates=4 best=move from (4, 2) to (3, 2):-244 second=move from (3, 1) to (4, 1):-303 abort=false",
+          "2026/11/10 16:08:57 ROOTTRACE d=9 move=move from (3, 1) to (4, 1) phase=verify-fresh score=-302 abort=false",
+          "2026/11/10 16:08:57 ROOTTRACE d=9 move=move from (4, 2) to (3, 2) phase=verify-fresh score=-244 abort=false",
+          "2026/11/10 16:08:57 ROOTTRACE d=9 phase=verify-top fresh-best=move from (4, 2) to (3, 2):-244 fresh-second=move from (3, 1) to (4, 1):-302 deep-depth=11",
+          "2026/11/10 16:09:01 ROOTTRACE d=11 move=move from (4, 2) to (3, 2) phase=verify-deep score=-193 abort=false",
+          "2026/11/10 16:09:02 ROOTTRACE d=11 move=move from (3, 1) to (4, 1) phase=verify-deep score=-787 abort=true",
+          "2026/11/10 16:09:02 ROOTTRACE d=9 phase=verifier-return move=move from (4, 2) to (3, 2) score=-244 abort=true",
+          "2026/11/10 16:09:02 ROOTTRACE d=9 phase=after-verifier best=move from (4, 2) to (3, 2):-244 abort=true",
+          "2026/11/10 16:09:02 ROOTTRACE d=9 phase=iteration-finish returned=move from (4, 2) to (3, 2):-244 prior=move from (3, 1) to (4, 1):-290 abort=true elapsed=6.715826847s",
+          "abdada-4-tt      move=g4g5 score=-290 stable=1/1 avg=6.716s depth=8 nodes/s=186899 tt-pruned=1054042 timeout=true"
+        ]
+      }
+    }
+  },
+  "rootCompletionExperiments": {
+    "status": "supported fallback deployed",
+    "candidateA": {
+      "description": "raw completed-root fallback",
+      "source": {
+        "path": "/tmp/chess-root-complete-20261110/abdada.go",
+        "sha256": "09505b693bb19d5c61996bd6ccd9f60dd8340ed29d538294d5a06ad0e1154f64"
+      },
+      "binary": {
+        "path": "/tmp/chess-root-complete-20261110/chess",
+        "sha256": "be88257aa021a72d42cf6bfc395a72d1ee0e6ea7bbe2abb24fd5bd498ad2a642"
+      },
+      "diff": {
+        "path": "/tmp/chess-root-complete-20261110/candidate.diff",
+        "sha256": "9591c9bb2e3d37565636f377e47ffea432c7bc00dcd33edcbf8b18c9843e7ca8"
+      },
+      "runner": {
+        "path": "/tmp/chess-root-complete-20261110/run.sh",
+        "sha256": "735d34720a7a13692f6b7d3cf5ceabdd3b550765696801524c13ea0640cc2b8a"
+      },
+      "logs": {
+        "ply53-1-baseline.log": "abdada-4-tt      move=c6c3 score=-86 stable=1/1 avg=8.002s depth=7 nodes/s=231074 tt-pruned=1248767 timeout=true",
+        "ply53-1-candidate.log": "abdada-4-tt      move=c6c3 score=-94 stable=1/1 avg=8.002s depth=8 nodes/s=230844 tt-pruned=1234476 timeout=true",
+        "ply71-1-baseline.log": "abdada-4-tt      move=g4g5 score=-290 stable=1/1 avg=6.715s depth=8 nodes/s=189611 tt-pruned=1061242 timeout=true",
+        "ply71-1-candidate.log": "abdada-4-tt      move=f5f4 score=-244 stable=1/1 avg=6.715s depth=9 nodes/s=189045 tt-pruned=1060015 timeout=true",
+        "ply71-2-baseline.log": "abdada-4-tt      move=g4g5 score=-290 stable=1/1 avg=6.715s depth=8 nodes/s=191438 tt-pruned=1070585 timeout=true",
+        "ply71-2-candidate.log": "abdada-4-tt      move=f5f4 score=-244 stable=1/1 avg=6.716s depth=9 nodes/s=191761 tt-pruned=1072135 timeout=true",
+        "ply71-3-baseline.log": "abdada-4-tt      move=g4g5 score=-290 stable=1/1 avg=6.716s depth=8 nodes/s=191821 tt-pruned=1072363 timeout=true",
+        "ply71-3-candidate.log": "abdada-4-tt      move=f5f4 score=-244 stable=1/1 avg=6.715s depth=9 nodes/s=187634 tt-pruned=1056988 timeout=true"
+      },
+      "finding": "ply71 candidate f5f4 depth 9 in 3/3 vs baseline g4g5 depth 8; ply53 same c6c3 at depth 8 vs baseline depth 7"
+    },
+    "historicalCaution": {
+      "source": "docs/strength-2026-09-08.md:57-73",
+      "finding": "Previous raw completed-root fallback regressed 11-position opening mean loss from 9.0 to 28.1 cp and was reverted; Petroff unverified Nc6 cost 123 cp."
+    },
+    "candidateB": {
+      "description": "same-depth-rescored fallback, distinct from A",
+      "source": {
+        "path": "/tmp/chess-root-fresh-20261110/abdada.go",
+        "sha256": "fd437c936ba805b18a0706ad468617e976f07fd8c7b2d8aded98b8f3bafd4ad7"
+      },
+      "binary": {
+        "path": "/tmp/chess-root-fresh-20261110/chess",
+        "sha256": "6a8e5a2704a1e819e3222c5ad89d275730f1b0f9c273b0aa9d53c097a61f9ae8"
+      },
+      "diff": {
+        "path": "/tmp/chess-root-fresh-20261110/candidate.diff",
+        "sha256": "b32e82ea582c3ada4eedfb067631acf50be86177ef31a70692df26e8604739ed"
+      },
+      "runner": {
+        "path": "/tmp/chess-root-fresh-20261110/run.sh",
+        "sha256": "80028f838b4014a42ca43c73be79afcff45b18fac1286660c51a7c876731da15"
+      },
+      "logs": {
+        "petroff-1-baseline.log": "abdada-8-tt      move=f6e4 score=-38 stable=1/1 avg=15.002s depth=6 nodes/s=130691 tt-pruned=1248414 timeout=true",
+        "petroff-1-candidate.log": "abdada-8-tt      move=b8c6 score=-27 stable=1/1 avg=15.002s depth=7 nodes/s=131155 tt-pruned=1250091 timeout=true",
+        "ply71-1-baseline.log": "abdada-4-tt      move=g4g5 score=-290 stable=1/1 avg=6.715s depth=8 nodes/s=187394 tt-pruned=1056037 timeout=true",
+        "ply71-1-candidate.log": "abdada-4-tt      move=f5f4 score=-244 stable=1/1 avg=6.716s depth=9 nodes/s=191766 tt-pruned=1072172 timeout=true",
+        "ply71-2-baseline.log": "abdada-4-tt      move=g4g5 score=-290 stable=1/1 avg=6.716s depth=8 nodes/s=190372 tt-pruned=1064217 timeout=true",
+        "ply71-2-candidate.log": "abdada-4-tt      move=f5f4 score=-244 stable=1/1 avg=6.716s depth=9 nodes/s=191102 tt-pruned=1067793 timeout=true",
+        "ply71-3-baseline.log": "abdada-4-tt      move=g4g5 score=-290 stable=1/1 avg=6.716s depth=8 nodes/s=191334 tt-pruned=1070324 timeout=true",
+        "ply71-3-candidate.log": "abdada-4-tt      move=f5f4 score=-244 stable=1/1 avg=6.715s depth=9 nodes/s=187605 tt-pruned=1056904 timeout=true"
+      },
+      "finding": "ply71 candidate f5f4 depth 9 in 3/3 vs baseline g4g5 depth 8; Petroff candidate b8c6 depth 7 vs baseline f6e4 depth 6",
+      "petroffTrace": {
+        "log": {
+          "path": "/tmp/chess-root-fresh-20261110/petroff-trace.log",
+          "sha256": "3f4be53964f7703935f72a8dc90b38ea68415097858b1cbfbb3bb6513239c906"
+        },
+        "keyLines": [
+          "2026/11/10 16:18:14 ROOTTRACE d=7 phase=before-verifier collected=30 expected=30 candidates=28 best=move from (7, 6) to (5, 5):-33 second=move from (5, 2) to (3, 3):-39 abort=false",
+          "2026/11/10 16:18:15 ROOTTRACE d=7 move=move from (5, 2) to (3, 3) phase=verify-fresh score=-43 abort=false",
+          "2026/11/10 16:18:15 ROOTTRACE d=7 move=move from (5, 4) to (4, 4) phase=verify-fresh score=-71 abort=false",
+          "2026/11/10 16:18:16 ROOTTRACE d=7 move=move from (6, 1) to (5, 1) phase=verify-fresh score=-95 abort=false",
+          "2026/11/10 16:18:16 ROOTTRACE d=7 move=move from (6, 0) to (5, 0) phase=verify-fresh score=-76 abort=false",
+          "2026/11/10 16:18:16 ROOTTRACE d=7 move=move from (6, 0) to (4, 0) phase=verify-fresh score=-82 abort=false",
+          "2026/11/10 16:18:17 ROOTTRACE d=7 move=move from (6, 7) to (5, 7) phase=verify-fresh score=-77 abort=false",
+          "2026/11/10 16:18:17 ROOTTRACE d=7 move=move from (6, 5) to (5, 5) phase=verify-fresh score=-81 abort=false",
+          "2026/11/10 16:18:17 ROOTTRACE d=7 move=move from (6, 5) to (4, 5) phase=verify-fresh score=-80 abort=false",
+          "2026/11/10 16:18:18 ROOTTRACE d=7 move=move from (7, 0) to (7, 1) phase=verify-fresh score=-75 abort=false",
+          "2026/11/10 16:18:18 ROOTTRACE d=7 move=move from (6, 7) to (4, 7) phase=verify-fresh score=-80 abort=false",
+          "2026/11/10 16:18:18 ROOTTRACE d=7 move=move from (6, 1) to (4, 1) phase=verify-fresh score=-57 abort=false",
+          "2026/11/10 16:18:19 ROOTTRACE d=7 move=move from (7, 4) to (6, 3) phase=verify-fresh score=-93 abort=false",
+          "2026/11/10 16:18:19 ROOTTRACE d=7 move=move from (7, 5) to (6, 4) phase=verify-fresh score=-78 abort=false",
+          "2026/11/10 16:18:19 ROOTTRACE d=7 move=move from (7, 6) to (6, 4) phase=verify-fresh score=-76 abort=false",
+          "2026/11/10 16:18:20 ROOTTRACE d=7 move=move from (7, 5) to (5, 3) phase=verify-fresh score=-76 abort=false",
+          "2026/11/10 16:18:20 ROOTTRACE d=7 move=move from (7, 2) to (6, 3) phase=verify-fresh score=-43 abort=false",
+          "2026/11/10 16:18:21 ROOTTRACE d=7 move=move from (7, 4) to (6, 4) phase=verify-fresh score=-108 abort=false",
+          "2026/11/10 16:18:21 ROOTTRACE d=7 move=move from (7, 6) to (5, 7) phase=verify-fresh score=-76 abort=false",
+          "2026/11/10 16:18:21 ROOTTRACE d=7 move=move from (7, 6) to (5, 5) phase=verify-fresh score=-27 abort=false",
+          "2026/11/10 16:18:21 ROOTTRACE d=7 move=move from (7, 5) to (3, 1) phase=verify-fresh score=-71 abort=false",
+          "2026/11/10 16:18:21 ROOTTRACE d=7 phase=verify-top fresh-best=move from (7, 6) to (5, 5):-27 fresh-second=move from (5, 2) to (3, 3):-43 deep-depth=9",
+          "2026/11/10 16:18:22 ROOTTRACE d=9 move=move from (7, 6) to (5, 5) phase=verify-deep score=37 abort=true",
+          "2026/11/10 16:18:22 ROOTTRACE d=7 phase=verifier-return move=move from (7, 6) to (5, 5) score=-33 abort=true",
+          "2026/11/10 16:18:22 ROOTTRACE d=7 phase=after-verifier best=move from (7, 6) to (5, 5):-33 abort=true",
+          "2026/11/10 16:18:22 ROOTTRACE d=7 phase=iteration-finish returned=move from (7, 6) to (5, 5):-33 prior=move from (5, 2) to (3, 3):-38 abort=true elapsed=15.00129159s",
+          "abdada-8-tt      move=f6e4 score=-38 stable=1/1 avg=15.001s depth=6 nodes/s=131465 tt-pruned=1250171 timeout=true"
+        ],
+        "interpretation": "Same-depth fresh score chose b8c6; its depth-9 verification aborted before completion. The traced baseline discarded the depth-7 result."
+      }
+    },
+    "candidateC": {
+      "rule": "When the runner-up deeper search aborts, retain the complete same-depth ranking if the leader completed its deeper search and its score held or improved. Preserve the leader move, same-depth score and depth together.",
+      "panelArtifact": "testdata/strength_2026_11_10_supported_root_panel.json",
+      "panelSha256": "9be74a097d65bb47fd8f130d94c6f7bb8703f9094c6fbb476126d68ab2f909f2",
+      "summary": {
+        "fresh10": {
+          "before": {
+            "positions": 10,
+            "meanLoss": 89.4,
+            "cappedMeanLoss1000": 89.4,
+            "lossAtLeast100": 4,
+            "lossAtLeast200": 2,
+            "mateScaleLosses": 0,
+            "expectedMoveHits": 3,
+            "knownBadMoves": 7,
+            "meanCompletedDepth": 6.2
+          },
+          "after": {
+            "positions": 10,
+            "meanLoss": 102.3,
+            "cappedMeanLoss1000": 102.3,
+            "lossAtLeast100": 5,
+            "lossAtLeast200": 2,
+            "mateScaleLosses": 0,
+            "expectedMoveHits": 2,
+            "knownBadMoves": 7,
+            "meanCompletedDepth": 6.1
+          }
+        },
+        "fresh7": {
+          "before": {
+            "positions": 7,
+            "meanLoss": 239.0,
+            "cappedMeanLoss1000": 239.0,
+            "lossAtLeast100": 6,
+            "lossAtLeast200": 4,
+            "mateScaleLosses": 0,
+            "expectedMoveHits": 1,
+            "knownBadMoves": 5,
+            "meanCompletedDepth": 6.57
+          },
+          "after": {
+            "positions": 7,
+            "meanLoss": 146.0,
+            "cappedMeanLoss1000": 146.0,
+            "lossAtLeast100": 4,
+            "lossAtLeast200": 3,
+            "mateScaleLosses": 0,
+            "expectedMoveHits": 3,
+            "knownBadMoves": 3,
+            "meanCompletedDepth": 6.86
+          }
+        },
+        "openings11": {
+          "before": {
+            "positions": 11,
+            "meanLoss": 10.73,
+            "cappedMeanLoss1000": 10.73,
+            "lossAtLeast100": 0,
+            "lossAtLeast200": 0,
+            "mateScaleLosses": 0,
+            "expectedMoveHits": 1,
+            "knownBadMoves": 0,
+            "meanCompletedDepth": 5.45
+          },
+          "after": {
+            "positions": 11,
+            "meanLoss": 12.82,
+            "cappedMeanLoss1000": 12.82,
+            "lossAtLeast100": 0,
+            "lossAtLeast200": 0,
+            "mateScaleLosses": 0,
+            "expectedMoveHits": 1,
+            "knownBadMoves": 0,
+            "meanCompletedDepth": 5.55
+          }
+        },
+        "all28": {
+          "before": {
+            "positions": 28,
+            "meanLoss": 95.89,
+            "cappedMeanLoss1000": 95.89,
+            "lossAtLeast100": 10,
+            "lossAtLeast200": 6,
+            "mateScaleLosses": 0,
+            "expectedMoveHits": 5,
+            "knownBadMoves": 12,
+            "meanCompletedDepth": 6.0
+          },
+          "after": {
+            "positions": 28,
+            "meanLoss": 78.07,
+            "cappedMeanLoss1000": 78.07,
+            "lossAtLeast100": 9,
+            "lossAtLeast200": 5,
+            "mateScaleLosses": 0,
+            "expectedMoveHits": 6,
+            "knownBadMoves": 10,
+            "meanCompletedDepth": 6.07
+          }
+        }
+      },
+      "changedPositions": [
+        {
+          "index": 9,
+          "fen": "5kr1/pp2qp2/2pb1p2/2p2Q2/2P1PP2/2NP2P1/PP6/2K4R b - - 0 25",
+          "tag": "lichess-04VH6uRt-ply50",
+          "refereeBest": "e7e6",
+          "before": "e7e6",
+          "after": "e7d8",
+          "beforeLoss": 0,
+          "afterLoss": 129,
+          "beforeDepth": 7,
+          "afterDepth": 6,
+          "deltaLoss": 129
+        },
+        {
+          "index": 12,
+          "fen": "8/5pk1/7p/5K1P/6P1/8/p4R2/r7 w - - 3 36",
+          "tag": "W692ODie-ply71",
+          "refereeBest": "f5f4",
+          "before": "g4g5",
+          "after": "f5f4",
+          "beforeLoss": 494,
+          "afterLoss": 0,
+          "beforeDepth": 8,
+          "afterDepth": 9,
+          "deltaLoss": -494
+        },
+        {
+          "index": 14,
+          "fen": "1r1r2k1/pp1b2pp/2Bbp3/1q3p2/3P4/1P3N1P/P2B1PP1/2RQR1K1 b - - 0 17",
+          "tag": "DpU8WcGP-ply34",
+          "refereeBest": "d7c6",
+          "before": "b7c6",
+          "after": "d7c6",
+          "beforeLoss": 157,
+          "afterLoss": 0,
+          "beforeDepth": 6,
+          "afterDepth": 7,
+          "deltaLoss": -157
+        },
+        {
+          "index": 25,
+          "fen": "r1bqkbnr/pp1ppppp/2n5/2p5/4P3/5NP1/PPPP1P1P/RNBQKB1R b KQkq e3 0 3",
+          "tag": "lichess-Op67WYFO-ply6",
+          "refereeBest": "g8f6",
+          "before": "g8f6",
+          "after": "d7d5",
+          "beforeLoss": 0,
+          "afterLoss": 23,
+          "beforeDepth": 5,
+          "afterDepth": 6,
+          "deltaLoss": 23
+        }
+      ],
+      "finalValidation": {
+        "method": "alternating paired searches, authenticated idle supervisor with post-exit check; four workers 6000ms",
+        "fen": "5kr1/pp2qp2/2pb1p2/2p2Q2/2P1PP2/2NP2P1/PP6/2K4R b - - 0 25",
+        "runs": [
+          {
+            "round": 1,
+            "side": "base",
+            "move": "e7e6",
+            "score": -36,
+            "elapsed": "6.002s",
+            "depth": 7,
+            "timeout": true,
+            "log": "/tmp/chess-root-final-validation-20261110/ply50-1-base.log"
+          },
+          {
+            "round": 1,
+            "side": "candidate",
+            "move": "e7d8",
+            "score": -123,
+            "elapsed": "6.001s",
+            "depth": 6,
+            "timeout": true,
+            "log": "/tmp/chess-root-final-validation-20261110/ply50-1-candidate.log"
+          },
+          {
+            "round": 2,
+            "side": "base",
+            "move": "e7e6",
+            "score": -36,
+            "elapsed": "5.854s",
+            "depth": 7,
+            "timeout": false,
+            "log": "/tmp/chess-root-final-validation-20261110/ply50-2-base.log"
+          },
+          {
+            "round": 2,
+            "side": "candidate",
+            "move": "e7d8",
+            "score": -123,
+            "elapsed": "6.001s",
+            "depth": 6,
+            "timeout": true,
+            "log": "/tmp/chess-root-final-validation-20261110/ply50-2-candidate.log"
+          },
+          {
+            "round": 3,
+            "side": "base",
+            "move": "e7d8",
+            "score": -123,
+            "elapsed": "6.002s",
+            "depth": 6,
+            "timeout": true,
+            "log": "/tmp/chess-root-final-validation-20261110/ply50-3-base.log"
+          },
+          {
+            "round": 3,
+            "side": "candidate",
+            "move": "e7e6",
+            "score": -36,
+            "elapsed": "5.495s",
+            "depth": 7,
+            "timeout": false,
+            "log": "/tmp/chess-root-final-validation-20261110/ply50-3-candidate.log"
+          }
+        ],
+        "gates": {
+          "fullAI": {
+            "output": "/tmp/chess-root-final-validation-20261110/full-ai.log",
+            "explicitExcluded": [
+              "TestAIBestMovesSame",
+              "TestLazySMPFindsHangingKnight"
+            ]
+          },
+          "race": {
+            "output": "/tmp/chess-root-final-validation-20261110/focused-race.log",
+            "selection": "root scout, promotion mate root TT, aspiration bounds, stable depth"
+          },
+          "build": {
+            "output": "/tmp/chess-root-final-validation-20261110/build.log",
+            "path": "/tmp/chess-root-final-validation-20261110/chess",
+            "sha256": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095",
+            "matchedOverlay": true
+          }
+        },
+        "panel": "testdata/strength_2026_11_10_supported_root_panel.json"
+      },
+      "testOutput": {
+        "full-ai.log": "ok  \tgithub.com/Vadman97/GolangChessAI/pkg/chessai/player/ai\t95.720s\n",
+        "focused-race.log": "ok  \tgithub.com/Vadman97/GolangChessAI/pkg/chessai/player/ai\t288.766s\n",
+        "build.log": ""
+      },
+      "finalOverlayDiff": "--- pkg/chessai/player/ai/abdada.go\t2026-11-10 08:56:11.733040614 -0800\n+++ /tmp/chess-root-supported-20261110/abdada.go\t2026-11-10 16:21:55.968971121 -0800\n@@ -537,7 +537,7 @@\n \treturn best\n }\n \n-func (ab *ABDADA) getBestMove(b *board.Board, depth, alpha, beta int, previousMove *board.LastMove) ScoredMove {\n+func (ab *ABDADA) getBestMove(b *board.Board, depth, alpha, beta int, previousMove *board.LastMove) (ScoredMove, bool) {\n \tab.player.setAbort(false)\n \toriginalAlpha := alpha\n \toriginalBeta := beta\n@@ -551,7 +551,7 @@\n \n \tmovesArr := b.GetAllMoves(ab.player.PlayerColor, previousMove)\n \tif len(*movesArr) == 0 {\n-\t\treturn ScoredMove{Score: ab.player.EvaluateBoard(b, ab.player.PlayerColor, previousMove).TotalScore}\n+\t\treturn ScoredMove{Score: ab.player.EvaluateBoard(b, ab.player.PlayerColor, previousMove).TotalScore}, false\n \t}\n \tttAnswer := ab.ttRead(b, ab.player.PlayerColor, uint16(depth), alpha, beta, false, true)\n \torderedMoves := orderMoves(*movesArr, ttAnswer.bestMove, [2]location.Move{}, ab, b, previousMove)\n@@ -618,11 +618,11 @@\n \t\t\trootResults = append(rootResults, value)\n \t\t\tbest, second = updateRootTopTwo(best, second, value)\n \t\t}\n-\t\tbest = ab.verifyCloseRootMoves(b, depth, best, second, rootResults)\n+\t\tbest, verified := ab.verifyCloseRootMoves(b, depth, best, second, rootResults)\n \t\tif !best.Move.Start.Equals(best.Move.End) {\n \t\t\tab.syncTTWrite(b, ab.player.PlayerColor, uint16(depth), originalAlpha, originalBeta, &best)\n \t\t}\n-\t\treturn best\n+\t\treturn best, verified\n \t}\n \n \tbest := ScoredMove{Score: NegInf}\n@@ -639,7 +639,7 @@\n \t\t}\n \t\tif alpha >= beta {\n \t\t\tab.syncTTWrite(b, ab.player.PlayerColor, uint16(depth), originalAlpha, originalBeta, &best)\n-\t\t\treturn best\n+\t\t\treturn best, false\n \t\t}\n \t}\n \tremainingMoves := orderedMoves[1:]\n@@ -647,7 +647,7 @@\n \t\tif !best.Move.Start.Equals(best.Move.End) {\n \t\t\tab.syncTTWrite(b, ab.player.PlayerColor, uint16(depth), originalAlpha, originalBeta, &best)\n \t\t}\n-\t\treturn best\n+\t\treturn best, false\n \t}\n \n \tworkerCount := ab.NumThreads\n@@ -711,11 +711,11 @@\n \t\trootResults = append(rootResults, result)\n \t\tbest, second = updateRootTopTwo(best, second, result)\n \t}\n-\tbest = ab.verifyCloseRootMoves(b, depth, best, second, rootResults)\n+\tbest, verified := ab.verifyCloseRootMoves(b, depth, best, second, rootResults)\n \tif !best.Move.Start.Equals(best.Move.End) {\n \t\tab.syncTTWrite(b, ab.player.PlayerColor, uint16(depth), originalAlpha, originalBeta, &best)\n \t}\n-\treturn best\n+\treturn best, verified\n }\n \n // defaultABDADAThreads caps short searches at four workers. ABDADA's workers own\n@@ -757,35 +757,35 @@\n \treturn a.Move.Start.Equals(b.Move.Start) && a.Move.End.Equals(b.Move.End)\n }\n \n-func (ab *ABDADA) verifyCloseRootMoves(b *board.Board, depth int, best, second ScoredMove, candidates []ScoredMove) ScoredMove {\n+func (ab *ABDADA) verifyCloseRootMoves(b *board.Board, depth int, best, second ScoredMove, candidates []ScoredMove) (ScoredMove, bool) {\n \tif ab.player.isAborted() ||\n \t\tbest.Move.Start.Equals(best.Move.End) {\n-\t\treturn best\n+\t\treturn best, false\n \t}\n \n \tif depth < 4 {\n \t\tmargin, quietOnly, verifyDepth, ok := deepRootVerifyParams(b, ab.player.PlayerColor, depth, best, candidates)\n \t\tif !ok {\n-\t\t\treturn best\n+\t\t\treturn best, false\n \t\t}\n-\t\treturn ab.verifyRootCandidates(b, verifyDepth, best, candidates, margin, quietOnly)\n+\t\treturn ab.verifyRootCandidates(b, verifyDepth, best, candidates, margin, quietOnly), false\n \t}\n \n \tif ab.NumThreads <= 1 {\n \t\tconst verifyMargin = 150\n \t\tif second.Move.Start.Equals(second.Move.End) || best.Score-second.Score > verifyMargin {\n-\t\t\treturn best\n+\t\t\treturn best, false\n \t\t}\n \t\tverifiedBest := ab.searchRootMoveForSelection(b, best.Move, depth, NegInf, PosInf)\n \t\tverifiedSecond := ab.searchRootMoveForSelection(b, second.Move, depth, NegInf, PosInf)\n \t\tif verifiedBest.Score == OnEvaluation || verifiedBest.Score == -OnEvaluation {\n-\t\t\treturn best\n+\t\t\treturn best, false\n \t\t}\n \t\tif verifiedSecond.Score != OnEvaluation && verifiedSecond.Score != -OnEvaluation && verifiedSecond.Score > verifiedBest.Score {\n \t\t\tverifiedSecond.ReturnThisMove = true\n-\t\t\treturn verifiedSecond\n+\t\t\treturn verifiedSecond, false\n \t\t}\n-\t\treturn verifiedBest\n+\t\treturn verifiedBest, false\n \t}\n \n \t// Root moves were already searched exactly (full window, or a scout followed\n@@ -811,11 +811,11 @@\n \t\tverifyMargin = wideDeepVerifyMargin\n \t}\n \tif second.Move.Start.Equals(second.Move.End) || best.Score-second.Score > verifyMargin {\n-\t\treturn best\n+\t\treturn best, false\n \t}\n \tconst minDeepRootVerifyTime = 2 * time.Second\n \tif ab.player.MaxThinkTime > 0 && ab.player.MaxThinkTime < minDeepRootVerifyTime {\n-\t\treturn best\n+\t\treturn best, false\n \t}\n \treturn ab.verifyParallelRootTie(b, depth, best, candidates, verifyMargin)\n }\n@@ -825,7 +825,7 @@\n \treturn worker.searchRootMove(b, move, depth, NegInf, PosInf)\n }\n \n-func (ab *ABDADA) verifyParallelRootTie(b *board.Board, depth int, best ScoredMove, candidates []ScoredMove, margin int) ScoredMove {\n+func (ab *ABDADA) verifyParallelRootTie(b *board.Board, depth int, best ScoredMove, candidates []ScoredMove, margin int) (ScoredMove, bool) {\n \t// Worker-local TTs can disagree by a few centipawns at the root. First\n \t// rescore every reported near-tie with fresh state at the SAME depth so the\n \t// two moves sent to the deeper tie-break are genuinely the top two. This\n@@ -839,7 +839,7 @@\n \t\t}\n \t\tfresh := ab.searchRootMoveFresh(b, candidate.Move, depth)\n \t\tif ab.player.isAborted() {\n-\t\t\treturn best\n+\t\t\treturn best, false\n \t\t}\n \t\tif fresh.Score == OnEvaluation || fresh.Score == -OnEvaluation {\n \t\t\tcontinue\n@@ -847,23 +847,28 @@\n \t\tfreshBest, freshSecond = updateRootTopTwo(freshBest, freshSecond, fresh)\n \t}\n \tif freshBest.Move.Start.Equals(freshBest.Move.End) {\n-\t\treturn best\n+\t\treturn best, false\n \t}\n \tif freshSecond.Move.Start.Equals(freshSecond.Move.End) || freshBest.Score-freshSecond.Score > margin {\n \t\tif !sameRootMove(freshBest, best) {\n \t\t\tfreshBest.ReturnThisMove = true\n \t\t}\n-\t\treturn freshBest\n+\t\treturn freshBest, false\n \t}\n \n \tverifyDepth := depth + 2\n \tdeepBest := ab.searchRootMoveFresh(b, freshBest.Move, verifyDepth)\n \tif ab.player.isAborted() || deepBest.Score == OnEvaluation || deepBest.Score == -OnEvaluation {\n-\t\treturn best\n+\t\treturn best, false\n \t}\n \tdeepSecond := ab.searchRootMoveFresh(b, freshSecond.Move, verifyDepth)\n \tif ab.player.isAborted() || deepSecond.Score == OnEvaluation || deepSecond.Score == -OnEvaluation {\n-\t\treturn best\n+\t\t// Retain only a fully ranked leader supported by its completed deeper\n+\t\t// search when the runner-up search itself is interrupted.\n+\t\tif ab.player.isAborted() && deepBest.Score >= freshBest.Score {\n+\t\t\treturn freshBest, true\n+\t\t}\n+\t\treturn best, false\n \t}\n \tif deepSecond.Score > deepBest.Score {\n \t\tdeepBest = deepSecond\n@@ -871,7 +876,7 @@\n \tif !sameRootMove(deepBest, best) {\n \t\tdeepBest.ReturnThisMove = true\n \t}\n-\treturn deepBest\n+\treturn deepBest, false\n }\n \n func shouldDeepVerifyRoot(b *board.Board, side color.Color, depth int, best ScoredMove, candidates []ScoredMove) bool {\n@@ -1237,19 +1242,23 @@\n \t\t// re-searches on ordinary between-depth score swings, so search once\n \t\t// per depth instead.\n \t\tvar newGuess ScoredMove\n+\t\tvar verified bool\n \t\tthinking, done := make(chan bool), make(chan bool, 1)\n \t\tgo ab.player.trackThinkTime(thinking, done, start)\n-\t\tnewGuess = ab.getBestMove(b, ab.currentSearchDepth, NegInf, PosInf, previousMove)\n+\t\tnewGuess, verified = ab.getBestMove(b, ab.currentSearchDepth, NegInf, PosInf, previousMove)\n \t\tclose(thinking)\n \t\t<-done\n \n-\t\tif !ab.player.isAborted() {\n+\t\tif !ab.player.isAborted() || verified {\n \t\t\tprevForStability := best\n \t\t\tbest = stableDepthMove(best, newGuess)\n \t\t\tab.player.LastSearchDepth = ab.currentSearchDepth\n \t\t\t// Feed the next iteration's soft-bound decision: was this depth stable?\n \t\t\tunstable = searchUnstable(prevForStability, best)\n \t\t\tab.player.printer <- fmt.Sprintf(\"Best D:%d M:%s score:%d\\n\", ab.player.LastSearchDepth, best.Move, best.Score)\n+\t\t\tif ab.player.isAborted() {\n+\t\t\t\tbreak\n+\t\t\t}\n \t\t} else {\n \t\t\t// Use the partial result if we haven't found any valid move yet.\n \t\t\t// Without this, a timeout on the very first IDA iteration leaves\n",
+      "deployment": {
+        "deployedAt": "2026-11-11T00:48:31.358471+00:00",
+        "oldPid": 3187851,
+        "newPid": 3617949,
+        "binarySha256": "9b97ec6f67da7a1fce9ef7052e13269b25404b27fab11821bc68fb4510b99095",
+        "baselineBackup": "/tmp/chess-nov10-baseline-before-supported-root",
+        "baselineSha256": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+        "logOffset": 180197026,
+        "authenticatedAccount": "vadbot",
+        "ratingsBeforeSupportedRootGames": {
+          "bullet": {
+            "games": 717,
+            "rating": 1883,
+            "rd": 45,
+            "prog": 6
+          },
+          "blitz": {
+            "games": 1128,
+            "rating": 1726,
+            "rd": 45,
+            "prog": -17
+          },
+          "rapid": {
+            "games": 603,
+            "rating": 2026,
+            "rd": 45,
+            "prog": -12
+          },
+          "classical": {
+            "games": 26,
+            "rating": 2116,
+            "rd": 84,
+            "prog": -69
+          },
+          "correspondence": {
+            "games": 0,
+            "rating": 2000,
+            "rd": 500,
+            "prog": 0,
+            "prov": true
+          },
+          "antichess": {
+            "games": 22,
+            "rating": 603,
+            "rd": 105,
+            "prog": -144
+          }
+        },
+        "nowPlaying": [],
+        "webServerPid": 3671326,
+        "webServerStillRunning": true,
+        "configurationSha256": {
+          "conf.json": "55acf47eb1965b3b2285287dc0345c505fe22fe8c24747e833512adaed6a1591",
+          "game_conf.json": "3e47d7efcbed8e7c04f35b54ea8cbbb742be2e2604267a95bffbeb174096bd34"
+        },
+        "status": "Supported root fallback installed. Fresh-game strength validation pending.",
+        "supervisorSha256AfterHandoff": "e03397a4102e6a62884d1e201c820e23ca6e3a9ea754e1a7bba63e0c137ca689",
+        "publicAccountStatus": [
+          {
+            "name": "vadbot",
+            "title": "BOT",
+            "flair": "smileys.distorted-face",
+            "id": "vadbot",
+            "online": true
+          }
+        ]
+      }
+    }
+  }
+}

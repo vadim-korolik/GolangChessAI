@@ -1,9 +1,29 @@
 package board
 
 import (
+	"github.com/Vadman97/GolangChessAI/pkg/chessai/color"
 	"github.com/Vadman97/GolangChessAI/pkg/chessai/location"
 	"github.com/Vadman97/GolangChessAI/pkg/chessai/piece"
 )
+
+// IsCheckmatingMove reports whether a legal move delivers mate without changing b.
+func (b *Board) IsCheckmatingMove(move location.Move) bool {
+	opponent := color.Color(b.getPieceData(move.Start)&1) ^ 1
+	if promotion, _ := move.End.GetPawnPromotion(); !promotion {
+		// Most quiet moves do not check. Probe only piece placement first, avoiding
+		// history allocation and hashing for moves that cannot possibly mate.
+		probe := Board{board: b.board, KingLocations: b.KingLocations}
+		probe.makeFastMove(&move)
+		if !probe.IsKingInCheck(opponent) {
+			return false
+		}
+	}
+	// Legal evasions need complete state, including castling rights and the last
+	// move. Promotions also need the full move rather than the placement probe.
+	probe := b.Copy()
+	last := MakeMove(&move, probe)
+	return probe.IsKingInCheck(opponent) && !probe.HasLegalMove(opponent, last)
+}
 
 // fastUndo holds the minimal state needed to undo a makeFastMove.
 type fastUndo struct {

@@ -1,0 +1,11 @@
+r1bqk2r/ppp2ppp/2n5/2bnN3/8/2N3P1/PP1PPPBP/R1BQK2R b KQkq - 0 7 | k5h80DBn-ply14 | d5c3 | c6e5 | depth16; clock 295.15s
+1r3k1r/pBp2ppp/3qb3/4n3/4Q3/2P3P1/P3PP1P/R1B2RK1 b - - 0 14 | k5h80DBn-ply28 | f7f5 | e6h3 | depth16; clock 275.39s
+1r3k1r/pBp2ppp/3q4/4n3/4Q3/2P3Pb/P3PP1P/R1B1R1K1 b - - 2 15 | k5h80DBn-ply30 | h7h5 | e5g4 | depth16; clock 272.43s
+r2k2r1/pb1pb2p/4pp1B/q1pn4/Np1P3N/1P6/PP3PPP/2RQ1RK1 b - - 0 17 | fFXT3GSB-ply34 | c5d4 | b7a6 | depth16; clock 270.43s
+3r4/pk1p3Q/b3Rp1B/3n4/1p1P3N/7P/1P3PPK/3q4 b - - 2 26 | fFXT3GSB-ply52 | d1d4 | a6d3 | depth16; clock 248.19s
+7r/pk1p1Q2/1n3R1B/8/1p1P4/5N1P/1P2qPP1/5bK1 b - - 2 31 | fFXT3GSB-ply62 | e2b2 | e2d1 | depth16; clock 243.39s
+8/pk1p4/1n3R2/7Q/1p1P3B/5N1P/1Pr2PPK/3q1b2 b - - 10 35 | fFXT3GSB-ply70 | c2b2 | b4b3 | depth16; clock 239.39s
+r1b2rk1/ppp2p2/2nq1n2/3p2B1/1b1P4/2NBP3/PP3PPP/R2Q1RK1 b - - 2 12 | 1DXrx7fP-ply24 | b4c3 | f6e4 | depth16; clock 604.03s
+r1b2rk1/ppp2p2/2nq4/6B1/1b1PB3/4P3/PP3PPP/R2Q1RK1 b - - 0 14 | 1DXrx7fP-ply28 | f7f5 | f8e8 | depth16; clock 599.23s
+r5k1/pppq4/4r3/b2Pnp1Q/5B2/P3P3/1P3PPP/R4RK1 b - - 2 21 | 1DXrx7fP-ply42 | e6e7 | d7d5 | depth16; clock 584.27s
+r5k1/ppp5/4r3/b2qnp1Q/5B2/P3P3/1P3PPP/3R1RK1 b - - 1 22 | 1DXrx7fP-ply44 | e5d3 | d5e4 | depth16; clock 579.23s

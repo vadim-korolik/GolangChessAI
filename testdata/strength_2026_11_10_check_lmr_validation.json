@@ -1,0 +1,267 @@
+{
+  "metadata": {
+    "sourceSha256": "2704b757c0f6fbd435e8a6d5baa4af517ed000ace272905a017668eccca5f23a",
+    "testSha256": "cdaa39374928bde7057ad43dd525e3e91b2c217212244e12628a80896bab6f3e",
+    "profileSha256": "fd489831db47b5aa5fbd41e581a2a56d876223aeb19b4c67073c57c46cbc88ab",
+    "supervisorSha256": "2dc2d48921f5b134e616bedbf1c934a726e2e8ea66dbbdc6e027d12d806add5f",
+    "baselineSha256": "047a5626dd79108d126f9415bd0fc1809504df7bfb537bea7e246b5a49c3e76e",
+    "overlayCandidateSha256": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+    "runnerSha256": "8082614df2bfd125ae8f29ae1d32f23ae1a8937f60fd1864ead3c6c7564aeeec",
+    "build": "GOAMD64=v3 go build -pgo=cpu.pprof -ldflags=-s -w ./cmd/main.go",
+    "skips": [
+      "TestAIBestMovesSame",
+      "TestLazySMPFindsHangingKnight"
+    ],
+    "fullAIPreformatTestSha256": "a55c0eb6b76e940ac20a45fb79af7f954cdfbe33500f06aecbe1dc847409ba2f",
+    "testChangeAfterFullAI": "gofmt and comment-only; byte match to gofmt of original with comment replacement",
+    "finalSha256": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+    "sameAsOverlayCandidate": true
+  },
+  "gates": {
+    "fullAI": {
+      "returncode": 0,
+      "command": [
+        "go",
+        "test",
+        "./pkg/chessai/player/ai",
+        "-skip",
+        "^(TestAIBestMovesSame|TestLazySMPFindsHangingKnight)$",
+        "-count=1",
+        "-timeout=10m"
+      ],
+      "output": "/tmp/chess-nov10-check-lmr-validation-fullAI-attempt1.txt",
+      "attempt": 1
+    },
+    "race": {
+      "returncode": 0,
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "./pkg/chessai/player/ai",
+        "-run",
+        "^(TestABDADACheckLMRAvoidsFalseRookGain|TestABDADAAwQCDMkPSeesMateAfterKnightCapture|TestABDADABusyTTDoesNotHideRookEndingMate|TestABDADANullMoveGuardFindsBishopDefense)$",
+        "-count=1",
+        "-timeout=10m"
+      ],
+      "output": "/tmp/chess-nov10-check-lmr-validation-race-attempt1.txt",
+      "attempt": 1
+    },
+    "build": {
+      "returncode": 0,
+      "command": [
+        "env",
+        "GOAMD64=v3",
+        "go",
+        "build",
+        "-pgo=cpu.pprof",
+        "-ldflags=-s -w",
+        "-o",
+        "/tmp/chess-nov10-check-lmr-final",
+        "./cmd/main.go"
+      ],
+      "output": "/tmp/chess-nov10-check-lmr-validation-build-attempt1.txt",
+      "attempt": 1
+    }
+  },
+  "idx46": [
+    {
+      "rep": 1,
+      "attempt": 1,
+      "before": {
+        "run": {
+          "move": "f8d8",
+          "score": -316,
+          "depth": 5,
+          "elapsedMs": 1201,
+          "considered": 329858,
+          "prunedAb": 1204015,
+          "prunedTt": 237309,
+          "ttImproved": 7168,
+          "timedOut": true
+        },
+        "stdout": "/tmp/chess-nov10-check-lmr-validation-idx46-1-before-attempt1.txt",
+        "json": "/tmp/chess-nov10-check-lmr-validation-idx46-1-before-attempt1.json"
+      },
+      "final": {
+        "run": {
+          "move": "f8d8",
+          "score": -316,
+          "depth": 5,
+          "elapsedMs": 1202,
+          "considered": 346571,
+          "prunedAb": 1255314,
+          "prunedTt": 245728,
+          "ttImproved": 7445,
+          "timedOut": true
+        },
+        "stdout": "/tmp/chess-nov10-check-lmr-validation-idx46-1-final-attempt1.txt",
+        "json": "/tmp/chess-nov10-check-lmr-validation-idx46-1-final-attempt1.json"
+      }
+    },
+    {
+      "rep": 2,
+      "attempt": 1,
+      "final": {
+        "run": {
+          "move": "f8d8",
+          "score": -316,
+          "depth": 5,
+          "elapsedMs": 1201,
+          "considered": 342943,
+          "prunedAb": 1233309,
+          "prunedTt": 227607,
+          "ttImproved": 6852,
+          "timedOut": true
+        },
+        "stdout": "/tmp/chess-nov10-check-lmr-validation-idx46-2-final-attempt1.txt",
+        "json": "/tmp/chess-nov10-check-lmr-validation-idx46-2-final-attempt1.json"
+      },
+      "before": {
+        "run": {
+          "move": "f8d8",
+          "score": -316,
+          "depth": 5,
+          "elapsedMs": 1202,
+          "considered": 340085,
+          "prunedAb": 1241787,
+          "prunedTt": 236138,
+          "ttImproved": 7138,
+          "timedOut": true
+        },
+        "stdout": "/tmp/chess-nov10-check-lmr-validation-idx46-2-before-attempt1.txt",
+        "json": "/tmp/chess-nov10-check-lmr-validation-idx46-2-before-attempt1.json"
+      }
+    },
+    {
+      "rep": 3,
+      "attempt": 1,
+      "before": {
+        "run": {
+          "move": "a8b8",
+          "score": -321,
+          "depth": 6,
+          "elapsedMs": 1196,
+          "considered": 342832,
+          "prunedAb": 1252381,
+          "prunedTt": 247827,
+          "ttImproved": 7520,
+          "timedOut": false
+        },
+        "stdout": "/tmp/chess-nov10-check-lmr-validation-idx46-3-before-attempt1.txt",
+        "json": "/tmp/chess-nov10-check-lmr-validation-idx46-3-before-attempt1.json"
+      },
+      "final": {
+        "run": {
+          "move": "f8d8",
+          "score": -316,
+          "depth": 5,
+          "elapsedMs": 1201,
+          "considered": 328422,
+          "prunedAb": 1187256,
+          "prunedTt": 230902,
+          "ttImproved": 6941,
+          "timedOut": true
+        },
+        "stdout": "/tmp/chess-nov10-check-lmr-validation-idx46-3-final-attempt1.txt",
+        "json": "/tmp/chess-nov10-check-lmr-validation-idx46-3-final-attempt1.json"
+      }
+    }
+  ],
+  "classical": [
+    {
+      "returncode": 0,
+      "command": [
+        "/tmp/chess-nov10-check-lmr-final",
+        "abdada-bench",
+        "--fens",
+        "/tmp/chess-nov10-native-replay-classical-fen.txt",
+        "--think-ms",
+        "27190",
+        "--threads",
+        "8",
+        "--runs",
+        "1",
+        "--json",
+        "/tmp/chess-nov10-check-lmr-validation-classical-1.json"
+      ],
+      "output": "/tmp/chess-nov10-check-lmr-validation-classical-1-attempt1.txt",
+      "attempt": 1,
+      "run": {
+        "move": "f3e4",
+        "score": -25,
+        "depth": 7,
+        "elapsedMs": 27191,
+        "considered": 3857103,
+        "prunedAb": 24881661,
+        "prunedTt": 1648101,
+        "ttImproved": 52486,
+        "timedOut": true
+      },
+      "json": "/tmp/chess-nov10-check-lmr-validation-classical-1.json"
+    },
+    {
+      "returncode": 0,
+      "command": [
+        "/tmp/chess-nov10-check-lmr-final",
+        "abdada-bench",
+        "--fens",
+        "/tmp/chess-nov10-native-replay-classical-fen.txt",
+        "--think-ms",
+        "27190",
+        "--threads",
+        "8",
+        "--runs",
+        "1",
+        "--json",
+        "/tmp/chess-nov10-check-lmr-validation-classical-2.json"
+      ],
+      "output": "/tmp/chess-nov10-check-lmr-validation-classical-2-attempt1.txt",
+      "attempt": 1,
+      "run": {
+        "move": "f3e4",
+        "score": -25,
+        "depth": 7,
+        "elapsedMs": 27192,
+        "considered": 3832507,
+        "prunedAb": 24772008,
+        "prunedTt": 1642107,
+        "ttImproved": 52279,
+        "timedOut": true
+      },
+      "json": "/tmp/chess-nov10-check-lmr-validation-classical-2.json"
+    },
+    {
+      "returncode": 0,
+      "command": [
+        "/tmp/chess-nov10-check-lmr-final",
+        "abdada-bench",
+        "--fens",
+        "/tmp/chess-nov10-native-replay-classical-fen.txt",
+        "--think-ms",
+        "27190",
+        "--threads",
+        "8",
+        "--runs",
+        "1",
+        "--json",
+        "/tmp/chess-nov10-check-lmr-validation-classical-3.json"
+      ],
+      "output": "/tmp/chess-nov10-check-lmr-validation-classical-3-attempt1.txt",
+      "attempt": 1,
+      "run": {
+        "move": "f3e4",
+        "score": -25,
+        "depth": 7,
+        "elapsedMs": 27191,
+        "considered": 3825620,
+        "prunedAb": 24746484,
+        "prunedTt": 1641965,
+        "ttImproved": 52275,
+        "timedOut": true
+      },
+      "json": "/tmp/chess-nov10-check-lmr-validation-classical-3.json"
+    }
+  ],
+  "complete": true
+}

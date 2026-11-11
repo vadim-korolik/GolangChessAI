@@ -1,0 +1,207 @@
+{
+  "log": "/tmp/chess.lichess.log",
+  "startOffset": 178451120,
+  "positions": [
+    {
+      "gameId": "1DXrx7fP",
+      "ply": 24,
+      "playedUci": "f6e4",
+      "thinking": "time=\"2026-11-10T09:57:51-08:00\" level=info msg=\"player thinking... have time 10m4.01s, inc 10s, set max to 12.583541666s\"",
+      "depth": "ABDADA (\u03b1/\u03b2 Parallel) hard abort! evaluated to depth 7",
+      "considered": "Considered 1808557",
+      "thought": "Black AI (ABDADA (\u03b1/\u03b2 Parallel) - Black) thought for 12.587280209s",
+      "bestIterations": [
+        "Best D:1 M:move from (7, 5) to (3, 1) score:236",
+        "Best D:2 M:move from (5, 2) to (3, 1) score:126",
+        "Best D:3 M:move from (3, 6) to (2, 5) score:232",
+        "Best D:4 M:move from (3, 6) to (2, 5) score:107",
+        "Best D:5 M:move from (3, 6) to (2, 5) score:152",
+        "Best D:6 M:move from (3, 6) to (2, 5) score:151",
+        "Best D:7 M:move from (5, 2) to (3, 3) score:133"
+      ],
+      "posted": "time=\"2026-11-10T09:58:03-08:00\" level=info msg=\"make move /api/bot/game/1DXrx7fP/move/f6e4?offeringDraw=false status 200 OK 200 {\\\"ok\\\":true}\""
+    },
+    {
+      "gameId": "1DXrx7fP",
+      "ply": 28,
+      "playedUci": "f8e8",
+      "thinking": "time=\"2026-11-10T09:58:21-08:00\" level=info msg=\"player thinking... have time 9m59.26s, inc 10s, set max to 12.484583332s\"",
+      "depth": "ABDADA (\u03b1/\u03b2 Parallel) hard abort! evaluated to depth 6",
+      "considered": "Considered 1764834",
+      "thought": "Black AI (ABDADA (\u03b1/\u03b2 Parallel) - Black) thought for 12.624494785s",
+      "bestIterations": [
+        "Best D:1 M:move from (6, 2) to (4, 2) score:218",
+        "Best D:2 M:move from (6, 2) to (4, 2) score:149",
+        "Best D:3 M:move from (6, 2) to (4, 2) score:175",
+        "Best D:4 M:move from (6, 2) to (4, 2) score:91",
+        "Best D:5 M:move from (6, 2) to (4, 2) score:83",
+        "Best D:6 M:move from (7, 2) to (7, 3) score:35"
+      ],
+      "posted": "time=\"2026-11-10T09:58:33-08:00\" level=info msg=\"make move /api/bot/game/1DXrx7fP/move/f8e8?offeringDraw=false status 200 OK 200 {\\\"ok\\\":true}\""
+    },
+    {
+      "gameId": "1DXrx7fP",
+      "ply": 42,
+      "playedUci": "d7d5",
+      "thinking": "time=\"2026-11-10T10:00:17-08:00\" level=info msg=\"player thinking... have time 9m44.29s, inc 10s, set max to 15s\"",
+      "depth": "",
+      "considered": "Considered 1911188",
+      "thought": "Black AI (ABDADA (\u03b1/\u03b2 Parallel) - Black) thought for 14.881826341s",
+      "bestIterations": [
+        "Best D:1 M:move from (6, 4) to (4, 4) score:162",
+        "Best D:2 M:move from (5, 3) to (7, 3) score:46",
+        "Best D:3 M:move from (6, 4) to (7, 3) score:24",
+        "Best D:4 M:move from (6, 4) to (4, 4) score:178",
+        "Best D:5 M:move from (6, 4) to (4, 4) score:105",
+        "Best D:6 M:move from (6, 4) to (4, 4) score:105",
+        "Best D:7 M:move from (6, 4) to (4, 4) score:106",
+        "Best D:8 M:move from (6, 4) to (4, 4) score:117",
+        "Best D:9 M:move from (6, 4) to (4, 4) score:110"
+      ],
+      "posted": "time=\"2026-11-10T10:00:32-08:00\" level=info msg=\"make move /api/bot/game/1DXrx7fP/move/d7d5?offeringDraw=false status 200 OK 200 {\\\"ok\\\":true}\""
+    },
+    {
+      "gameId": "1DXrx7fP",
+      "ply": 44,
+      "playedUci": "d5e4",
+      "thinking": "time=\"2026-11-10T10:00:33-08:00\" level=info msg=\"player thinking... have time 9m39.2s, inc 10s, set max to 15s\"",
+      "depth": "",
+      "considered": "Considered 1776716",
+      "thought": "Black AI (ABDADA (\u03b1/\u03b2 Parallel) - Black) thought for 13.598268908s",
+      "bestIterations": [
+        "Best D:1 M:move from (4, 3) to (2, 4) score:291",
+        "Best D:2 M:move from (4, 3) to (2, 4) score:173",
+        "Best D:3 M:move from (4, 4) to (5, 5) score:105",
+        "Best D:4 M:move from (4, 4) to (5, 5) score:118",
+        "Best D:5 M:move from (4, 4) to (3, 3) score:92",
+        "Best D:6 M:move from (4, 4) to (5, 5) score:131",
+        "Best D:7 M:move from (4, 4) to (3, 3) score:6"
+      ],
+      "posted": "time=\"2026-11-10T10:00:47-08:00\" level=info msg=\"make move /api/bot/game/1DXrx7fP/move/d5e4?offeringDraw=false status 200 OK 200 {\\\"ok\\\":true}\""
+    },
+    {
+      "gameId": "fFXT3GSB",
+      "ply": 34,
+      "playedUci": "b7a6",
+      "thinking": "time=\"2026-11-10T11:04:03-08:00\" level=info msg=\"player thinking... have time 4m30.44s, inc 3s, set max to 5.634166666s\"",
+      "depth": "ABDADA (\u03b1/\u03b2 Parallel) hard abort! evaluated to depth 5",
+      "considered": "Considered 844381",
+      "thought": "Black AI (ABDADA (\u03b1/\u03b2 Parallel) - Black) thought for 5.63769187s",
+      "bestIterations": [
+        "Best D:1 M:move from (6, 6) to (5, 7) score:144",
+        "Best D:2 M:move from (6, 6) to (5, 7) score:97",
+        "Best D:3 M:move from (6, 6) to (5, 7) score:169",
+        "Best D:4 M:move from (6, 6) to (5, 7) score:71",
+        "Best D:5 M:move from (6, 6) to (5, 7) score:80"
+      ],
+      "posted": "time=\"2026-11-10T11:04:09-08:00\" level=info msg=\"make move /api/bot/game/fFXT3GSB/move/b7a6?offeringDraw=false status 200 OK 200 {\\\"ok\\\":true}\""
+    },
+    {
+      "gameId": "fFXT3GSB",
+      "ply": 52,
+      "playedUci": "a6d3",
+      "thinking": "time=\"2026-11-10T11:04:53-08:00\" level=info msg=\"player thinking... have time 4m8.16s, inc 3s, set max to 4.136s\"",
+      "depth": "ABDADA (\u03b1/\u03b2 Parallel) hard abort! evaluated to depth 5",
+      "considered": "Considered 610812",
+      "thought": "Black AI (ABDADA (\u03b1/\u03b2 Parallel) - Black) thought for 4.139540975s",
+      "bestIterations": [
+        "Best D:1 M:move from (5, 7) to (0, 2) score:331",
+        "Best D:2 M:move from (5, 7) to (0, 2) score:228",
+        "Best D:3 M:move from (5, 7) to (0, 2) score:205",
+        "Best D:4 M:move from (5, 7) to (0, 2) score:98",
+        "Best D:5 M:move from (5, 7) to (2, 4) score:114"
+      ],
+      "posted": "time=\"2026-11-10T11:04:58-08:00\" level=info msg=\"make move /api/bot/game/fFXT3GSB/move/a6d3?offeringDraw=false status 200 OK 200 {\\\"ok\\\":true}\""
+    },
+    {
+      "gameId": "fFXT3GSB",
+      "ply": 62,
+      "playedUci": "e2d1",
+      "thinking": "time=\"2026-11-10T11:05:14-08:00\" level=info msg=\"player thinking... have time 4m3.37s, inc 3s, set max to 4.056166666s\"",
+      "depth": "",
+      "considered": "Considered 552272",
+      "thought": "Black AI (ABDADA (\u03b1/\u03b2 Parallel) - Black) thought for 3.176540043s",
+      "bestIterations": [
+        "Best D:1 M:move from (7, 0) to (7, 5) score:82",
+        "Best D:2 M:move from (6, 6) to (7, 6) score:25",
+        "Best D:3 M:move from (1, 3) to (4, 6) score:28",
+        "Best D:4 M:move from (1, 3) to (0, 4) score:0",
+        "Best D:5 M:move from (1, 3) to (0, 4) score:0"
+      ],
+      "posted": "time=\"2026-11-10T11:05:17-08:00\" level=info msg=\"make move /api/bot/game/fFXT3GSB/move/e2d1?offeringDraw=false status 200 OK 200 {\\\"ok\\\":true}\""
+    },
+    {
+      "gameId": "fFXT3GSB",
+      "ply": 70,
+      "playedUci": "b4b3",
+      "thinking": "time=\"2026-11-10T11:05:30-08:00\" level=info msg=\"player thinking... have time 3m59.39s, inc 3s, set max to 3.989833333s\"",
+      "depth": "ABDADA (\u03b1/\u03b2 Parallel) hard abort! evaluated to depth 6",
+      "considered": "Considered 913996",
+      "thought": "Black AI (ABDADA (\u03b1/\u03b2 Parallel) - Black) thought for 3.994581117s",
+      "bestIterations": [
+        "Best D:1 M:move from (1, 5) to (1, 6) score:299",
+        "Best D:2 M:move from (6, 4) to (4, 4) score:225",
+        "Best D:3 M:move from (0, 4) to (0, 7) score:211",
+        "Best D:4 M:move from (0, 4) to (0, 7) score:88",
+        "Best D:5 M:move from (0, 4) to (0, 7) score:151",
+        "Best D:6 M:move from (3, 6) to (2, 6) score:129"
+      ],
+      "posted": "time=\"2026-11-10T11:05:34-08:00\" level=info msg=\"make move /api/bot/game/fFXT3GSB/move/b4b3?offeringDraw=false status 200 OK 200 {\\\"ok\\\":true}\""
+    },
+    {
+      "gameId": "k5h80DBn",
+      "ply": 14,
+      "playedUci": "c6e5",
+      "thinking": "time=\"2026-11-10T15:15:15-08:00\" level=info msg=\"player thinking... have time 4m55.15s, inc 3s, set max to 4.919166666s\"",
+      "depth": "ABDADA (\u03b1/\u03b2 Parallel) hard abort! evaluated to depth 6",
+      "considered": "Considered 939282",
+      "thought": "Black AI (ABDADA (\u03b1/\u03b2 Parallel) - Black) thought for 4.922931044s",
+      "bestIterations": [
+        "Best D:1 M:move from (7, 4) to (5, 2) score:79",
+        "Best D:2 M:move from (4, 4) to (3, 6) score:37",
+        "Best D:3 M:move from (5, 5) to (4, 3) score:123",
+        "Best D:4 M:move from (5, 5) to (4, 3) score:38",
+        "Best D:5 M:move from (5, 5) to (4, 3) score:17",
+        "Best D:6 M:move from (5, 5) to (4, 3) score:38"
+      ],
+      "posted": "time=\"2026-11-10T15:15:20-08:00\" level=info msg=\"make move /api/bot/game/k5h80DBn/move/c6e5?offeringDraw=false status 200 OK 200 {\\\"ok\\\":true}\""
+    },
+    {
+      "gameId": "k5h80DBn",
+      "ply": 28,
+      "playedUci": "e6h3",
+      "thinking": "time=\"2026-11-10T15:15:57-08:00\" level=info msg=\"player thinking... have time 4m35.36s, inc 3s, set max to 5.736666666s\"",
+      "depth": "ABDADA (\u03b1/\u03b2 Parallel) hard abort! evaluated to depth 7",
+      "considered": "Considered 1582383",
+      "thought": "Black AI (ABDADA (\u03b1/\u03b2 Parallel) - Black) thought for 5.740644573s",
+      "bestIterations": [
+        "Best D:1 M:move from (5, 3) to (2, 0) score:355",
+        "Best D:2 M:move from (5, 3) to (2, 0) score:290",
+        "Best D:3 M:move from (5, 3) to (2, 0) score:236",
+        "Best D:4 M:move from (5, 3) to (2, 0) score:232",
+        "Best D:5 M:move from (5, 3) to (2, 0) score:228",
+        "Best D:6 M:move from (5, 3) to (2, 0) score:177",
+        "Best D:7 M:move from (5, 3) to (2, 0) score:176"
+      ],
+      "posted": "time=\"2026-11-10T15:16:03-08:00\" level=info msg=\"make move /api/bot/game/k5h80DBn/move/e6h3?offeringDraw=false status 200 OK 200 {\\\"ok\\\":true}\""
+    },
+    {
+      "gameId": "k5h80DBn",
+      "ply": 30,
+      "playedUci": "e5g4",
+      "thinking": "time=\"2026-11-10T15:16:03-08:00\" level=info msg=\"player thinking... have time 4m32.45s, inc 3s, set max to 5.676041666s\"",
+      "depth": "",
+      "considered": "Considered 717895",
+      "thought": "Black AI (ABDADA (\u03b1/\u03b2 Parallel) - Black) thought for 5.133043823s",
+      "bestIterations": [
+        "Best D:1 M:move from (5, 4) to (5, 2) score:471",
+        "Best D:2 M:move from (5, 4) to (5, 3) score:329",
+        "Best D:3 M:move from (4, 3) to (3, 1) score:333",
+        "Best D:4 M:move from (7, 6) to (7, 3) score:275",
+        "Best D:5 M:move from (4, 3) to (3, 1) score:209",
+        "Best D:6 M:move from (4, 3) to (3, 1) score:198"
+      ],
+      "posted": "time=\"2026-11-10T15:16:08-08:00\" level=info msg=\"make move /api/bot/game/k5h80DBn/move/e5g4?offeringDraw=false status 200 OK 200 {\\\"ok\\\":true}\""
+    }
+  ]
+}

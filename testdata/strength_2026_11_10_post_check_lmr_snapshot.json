@@ -1,0 +1,258 @@
+{
+  "checkedAt": "2026-11-11T00:01:29.558070+00:00",
+  "sinceMs": 1794330331264,
+  "binarySha256": "8410a61016ad70102a639017a29bfb07d1c39c73e4c6634e270083a840ec73f3",
+  "botPid": 3187851,
+  "games": [
+    {
+      "id": "FkLBOOyh",
+      "speed": "blitz",
+      "side": "black",
+      "result": "loss",
+      "status": "mate",
+      "plies": 81,
+      "opponentRating": 1909,
+      "clock": {
+        "initial": 180,
+        "increment": 2,
+        "totalTime": 260
+      }
+    },
+    {
+      "id": "k5h80DBn",
+      "speed": "blitz",
+      "side": "black",
+      "result": "loss",
+      "status": "mate",
+      "plies": 71,
+      "opponentRating": 1749,
+      "clock": {
+        "initial": 300,
+        "increment": 3,
+        "totalTime": 420
+      }
+    },
+    {
+      "id": "sxDkgOHM",
+      "speed": "classical",
+      "side": "white",
+      "result": "win",
+      "status": "mate",
+      "plies": 117,
+      "opponentRating": 1815,
+      "clock": {
+        "initial": 1800,
+        "increment": 1,
+        "totalTime": 1840
+      }
+    },
+    {
+      "id": "ssfz7VDE",
+      "speed": "blitz",
+      "side": "black",
+      "result": "loss",
+      "status": "mate",
+      "plies": 105,
+      "opponentRating": 2006,
+      "clock": {
+        "initial": 180,
+        "increment": 0,
+        "totalTime": 180
+      }
+    },
+    {
+      "id": "Hfgdz9VR",
+      "speed": "blitz",
+      "side": "white",
+      "result": "win",
+      "status": "mate",
+      "plies": 71,
+      "opponentRating": 1534,
+      "clock": {
+        "initial": 300,
+        "increment": 3,
+        "totalTime": 420
+      }
+    },
+    {
+      "id": "wj0UDYwh",
+      "speed": "bullet",
+      "side": "white",
+      "result": "loss",
+      "status": "mate",
+      "plies": 176,
+      "opponentRating": 2003,
+      "clock": {
+        "initial": 60,
+        "increment": 2,
+        "totalTime": 140
+      }
+    },
+    {
+      "id": "fFXT3GSB",
+      "speed": "blitz",
+      "side": "black",
+      "result": "loss",
+      "status": "mate",
+      "plies": 91,
+      "opponentRating": 1744,
+      "clock": {
+        "initial": 300,
+        "increment": 3,
+        "totalTime": 420
+      }
+    },
+    {
+      "id": "1DXrx7fP",
+      "speed": "rapid",
+      "side": "black",
+      "result": "loss",
+      "status": "mate",
+      "plies": 149,
+      "opponentRating": 1936,
+      "clock": {
+        "initial": 600,
+        "increment": 10,
+        "totalTime": 1000
+      }
+    },
+    {
+      "id": "KZhpn37Z",
+      "speed": "blitz",
+      "side": "black",
+      "result": "loss",
+      "status": "mate",
+      "plies": 115,
+      "opponentRating": 2027,
+      "clock": {
+        "initial": 180,
+        "increment": 3,
+        "totalTime": 300
+      }
+    },
+    {
+      "id": "lTPGFwAC",
+      "speed": "blitz",
+      "side": "black",
+      "result": "loss",
+      "status": "mate",
+      "plies": 95,
+      "opponentRating": 2062,
+      "clock": {
+        "initial": 180,
+        "increment": 2,
+        "totalTime": 260
+      }
+    },
+    {
+      "id": "RBdVR0Ko",
+      "speed": "blitz",
+      "side": "black",
+      "result": "loss",
+      "status": "mate",
+      "plies": 141,
+      "opponentRating": 1897,
+      "clock": {
+        "initial": 60,
+        "increment": 3,
+        "totalTime": 180
+      }
+    }
+  ],
+  "outcomesBySpeed": {
+    "blitz": {
+      "loss": 7,
+      "win": 1
+    },
+    "classical": {
+      "win": 1
+    },
+    "bullet": {
+      "loss": 1
+    },
+    "rapid": {
+      "loss": 1
+    }
+  },
+  "ratingsBeforeDeployment": {
+    "bullet": {
+      "games": 716,
+      "rating": 1887,
+      "rd": 45,
+      "prog": 8
+    },
+    "blitz": {
+      "games": 1119,
+      "rating": 1739,
+      "rd": 45,
+      "prog": -4
+    },
+    "rapid": {
+      "games": 602,
+      "rating": 2033,
+      "rd": 45,
+      "prog": -7
+    },
+    "classical": {
+      "games": 25,
+      "rating": 2110,
+      "rd": 85,
+      "prog": -113
+    },
+    "correspondence": {
+      "games": 0,
+      "rating": 2000,
+      "rd": 500,
+      "prog": 0,
+      "prov": true
+    },
+    "antichess": {
+      "games": 22,
+      "rating": 603,
+      "rd": 105,
+      "prog": -144
+    }
+  },
+  "ratingsObserved": {
+    "checkedAt": "2026-11-11T00:01:29.519113+00:00",
+    "perfs": {
+      "bullet": {
+        "games": 717,
+        "rating": 1883,
+        "rd": 45,
+        "prog": 6
+      },
+      "blitz": {
+        "games": 1127,
+        "rating": 1721,
+        "rd": 45,
+        "prog": -25
+      },
+      "rapid": {
+        "games": 603,
+        "rating": 2026,
+        "rd": 45,
+        "prog": -12
+      },
+      "classical": {
+        "games": 26,
+        "rating": 2116,
+        "rd": 84,
+        "prog": -69
+      },
+      "correspondence": {
+        "games": 0,
+        "rating": 2000,
+        "rd": 500,
+        "prog": 0,
+        "prov": true
+      },
+      "antichess": {
+        "games": 22,
+        "rating": 603,
+        "rd": 105,
+        "prog": -144
+      }
+    }
+  }
+}

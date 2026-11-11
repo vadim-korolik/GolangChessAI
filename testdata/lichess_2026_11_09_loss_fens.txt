@@ -1,0 +1,12 @@
+# Fresh losses scanned November 9, 2026; cold-hash Stockfish depth 16.
+# FEN | tag | expected UCI | known bad UCI | notes
+r2q1k1r/p3nppp/2pp4/5b2/8/2PB1N2/P1P2PPP/R2Q1RK1 b - - 1 14 | lichess-AwQCDMkP-ply28 | g7g6 | d8a5 | SF16 loss 88 cp; clock 256.67 s
+4rk1r/p2bnppp/3p4/q1p5/2P1B3/5N2/P1P2PPP/1R1QR1K1 b - - 1 18 | lichess-AwQCDMkP-ply36 | e7c8 | f7f5 | SF16 loss 177 cp; clock 240.27 s
+4rk1r/p2Qn1pp/8/q1p5/2P1p3/5N2/P1P2PPP/1R2R1K1 b - - 0 20 | lichess-AwQCDMkP-ply40 | a5d8 | e4f3 | SF16 loss 99569 cp; clock 231.95 s
+2rq1rk1/1b1n1ppp/p3pb2/3p4/5B2/2N5/PPPQBPPP/3RR1K1 w - - 7 18 | lichess-ymx2uvTy-ply35 | c3e4 | f4d6 | SF16 loss 107 cp; clock 525.15 s
+2rr2k1/1b3pp1/pq2pb1p/8/3p4/B1P5/PPQ1BPPP/3RR1K1 w - - 0 24 | lichess-ymx2uvTy-ply47 | c3c4 | e2d3 | SF16 loss 214 cp; clock 499.47 s
+2rr2k1/1b3pp1/pq2pb1p/8/8/B1pB4/PPQ2PPP/3RR1K1 w - - 0 25 | lichess-ymx2uvTy-ply49 | b2b3 | d3h7 | SF16 loss 89 cp; clock 495.95 s
+2rq3k/1b3ppB/p3pb1p/8/8/B1p5/PPQ2PPP/4R1K1 w - - 0 27 | lichess-ymx2uvTy-ply53 | b2b3 | e1d1 | SF16 loss 84 cp; clock 485.39 s
+2r4k/1b3ppB/p3pb1p/q7/8/B1p5/PPQ2PPP/3R2K1 w - - 2 28 | lichess-ymx2uvTy-ply55 | c2b1 | b2b4 | SF16 loss 121 cp; clock 482.11 s
+r1bqk2r/pp2bp2/2p2p1p/2p5/2P1PP2/2NP4/PP5P/R2QK1NR b KQkq - 0 11 | lichess-04VH6uRt-ply22 | f6f5 | e8g8 | SF16 loss 257 cp; clock 271.07 s
+5kr1/pp2qp2/2pb1p2/2p2Q2/2P1PP2/2NP2P1/PP6/2K4R b - - 0 25 | lichess-04VH6uRt-ply50 | e7e6 | d6c7 | SF16 loss 93 cp; clock 210.67 s
