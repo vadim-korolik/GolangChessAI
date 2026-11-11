@@ -648,7 +648,7 @@ func (l *Lichess) handleEvent(event *Event) error {
 		}
 		if !event.Challenge.Rated {
 			log.Infof("declining casual challenge %s from %s: only rated games accepted", event.Challenge.ID, challengerID)
-			if err := l.DeclineChallenge(event.Challenge.ID, "casual"); err != nil {
+			if err := l.DeclineChallenge(event.Challenge.ID, "rated"); err != nil {
 				log.Errorf("failed to decline casual challenge %s: %s", event.Challenge.ID, err)
 			}
 			break
